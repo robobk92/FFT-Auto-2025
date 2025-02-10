@@ -3,7 +3,6 @@ using Cognex.VisionPro.ImageFile;
 using Cognex.VisionPro.Implementation.Internal;
 using LibFunction;
 using Newtonsoft.Json.Linq;
-using Protocol;
 using ScottPlot.Drawing.Colormaps;
 using SLTSoft.RJControl;
 using SLTtechSoft.Properties;
