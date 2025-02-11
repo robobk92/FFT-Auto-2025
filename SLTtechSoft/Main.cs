@@ -785,7 +785,7 @@ namespace SLTtechSoft
         {
             //Condition
             if (!CurrentDoorTestData.Enable) return;
-            if (CurrentDoorTestData.Name != functionDoorList.Firmwave_Check.Name) return; //trung ten van return
+            if (CurrentDoorTestData.Name != functionDoorList.Firmwave_Check.Name) return;
             string CurrentResult = dataGridView1.Rows[CurrentDoorTestData.RowIndex].Cells[DoorTableCol.Result].Value.ToString();
 
             if (ProcessTestIndex == 0 && CurrentResult == DoorResult.Empty)
