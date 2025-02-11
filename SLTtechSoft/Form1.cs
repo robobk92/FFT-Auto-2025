@@ -953,6 +953,7 @@ namespace SLTtechSoft
             DataWritePLC[26] = PLC.Write.Word.Pos5;
             DataWritePLC[27] = PLC.Write.Word.Pos6;
             DataWritePLC[28] = PLC.Write.Word.SpeedXAuto;
+
             DataWritePLC[29] = PLC.Write.Word.nudRPos1;
             DataWritePLC[30] = PLC.Write.Word.nudRPos2;
             DataWritePLC[31] = PLC.Write.Word.nudRPos3;
