@@ -78,9 +78,10 @@ namespace SLTtechSoft
             this.WindowState = FormWindowState.Maximized;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
 
+        private void btnskip_Click(object sender, EventArgs e)
+        {
+            ProcessTestIndex = 4;
         }
         private void tbSerialNumber_Keydown(object sender, KeyEventArgs e)
         {
@@ -259,7 +260,7 @@ namespace SLTtechSoft
                                 {
                                     if (dataGridView1.Rows[i].Cells[1].Value.ToString() == ListItemStopWhenFail[k])
                                     { 
-                                        StopTestingByFail = true;
+                                        StopTestingByFail = false;
                                         break;
                                     }
                                 }
@@ -503,6 +504,7 @@ namespace SLTtechSoft
                         
                         break;
                     }
+                
 
                 default: { break; }
             }

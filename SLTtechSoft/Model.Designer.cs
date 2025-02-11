@@ -77,6 +77,8 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPageModel = new System.Windows.Forms.TabPage();
+            this.tabPageMotion = new System.Windows.Forms.TabPage();
+            this.panel13 = new System.Windows.Forms.Panel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
@@ -113,8 +115,6 @@
             this.btnFftClear = new SLTSoft.RJControl.RJButton();
             this.btnFftStop = new SLTSoft.RJControl.RJButton();
             this.btnFftStart = new SLTSoft.RJControl.RJButton();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.tabPageMotion = new System.Windows.Forms.TabPage();
             this.panel1.SuspendLayout();
             this.panel17.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
@@ -128,6 +128,7 @@
             this.panel22.SuspendLayout();
             this.panel7.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            this.tabPageMotion.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel16.SuspendLayout();
@@ -143,7 +144,6 @@
             this.panel21.SuspendLayout();
             this.panel19.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.tabPageMotion.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -488,6 +488,18 @@
             this.tabPageModel.Name = "tabPageModel";
             this.tabPageModel.UseVisualStyleBackColor = true;
             // 
+            // tabPageMotion
+            // 
+            this.tabPageMotion.Controls.Add(this.panel13);
+            resources.ApplyResources(this.tabPageMotion, "tabPageMotion");
+            this.tabPageMotion.Name = "tabPageMotion";
+            this.tabPageMotion.UseVisualStyleBackColor = true;
+            // 
+            // panel13
+            // 
+            resources.ApplyResources(this.panel13, "panel13");
+            this.panel13.Name = "panel13";
+            // 
             // tabPage2
             // 
             resources.ApplyResources(this.tabPage2, "tabPage2");
@@ -808,18 +820,6 @@
             this.btnFftStart.UseVisualStyleBackColor = false;
             this.btnFftStart.Click += new System.EventHandler(this.btnFftStart_Click);
             // 
-            // panel13
-            // 
-            resources.ApplyResources(this.panel13, "panel13");
-            this.panel13.Name = "panel13";
-            // 
-            // tabPageMotion
-            // 
-            this.tabPageMotion.Controls.Add(this.panel13);
-            resources.ApplyResources(this.tabPageMotion, "tabPageMotion");
-            this.tabPageMotion.Name = "tabPageMotion";
-            this.tabPageMotion.UseVisualStyleBackColor = true;
-            // 
             // Model
             // 
             resources.ApplyResources(this, "$this");
@@ -844,6 +844,7 @@
             this.panel22.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
+            this.tabPageMotion.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
             this.panel16.ResumeLayout(false);
@@ -860,7 +861,6 @@
             this.panel21.ResumeLayout(false);
             this.panel19.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
-            this.tabPageMotion.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -887,7 +887,6 @@
         private System.Windows.Forms.RadioButton radioUseFolder;
         private System.Windows.Forms.TextBox txbRunTextFolder;
         private System.Windows.Forms.TextBox txbRunTestFile;
-        private System.Windows.Forms.Button btnRunOnce;
         private System.Windows.Forms.Button btnLoadVppFile1;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Label label10;
@@ -932,7 +931,6 @@
         private System.Windows.Forms.Panel panel21;
         private System.Windows.Forms.Panel panelKeysight;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox tbExposure;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button btnExtendFFTAnalize;
         private System.Windows.Forms.TabPage tabPage1;
@@ -952,5 +950,7 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TabPage tabPageMotion;
         private System.Windows.Forms.Panel panel13;
+        public System.Windows.Forms.Button btnRunOnce;
+        public System.Windows.Forms.TextBox tbExposure;
     }
 }

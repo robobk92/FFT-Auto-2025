@@ -69,6 +69,7 @@
             this.tbSerialNumber = new SLTSoft.RJControl.RJTextBox();
             this.tbMacMes = new SLTSoft.RJControl.RJTextBox();
             this.panel27 = new System.Windows.Forms.Panel();
+            this.btnskip = new System.Windows.Forms.Button();
             this.tbUSBScan = new SLTSoft.RJControl.RJTextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -81,7 +82,6 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel22 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.tbSKUCode.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -424,7 +424,7 @@
             // 
             // panel27
             // 
-            this.panel27.Controls.Add(this.button1);
+            this.panel27.Controls.Add(this.btnskip);
             this.panel27.Controls.Add(this.tbMacMes);
             this.panel27.Controls.Add(this.tbUSBScan);
             this.panel27.Controls.Add(this.tbMacDevice);
@@ -439,6 +439,13 @@
             this.panel27.Controls.Add(this.label15);
             resources.ApplyResources(this.panel27, "panel27");
             this.panel27.Name = "panel27";
+            // 
+            // btnskip
+            // 
+            resources.ApplyResources(this.btnskip, "btnskip");
+            this.btnskip.Name = "btnskip";
+            this.btnskip.UseVisualStyleBackColor = true;
+            this.btnskip.Click += new System.EventHandler(this.btnskip_Click);
             // 
             // tbUSBScan
             // 
@@ -518,13 +525,6 @@
             this.panel1.Controls.Add(this.panel22);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
-            // 
-            // button1
-            // 
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Main
             // 
@@ -618,6 +618,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_Timeout;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnskip;
     }
 }

@@ -823,7 +823,9 @@ namespace SLTtechSoft
         {
             if (radioUseCam.Checked)
             {
-                _form1.TriggerCamManual(0, true, true);
+                
+                _form1.GUICamera.StartSingleShotGrabbing();
+                //_form1.TriggerCamManual(0, true, true);
             }
             else
             {

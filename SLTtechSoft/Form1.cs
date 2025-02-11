@@ -39,6 +39,7 @@ using GUISampleMultiCam;
 using Cognex.VisionPro.Implementation.Internal;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static SLTtechSoft.TopControl;
+using Basler.Pylon;
 
 
 
@@ -233,7 +234,7 @@ namespace SLTtechSoft
             if (result == DialogResult.Yes)
             {
                 IsTestNoPLC = false;
-                IsTestNoCam = new bool[] { true, true, true };
+                IsTestNoCam = new bool[] { false, false, false };
                 IsTestNoScanner = false;
                 IstestNoLock = false;
                 IsTestNoMes = false;
@@ -376,6 +377,7 @@ namespace SLTtechSoft
             btnModel.BackColor = TabControlBackColorOFF;
             btnIO.BackColor = TabControlBackColorOFF;
             btnOption.BackColor = TabControlBackColorOFF;
+            formModel.btnRunOnce.Enabled = GUICamera.IsSingleShotSupported();
         }
 
         private void BtnStop_Click(object sender, EventArgs e)
@@ -1062,7 +1064,7 @@ namespace SLTtechSoft
             if (_VisionSystem != null)
             {
                 if (_VisionSystem[0] != null)
-                    lbCam1Connected.BackColor = _VisionSystem[0].IsCamConnected ? Color.Green : Color.IndianRed;
+                    lbCam1Connected.BackColor = GUICamera.IsOpen ? Color.Green : Color.IndianRed;
             }
             if (_VisionSystem != null)
             {
@@ -1121,7 +1123,7 @@ namespace SLTtechSoft
                         case ModeMachine.Manual:
                             {
                                 TriggerCamAuto(cam, ImageGrap, false, false);
-
+                                formModel.RunOneCogToolBlockEdit(ImageGrap.Image);
                                 break;
                             }
                         case ModeMachine.Teaching:
@@ -1158,7 +1160,7 @@ namespace SLTtechSoft
             GUICamera = new GUICamera();
             InitializeCamera(0);
         }
-        public void InitializeCamera(int index)
+        public void InitializeCamera(int index) 
         {
             _VisionSystem[index].IsCamConnected = false;
 
@@ -1169,7 +1171,8 @@ namespace SLTtechSoft
                 GUICamera.CreateCameraByIndex(0);
                 GUICamera.OpenCamera();
                 GUICamera.HandleImageGrabbed += new GUICamera.ImageGrabbedHandle(CameraHandle1);
-
+                GUICamera.GuiCameraGrabStarted += GUICamera_GuiCameraGrabStarted;
+                GUICamera.GuiCameraGrabStopped += GUICamera_GuiCameraGrabStopped;
             }
             catch (Exception ex)
             {
@@ -1180,6 +1183,37 @@ namespace SLTtechSoft
                 }));
             }
         }
+
+        private void GUICamera_GuiCameraGrabStopped(object sender, EventArgs e)
+        {
+            if (InvokeRequired)
+            {
+                // If called from a different thread, we must use the Invoke method to marshal the call to the proper thread.
+                BeginInvoke(new EventHandler<GrabStopEventArgs>(GUICamera_GuiCameraGrabStopped), sender, e);
+                return;
+            }
+            GUICamera.Stopwatch.Stop();
+            TimeSpan ts = GUICamera.Stopwatch.Elapsed;
+            lbTimeCamCapture.Text = $"{ts.Seconds}.{PadLeftZeros(ts.Milliseconds, 3)}";
+        }
+
+        private void GUICamera_GuiCameraGrabStarted(object sender, EventArgs e)
+        {
+            
+            Thread.Sleep(300);
+            if (InvokeRequired)
+            {
+                // If called from a different thread, we must use the Invoke method to marshal the call to the proper thread.
+                BeginInvoke(new EventHandler<EventArgs>(GUICamera_GuiCameraGrabStarted), sender, e);
+                return;
+            }
+            GUICamera.Stopwatch = new Stopwatch();
+            GUICamera.Stopwatch.Start();
+        }
+
+
+
+      
         public void InitialAllCameras()
         {
 

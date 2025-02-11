@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Threading;
@@ -25,6 +26,10 @@ namespace GUISampleMultiCam
         // Grab statistical values.
         private int imageCount = 0;
         private int errorCount = 0;
+
+        //StopWatch
+        public Stopwatch Stopwatch = new Stopwatch();
+
 
         // Monitor object for managing concurrent thread access to latestFrame.
         private Object monitor = new Object();
@@ -309,6 +314,7 @@ namespace GUISampleMultiCam
         // Configures the camera for continuous shot and starts grabbing.
         public void StartContinuousShotGrabbing()
         {
+            if (IsGrabbing) return;
             // Start grabbing images until grabbing is stopped.
             ResetGrabStatistics();
             Configuration.AcquireContinuous( camera, null );
@@ -318,8 +324,14 @@ namespace GUISampleMultiCam
         // Executes a single shot on the camera.
         public void StartSingleShotGrabbing()
         {
+            if (IsGrabbing)
+            {
+                Console.WriteLine("IsGrabbing");
+                return;
+            }
+                
             ResetGrabStatistics();
-            Configuration.AcquireSingleFrame( camera, null );
+            Configuration.AcquireSingleFrame(camera, null);
             camera.StreamGrabber.Start(1, GrabStrategy.OneByOne, GrabLoop.ProvidedByStreamGrabber);
         }
 
@@ -487,9 +499,15 @@ namespace GUISampleMultiCam
 
         // Invoke event handlers when a grab has been started.
         // This event is raised by the member object camera.
-        protected virtual void OnGrabStarted(Object sender, EventArgs e)
+        public void OnGrabStarted(Object sender, EventArgs e)
         {
+            //for (int i = 0; i <= 1000; i++) 
+            //{
+            //    int k = i;
+            //}
+
             EventHandler handler = GuiCameraGrabStarted;
+            Console.WriteLine("OnGrabStarted");
             if (handler != null)
             {
                 handler.Invoke(this, e);
