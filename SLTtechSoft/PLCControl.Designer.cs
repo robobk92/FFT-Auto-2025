@@ -57,6 +57,7 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.tbMotionFile = new SLTSoft.RJControl.RJTextBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label24 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -66,8 +67,11 @@
             this.Timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.btnRGotoPos3 = new SLTtechSoft.ToggleSwitch();
             this.btnRgetPos3 = new System.Windows.Forms.Button();
+            this.btnRGotoPos2 = new SLTtechSoft.ToggleSwitch();
             this.nudRPos3 = new System.Windows.Forms.NumericUpDown();
+            this.btnRGotoPos1 = new SLTtechSoft.ToggleSwitch();
             this.label23 = new System.Windows.Forms.Label();
             this.btnSaveRPos = new System.Windows.Forms.Button();
             this.btnRgetPos2 = new System.Windows.Forms.Button();
@@ -100,6 +104,8 @@
             this.tbXPosition = new System.Windows.Forms.TextBox();
             this.groupBox33 = new System.Windows.Forms.GroupBox();
             this.lbX6 = new System.Windows.Forms.Label();
+            this.btnHomeAll = new SLTtechSoft.ToggleSwitch();
+            this.btnHomeX = new SLTtechSoft.ToggleSwitch();
             this.nudStepSizeX = new System.Windows.Forms.NumericUpDown();
             this.nudFeedRateR = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
@@ -110,7 +116,17 @@
             this.nudStepSizeR = new System.Windows.Forms.NumericUpDown();
             this.groupBox29 = new System.Windows.Forms.GroupBox();
             this.groupBox30 = new System.Windows.Forms.GroupBox();
+            this.btnJogMode = new SLTtechSoft.ToggleSwitch();
+            this.toggleSwitch3 = new SLTtechSoft.ToggleSwitch();
+            this.toggleSwitch1 = new SLTtechSoft.ToggleSwitch();
+            this.btnJogXup = new SLTtechSoft.ToggleSwitch();
             this.groupBox26 = new System.Windows.Forms.GroupBox();
+            this.btnGotoPos3 = new SLTtechSoft.ToggleSwitch();
+            this.btnGotoPos4 = new SLTtechSoft.ToggleSwitch();
+            this.btnGotoPos5 = new SLTtechSoft.ToggleSwitch();
+            this.btnGotoPos6 = new SLTtechSoft.ToggleSwitch();
+            this.btnGotoPos2 = new SLTtechSoft.ToggleSwitch();
+            this.btnGotoPos1 = new SLTtechSoft.ToggleSwitch();
             this.nudPoint6 = new System.Windows.Forms.NumericUpDown();
             this.label20 = new System.Windows.Forms.Label();
             this.nudPoint5 = new System.Windows.Forms.NumericUpDown();
@@ -127,22 +143,6 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnRGotoPos3 = new SLTtechSoft.ToggleSwitch();
-            this.btnRGotoPos2 = new SLTtechSoft.ToggleSwitch();
-            this.btnRGotoPos1 = new SLTtechSoft.ToggleSwitch();
-            this.btnGotoPos3 = new SLTtechSoft.ToggleSwitch();
-            this.btnGotoPos4 = new SLTtechSoft.ToggleSwitch();
-            this.btnGotoPos5 = new SLTtechSoft.ToggleSwitch();
-            this.btnGotoPos6 = new SLTtechSoft.ToggleSwitch();
-            this.btnGotoPos2 = new SLTtechSoft.ToggleSwitch();
-            this.btnGotoPos1 = new SLTtechSoft.ToggleSwitch();
-            this.btnHomeAll = new SLTtechSoft.ToggleSwitch();
-            this.btnHomeX = new SLTtechSoft.ToggleSwitch();
-            this.btnJogMode = new SLTtechSoft.ToggleSwitch();
-            this.toggleSwitch3 = new SLTtechSoft.ToggleSwitch();
-            this.toggleSwitch1 = new SLTtechSoft.ToggleSwitch();
-            this.btnJogXup = new SLTtechSoft.ToggleSwitch();
-            this.tbMotionFile = new SLTSoft.RJControl.RJTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudRStartSpeed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudRStartAddress)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudROprSpeed)).BeginInit();
@@ -493,6 +493,25 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(519, 40);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
+            // tbMotionFile
+            // 
+            this.tbMotionFile.BackColor = System.Drawing.SystemColors.Window;
+            this.tbMotionFile.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.tbMotionFile.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.tbMotionFile.BorderSize = 2;
+            this.tbMotionFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbMotionFile.ForeColor = System.Drawing.Color.DimGray;
+            this.tbMotionFile.Location = new System.Drawing.Point(4, 3);
+            this.tbMotionFile.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.tbMotionFile.Multiline = false;
+            this.tbMotionFile.Name = "tbMotionFile";
+            this.tbMotionFile.Padding = new System.Windows.Forms.Padding(7);
+            this.tbMotionFile.PasswordChar = false;
+            this.tbMotionFile.Size = new System.Drawing.Size(672, 30);
+            this.tbMotionFile.TabIndex = 1;
+            this.tbMotionFile.Texts = "";
+            this.tbMotionFile.UnderlinedStyle = false;
+            // 
             // panel8
             // 
             this.panel8.Controls.Add(this.label24);
@@ -595,6 +614,21 @@
             this.groupBox12.Text = "R-Point Setting";
             this.groupBox12.Visible = false;
             // 
+            // btnRGotoPos3
+            // 
+            this.btnRGotoPos3.BackColor = System.Drawing.Color.Transparent;
+            this.btnRGotoPos3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnRGotoPos3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnRGotoPos3.Location = new System.Drawing.Point(249, 88);
+            this.btnRGotoPos3.Name = "btnRGotoPos3";
+            this.btnRGotoPos3.ReadSameRelay = true;
+            this.btnRGotoPos3.Size = new System.Drawing.Size(60, 23);
+            this.btnRGotoPos3.State = false;
+            this.btnRGotoPos3.TabIndex = 88;
+            this.btnRGotoPos3.Text = "Zone 3";
+            this.btnRGotoPos3.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Momentary;
+            this.btnRGotoPos3.UseVisualStyleBackColor = false;
+            // 
             // btnRgetPos3
             // 
             this.btnRgetPos3.Location = new System.Drawing.Point(199, 87);
@@ -604,6 +638,21 @@
             this.btnRgetPos3.Text = "Get";
             this.btnRgetPos3.UseVisualStyleBackColor = true;
             this.btnRgetPos3.Click += new System.EventHandler(this.btnRgetPos1_Click);
+            // 
+            // btnRGotoPos2
+            // 
+            this.btnRGotoPos2.BackColor = System.Drawing.Color.Transparent;
+            this.btnRGotoPos2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnRGotoPos2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnRGotoPos2.Location = new System.Drawing.Point(249, 59);
+            this.btnRGotoPos2.Name = "btnRGotoPos2";
+            this.btnRGotoPos2.ReadSameRelay = true;
+            this.btnRGotoPos2.Size = new System.Drawing.Size(60, 23);
+            this.btnRGotoPos2.State = false;
+            this.btnRGotoPos2.TabIndex = 87;
+            this.btnRGotoPos2.Text = "Zone 2";
+            this.btnRGotoPos2.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Momentary;
+            this.btnRGotoPos2.UseVisualStyleBackColor = false;
             // 
             // nudRPos3
             // 
@@ -622,6 +671,21 @@
             this.nudRPos3.Name = "nudRPos3";
             this.nudRPos3.Size = new System.Drawing.Size(78, 22);
             this.nudRPos3.TabIndex = 76;
+            // 
+            // btnRGotoPos1
+            // 
+            this.btnRGotoPos1.BackColor = System.Drawing.Color.Transparent;
+            this.btnRGotoPos1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnRGotoPos1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnRGotoPos1.Location = new System.Drawing.Point(249, 29);
+            this.btnRGotoPos1.Name = "btnRGotoPos1";
+            this.btnRGotoPos1.ReadSameRelay = true;
+            this.btnRGotoPos1.Size = new System.Drawing.Size(60, 23);
+            this.btnRGotoPos1.State = false;
+            this.btnRGotoPos1.TabIndex = 86;
+            this.btnRGotoPos1.Text = "Zone 1";
+            this.btnRGotoPos1.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Momentary;
+            this.btnRGotoPos1.UseVisualStyleBackColor = false;
             // 
             // label23
             // 
@@ -999,6 +1063,7 @@
             this.tbXPosition.Name = "tbXPosition";
             this.tbXPosition.Size = new System.Drawing.Size(115, 19);
             this.tbXPosition.TabIndex = 52;
+            this.tbXPosition.Text = "0";
             this.tbXPosition.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // groupBox33
@@ -1022,6 +1087,37 @@
             this.lbX6.TabIndex = 54;
             this.lbX6.Text = "X6";
             this.lbX6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnHomeAll
+            // 
+            this.btnHomeAll.BackColor = System.Drawing.Color.Transparent;
+            this.btnHomeAll.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.btnHomeAll.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnHomeAll.Location = new System.Drawing.Point(1, 19);
+            this.btnHomeAll.Name = "btnHomeAll";
+            this.btnHomeAll.ReadSameRelay = true;
+            this.btnHomeAll.Size = new System.Drawing.Size(66, 64);
+            this.btnHomeAll.State = false;
+            this.btnHomeAll.TabIndex = 77;
+            this.btnHomeAll.Text = "Home All";
+            this.btnHomeAll.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Momentary;
+            this.btnHomeAll.UseVisualStyleBackColor = false;
+            // 
+            // btnHomeX
+            // 
+            this.btnHomeX.BackColor = System.Drawing.Color.Transparent;
+            this.btnHomeX.Font = new System.Drawing.Font("Arial", 15.75F);
+            this.btnHomeX.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnHomeX.Location = new System.Drawing.Point(72, 19);
+            this.btnHomeX.Name = "btnHomeX";
+            this.btnHomeX.ReadSameRelay = true;
+            this.btnHomeX.Size = new System.Drawing.Size(66, 64);
+            this.btnHomeX.State = false;
+            this.btnHomeX.TabIndex = 78;
+            this.btnHomeX.Text = "X";
+            this.btnHomeX.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHomeX.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Momentary;
+            this.btnHomeX.UseVisualStyleBackColor = false;
             // 
             // nudStepSizeX
             // 
@@ -1094,15 +1190,10 @@
             this.nudFeedRateX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudFeedRateX.Location = new System.Drawing.Point(102, 28);
             this.nudFeedRateX.Maximum = new decimal(new int[] {
-            10000,
+            32767,
             0,
             0,
             0});
-            this.nudFeedRateX.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            -2147483648});
             this.nudFeedRateX.Name = "nudFeedRateX";
             this.nudFeedRateX.Size = new System.Drawing.Size(72, 22);
             this.nudFeedRateX.TabIndex = 26;
@@ -1166,6 +1257,70 @@
             this.groupBox30.TabStop = false;
             this.groupBox30.Text = "Step Size / Feed rate";
             // 
+            // btnJogMode
+            // 
+            this.btnJogMode.BackColor = System.Drawing.Color.Transparent;
+            this.btnJogMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnJogMode.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnJogMode.Location = new System.Drawing.Point(38, 82);
+            this.btnJogMode.Name = "btnJogMode";
+            this.btnJogMode.ReadSameRelay = true;
+            this.btnJogMode.Size = new System.Drawing.Size(247, 32);
+            this.btnJogMode.State = false;
+            this.btnJogMode.TabIndex = 83;
+            this.btnJogMode.Text = "STEP MODE";
+            this.btnJogMode.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Toggle;
+            this.btnJogMode.UseVisualStyleBackColor = false;
+            // 
+            // toggleSwitch3
+            // 
+            this.toggleSwitch3.AccessibleName = "btnStartStopPulse";
+            this.toggleSwitch3.BackColor = System.Drawing.Color.Transparent;
+            this.toggleSwitch3.Font = new System.Drawing.Font("Arial", 15.75F);
+            this.toggleSwitch3.ForeColor = System.Drawing.Color.LightSalmon;
+            this.toggleSwitch3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.toggleSwitch3.Location = new System.Drawing.Point(125, 26);
+            this.toggleSwitch3.Name = "toggleSwitch3";
+            this.toggleSwitch3.ReadSameRelay = true;
+            this.toggleSwitch3.Size = new System.Drawing.Size(78, 51);
+            this.toggleSwitch3.State = false;
+            this.toggleSwitch3.TabIndex = 81;
+            this.toggleSwitch3.Text = "STOP";
+            this.toggleSwitch3.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Momentary;
+            this.toggleSwitch3.UseVisualStyleBackColor = false;
+            this.toggleSwitch3.Click += new System.EventHandler(this.toggleSwitch3_Click);
+            // 
+            // toggleSwitch1
+            // 
+            this.toggleSwitch1.AccessibleName = "btnJogXdown";
+            this.toggleSwitch1.BackColor = System.Drawing.Color.Transparent;
+            this.toggleSwitch1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.toggleSwitch1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.toggleSwitch1.Location = new System.Drawing.Point(37, 26);
+            this.toggleSwitch1.Name = "toggleSwitch1";
+            this.toggleSwitch1.ReadSameRelay = true;
+            this.toggleSwitch1.Size = new System.Drawing.Size(66, 53);
+            this.toggleSwitch1.State = false;
+            this.toggleSwitch1.TabIndex = 79;
+            this.toggleSwitch1.Text = "X--";
+            this.toggleSwitch1.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Momentary;
+            this.toggleSwitch1.UseVisualStyleBackColor = false;
+            // 
+            // btnJogXup
+            // 
+            this.btnJogXup.BackColor = System.Drawing.Color.Transparent;
+            this.btnJogXup.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.btnJogXup.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnJogXup.Location = new System.Drawing.Point(219, 26);
+            this.btnJogXup.Name = "btnJogXup";
+            this.btnJogXup.ReadSameRelay = true;
+            this.btnJogXup.Size = new System.Drawing.Size(66, 53);
+            this.btnJogXup.State = false;
+            this.btnJogXup.TabIndex = 80;
+            this.btnJogXup.Text = "X++";
+            this.btnJogXup.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Momentary;
+            this.btnJogXup.UseVisualStyleBackColor = false;
+            // 
             // groupBox26
             // 
             this.groupBox26.Controls.Add(this.btnWriteSpeedXAuto);
@@ -1201,6 +1356,97 @@
             this.groupBox26.TabIndex = 33;
             this.groupBox26.TabStop = false;
             this.groupBox26.Text = "X-Point Setting";
+            // 
+            // btnGotoPos3
+            // 
+            this.btnGotoPos3.BackColor = System.Drawing.Color.Transparent;
+            this.btnGotoPos3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnGotoPos3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnGotoPos3.Location = new System.Drawing.Point(233, 83);
+            this.btnGotoPos3.Name = "btnGotoPos3";
+            this.btnGotoPos3.ReadSameRelay = true;
+            this.btnGotoPos3.Size = new System.Drawing.Size(60, 23);
+            this.btnGotoPos3.State = false;
+            this.btnGotoPos3.TabIndex = 85;
+            this.btnGotoPos3.Text = "Zone 3";
+            this.btnGotoPos3.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Momentary;
+            this.btnGotoPos3.UseVisualStyleBackColor = false;
+            // 
+            // btnGotoPos4
+            // 
+            this.btnGotoPos4.BackColor = System.Drawing.Color.Transparent;
+            this.btnGotoPos4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnGotoPos4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnGotoPos4.Location = new System.Drawing.Point(233, 110);
+            this.btnGotoPos4.Name = "btnGotoPos4";
+            this.btnGotoPos4.ReadSameRelay = true;
+            this.btnGotoPos4.Size = new System.Drawing.Size(60, 23);
+            this.btnGotoPos4.State = false;
+            this.btnGotoPos4.TabIndex = 84;
+            this.btnGotoPos4.Text = "Zone 4";
+            this.btnGotoPos4.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Momentary;
+            this.btnGotoPos4.UseVisualStyleBackColor = false;
+            // 
+            // btnGotoPos5
+            // 
+            this.btnGotoPos5.BackColor = System.Drawing.Color.Transparent;
+            this.btnGotoPos5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnGotoPos5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnGotoPos5.Location = new System.Drawing.Point(233, 138);
+            this.btnGotoPos5.Name = "btnGotoPos5";
+            this.btnGotoPos5.ReadSameRelay = true;
+            this.btnGotoPos5.Size = new System.Drawing.Size(60, 23);
+            this.btnGotoPos5.State = false;
+            this.btnGotoPos5.TabIndex = 83;
+            this.btnGotoPos5.Text = "Zone 5";
+            this.btnGotoPos5.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Momentary;
+            this.btnGotoPos5.UseVisualStyleBackColor = false;
+            // 
+            // btnGotoPos6
+            // 
+            this.btnGotoPos6.BackColor = System.Drawing.Color.Transparent;
+            this.btnGotoPos6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnGotoPos6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnGotoPos6.Location = new System.Drawing.Point(233, 164);
+            this.btnGotoPos6.Name = "btnGotoPos6";
+            this.btnGotoPos6.ReadSameRelay = true;
+            this.btnGotoPos6.Size = new System.Drawing.Size(60, 23);
+            this.btnGotoPos6.State = false;
+            this.btnGotoPos6.TabIndex = 82;
+            this.btnGotoPos6.Text = "Zone 6";
+            this.btnGotoPos6.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Momentary;
+            this.btnGotoPos6.UseVisualStyleBackColor = false;
+            // 
+            // btnGotoPos2
+            // 
+            this.btnGotoPos2.BackColor = System.Drawing.Color.Transparent;
+            this.btnGotoPos2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnGotoPos2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnGotoPos2.Location = new System.Drawing.Point(233, 57);
+            this.btnGotoPos2.Name = "btnGotoPos2";
+            this.btnGotoPos2.ReadSameRelay = true;
+            this.btnGotoPos2.Size = new System.Drawing.Size(60, 23);
+            this.btnGotoPos2.State = false;
+            this.btnGotoPos2.TabIndex = 80;
+            this.btnGotoPos2.Text = "Zone 2";
+            this.btnGotoPos2.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Momentary;
+            this.btnGotoPos2.UseVisualStyleBackColor = false;
+            // 
+            // btnGotoPos1
+            // 
+            this.btnGotoPos1.BackColor = System.Drawing.Color.Transparent;
+            this.btnGotoPos1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnGotoPos1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnGotoPos1.Location = new System.Drawing.Point(233, 27);
+            this.btnGotoPos1.Name = "btnGotoPos1";
+            this.btnGotoPos1.ReadSameRelay = true;
+            this.btnGotoPos1.Size = new System.Drawing.Size(60, 23);
+            this.btnGotoPos1.State = false;
+            this.btnGotoPos1.TabIndex = 79;
+            this.btnGotoPos1.Text = "Zone 1";
+            this.btnGotoPos1.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Momentary;
+            this.btnGotoPos1.UseVisualStyleBackColor = false;
+            this.btnGotoPos1.Click += new System.EventHandler(this.btnGotoPos1_Click);
             // 
             // nudPoint6
             // 
@@ -1420,255 +1666,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(704, 473);
             this.panel1.TabIndex = 156;
-            // 
-            // btnRGotoPos3
-            // 
-            this.btnRGotoPos3.BackColor = System.Drawing.Color.Transparent;
-            this.btnRGotoPos3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnRGotoPos3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnRGotoPos3.Location = new System.Drawing.Point(249, 88);
-            this.btnRGotoPos3.Name = "btnRGotoPos3";
-            this.btnRGotoPos3.ReadSameRelay = true;
-            this.btnRGotoPos3.Size = new System.Drawing.Size(60, 23);
-            this.btnRGotoPos3.State = false;
-            this.btnRGotoPos3.TabIndex = 88;
-            this.btnRGotoPos3.Text = "Zone 3";
-            this.btnRGotoPos3.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Momentary;
-            this.btnRGotoPos3.UseVisualStyleBackColor = false;
-            // 
-            // btnRGotoPos2
-            // 
-            this.btnRGotoPos2.BackColor = System.Drawing.Color.Transparent;
-            this.btnRGotoPos2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnRGotoPos2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnRGotoPos2.Location = new System.Drawing.Point(249, 59);
-            this.btnRGotoPos2.Name = "btnRGotoPos2";
-            this.btnRGotoPos2.ReadSameRelay = true;
-            this.btnRGotoPos2.Size = new System.Drawing.Size(60, 23);
-            this.btnRGotoPos2.State = false;
-            this.btnRGotoPos2.TabIndex = 87;
-            this.btnRGotoPos2.Text = "Zone 2";
-            this.btnRGotoPos2.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Momentary;
-            this.btnRGotoPos2.UseVisualStyleBackColor = false;
-            // 
-            // btnRGotoPos1
-            // 
-            this.btnRGotoPos1.BackColor = System.Drawing.Color.Transparent;
-            this.btnRGotoPos1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnRGotoPos1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnRGotoPos1.Location = new System.Drawing.Point(249, 29);
-            this.btnRGotoPos1.Name = "btnRGotoPos1";
-            this.btnRGotoPos1.ReadSameRelay = true;
-            this.btnRGotoPos1.Size = new System.Drawing.Size(60, 23);
-            this.btnRGotoPos1.State = false;
-            this.btnRGotoPos1.TabIndex = 86;
-            this.btnRGotoPos1.Text = "Zone 1";
-            this.btnRGotoPos1.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Momentary;
-            this.btnRGotoPos1.UseVisualStyleBackColor = false;
-            // 
-            // btnGotoPos3
-            // 
-            this.btnGotoPos3.BackColor = System.Drawing.Color.Transparent;
-            this.btnGotoPos3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnGotoPos3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnGotoPos3.Location = new System.Drawing.Point(233, 83);
-            this.btnGotoPos3.Name = "btnGotoPos3";
-            this.btnGotoPos3.ReadSameRelay = true;
-            this.btnGotoPos3.Size = new System.Drawing.Size(60, 23);
-            this.btnGotoPos3.State = false;
-            this.btnGotoPos3.TabIndex = 85;
-            this.btnGotoPos3.Text = "Zone 3";
-            this.btnGotoPos3.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Momentary;
-            this.btnGotoPos3.UseVisualStyleBackColor = false;
-            // 
-            // btnGotoPos4
-            // 
-            this.btnGotoPos4.BackColor = System.Drawing.Color.Transparent;
-            this.btnGotoPos4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnGotoPos4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnGotoPos4.Location = new System.Drawing.Point(233, 110);
-            this.btnGotoPos4.Name = "btnGotoPos4";
-            this.btnGotoPos4.ReadSameRelay = true;
-            this.btnGotoPos4.Size = new System.Drawing.Size(60, 23);
-            this.btnGotoPos4.State = false;
-            this.btnGotoPos4.TabIndex = 84;
-            this.btnGotoPos4.Text = "Zone 4";
-            this.btnGotoPos4.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Momentary;
-            this.btnGotoPos4.UseVisualStyleBackColor = false;
-            // 
-            // btnGotoPos5
-            // 
-            this.btnGotoPos5.BackColor = System.Drawing.Color.Transparent;
-            this.btnGotoPos5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnGotoPos5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnGotoPos5.Location = new System.Drawing.Point(233, 138);
-            this.btnGotoPos5.Name = "btnGotoPos5";
-            this.btnGotoPos5.ReadSameRelay = true;
-            this.btnGotoPos5.Size = new System.Drawing.Size(60, 23);
-            this.btnGotoPos5.State = false;
-            this.btnGotoPos5.TabIndex = 83;
-            this.btnGotoPos5.Text = "Zone 5";
-            this.btnGotoPos5.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Momentary;
-            this.btnGotoPos5.UseVisualStyleBackColor = false;
-            // 
-            // btnGotoPos6
-            // 
-            this.btnGotoPos6.BackColor = System.Drawing.Color.Transparent;
-            this.btnGotoPos6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnGotoPos6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnGotoPos6.Location = new System.Drawing.Point(233, 164);
-            this.btnGotoPos6.Name = "btnGotoPos6";
-            this.btnGotoPos6.ReadSameRelay = true;
-            this.btnGotoPos6.Size = new System.Drawing.Size(60, 23);
-            this.btnGotoPos6.State = false;
-            this.btnGotoPos6.TabIndex = 82;
-            this.btnGotoPos6.Text = "Zone 6";
-            this.btnGotoPos6.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Momentary;
-            this.btnGotoPos6.UseVisualStyleBackColor = false;
-            // 
-            // btnGotoPos2
-            // 
-            this.btnGotoPos2.BackColor = System.Drawing.Color.Transparent;
-            this.btnGotoPos2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnGotoPos2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnGotoPos2.Location = new System.Drawing.Point(233, 57);
-            this.btnGotoPos2.Name = "btnGotoPos2";
-            this.btnGotoPos2.ReadSameRelay = true;
-            this.btnGotoPos2.Size = new System.Drawing.Size(60, 23);
-            this.btnGotoPos2.State = false;
-            this.btnGotoPos2.TabIndex = 80;
-            this.btnGotoPos2.Text = "Zone 2";
-            this.btnGotoPos2.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Momentary;
-            this.btnGotoPos2.UseVisualStyleBackColor = false;
-            // 
-            // btnGotoPos1
-            // 
-            this.btnGotoPos1.BackColor = System.Drawing.Color.Transparent;
-            this.btnGotoPos1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnGotoPos1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnGotoPos1.Location = new System.Drawing.Point(233, 27);
-            this.btnGotoPos1.Name = "btnGotoPos1";
-            this.btnGotoPos1.ReadSameRelay = true;
-            this.btnGotoPos1.Size = new System.Drawing.Size(60, 23);
-            this.btnGotoPos1.State = false;
-            this.btnGotoPos1.TabIndex = 79;
-            this.btnGotoPos1.Text = "Zone 1";
-            this.btnGotoPos1.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Momentary;
-            this.btnGotoPos1.UseVisualStyleBackColor = false;
-            // 
-            // btnHomeAll
-            // 
-            this.btnHomeAll.BackColor = System.Drawing.Color.Transparent;
-            this.btnHomeAll.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.btnHomeAll.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnHomeAll.Location = new System.Drawing.Point(1, 19);
-            this.btnHomeAll.Name = "btnHomeAll";
-            this.btnHomeAll.ReadSameRelay = true;
-            this.btnHomeAll.Size = new System.Drawing.Size(66, 64);
-            this.btnHomeAll.State = false;
-            this.btnHomeAll.TabIndex = 77;
-            this.btnHomeAll.Text = "Home All";
-            this.btnHomeAll.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Momentary;
-            this.btnHomeAll.UseVisualStyleBackColor = false;
-            // 
-            // btnHomeX
-            // 
-            this.btnHomeX.BackColor = System.Drawing.Color.Transparent;
-            this.btnHomeX.Font = new System.Drawing.Font("Arial", 15.75F);
-            this.btnHomeX.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnHomeX.Location = new System.Drawing.Point(72, 19);
-            this.btnHomeX.Name = "btnHomeX";
-            this.btnHomeX.ReadSameRelay = true;
-            this.btnHomeX.Size = new System.Drawing.Size(66, 64);
-            this.btnHomeX.State = false;
-            this.btnHomeX.TabIndex = 78;
-            this.btnHomeX.Text = "X";
-            this.btnHomeX.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHomeX.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Momentary;
-            this.btnHomeX.UseVisualStyleBackColor = false;
-            // 
-            // btnJogMode
-            // 
-            this.btnJogMode.BackColor = System.Drawing.Color.Transparent;
-            this.btnJogMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnJogMode.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnJogMode.Location = new System.Drawing.Point(38, 82);
-            this.btnJogMode.Name = "btnJogMode";
-            this.btnJogMode.ReadSameRelay = true;
-            this.btnJogMode.Size = new System.Drawing.Size(247, 32);
-            this.btnJogMode.State = false;
-            this.btnJogMode.TabIndex = 83;
-            this.btnJogMode.Text = "STEP MODE";
-            this.btnJogMode.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Toggle;
-            this.btnJogMode.UseVisualStyleBackColor = false;
-            // 
-            // toggleSwitch3
-            // 
-            this.toggleSwitch3.AccessibleName = "btnStartStopPulse";
-            this.toggleSwitch3.BackColor = System.Drawing.Color.Transparent;
-            this.toggleSwitch3.Font = new System.Drawing.Font("Arial", 15.75F);
-            this.toggleSwitch3.ForeColor = System.Drawing.Color.LightSalmon;
-            this.toggleSwitch3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.toggleSwitch3.Location = new System.Drawing.Point(125, 26);
-            this.toggleSwitch3.Name = "toggleSwitch3";
-            this.toggleSwitch3.ReadSameRelay = true;
-            this.toggleSwitch3.Size = new System.Drawing.Size(78, 51);
-            this.toggleSwitch3.State = false;
-            this.toggleSwitch3.TabIndex = 81;
-            this.toggleSwitch3.Text = "STOP";
-            this.toggleSwitch3.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Momentary;
-            this.toggleSwitch3.UseVisualStyleBackColor = false;
-            this.toggleSwitch3.Click += new System.EventHandler(this.toggleSwitch3_Click);
-            // 
-            // toggleSwitch1
-            // 
-            this.toggleSwitch1.AccessibleName = "btnJogXdown";
-            this.toggleSwitch1.BackColor = System.Drawing.Color.Transparent;
-            this.toggleSwitch1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.toggleSwitch1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.toggleSwitch1.Location = new System.Drawing.Point(37, 26);
-            this.toggleSwitch1.Name = "toggleSwitch1";
-            this.toggleSwitch1.ReadSameRelay = true;
-            this.toggleSwitch1.Size = new System.Drawing.Size(66, 53);
-            this.toggleSwitch1.State = false;
-            this.toggleSwitch1.TabIndex = 79;
-            this.toggleSwitch1.Text = "X--";
-            this.toggleSwitch1.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Momentary;
-            this.toggleSwitch1.UseVisualStyleBackColor = false;
-            // 
-            // btnJogXup
-            // 
-            this.btnJogXup.BackColor = System.Drawing.Color.Transparent;
-            this.btnJogXup.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.btnJogXup.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnJogXup.Location = new System.Drawing.Point(219, 26);
-            this.btnJogXup.Name = "btnJogXup";
-            this.btnJogXup.ReadSameRelay = true;
-            this.btnJogXup.Size = new System.Drawing.Size(66, 53);
-            this.btnJogXup.State = false;
-            this.btnJogXup.TabIndex = 80;
-            this.btnJogXup.Text = "X++";
-            this.btnJogXup.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Momentary;
-            this.btnJogXup.UseVisualStyleBackColor = false;
-            // 
-            // tbMotionFile
-            // 
-            this.tbMotionFile.BackColor = System.Drawing.SystemColors.Window;
-            this.tbMotionFile.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.tbMotionFile.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.tbMotionFile.BorderSize = 2;
-            this.tbMotionFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMotionFile.ForeColor = System.Drawing.Color.DimGray;
-            this.tbMotionFile.Location = new System.Drawing.Point(4, 3);
-            this.tbMotionFile.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tbMotionFile.Multiline = false;
-            this.tbMotionFile.Name = "tbMotionFile";
-            this.tbMotionFile.Padding = new System.Windows.Forms.Padding(7);
-            this.tbMotionFile.PasswordChar = false;
-            this.tbMotionFile.Size = new System.Drawing.Size(672, 30);
-            this.tbMotionFile.TabIndex = 1;
-            this.tbMotionFile.Texts = "";
-            this.tbMotionFile.UnderlinedStyle = false;
             // 
             // PLCControl
             // 
