@@ -628,15 +628,7 @@ namespace SLTtechSoft
                         if (powerOn.Power_On)
                         {
                             string Value = $"0-{ResultSpringOne}-{ResultSpringTwo}-{ResultSpringThree}";
-                            if (powerOn.Power_On)
-                            {
-                                FinishATest(true, Value);
-                            }
-                            else
-                            {
-                                FinishATest(false, Value);
-                            }
-                            //if (_form1.PLC.Read.Auto.Test.ResultSpringOne && _form1.PLC.Read.Auto.Test.ResultSpringTwo && _form1.PLC.Read.Auto.Test.ResultSpringThree)
+                            //if (powerOn.Power_On)
                             //{
                             //    FinishATest(true, Value);
                             //}
@@ -644,6 +636,14 @@ namespace SLTtechSoft
                             //{
                             //    FinishATest(false, Value);
                             //}
+                            if (_form1.PLC.Read.Auto.Test.ResultSpringOne && _form1.PLC.Read.Auto.Test.ResultSpringTwo && _form1.PLC.Read.Auto.Test.ResultSpringThree)
+                            {
+                                FinishATest(true, Value);
+                            }
+                            else
+                            {
+                                FinishATest(false, Value);
+                            }
                         }
                         else
                         {
@@ -785,7 +785,7 @@ namespace SLTtechSoft
         {
             //Condition
             if (!CurrentDoorTestData.Enable) return;
-            if (CurrentDoorTestData.Name != functionDoorList.Firmwave_Check.Name) return;
+            if (CurrentDoorTestData.Name != functionDoorList.Firmwave_Check.Name) return; //trung ten van return
             string CurrentResult = dataGridView1.Rows[CurrentDoorTestData.RowIndex].Cells[DoorTableCol.Result].Value.ToString();
 
             if (ProcessTestIndex == 0 && CurrentResult == DoorResult.Empty)
