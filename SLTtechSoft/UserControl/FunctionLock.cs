@@ -135,13 +135,14 @@ namespace FunctionLoock.Usercontrol
         }
         private string[] SetDefaultDoor()
         {
-            string[] Result = new string[1];
+            string[] Result = new string[2];
             int timeout = Convert.ToInt32(tbTimeOut.Text);
             SetdeafautLock data = new SetdeafautLock();
             data = _form1.LockASSA.SetDefaultDoor(0xFF, timeout);
             if (data != null)
             {
                 Result[0] = data.temperature;
+                Result[1] = data.checkFlash.ToString();
             }
             else
             {

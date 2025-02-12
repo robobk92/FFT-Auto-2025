@@ -725,9 +725,9 @@ namespace LibFunction
                 }
                 byte[] Bytes = { DataDefaut.DataRecived[12], DataDefaut.DataRecived[13] };
                 DataDefaut.temperature = string.Join("", Array.ConvertAll(Bytes, b => b.ToString()));
-                if (DataDefaut.DataRecived[4]==0x12&& DataDefaut.DataRecived[5] == 0x34 && DataDefaut.DataRecived[6] == 0x56 && DataDefaut.DataRecived[7] == 0x78 &&
-                    DataDefaut.DataRecived[8] == 0x90 && DataDefaut.DataRecived[9] == 0xFF && DataDefaut.DataRecived[10] == 0xFF && DataDefaut.DataRecived[11] == 0xFF)
+                if (DataDefaut.DataRecived[9] == 0xFF && DataDefaut.DataRecived[10] == 0xFF && DataDefaut.DataRecived[11] == 0xFF)
                 {
+
                     DataDefaut.checkFlash = true;
                 }
                 else
