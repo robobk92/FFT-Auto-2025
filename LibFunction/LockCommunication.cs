@@ -493,15 +493,17 @@ namespace LibFunction
                 {
                     throw new Exception("Recived Timeout!");
                 }
-                
-                
-                int number = Convert.ToInt16(DataRecivedVersion.DataRecived[6]); 
-                string hexValue = number.ToString("X");
-                int lastnumber =Convert.ToInt16(DataRecivedVersion.DataRecived[7]);
-                string hexLast = lastnumber.ToString("X");
-                DataRecivedVersion.version = hexValue+hexLast;
-                //string[] Bytes = { DataRecivedVersion.DataRecived[6].ToString(), DataRecivedVersion.DataRecived[7].ToString() };
-                //DataRecivedVersion.version = string.Join("", Array.ConvertAll(Bytes, b => b.ToString()));
+
+
+                //int number = Convert.ToInt16(DataRecivedVersion.DataRecived[6]); 
+                //string hexValue = number.ToString("X");
+                //int lastnumber =Convert.ToInt16(DataRecivedVersion.DataRecived[7]);
+                //string hexLast = lastnumber.ToString("X");
+                //DataRecivedVersion.version = hexValue+hexLast;
+                string formattedNumber = "." + DataRecivedVersion.DataRecived[7].ToString().PadLeft(2, '0');
+                double result = DataRecivedVersion.DataRecived[6] / 10.0;
+                string[] Bytes = { result.ToString("0.0"), formattedNumber };
+                DataRecivedVersion.version = string.Join("", Array.ConvertAll(Bytes, b => b.ToString()));
 
             }
             catch (Exception ex)

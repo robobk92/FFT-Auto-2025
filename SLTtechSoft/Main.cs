@@ -781,6 +781,7 @@ namespace SLTtechSoft
                 default: { break; }
             }
         }
+
         public void Test_Firmwave_Check()
         {
             //Condition
@@ -851,7 +852,7 @@ namespace SLTtechSoft
                         try
                         {
                             string hexString = CurrentDoorTestData.Min;
-                            byte result = Convert.ToByte(hexString.Replace("0x", ""), CurrentDoorTestData.TimeOut);
+                            byte result = Convert.ToByte(hexString.Replace("0x", ""));
                             SetdeafautLock SetDefaultDoor = _form1.LockASSA.SetDefaultDoor(result, CurrentDoorTestData.TimeOut);
                             if (SetDefaultDoor != null)
                             {
