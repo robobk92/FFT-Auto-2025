@@ -966,7 +966,7 @@ namespace SLTtechSoft
         {
             formMain.DoorTestProcess();
             Timer1_ShowProductivity();
-            LiveCam();
+            //LiveCam();
             //CallModelAutoPLC();
             if (CountIntervalTimer1++ > 5)
             {
@@ -1127,14 +1127,10 @@ namespace SLTtechSoft
                 else
                 {
                     if (IsLiveCam[cam])
-                        leftTabControl.CamDisplay.mDisplay.Image = ImageGrap.Image;
-                    else
                     {
-                        if (formModel.IsliveCamModel)
-                        {
-                            formModel.mLiveDisplay.Image = ImageGrap.Image;
-                        }
+                        formModel.mLiveDisplay.Image = ImageGrap.Image;
                     }
+                   
                 }
 
             }
@@ -1179,15 +1175,18 @@ namespace SLTtechSoft
                 BeginInvoke(new EventHandler<GrabStopEventArgs>(GUICamera_GuiCameraGrabStopped), sender, e);
                 return;
             }
+           
             GUICamera.Stopwatch.Stop();
             TimeSpan ts = GUICamera.Stopwatch.Elapsed;
             lbTimeCamCapture.Text = $"{ts.Seconds}.{PadLeftZeros(ts.Milliseconds, 3)}";
+            timer1.Enabled = true;
         }
 
         private void GUICamera_GuiCameraGrabStarted(object sender, EventArgs e)
         {
             
-            Thread.Sleep(300);
+            
+            timer1.Enabled = false;
             if (InvokeRequired)
             {
                 // If called from a different thread, we must use the Invoke method to marshal the call to the proper thread.
@@ -1198,9 +1197,6 @@ namespace SLTtechSoft
             GUICamera.Stopwatch.Start();
         }
 
-
-
-      
         public void InitialAllCameras()
         {
 

@@ -329,8 +329,8 @@ namespace GUISampleMultiCam
                 Console.WriteLine("IsGrabbing");
                 return;
             }
-                
             ResetGrabStatistics();
+           
             Configuration.AcquireSingleFrame(camera, null);
             camera.StreamGrabber.Start(1, GrabStrategy.OneByOne, GrabLoop.ProvidedByStreamGrabber);
         }
@@ -505,7 +505,7 @@ namespace GUISampleMultiCam
             //{
             //    int k = i;
             //}
-
+            camera.Parameters[PLCamera.UserOutputValue].TrySetValue(true);
             EventHandler handler = GuiCameraGrabStarted;
             Console.WriteLine("OnGrabStarted");
             if (handler != null)
@@ -523,6 +523,7 @@ namespace GUISampleMultiCam
             {
                 handler.Invoke(this, e);
             }
+            camera.Parameters[PLCamera.UserOutputValue].TrySetValue(false);
         }
 
         // A displayable frame is ready.

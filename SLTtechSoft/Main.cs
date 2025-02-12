@@ -852,7 +852,7 @@ namespace SLTtechSoft
                         try
                         {
                             string hexString = CurrentDoorTestData.Min;
-                            byte result = Convert.ToByte(hexString.Replace("0x", ""));
+                            byte result = Convert.ToByte(hexString);
                             SetdeafautLock SetDefaultDoor = _form1.LockASSA.SetDefaultDoor(result, CurrentDoorTestData.TimeOut);
                             if (SetDefaultDoor != null)
                             {
@@ -860,7 +860,10 @@ namespace SLTtechSoft
                             }
                             else
                             {
-                                FinishATest(false, "Null");
+                                if (TestRetryTime++ > CurrentDoorTestData.retry)
+                                {
+                                    FinishATest(false, "Null");
+                                }
                             }
                         }
                         catch (Exception ex) 

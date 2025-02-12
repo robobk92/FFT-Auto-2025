@@ -1013,10 +1013,18 @@ namespace SLTtechSoft
         {
             
             if (_form1.MachineMode == ModeMachine.Auto) return;
-            if (_form1.IsLiveCam[0]) return;
             if (_form1.IsCamRunContinous[0]) return;
-            
-            IsliveCamModel = !IsliveCamModel;
+
+            _form1.IsLiveCam[0] = !_form1.IsLiveCam[0];
+            IsliveCamModel = true;
+            if (_form1.IsLiveCam[0])
+            {
+                _form1.GUICamera.StartContinuousShotGrabbing();
+            }
+            else
+            {
+                _form1.GUICamera.StopGrabbing();
+            }
         }
         public void LiveCamInModelForm(bool Enable)
         {
