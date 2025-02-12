@@ -123,6 +123,7 @@ namespace SLTtechSoft
         public bool HomeAll { get; set; }
         public bool HomeX { get; set; }
         public bool Bypass { get; set; }
+        public bool Step_Mode { get; set; }
         public bool TestFinish { get; set; }
         public bool MotionReady { get; set; }
         public bool ComFlash { get; set; }

@@ -256,14 +256,14 @@ namespace SLTtechSoft
                                 dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.Red;
                                 //Kiểm tra xem Chức năng có thuộc danh sách dừng Check Khi Fail hay không
                                 //Nếu phải thì cho dừng Kiểm tra
-                                for (int k = 0; k <= ListItemStopWhenFail.Length; k++)
-                                {
-                                    if (dataGridView1.Rows[i].Cells[1].Value.ToString() == ListItemStopWhenFail[k])
-                                    { 
-                                        StopTestingByFail = false;
-                                        break;
-                                    }
-                                }
+                                //for (int k = 0; k <= ListItemStopWhenFail.Length; k++)
+                                //{
+                                //    if (dataGridView1.Rows[i].Cells[1].Value.ToString() == ListItemStopWhenFail[k])
+                                //    { 
+                                //        StopTestingByFail = false;
+                                //        break;
+                                //    }
+                                //}
                                 if (StopTestingByFail) break;
                             }
                             else
@@ -624,9 +624,18 @@ namespace SLTtechSoft
                     {
                         //kiểm tra Power On
                         PowerOn powerOn = _form1.LockASSA.ReadPowerOn(CurrentDoorTestData.TimeOut);
+                        if (powerOn == null) return;
                         if (powerOn.Power_On)
                         {
                             string Value = $"0-{ResultSpringOne}-{ResultSpringTwo}-{ResultSpringThree}";
+                            //if (powerOn.Power_On)
+                            //{
+                            //    FinishATest(true, Value);
+                            //}
+                            //else
+                            //{
+                            //    FinishATest(false, Value);
+                            //}
                             if (_form1.PLC.Read.Auto.Test.ResultSpringOne && _form1.PLC.Read.Auto.Test.ResultSpringTwo && _form1.PLC.Read.Auto.Test.ResultSpringThree)
                             {
                                 FinishATest(true, Value);
@@ -727,7 +736,8 @@ namespace SLTtechSoft
             {
                 case 1:
                     {
-                        if (_form1.LockASSA.initializationLock(CurrentDoorTestData.TimeOut) && TestRetryTime < CurrentDoorTestData.retry)
+                        _form1.LockASSA.initializationLock(CurrentDoorTestData.TimeOut);
+                        if (  TestRetryTime < CurrentDoorTestData.retry)
                         {
                             TestRetryTime = 0;
                             ProcessTestIndex++;

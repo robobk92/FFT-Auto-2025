@@ -119,6 +119,11 @@ namespace SLTtechSoft
            
             
         }
+        private void btnGotoPos1_Click(object sender, EventArgs e)
+        {
+            
+            
+        }
 
         private void btnRgetPos1_Click(object sender, EventArgs e)
         {
@@ -227,18 +232,31 @@ namespace SLTtechSoft
             _form1.PLC.Write.Auto.StepXPos =  btnJogXup.State;
             _form1.PLC.Write.Auto.HomeX = btnHomeX.State;
             _form1.PLC.Write.Auto.HomeAll = btnHomeAll.State;
-            _form1.PLC.Write.Auto.HomeX = btnHomeX.State;
-            _form1.PLC.Write.Auto.HomeX = btnHomeX.State;
-            _form1.PLC.Write.Auto.HomeX = btnHomeX.State;
-            _form1.PLC.Write.Auto.HomeX = btnHomeX.State;
-            _form1.PLC.Write.Auto.HomeX = btnHomeX.State;
-            _form1.PLC.Write.Auto.HomeX = btnHomeX.State;
-            _form1.PLC.Write.Auto.HomeX = btnHomeX.State;
-            _form1.PLC.Write.Auto.HomeX = btnHomeX.State;
+            _form1.PLC.Write.Auto.Step_Mode = btnJogMode.State;
+            _form1.PLC.Write.Auto.MovePosX1 = btnGotoPos1.State;
+            _form1.PLC.Write.Auto.MovePosX2 = btnGotoPos2.State;
+            _form1.PLC.Write.Auto.MovePosX3 = btnGotoPos3.State;
+            _form1.PLC.Write.Auto.MovePosX4 = btnGotoPos4.State;
+            _form1.PLC.Write.Auto.MovePosX5 = btnGotoPos5.State;
+            _form1.PLC.Write.Auto.MovePosX6 = btnGotoPos6.State;
+           
+
+
             //Word 
             _form1.PLC.Write.Word.nudStepSizeX = Convert.ToInt32(nudStepSizeX.Value);
             _form1.PLC.Write.Word.nudFeedRateX = Convert.ToInt32(nudFeedRateX.Value);
-            _form1.PLC.Write.Word.SpeedXAuto = Convert.ToInt32(nudSpeed.Value);
+            _form1.PLC.Write.Word.tbOPRCreepSpeedX = Convert.ToInt32(_model.currentModelInfomation.pLCInternalPara.tbOPRCreepSpeedX);
+            _form1.PLC.Write.Word.tbOprSpeedX = Convert.ToInt32(_model.currentModelInfomation.pLCInternalPara.tbOprSpeedX);
+            _form1.PLC.Write.Word.tbStartAddressX = Convert.ToInt32(_model.currentModelInfomation.pLCInternalPara.tbStartAddressX);
+            _form1.PLC.Write.Word.tbOprStartSpeedX = Convert.ToInt32(_model.currentModelInfomation.pLCInternalPara.tbOprStartSpeedX);
+            _form1.PLC.Write.Word.SpeedXAuto = _model.modelParameter.pLCModelPara.nudSpeed;
+            _form1.PLC.Write.Word.PosCamera = _model.modelParameter.pLCModelPara.nudPoint1;
+            _form1.PLC.Write.Word.PosInput = _model.modelParameter.pLCModelPara.nudPoint2;
+            _form1.PLC.Write.Word.PosGoOriginal = _model.modelParameter.pLCModelPara.nudPoint3;
+            _form1.PLC.Write.Word.PosDoor = _model.modelParameter.pLCModelPara.nudPoint4;
+            _form1.PLC.Write.Word.Pos5 = _model.modelParameter.pLCModelPara.nudPoint5;
+            _form1.PLC.Write.Word.Pos6 = _model.modelParameter.pLCModelPara.nudPoint6;
+
             //outputnudStepSizeX
             _form1.PLC.Write.Output.CylinderDoorClose = ManualControlPLC.CylinderDoorClose.State;
             _form1.PLC.Write.Output.CylinderToolsDown = ManualControlPLC.CylinderToolsDown.State;
@@ -270,6 +288,9 @@ namespace SLTtechSoft
             _form1.PLC.Write.Output.Supply6VToBattery = ManualControlPLC.Supply6VToBattery.State;
             _form1.PLC.Write.Output.Supply9VToFront = ManualControlPLC.Supply9VToFront.State;
             _form1.PLC.Write.Output.Change9Vor6V = ManualControlPLC.Change9Vor6V.State;
+            //read
+            tbXPosition.Text = _form1.PLC.Read.Word.CoordinateX.ToString();
+           
         }
 
         private void toggleSwitch3_Click(object sender, EventArgs e)
@@ -277,5 +298,7 @@ namespace SLTtechSoft
             _form1.PLC.Write.Auto.StepXNeg = false;
             _form1.PLC.Write.Auto.StepXPos = false;
         }
+
+       
     }
 }

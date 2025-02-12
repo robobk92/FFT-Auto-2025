@@ -834,9 +834,9 @@ namespace SLTtechSoft
                 PLC.Write.Auto.HomeAll,
                 PLC.Write.Auto.HomeX,
                 PLC.Write.Auto.Bypass,
-                false,
-                false,
-                false,
+                PLC.Write.Auto.TestFinish,
+                PLC.Write.Auto.MotionReady,
+                PLC.Write.Auto.Step_Mode,
                 false,
                 false,
                 false,
@@ -917,7 +917,8 @@ namespace SLTtechSoft
                 false,
                 false
                 );
-
+           
+           
             DataWritePLC[10] = PLC.Write.Word.nudStepSizeX;
             DataWritePLC[11] = PLC.Write.Word.nudFeedRateX;
             DataWritePLC[12] = PLC.Write.Word.nudStepSizeR;
@@ -937,6 +938,7 @@ namespace SLTtechSoft
             DataWritePLC[26] = PLC.Write.Word.Pos5;
             DataWritePLC[27] = PLC.Write.Word.Pos6;
             DataWritePLC[28] = PLC.Write.Word.SpeedXAuto;
+
             DataWritePLC[29] = PLC.Write.Word.nudRPos1;
             DataWritePLC[30] = PLC.Write.Word.nudRPos2;
             DataWritePLC[31] = PLC.Write.Word.nudRPos3;
