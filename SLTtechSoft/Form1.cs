@@ -446,7 +446,7 @@ namespace SLTtechSoft
                 btnModel.BackColor = TabControlBackColorON;
                 btnIO.BackColor = TabControlBackColorOFF;
                 btnOption.BackColor = TabControlBackColorOFF;
-                formModel.timer1.Enabled = true;
+                //formModel.timer1.Enabled = true;
                 //formIO.timer1.Enabled = false;
             }
 
@@ -642,11 +642,13 @@ namespace SLTtechSoft
                 //PLC.Read.Output.CylinderPushLock = dataReadPLC_bools5[4];
                 //PLC.Read.Output.CylinderCheckSpring = dataReadPLC_bools5[5];
                 PLC.Read.Output.DirAxis1 = dataReadPLC_bools5[6];
-                //PLC.Read.Output.CylinderTools1 = dataReadPLC_bools5[8];
-                //PLC.Read.Output.CylinderTools2 = dataReadPLC_bools5[9];
-                //PLC.Read.Output.CylinderTransTools = dataReadPLC_bools5[10];
-                //PLC.Read.Output.CylinderPush1 = dataReadPLC_bools5[11];
+                PLC.Read.Output.Broken = dataReadPLC_bools5[7];
+                PLC.Read.Output.TL_Green = dataReadPLC_bools5[8];
+                PLC.Read.Output.TL_Red = dataReadPLC_bools5[9];
+                PLC.Read.Output.TL_Yellow = dataReadPLC_bools5[10];
+                PLC.Read.Output.TL_Buzzer = dataReadPLC_bools5[11];
                 //PLC.Read.Output.CylinderPush2 = dataReadPLC_bools5[12];
+                PLC.Read.Output.CylinderDownSpring = dataReadPLC_bools5[13];
 
                 PLC.Read.Output.CylinderKeyAsterisk = dataReadPLC_bools6[0];
                 PLC.Read.Output.CylinderKeySharp = dataReadPLC_bools6[1];
@@ -778,14 +780,14 @@ namespace SLTtechSoft
                 PLC.Write.Output.Change9Vor6V,
                 PLC.Write.Output.Supply6VToBattery,
                 PLC.Write.Output.Supply9VToFront,
-                false,
                 PLC.Write.Output.DirAxis1,
+                PLC.Write.Output.Broken,
+                PLC.Write.Output.TL_Green,
+                PLC.Write.Output.TL_Red,
+                PLC.Write.Output.TL_Yellow,
+                PLC.Write.Output.TL_Buzzer,
                 false,
-                false,
-                false,
-                false,
-                false,
-                false,
+                PLC.Write.Output.CylinderDownSpring,
                 false,
                 false
                 );
@@ -2098,6 +2100,7 @@ namespace SLTtechSoft
         }
         private void WriteLogError(string LogType, string ErrorCode, string ErrorContent)
         {
+            if (formOption == null) return;
             if (formOption.Parameters == null) return;
             if (formOption.Parameters.CommonPath == null) return;
             string DayTime = DateTime.Now.ToString("MM-dd-yyyy HH:mm:ss");

@@ -117,7 +117,7 @@
             this.groupBox29 = new System.Windows.Forms.GroupBox();
             this.groupBox30 = new System.Windows.Forms.GroupBox();
             this.btnJogMode = new SLTtechSoft.ToggleSwitch();
-            this.toggleSwitch3 = new SLTtechSoft.ToggleSwitch();
+            this.Stop = new SLTtechSoft.ToggleSwitch();
             this.toggleSwitch1 = new SLTtechSoft.ToggleSwitch();
             this.btnJogXup = new SLTtechSoft.ToggleSwitch();
             this.groupBox26 = new System.Windows.Forms.GroupBox();
@@ -1231,7 +1231,7 @@
             // 
             this.groupBox29.Controls.Add(this.groupBox30);
             this.groupBox29.Controls.Add(this.btnJogMode);
-            this.groupBox29.Controls.Add(this.toggleSwitch3);
+            this.groupBox29.Controls.Add(this.Stop);
             this.groupBox29.Controls.Add(this.toggleSwitch1);
             this.groupBox29.Controls.Add(this.btnJogXup);
             this.groupBox29.Location = new System.Drawing.Point(5, 101);
@@ -1272,23 +1272,23 @@
             this.btnJogMode.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Toggle;
             this.btnJogMode.UseVisualStyleBackColor = false;
             // 
-            // toggleSwitch3
+            // Stop
             // 
-            this.toggleSwitch3.AccessibleName = "btnStartStopPulse";
-            this.toggleSwitch3.BackColor = System.Drawing.Color.Transparent;
-            this.toggleSwitch3.Font = new System.Drawing.Font("Arial", 15.75F);
-            this.toggleSwitch3.ForeColor = System.Drawing.Color.LightSalmon;
-            this.toggleSwitch3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.toggleSwitch3.Location = new System.Drawing.Point(125, 26);
-            this.toggleSwitch3.Name = "toggleSwitch3";
-            this.toggleSwitch3.ReadSameRelay = true;
-            this.toggleSwitch3.Size = new System.Drawing.Size(78, 51);
-            this.toggleSwitch3.State = false;
-            this.toggleSwitch3.TabIndex = 81;
-            this.toggleSwitch3.Text = "STOP";
-            this.toggleSwitch3.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Momentary;
-            this.toggleSwitch3.UseVisualStyleBackColor = false;
-            this.toggleSwitch3.Click += new System.EventHandler(this.toggleSwitch3_Click);
+            this.Stop.AccessibleName = "btnStartStopPulse";
+            this.Stop.BackColor = System.Drawing.Color.Transparent;
+            this.Stop.Font = new System.Drawing.Font("Arial", 15.75F);
+            this.Stop.ForeColor = System.Drawing.Color.LightSalmon;
+            this.Stop.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Stop.Location = new System.Drawing.Point(125, 26);
+            this.Stop.Name = "Stop";
+            this.Stop.ReadSameRelay = true;
+            this.Stop.Size = new System.Drawing.Size(78, 51);
+            this.Stop.State = false;
+            this.Stop.TabIndex = 81;
+            this.Stop.Text = "STOP";
+            this.Stop.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Momentary;
+            this.Stop.UseVisualStyleBackColor = false;
+            this.Stop.Click += new System.EventHandler(this.toggleSwitch3_Click);
             // 
             // toggleSwitch1
             // 
@@ -1827,7 +1827,7 @@
         private ToggleSwitch btnHomeAll;
         private ToggleSwitch btnHomeX;
         private ToggleSwitch btnJogMode;
-        private ToggleSwitch toggleSwitch3;
+        private ToggleSwitch Stop;
         private ToggleSwitch btnJogXup;
         private ToggleSwitch toggleSwitch1;
         private ToggleSwitch btnGotoPos1;

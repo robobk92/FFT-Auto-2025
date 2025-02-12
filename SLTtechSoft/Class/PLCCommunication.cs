@@ -62,6 +62,12 @@ namespace SLTtechSoft
         public bool CylinderPushLock { get; set; }
         public bool CylinderCheckSpring { get; set; }
         public bool DirAxis1 { get; set; }
+        public bool Broken {  get; set; }
+        public bool TL_Green { get; set; }
+        public bool TL_Red { get; set; }
+        public bool TL_Yellow { get; set; }
+        public bool TL_Buzzer { get; set; }
+        public bool CylinderDownSpring { get; set; }
         public bool CylinderTools1 { get; set; }
         public bool CylinderTools2 { get; set; }
         public bool CylinderTransTools { get; set; }

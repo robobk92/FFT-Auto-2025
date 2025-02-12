@@ -225,6 +225,7 @@ namespace SLTtechSoft
 
             //Auto
             _form1.PLC.Write.Auto.Auto = ManualControlPLC.AutoCmd.State;
+            _form1.PLC.Write.Auto.Stop = Stop.State;
             _form1.PLC.Write.Auto.ResetAll = ManualControlPLC.Reset.State;
             _form1.PLC.Write.Auto.TestFinish = ManualControlPLC.TestFinish.State;
             _form1.PLC.Write.Auto.MotionReady = ManualControlPLC.MotionReady.State;
@@ -268,7 +269,7 @@ namespace SLTtechSoft
             _form1.PLC.Write.Output.CylinderTransTools = ManualControlPLC.CylinderTransTools.State;
             _form1.PLC.Write.Output.CylinderPush1 = ManualControlPLC.CylinderPush1.State;
             _form1.PLC.Write.Output.CylinderPush2 = ManualControlPLC.CylinderPush2.State;
-
+            _form1.PLC.Write.Output.CylinderDownSpring = ManualControlPLC.CylDownSpring.State;
             _form1.PLC.Write.Output.CylinderTools3 = ManualControlPLC.CylinderTools3.State;
             _form1.PLC.Write.Output.CylinderTools4 = ManualControlPLC.CylinderTools4.State;
 
@@ -288,15 +289,22 @@ namespace SLTtechSoft
             _form1.PLC.Write.Output.Supply6VToBattery = ManualControlPLC.Supply6VToBattery.State;
             _form1.PLC.Write.Output.Supply9VToFront = ManualControlPLC.Supply9VToFront.State;
             _form1.PLC.Write.Output.Change9Vor6V = ManualControlPLC.Change9Vor6V.State;
-            //read
+            _form1.PLC.Write.Output.Broken = ManualControlPLC.Broken.State;
+            //read word 
             tbXPosition.Text = _form1.PLC.Read.Word.CoordinateX.ToString();
-           
+            //read output
+            lbTowerLightGreen.BackColor = _form1.PLC.Read.Output.TL_Green ? On : Off;
+            lbTowerLightRed.BackColor = _form1.PLC.Read.Output.TL_Red ? On : Off;
+            lbTowerLightOrange.BackColor = _form1.PLC.Read.Output.TL_Yellow ? On : Off;
+            lbTowerLightOrange .BackColor = _form1.PLC.Read.Output.TL_Buzzer ? On : Off;
+
         }
 
         private void toggleSwitch3_Click(object sender, EventArgs e)
         {
             _form1.PLC.Write.Auto.StepXNeg = false;
             _form1.PLC.Write.Auto.StepXPos = false;
+
         }
 
        

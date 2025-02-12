@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.SafetySensor = new System.Windows.Forms.Button();
             this.Check3 = new System.Windows.Forms.Button();
             this.Check2 = new System.Windows.Forms.Button();
@@ -44,53 +45,57 @@
             this.LimitPosAxis1 = new System.Windows.Forms.Button();
             this.HomeAxis1 = new System.Windows.Forms.Button();
             this.LimitNegAxis1 = new System.Windows.Forms.Button();
-            this.MotionReady = new SLTtechSoft.ToggleSwitch();
-            this.TestFinish = new SLTtechSoft.ToggleSwitch();
-            this.Reset = new SLTtechSoft.ToggleSwitch();
-            this.Change9Vor6V = new SLTtechSoft.ToggleSwitch();
-            this.Reverse9V = new SLTtechSoft.ToggleSwitch();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.CylinderTools4 = new SLTtechSoft.ToggleSwitch();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
-            this.CylinderPush2 = new SLTtechSoft.ToggleSwitch();
             this.Push2FW = new System.Windows.Forms.Button();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.CylinderTools3 = new SLTtechSoft.ToggleSwitch();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.CylinderPush1 = new SLTtechSoft.ToggleSwitch();
             this.Push1Dw = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.CylinderTransTools = new SLTtechSoft.ToggleSwitch();
             this.TransToolFW = new System.Windows.Forms.Button();
             this.TransToolBW = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.CylinderTools2 = new SLTtechSoft.ToggleSwitch();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.CylinderTools1 = new SLTtechSoft.ToggleSwitch();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.CylinderCheckSpring = new SLTtechSoft.ToggleSwitch();
             this.CheckSpringOpen = new System.Windows.Forms.Button();
             this.CheckSpringClose = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.CylinderPushLock = new SLTtechSoft.ToggleSwitch();
             this.LockUp = new System.Windows.Forms.Button();
             this.LockDw = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.CylinderToolsDown = new SLTtechSoft.ToggleSwitch();
             this.ToolsUp = new System.Windows.Forms.Button();
             this.ToolsDw = new System.Windows.Forms.Button();
             this.groupBox34 = new System.Windows.Forms.GroupBox();
-            this.CylinderDoorClose = new SLTtechSoft.ToggleSwitch();
             this.DoorUp = new System.Windows.Forms.Button();
             this.DoorDw = new System.Windows.Forms.Button();
             this.lbStartRun = new System.Windows.Forms.Label();
             this.btnWaitSWRequest = new System.Windows.Forms.Button();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.AutoCmd = new SLTtechSoft.ToggleSwitch();
             this.groupBox36 = new System.Windows.Forms.GroupBox();
+            this.cbAutoUp = new System.Windows.Forms.CheckBox();
+            this.Broken = new SLTtechSoft.ToggleSwitch();
+            this.CylDownSpring = new SLTtechSoft.ToggleSwitch();
+            this.Supply9VToFront = new SLTtechSoft.ToggleSwitch();
+            this.Supply6VToBattery = new SLTtechSoft.ToggleSwitch();
+            this.MotionReady = new SLTtechSoft.ToggleSwitch();
+            this.TestFinish = new SLTtechSoft.ToggleSwitch();
+            this.Reset = new SLTtechSoft.ToggleSwitch();
+            this.Change9Vor6V = new SLTtechSoft.ToggleSwitch();
+            this.Reverse9V = new SLTtechSoft.ToggleSwitch();
+            this.CylinderTools4 = new SLTtechSoft.ToggleSwitch();
+            this.CylinderPush2 = new SLTtechSoft.ToggleSwitch();
+            this.CylinderTools3 = new SLTtechSoft.ToggleSwitch();
+            this.CylinderPush1 = new SLTtechSoft.ToggleSwitch();
+            this.CylinderTransTools = new SLTtechSoft.ToggleSwitch();
+            this.CylinderTools2 = new SLTtechSoft.ToggleSwitch();
+            this.CylinderTools1 = new SLTtechSoft.ToggleSwitch();
+            this.CylinderCheckSpring = new SLTtechSoft.ToggleSwitch();
+            this.CylinderPushLock = new SLTtechSoft.ToggleSwitch();
+            this.CylinderToolsDown = new SLTtechSoft.ToggleSwitch();
+            this.CylinderDoorClose = new SLTtechSoft.ToggleSwitch();
+            this.AutoCmd = new SLTtechSoft.ToggleSwitch();
             this.CylinderFinger = new SLTtechSoft.ToggleSwitch();
             this.CylinderKeySharp = new SLTtechSoft.ToggleSwitch();
-            this.cbAutoUp = new System.Windows.Forms.CheckBox();
             this.CylinderKey0 = new SLTtechSoft.ToggleSwitch();
             this.CylinderKeyAsterisk = new SLTtechSoft.ToggleSwitch();
             this.CylinderKey1 = new SLTtechSoft.ToggleSwitch();
@@ -102,9 +107,8 @@
             this.CylinderKey4 = new SLTtechSoft.ToggleSwitch();
             this.CylinderKey6 = new SLTtechSoft.ToggleSwitch();
             this.CylinderKey5 = new SLTtechSoft.ToggleSwitch();
-            this.Supply6VToBattery = new SLTtechSoft.ToggleSwitch();
-            this.Supply9VToFront = new SLTtechSoft.ToggleSwitch();
             this.groupBox5.SuspendLayout();
+            this.groupBox13.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox12.SuspendLayout();
             this.groupBox9.SuspendLayout();
@@ -122,6 +126,8 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.Broken);
+            this.groupBox5.Controls.Add(this.groupBox13);
             this.groupBox5.Controls.Add(this.Supply9VToFront);
             this.groupBox5.Controls.Add(this.Supply6VToBattery);
             this.groupBox5.Controls.Add(this.SafetySensor);
@@ -170,6 +176,17 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Manual";
             // 
+            // groupBox13
+            // 
+            this.groupBox13.Controls.Add(this.CylDownSpring);
+            this.groupBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox13.Location = new System.Drawing.Point(454, 289);
+            this.groupBox13.Name = "groupBox13";
+            this.groupBox13.Size = new System.Drawing.Size(149, 60);
+            this.groupBox13.TabIndex = 93;
+            this.groupBox13.TabStop = false;
+            this.groupBox13.Text = "Cyl_Down_Spring_Y014";
+            // 
             // SafetySensor
             // 
             this.SafetySensor.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -177,37 +194,37 @@
             this.SafetySensor.Name = "SafetySensor";
             this.SafetySensor.Size = new System.Drawing.Size(136, 22);
             this.SafetySensor.TabIndex = 117;
-            this.SafetySensor.Text = "SafetySensor/X032";
+            this.SafetySensor.Text = "SafetySensor/X013";
             this.SafetySensor.UseVisualStyleBackColor = true;
             // 
             // Check3
             // 
             this.Check3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Check3.Location = new System.Drawing.Point(164, 457);
+            this.Check3.Location = new System.Drawing.Point(306, 372);
             this.Check3.Name = "Check3";
             this.Check3.Size = new System.Drawing.Size(136, 22);
             this.Check3.TabIndex = 116;
-            this.Check3.Text = "Check3/X031";
+            this.Check3.Text = "Check3/X012";
             this.Check3.UseVisualStyleBackColor = true;
             // 
             // Check2
             // 
             this.Check2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Check2.Location = new System.Drawing.Point(164, 429);
+            this.Check2.Location = new System.Drawing.Point(306, 344);
             this.Check2.Name = "Check2";
             this.Check2.Size = new System.Drawing.Size(136, 22);
             this.Check2.TabIndex = 115;
-            this.Check2.Text = "Check2/X030";
+            this.Check2.Text = "Check2/X011";
             this.Check2.UseVisualStyleBackColor = true;
             // 
             // Check1
             // 
             this.Check1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Check1.Location = new System.Drawing.Point(164, 401);
+            this.Check1.Location = new System.Drawing.Point(306, 316);
             this.Check1.Name = "Check1";
             this.Check1.Size = new System.Drawing.Size(136, 22);
             this.Check1.TabIndex = 114;
-            this.Check1.Text = "Check1/X027";
+            this.Check1.Text = "Check1/X010";
             this.Check1.UseVisualStyleBackColor = true;
             // 
             // CheckSpring3
@@ -253,7 +270,7 @@
             // OP_EMG
             // 
             this.OP_EMG.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OP_EMG.Location = new System.Drawing.Point(21, 457);
+            this.OP_EMG.Location = new System.Drawing.Point(305, 400);
             this.OP_EMG.Name = "OP_EMG";
             this.OP_EMG.Size = new System.Drawing.Size(136, 22);
             this.OP_EMG.TabIndex = 109;
@@ -263,7 +280,7 @@
             // OP_Start2
             // 
             this.OP_Start2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OP_Start2.Location = new System.Drawing.Point(21, 429);
+            this.OP_Start2.Location = new System.Drawing.Point(163, 401);
             this.OP_Start2.Name = "OP_Start2";
             this.OP_Start2.Size = new System.Drawing.Size(136, 22);
             this.OP_Start2.TabIndex = 108;
@@ -320,15 +337,395 @@
             this.LimitNegAxis1.Text = "LimitNegAxis1/X000";
             this.LimitNegAxis1.UseVisualStyleBackColor = true;
             // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.CylinderTools4);
+            this.groupBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox8.Location = new System.Drawing.Point(609, 289);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(149, 61);
+            this.groupBox8.TabIndex = 97;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Cyl_Reset_Defaut/Y035";
+            // 
+            // groupBox12
+            // 
+            this.groupBox12.Controls.Add(this.CylinderPush2);
+            this.groupBox12.Controls.Add(this.Push2FW);
+            this.groupBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox12.Location = new System.Drawing.Point(609, 163);
+            this.groupBox12.Name = "groupBox12";
+            this.groupBox12.Size = new System.Drawing.Size(149, 66);
+            this.groupBox12.TabIndex = 95;
+            this.groupBox12.TabStop = false;
+            this.groupBox12.Text = "Cyl_Check_Switch/Y047";
+            // 
+            // Push2FW
+            // 
+            this.Push2FW.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Push2FW.Location = new System.Drawing.Point(79, 16);
+            this.Push2FW.Name = "Push2FW";
+            this.Push2FW.Size = new System.Drawing.Size(45, 21);
+            this.Push2FW.TabIndex = 24;
+            this.Push2FW.Text = "X026";
+            this.Push2FW.UseVisualStyleBackColor = true;
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.CylinderTools3);
+            this.groupBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox9.Location = new System.Drawing.Point(609, 227);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(149, 59);
+            this.groupBox9.TabIndex = 96;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Cyl_Check_9V/Y034";
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.CylinderPush1);
+            this.groupBox10.Controls.Add(this.Push1Dw);
+            this.groupBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox10.Location = new System.Drawing.Point(613, 91);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(149, 69);
+            this.groupBox10.TabIndex = 94;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "Cyl_Check_Card/Y046";
+            // 
+            // Push1Dw
+            // 
+            this.Push1Dw.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Push1Dw.Location = new System.Drawing.Point(75, 16);
+            this.Push1Dw.Name = "Push1Dw";
+            this.Push1Dw.Size = new System.Drawing.Size(45, 21);
+            this.Push1Dw.TabIndex = 24;
+            this.Push1Dw.Text = "X025";
+            this.Push1Dw.UseVisualStyleBackColor = true;
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.CylinderTransTools);
+            this.groupBox7.Controls.Add(this.TransToolFW);
+            this.groupBox7.Controls.Add(this.TransToolBW);
+            this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox7.Location = new System.Drawing.Point(609, 27);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(149, 58);
+            this.groupBox7.TabIndex = 93;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Cyl_Trans_Tools/Y045";
+            // 
+            // TransToolFW
+            // 
+            this.TransToolFW.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TransToolFW.Location = new System.Drawing.Point(79, 17);
+            this.TransToolFW.Name = "TransToolFW";
+            this.TransToolFW.Size = new System.Drawing.Size(45, 21);
+            this.TransToolFW.TabIndex = 25;
+            this.TransToolFW.Text = "X023";
+            this.TransToolFW.UseVisualStyleBackColor = true;
+            // 
+            // TransToolBW
+            // 
+            this.TransToolBW.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TransToolBW.Location = new System.Drawing.Point(79, 37);
+            this.TransToolBW.Name = "TransToolBW";
+            this.TransToolBW.Size = new System.Drawing.Size(45, 21);
+            this.TransToolBW.TabIndex = 24;
+            this.TransToolBW.Text = "X024";
+            this.TransToolBW.UseVisualStyleBackColor = true;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.CylinderTools2);
+            this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox6.Location = new System.Drawing.Point(609, 350);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(149, 60);
+            this.groupBox6.TabIndex = 92;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Cyl_Lock/Y044";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.CylinderTools1);
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Location = new System.Drawing.Point(454, 350);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(149, 58);
+            this.groupBox4.TabIndex = 91;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Cyl_Register/Y043";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.CylinderCheckSpring);
+            this.groupBox3.Controls.Add(this.CheckSpringOpen);
+            this.groupBox3.Controls.Add(this.CheckSpringClose);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(454, 228);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(149, 58);
+            this.groupBox3.TabIndex = 90;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Cyl_Check_Spring/Y042";
+            // 
+            // CheckSpringOpen
+            // 
+            this.CheckSpringOpen.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CheckSpringOpen.Location = new System.Drawing.Point(79, 17);
+            this.CheckSpringOpen.Name = "CheckSpringOpen";
+            this.CheckSpringOpen.Size = new System.Drawing.Size(45, 21);
+            this.CheckSpringOpen.TabIndex = 25;
+            this.CheckSpringOpen.Text = "X031";
+            this.CheckSpringOpen.UseVisualStyleBackColor = true;
+            // 
+            // CheckSpringClose
+            // 
+            this.CheckSpringClose.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CheckSpringClose.Location = new System.Drawing.Point(79, 37);
+            this.CheckSpringClose.Name = "CheckSpringClose";
+            this.CheckSpringClose.Size = new System.Drawing.Size(45, 21);
+            this.CheckSpringClose.TabIndex = 24;
+            this.CheckSpringClose.Text = "X032";
+            this.CheckSpringClose.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.CylinderPushLock);
+            this.groupBox2.Controls.Add(this.LockUp);
+            this.groupBox2.Controls.Add(this.LockDw);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(454, 163);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(149, 66);
+            this.groupBox2.TabIndex = 89;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Cyl_Push_lock/Y041";
+            // 
+            // LockUp
+            // 
+            this.LockUp.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LockUp.Location = new System.Drawing.Point(79, 17);
+            this.LockUp.Name = "LockUp";
+            this.LockUp.Size = new System.Drawing.Size(45, 21);
+            this.LockUp.TabIndex = 25;
+            this.LockUp.Text = "X023";
+            this.LockUp.UseVisualStyleBackColor = true;
+            // 
+            // LockDw
+            // 
+            this.LockDw.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LockDw.Location = new System.Drawing.Point(79, 37);
+            this.LockDw.Name = "LockDw";
+            this.LockDw.Size = new System.Drawing.Size(45, 21);
+            this.LockDw.TabIndex = 24;
+            this.LockDw.Text = "X024";
+            this.LockDw.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.CylinderToolsDown);
+            this.groupBox1.Controls.Add(this.ToolsUp);
+            this.groupBox1.Controls.Add(this.ToolsDw);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(454, 91);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(149, 67);
+            this.groupBox1.TabIndex = 88;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Cyl_Tools/Y040";
+            // 
+            // ToolsUp
+            // 
+            this.ToolsUp.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ToolsUp.Location = new System.Drawing.Point(79, 17);
+            this.ToolsUp.Name = "ToolsUp";
+            this.ToolsUp.Size = new System.Drawing.Size(45, 21);
+            this.ToolsUp.TabIndex = 25;
+            this.ToolsUp.Text = "X016";
+            this.ToolsUp.UseVisualStyleBackColor = true;
+            // 
+            // ToolsDw
+            // 
+            this.ToolsDw.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ToolsDw.Location = new System.Drawing.Point(79, 36);
+            this.ToolsDw.Name = "ToolsDw";
+            this.ToolsDw.Size = new System.Drawing.Size(45, 21);
+            this.ToolsDw.TabIndex = 24;
+            this.ToolsDw.Text = "X017";
+            this.ToolsDw.UseVisualStyleBackColor = true;
+            // 
+            // groupBox34
+            // 
+            this.groupBox34.Controls.Add(this.CylinderDoorClose);
+            this.groupBox34.Controls.Add(this.DoorUp);
+            this.groupBox34.Controls.Add(this.DoorDw);
+            this.groupBox34.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox34.Location = new System.Drawing.Point(454, 27);
+            this.groupBox34.Name = "groupBox34";
+            this.groupBox34.Size = new System.Drawing.Size(149, 58);
+            this.groupBox34.TabIndex = 86;
+            this.groupBox34.TabStop = false;
+            this.groupBox34.Text = "Cyl_Door/Y037";
+            // 
+            // DoorUp
+            // 
+            this.DoorUp.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DoorUp.Location = new System.Drawing.Point(79, 17);
+            this.DoorUp.Name = "DoorUp";
+            this.DoorUp.Size = new System.Drawing.Size(45, 21);
+            this.DoorUp.TabIndex = 25;
+            this.DoorUp.Text = "X014";
+            this.DoorUp.UseVisualStyleBackColor = true;
+            // 
+            // DoorDw
+            // 
+            this.DoorDw.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DoorDw.Location = new System.Drawing.Point(79, 37);
+            this.DoorDw.Name = "DoorDw";
+            this.DoorDw.Size = new System.Drawing.Size(45, 21);
+            this.DoorDw.TabIndex = 24;
+            this.DoorDw.Text = "X015";
+            this.DoorDw.UseVisualStyleBackColor = true;
+            // 
+            // lbStartRun
+            // 
+            this.lbStartRun.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lbStartRun.Location = new System.Drawing.Point(320, 30);
+            this.lbStartRun.Name = "lbStartRun";
+            this.lbStartRun.Size = new System.Drawing.Size(128, 35);
+            this.lbStartRun.TabIndex = 82;
+            this.lbStartRun.Text = "Start Run";
+            this.lbStartRun.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnWaitSWRequest
+            // 
+            this.btnWaitSWRequest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnWaitSWRequest.Location = new System.Drawing.Point(180, 73);
+            this.btnWaitSWRequest.Name = "btnWaitSWRequest";
+            this.btnWaitSWRequest.Size = new System.Drawing.Size(85, 42);
+            this.btnWaitSWRequest.TabIndex = 79;
+            this.btnWaitSWRequest.Text = "Wait SW Request";
+            this.btnWaitSWRequest.UseVisualStyleBackColor = true;
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.AutoCmd);
+            this.groupBox11.Location = new System.Drawing.Point(180, 8);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(134, 62);
+            this.groupBox11.TabIndex = 78;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "Control mode";
+            // 
+            // groupBox36
+            // 
+            this.groupBox36.BackColor = System.Drawing.Color.LightGray;
+            this.groupBox36.Controls.Add(this.CylinderFinger);
+            this.groupBox36.Controls.Add(this.CylinderKeySharp);
+            this.groupBox36.Controls.Add(this.cbAutoUp);
+            this.groupBox36.Controls.Add(this.CylinderKey0);
+            this.groupBox36.Controls.Add(this.CylinderKeyAsterisk);
+            this.groupBox36.Controls.Add(this.CylinderKey1);
+            this.groupBox36.Controls.Add(this.CylinderKey9);
+            this.groupBox36.Controls.Add(this.CylinderKey2);
+            this.groupBox36.Controls.Add(this.CylinderKey8);
+            this.groupBox36.Controls.Add(this.CylinderKey3);
+            this.groupBox36.Controls.Add(this.CylinderKey7);
+            this.groupBox36.Controls.Add(this.CylinderKey4);
+            this.groupBox36.Controls.Add(this.CylinderKey6);
+            this.groupBox36.Controls.Add(this.CylinderKey5);
+            this.groupBox36.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox36.Location = new System.Drawing.Point(21, 27);
+            this.groupBox36.Name = "groupBox36";
+            this.groupBox36.Size = new System.Drawing.Size(153, 256);
+            this.groupBox36.TabIndex = 46;
+            this.groupBox36.TabStop = false;
+            this.groupBox36.Text = "Key Panel Control";
+            // 
+            // cbAutoUp
+            // 
+            this.cbAutoUp.AutoSize = true;
+            this.cbAutoUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbAutoUp.Location = new System.Drawing.Point(82, 222);
+            this.cbAutoUp.Name = "cbAutoUp";
+            this.cbAutoUp.Size = new System.Drawing.Size(65, 17);
+            this.cbAutoUp.TabIndex = 90;
+            this.cbAutoUp.Text = "Auto Up";
+            this.cbAutoUp.UseVisualStyleBackColor = true;
+            this.cbAutoUp.CheckedChanged += new System.EventHandler(this.cbAutoUp_CheckedChanged);
+            // 
+            // Broken
+            // 
+            this.Broken.BackColor = System.Drawing.Color.Transparent;
+            this.Broken.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.Broken.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Broken.Location = new System.Drawing.Point(320, 140);
+            this.Broken.Name = "Broken";
+            this.Broken.ReadSameRelay = true;
+            this.Broken.Size = new System.Drawing.Size(90, 34);
+            this.Broken.State = false;
+            this.Broken.TabIndex = 120;
+            this.Broken.Text = "RL_Broken";
+            this.Broken.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Toggle;
+            this.Broken.UseVisualStyleBackColor = false;
+            // 
+            // CylDownSpring
+            // 
+            this.CylDownSpring.BackColor = System.Drawing.Color.Transparent;
+            this.CylDownSpring.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.CylDownSpring.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.CylDownSpring.Location = new System.Drawing.Point(0, 16);
+            this.CylDownSpring.Name = "CylDownSpring";
+            this.CylDownSpring.ReadSameRelay = true;
+            this.CylDownSpring.Size = new System.Drawing.Size(70, 42);
+            this.CylDownSpring.State = false;
+            this.CylDownSpring.TabIndex = 87;
+            this.CylDownSpring.Text = "UP";
+            this.CylDownSpring.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Toggle;
+            this.CylDownSpring.UseVisualStyleBackColor = false;
+            // 
+            // Supply9VToFront
+            // 
+            this.Supply9VToFront.BackColor = System.Drawing.Color.Transparent;
+            this.Supply9VToFront.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.Supply9VToFront.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Supply9VToFront.Location = new System.Drawing.Point(320, 226);
+            this.Supply9VToFront.Name = "Supply9VToFront";
+            this.Supply9VToFront.ReadSameRelay = true;
+            this.Supply9VToFront.Size = new System.Drawing.Size(90, 46);
+            this.Supply9VToFront.State = false;
+            this.Supply9VToFront.TabIndex = 119;
+            this.Supply9VToFront.Text = "Supply9VToFront";
+            this.Supply9VToFront.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Toggle;
+            this.Supply9VToFront.UseVisualStyleBackColor = false;
+            // 
+            // Supply6VToBattery
+            // 
+            this.Supply6VToBattery.BackColor = System.Drawing.Color.Transparent;
+            this.Supply6VToBattery.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.Supply6VToBattery.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Supply6VToBattery.Location = new System.Drawing.Point(205, 226);
+            this.Supply6VToBattery.Name = "Supply6VToBattery";
+            this.Supply6VToBattery.ReadSameRelay = true;
+            this.Supply6VToBattery.Size = new System.Drawing.Size(94, 45);
+            this.Supply6VToBattery.State = false;
+            this.Supply6VToBattery.TabIndex = 118;
+            this.Supply6VToBattery.Text = "Supply6VToBattery";
+            this.Supply6VToBattery.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Toggle;
+            this.Supply6VToBattery.UseVisualStyleBackColor = false;
+            // 
             // MotionReady
             // 
             this.MotionReady.BackColor = System.Drawing.Color.Transparent;
-            this.MotionReady.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.MotionReady.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.MotionReady.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.MotionReady.Location = new System.Drawing.Point(250, 124);
+            this.MotionReady.Location = new System.Drawing.Point(205, 140);
             this.MotionReady.Name = "MotionReady";
             this.MotionReady.ReadSameRelay = true;
-            this.MotionReady.Size = new System.Drawing.Size(129, 34);
+            this.MotionReady.Size = new System.Drawing.Size(95, 34);
             this.MotionReady.State = false;
             this.MotionReady.TabIndex = 102;
             this.MotionReady.Text = "Motion Ready";
@@ -370,10 +767,10 @@
             this.Change9Vor6V.BackColor = System.Drawing.Color.Transparent;
             this.Change9Vor6V.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.Change9Vor6V.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Change9Vor6V.Location = new System.Drawing.Point(320, 163);
+            this.Change9Vor6V.Location = new System.Drawing.Point(320, 180);
             this.Change9Vor6V.Name = "Change9Vor6V";
             this.Change9Vor6V.ReadSameRelay = true;
-            this.Change9Vor6V.Size = new System.Drawing.Size(98, 57);
+            this.Change9Vor6V.Size = new System.Drawing.Size(90, 40);
             this.Change9Vor6V.State = false;
             this.Change9Vor6V.TabIndex = 99;
             this.Change9Vor6V.Text = "9V/6V Change/Y037";
@@ -385,26 +782,15 @@
             this.Reverse9V.BackColor = System.Drawing.Color.Transparent;
             this.Reverse9V.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.Reverse9V.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Reverse9V.Location = new System.Drawing.Point(205, 163);
+            this.Reverse9V.Location = new System.Drawing.Point(205, 180);
             this.Reverse9V.Name = "Reverse9V";
             this.Reverse9V.ReadSameRelay = true;
-            this.Reverse9V.Size = new System.Drawing.Size(98, 57);
+            this.Reverse9V.Size = new System.Drawing.Size(94, 40);
             this.Reverse9V.State = false;
             this.Reverse9V.TabIndex = 98;
             this.Reverse9V.Text = "9V REVERSE";
             this.Reverse9V.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Toggle;
             this.Reverse9V.UseVisualStyleBackColor = false;
-            // 
-            // groupBox8
-            // 
-            this.groupBox8.Controls.Add(this.CylinderTools4);
-            this.groupBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox8.Location = new System.Drawing.Point(613, 342);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(149, 72);
-            this.groupBox8.TabIndex = 97;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Cyl_Tools_4/Y035";
             // 
             // CylinderTools4
             // 
@@ -414,24 +800,12 @@
             this.CylinderTools4.Location = new System.Drawing.Point(0, 16);
             this.CylinderTools4.Name = "CylinderTools4";
             this.CylinderTools4.ReadSameRelay = true;
-            this.CylinderTools4.Size = new System.Drawing.Size(76, 53);
+            this.CylinderTools4.Size = new System.Drawing.Size(70, 42);
             this.CylinderTools4.State = false;
             this.CylinderTools4.TabIndex = 87;
             this.CylinderTools4.Text = "UP";
             this.CylinderTools4.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Toggle;
             this.CylinderTools4.UseVisualStyleBackColor = false;
-            // 
-            // groupBox12
-            // 
-            this.groupBox12.Controls.Add(this.CylinderPush2);
-            this.groupBox12.Controls.Add(this.Push2FW);
-            this.groupBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox12.Location = new System.Drawing.Point(609, 186);
-            this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(149, 72);
-            this.groupBox12.TabIndex = 95;
-            this.groupBox12.TabStop = false;
-            this.groupBox12.Text = "Cyl_Push_2/Y014";
             // 
             // CylinderPush2
             // 
@@ -441,33 +815,12 @@
             this.CylinderPush2.Location = new System.Drawing.Point(0, 16);
             this.CylinderPush2.Name = "CylinderPush2";
             this.CylinderPush2.ReadSameRelay = true;
-            this.CylinderPush2.Size = new System.Drawing.Size(76, 53);
+            this.CylinderPush2.Size = new System.Drawing.Size(70, 42);
             this.CylinderPush2.State = false;
             this.CylinderPush2.TabIndex = 87;
             this.CylinderPush2.Text = "UP";
             this.CylinderPush2.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Toggle;
             this.CylinderPush2.UseVisualStyleBackColor = false;
-            // 
-            // Push2FW
-            // 
-            this.Push2FW.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Push2FW.Location = new System.Drawing.Point(79, 47);
-            this.Push2FW.Name = "Push2FW";
-            this.Push2FW.Size = new System.Drawing.Size(45, 22);
-            this.Push2FW.TabIndex = 24;
-            this.Push2FW.Text = "X026";
-            this.Push2FW.UseVisualStyleBackColor = true;
-            // 
-            // groupBox9
-            // 
-            this.groupBox9.Controls.Add(this.CylinderTools3);
-            this.groupBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox9.Location = new System.Drawing.Point(613, 264);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(149, 72);
-            this.groupBox9.TabIndex = 96;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Cyl_Tools_3/Y034";
             // 
             // CylinderTools3
             // 
@@ -477,24 +830,12 @@
             this.CylinderTools3.Location = new System.Drawing.Point(0, 16);
             this.CylinderTools3.Name = "CylinderTools3";
             this.CylinderTools3.ReadSameRelay = true;
-            this.CylinderTools3.Size = new System.Drawing.Size(76, 53);
+            this.CylinderTools3.Size = new System.Drawing.Size(70, 42);
             this.CylinderTools3.State = false;
             this.CylinderTools3.TabIndex = 87;
             this.CylinderTools3.Text = "UP";
             this.CylinderTools3.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Toggle;
             this.CylinderTools3.UseVisualStyleBackColor = false;
-            // 
-            // groupBox10
-            // 
-            this.groupBox10.Controls.Add(this.CylinderPush1);
-            this.groupBox10.Controls.Add(this.Push1Dw);
-            this.groupBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox10.Location = new System.Drawing.Point(609, 108);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(149, 72);
-            this.groupBox10.TabIndex = 94;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "Cyl_Push_1/Y013";
             // 
             // CylinderPush1
             // 
@@ -504,35 +845,12 @@
             this.CylinderPush1.Location = new System.Drawing.Point(0, 16);
             this.CylinderPush1.Name = "CylinderPush1";
             this.CylinderPush1.ReadSameRelay = true;
-            this.CylinderPush1.Size = new System.Drawing.Size(76, 53);
+            this.CylinderPush1.Size = new System.Drawing.Size(70, 42);
             this.CylinderPush1.State = false;
             this.CylinderPush1.TabIndex = 87;
             this.CylinderPush1.Text = "UP";
             this.CylinderPush1.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Toggle;
             this.CylinderPush1.UseVisualStyleBackColor = false;
-            // 
-            // Push1Dw
-            // 
-            this.Push1Dw.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Push1Dw.Location = new System.Drawing.Point(79, 47);
-            this.Push1Dw.Name = "Push1Dw";
-            this.Push1Dw.Size = new System.Drawing.Size(45, 22);
-            this.Push1Dw.TabIndex = 24;
-            this.Push1Dw.Text = "X025";
-            this.Push1Dw.UseVisualStyleBackColor = true;
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.CylinderTransTools);
-            this.groupBox7.Controls.Add(this.TransToolFW);
-            this.groupBox7.Controls.Add(this.TransToolBW);
-            this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox7.Location = new System.Drawing.Point(609, 30);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(149, 72);
-            this.groupBox7.TabIndex = 93;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Cyl_Trans_Tools/Y012";
             // 
             // CylinderTransTools
             // 
@@ -542,43 +860,12 @@
             this.CylinderTransTools.Location = new System.Drawing.Point(0, 16);
             this.CylinderTransTools.Name = "CylinderTransTools";
             this.CylinderTransTools.ReadSameRelay = true;
-            this.CylinderTransTools.Size = new System.Drawing.Size(76, 53);
+            this.CylinderTransTools.Size = new System.Drawing.Size(70, 42);
             this.CylinderTransTools.State = false;
             this.CylinderTransTools.TabIndex = 87;
             this.CylinderTransTools.Text = "UP";
             this.CylinderTransTools.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Toggle;
             this.CylinderTransTools.UseVisualStyleBackColor = false;
-            // 
-            // TransToolFW
-            // 
-            this.TransToolFW.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TransToolFW.Location = new System.Drawing.Point(79, 17);
-            this.TransToolFW.Name = "TransToolFW";
-            this.TransToolFW.Size = new System.Drawing.Size(45, 22);
-            this.TransToolFW.TabIndex = 25;
-            this.TransToolFW.Text = "X023";
-            this.TransToolFW.UseVisualStyleBackColor = true;
-            // 
-            // TransToolBW
-            // 
-            this.TransToolBW.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TransToolBW.Location = new System.Drawing.Point(79, 47);
-            this.TransToolBW.Name = "TransToolBW";
-            this.TransToolBW.Size = new System.Drawing.Size(45, 22);
-            this.TransToolBW.TabIndex = 24;
-            this.TransToolBW.Text = "X024";
-            this.TransToolBW.UseVisualStyleBackColor = true;
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.CylinderTools2);
-            this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox6.Location = new System.Drawing.Point(454, 417);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(149, 72);
-            this.groupBox6.TabIndex = 92;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Cyl_Tools_2/Y011";
             // 
             // CylinderTools2
             // 
@@ -588,51 +875,27 @@
             this.CylinderTools2.Location = new System.Drawing.Point(0, 16);
             this.CylinderTools2.Name = "CylinderTools2";
             this.CylinderTools2.ReadSameRelay = true;
-            this.CylinderTools2.Size = new System.Drawing.Size(76, 53);
+            this.CylinderTools2.Size = new System.Drawing.Size(70, 42);
             this.CylinderTools2.State = false;
             this.CylinderTools2.TabIndex = 87;
             this.CylinderTools2.Text = "UP";
             this.CylinderTools2.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Toggle;
             this.CylinderTools2.UseVisualStyleBackColor = false;
             // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.CylinderTools1);
-            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(454, 342);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(149, 72);
-            this.groupBox4.TabIndex = 91;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Cyl_Tools_1/Y010";
-            // 
             // CylinderTools1
             // 
             this.CylinderTools1.BackColor = System.Drawing.Color.Transparent;
             this.CylinderTools1.Font = new System.Drawing.Font("Arial", 9.75F);
             this.CylinderTools1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.CylinderTools1.Location = new System.Drawing.Point(0, 16);
+            this.CylinderTools1.Location = new System.Drawing.Point(0, 14);
             this.CylinderTools1.Name = "CylinderTools1";
             this.CylinderTools1.ReadSameRelay = true;
-            this.CylinderTools1.Size = new System.Drawing.Size(76, 53);
+            this.CylinderTools1.Size = new System.Drawing.Size(70, 42);
             this.CylinderTools1.State = false;
             this.CylinderTools1.TabIndex = 87;
             this.CylinderTools1.Text = "UP";
             this.CylinderTools1.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Toggle;
             this.CylinderTools1.UseVisualStyleBackColor = false;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.CylinderCheckSpring);
-            this.groupBox3.Controls.Add(this.CheckSpringOpen);
-            this.groupBox3.Controls.Add(this.CheckSpringClose);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(454, 264);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(149, 72);
-            this.groupBox3.TabIndex = 90;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Cyl_Check_Spring/Y005";
             // 
             // CylinderCheckSpring
             // 
@@ -642,93 +905,27 @@
             this.CylinderCheckSpring.Location = new System.Drawing.Point(0, 16);
             this.CylinderCheckSpring.Name = "CylinderCheckSpring";
             this.CylinderCheckSpring.ReadSameRelay = true;
-            this.CylinderCheckSpring.Size = new System.Drawing.Size(76, 53);
+            this.CylinderCheckSpring.Size = new System.Drawing.Size(70, 42);
             this.CylinderCheckSpring.State = false;
             this.CylinderCheckSpring.TabIndex = 87;
             this.CylinderCheckSpring.Text = "UP";
             this.CylinderCheckSpring.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Toggle;
             this.CylinderCheckSpring.UseVisualStyleBackColor = false;
             // 
-            // CheckSpringOpen
-            // 
-            this.CheckSpringOpen.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CheckSpringOpen.Location = new System.Drawing.Point(79, 17);
-            this.CheckSpringOpen.Name = "CheckSpringOpen";
-            this.CheckSpringOpen.Size = new System.Drawing.Size(45, 22);
-            this.CheckSpringOpen.TabIndex = 25;
-            this.CheckSpringOpen.Text = "X015";
-            this.CheckSpringOpen.UseVisualStyleBackColor = true;
-            // 
-            // CheckSpringClose
-            // 
-            this.CheckSpringClose.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CheckSpringClose.Location = new System.Drawing.Point(79, 47);
-            this.CheckSpringClose.Name = "CheckSpringClose";
-            this.CheckSpringClose.Size = new System.Drawing.Size(45, 22);
-            this.CheckSpringClose.TabIndex = 24;
-            this.CheckSpringClose.Text = "X016";
-            this.CheckSpringClose.UseVisualStyleBackColor = true;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.CylinderPushLock);
-            this.groupBox2.Controls.Add(this.LockUp);
-            this.groupBox2.Controls.Add(this.LockDw);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(454, 186);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(149, 72);
-            this.groupBox2.TabIndex = 89;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Cyl_Push_lock/Y004";
-            // 
             // CylinderPushLock
             // 
             this.CylinderPushLock.BackColor = System.Drawing.Color.Transparent;
             this.CylinderPushLock.Font = new System.Drawing.Font("Arial", 9.75F);
             this.CylinderPushLock.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.CylinderPushLock.Location = new System.Drawing.Point(0, 16);
+            this.CylinderPushLock.Location = new System.Drawing.Point(0, 17);
             this.CylinderPushLock.Name = "CylinderPushLock";
             this.CylinderPushLock.ReadSameRelay = true;
-            this.CylinderPushLock.Size = new System.Drawing.Size(76, 53);
+            this.CylinderPushLock.Size = new System.Drawing.Size(70, 42);
             this.CylinderPushLock.State = false;
             this.CylinderPushLock.TabIndex = 87;
             this.CylinderPushLock.Text = "UP";
             this.CylinderPushLock.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Toggle;
             this.CylinderPushLock.UseVisualStyleBackColor = false;
-            // 
-            // LockUp
-            // 
-            this.LockUp.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LockUp.Location = new System.Drawing.Point(79, 17);
-            this.LockUp.Name = "LockUp";
-            this.LockUp.Size = new System.Drawing.Size(45, 22);
-            this.LockUp.TabIndex = 25;
-            this.LockUp.Text = "X013";
-            this.LockUp.UseVisualStyleBackColor = true;
-            // 
-            // LockDw
-            // 
-            this.LockDw.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LockDw.Location = new System.Drawing.Point(79, 47);
-            this.LockDw.Name = "LockDw";
-            this.LockDw.Size = new System.Drawing.Size(45, 22);
-            this.LockDw.TabIndex = 24;
-            this.LockDw.Text = "X014";
-            this.LockDw.UseVisualStyleBackColor = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.CylinderToolsDown);
-            this.groupBox1.Controls.Add(this.ToolsUp);
-            this.groupBox1.Controls.Add(this.ToolsDw);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(454, 108);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(149, 72);
-            this.groupBox1.TabIndex = 88;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Cyl_Tools/Y003";
             // 
             // CylinderToolsDown
             // 
@@ -738,110 +935,27 @@
             this.CylinderToolsDown.Location = new System.Drawing.Point(0, 16);
             this.CylinderToolsDown.Name = "CylinderToolsDown";
             this.CylinderToolsDown.ReadSameRelay = true;
-            this.CylinderToolsDown.Size = new System.Drawing.Size(76, 53);
+            this.CylinderToolsDown.Size = new System.Drawing.Size(70, 42);
             this.CylinderToolsDown.State = false;
             this.CylinderToolsDown.TabIndex = 87;
             this.CylinderToolsDown.Text = "UP";
             this.CylinderToolsDown.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Toggle;
             this.CylinderToolsDown.UseVisualStyleBackColor = false;
             // 
-            // ToolsUp
-            // 
-            this.ToolsUp.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ToolsUp.Location = new System.Drawing.Point(79, 17);
-            this.ToolsUp.Name = "ToolsUp";
-            this.ToolsUp.Size = new System.Drawing.Size(45, 22);
-            this.ToolsUp.TabIndex = 25;
-            this.ToolsUp.Text = "X011";
-            this.ToolsUp.UseVisualStyleBackColor = true;
-            // 
-            // ToolsDw
-            // 
-            this.ToolsDw.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ToolsDw.Location = new System.Drawing.Point(79, 47);
-            this.ToolsDw.Name = "ToolsDw";
-            this.ToolsDw.Size = new System.Drawing.Size(45, 22);
-            this.ToolsDw.TabIndex = 24;
-            this.ToolsDw.Text = "X012";
-            this.ToolsDw.UseVisualStyleBackColor = true;
-            // 
-            // groupBox34
-            // 
-            this.groupBox34.Controls.Add(this.CylinderDoorClose);
-            this.groupBox34.Controls.Add(this.DoorUp);
-            this.groupBox34.Controls.Add(this.DoorDw);
-            this.groupBox34.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox34.Location = new System.Drawing.Point(454, 30);
-            this.groupBox34.Name = "groupBox34";
-            this.groupBox34.Size = new System.Drawing.Size(149, 72);
-            this.groupBox34.TabIndex = 86;
-            this.groupBox34.TabStop = false;
-            this.groupBox34.Text = "Cyl_Door/Y002";
-            // 
             // CylinderDoorClose
             // 
             this.CylinderDoorClose.BackColor = System.Drawing.Color.Transparent;
             this.CylinderDoorClose.Font = new System.Drawing.Font("Arial", 9.75F);
             this.CylinderDoorClose.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.CylinderDoorClose.Location = new System.Drawing.Point(0, 16);
+            this.CylinderDoorClose.Location = new System.Drawing.Point(6, 16);
             this.CylinderDoorClose.Name = "CylinderDoorClose";
             this.CylinderDoorClose.ReadSameRelay = true;
-            this.CylinderDoorClose.Size = new System.Drawing.Size(76, 53);
+            this.CylinderDoorClose.Size = new System.Drawing.Size(70, 42);
             this.CylinderDoorClose.State = false;
             this.CylinderDoorClose.TabIndex = 87;
             this.CylinderDoorClose.Text = "UP";
             this.CylinderDoorClose.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Toggle;
             this.CylinderDoorClose.UseVisualStyleBackColor = false;
-            // 
-            // DoorUp
-            // 
-            this.DoorUp.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DoorUp.Location = new System.Drawing.Point(79, 17);
-            this.DoorUp.Name = "DoorUp";
-            this.DoorUp.Size = new System.Drawing.Size(45, 22);
-            this.DoorUp.TabIndex = 25;
-            this.DoorUp.Text = "X007";
-            this.DoorUp.UseVisualStyleBackColor = true;
-            // 
-            // DoorDw
-            // 
-            this.DoorDw.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DoorDw.Location = new System.Drawing.Point(79, 47);
-            this.DoorDw.Name = "DoorDw";
-            this.DoorDw.Size = new System.Drawing.Size(45, 22);
-            this.DoorDw.TabIndex = 24;
-            this.DoorDw.Text = "X010";
-            this.DoorDw.UseVisualStyleBackColor = true;
-            // 
-            // lbStartRun
-            // 
-            this.lbStartRun.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lbStartRun.Location = new System.Drawing.Point(320, 30);
-            this.lbStartRun.Name = "lbStartRun";
-            this.lbStartRun.Size = new System.Drawing.Size(128, 35);
-            this.lbStartRun.TabIndex = 82;
-            this.lbStartRun.Text = "Start Run";
-            this.lbStartRun.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnWaitSWRequest
-            // 
-            this.btnWaitSWRequest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnWaitSWRequest.Location = new System.Drawing.Point(180, 73);
-            this.btnWaitSWRequest.Name = "btnWaitSWRequest";
-            this.btnWaitSWRequest.Size = new System.Drawing.Size(85, 42);
-            this.btnWaitSWRequest.TabIndex = 79;
-            this.btnWaitSWRequest.Text = "Wait SW Request";
-            this.btnWaitSWRequest.UseVisualStyleBackColor = true;
-            // 
-            // groupBox11
-            // 
-            this.groupBox11.Controls.Add(this.AutoCmd);
-            this.groupBox11.Location = new System.Drawing.Point(180, 8);
-            this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(134, 62);
-            this.groupBox11.TabIndex = 78;
-            this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "Control mode";
             // 
             // AutoCmd
             // 
@@ -857,31 +971,6 @@
             this.AutoCmd.Text = "AUTO";
             this.AutoCmd.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Momentary;
             this.AutoCmd.UseVisualStyleBackColor = false;
-            // 
-            // groupBox36
-            // 
-            this.groupBox36.BackColor = System.Drawing.Color.LightGray;
-            this.groupBox36.Controls.Add(this.CylinderFinger);
-            this.groupBox36.Controls.Add(this.CylinderKeySharp);
-            this.groupBox36.Controls.Add(this.cbAutoUp);
-            this.groupBox36.Controls.Add(this.CylinderKey0);
-            this.groupBox36.Controls.Add(this.CylinderKeyAsterisk);
-            this.groupBox36.Controls.Add(this.CylinderKey1);
-            this.groupBox36.Controls.Add(this.CylinderKey9);
-            this.groupBox36.Controls.Add(this.CylinderKey2);
-            this.groupBox36.Controls.Add(this.CylinderKey8);
-            this.groupBox36.Controls.Add(this.CylinderKey3);
-            this.groupBox36.Controls.Add(this.CylinderKey7);
-            this.groupBox36.Controls.Add(this.CylinderKey4);
-            this.groupBox36.Controls.Add(this.CylinderKey6);
-            this.groupBox36.Controls.Add(this.CylinderKey5);
-            this.groupBox36.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox36.Location = new System.Drawing.Point(21, 27);
-            this.groupBox36.Name = "groupBox36";
-            this.groupBox36.Size = new System.Drawing.Size(153, 256);
-            this.groupBox36.TabIndex = 46;
-            this.groupBox36.TabStop = false;
-            this.groupBox36.Text = "Key Panel Control";
             // 
             // CylinderFinger
             // 
@@ -912,18 +1001,6 @@
             this.CylinderKeySharp.Text = "#";
             this.CylinderKeySharp.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Toggle;
             this.CylinderKeySharp.UseVisualStyleBackColor = false;
-            // 
-            // cbAutoUp
-            // 
-            this.cbAutoUp.AutoSize = true;
-            this.cbAutoUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbAutoUp.Location = new System.Drawing.Point(82, 222);
-            this.cbAutoUp.Name = "cbAutoUp";
-            this.cbAutoUp.Size = new System.Drawing.Size(65, 17);
-            this.cbAutoUp.TabIndex = 90;
-            this.cbAutoUp.Text = "Auto Up";
-            this.cbAutoUp.UseVisualStyleBackColor = true;
-            this.cbAutoUp.CheckedChanged += new System.EventHandler(this.cbAutoUp_CheckedChanged);
             // 
             // CylinderKey0
             // 
@@ -1090,36 +1167,6 @@
             this.CylinderKey5.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Toggle;
             this.CylinderKey5.UseVisualStyleBackColor = false;
             // 
-            // Supply6VToBattery
-            // 
-            this.Supply6VToBattery.BackColor = System.Drawing.Color.Transparent;
-            this.Supply6VToBattery.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.Supply6VToBattery.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Supply6VToBattery.Location = new System.Drawing.Point(205, 228);
-            this.Supply6VToBattery.Name = "Supply6VToBattery";
-            this.Supply6VToBattery.ReadSameRelay = true;
-            this.Supply6VToBattery.Size = new System.Drawing.Size(98, 57);
-            this.Supply6VToBattery.State = false;
-            this.Supply6VToBattery.TabIndex = 118;
-            this.Supply6VToBattery.Text = "Supply6VToBattery";
-            this.Supply6VToBattery.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Toggle;
-            this.Supply6VToBattery.UseVisualStyleBackColor = false;
-            // 
-            // Supply9VToFront
-            // 
-            this.Supply9VToFront.BackColor = System.Drawing.Color.Transparent;
-            this.Supply9VToFront.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.Supply9VToFront.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Supply9VToFront.Location = new System.Drawing.Point(320, 226);
-            this.Supply9VToFront.Name = "Supply9VToFront";
-            this.Supply9VToFront.ReadSameRelay = true;
-            this.Supply9VToFront.Size = new System.Drawing.Size(98, 57);
-            this.Supply9VToFront.State = false;
-            this.Supply9VToFront.TabIndex = 119;
-            this.Supply9VToFront.Text = "Supply9VToFront";
-            this.Supply9VToFront.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Toggle;
-            this.Supply9VToFront.UseVisualStyleBackColor = false;
-            // 
             // ManualControlPLC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1128,6 +1175,7 @@
             this.Name = "ManualControlPLC";
             this.Size = new System.Drawing.Size(765, 493);
             this.groupBox5.ResumeLayout(false);
+            this.groupBox13.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.groupBox12.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
@@ -1224,5 +1272,8 @@
         public System.Windows.Forms.Button SafetySensor;
         public ToggleSwitch Supply9VToFront;
         public ToggleSwitch Supply6VToBattery;
+        public System.Windows.Forms.GroupBox groupBox13;
+        public ToggleSwitch CylDownSpring;
+        public ToggleSwitch Broken;
     }
 }

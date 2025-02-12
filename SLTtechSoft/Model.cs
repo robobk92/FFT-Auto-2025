@@ -1005,7 +1005,7 @@ namespace SLTtechSoft
         private int CountMov;
         private void timer1_Tick(object sender, EventArgs e)
         {
-            LiveCamInModelForm(IsliveCamModel);
+            
 
         }
         public bool IsliveCamModel = false;
@@ -1016,7 +1016,8 @@ namespace SLTtechSoft
             if (_form1.IsCamRunContinous[0]) return;
 
             _form1.IsLiveCam[0] = !_form1.IsLiveCam[0];
-            IsliveCamModel = true;
+            IsliveCamModel = _form1.IsLiveCam[0];
+            LiveCamInModelForm(IsliveCamModel);
             if (_form1.IsLiveCam[0])
             {
                 _form1.GUICamera.StartContinuousShotGrabbing();
