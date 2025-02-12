@@ -135,7 +135,7 @@ namespace LibFunction
     public class ClassFirmware_Check
     {
         public string ID = "FFT-2.2";
-        public string Name = "Firmwave_Check";
+        public string Name = "Firmware_Check";
         public string Detail = "";
     }
 
