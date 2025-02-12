@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO.Ports;
 using System.IO;
@@ -19,11 +17,6 @@ using Cognex.VisionPro.ToolBlock;
 using Cognex.VisionPro.ImageFile;
 using Cognex.VisionPro.Exceptions;
 using System.Drawing.Imaging;
-using Cognex.VisionPro.PMAlign;
-
-using static SLTtechSoft.Form1;
-using Cognex.VisionPro.Caliper;
-using Newtonsoft.Json.Serialization;
 
 // PLC Connection
 using SLMP;
@@ -31,18 +24,10 @@ using LibFunction;
 
 using static SLTtechSoft.Welcome;
 using System.Net.NetworkInformation;
-using Cognex.VisionPro.Implementation;
-using System.Xml.Linq;
-using static SLTtechSoft.ModelTable;
 using System.Runtime.InteropServices;
 using GUISampleMultiCam;
-using Cognex.VisionPro.Implementation.Internal;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static SLTtechSoft.TopControl;
 using Basler.Pylon;
-
-
-
 
 namespace SLTtechSoft
 {

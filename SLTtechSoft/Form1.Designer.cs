@@ -53,6 +53,7 @@
             this.lbPLCConected = new System.Windows.Forms.Label();
             this.lbPLCConnectLabel = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.lbTimeCamCapture = new System.Windows.Forms.Label();
             this.lbCountImageBasler = new System.Windows.Forms.Label();
             this.lbCam1Connected = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -79,7 +80,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lbProcessStepName = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.lbTimeCamCapture = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -375,6 +375,17 @@
             this.panel10.Size = new System.Drawing.Size(166, 24);
             this.panel10.TabIndex = 36;
             // 
+            // lbTimeCamCapture
+            // 
+            this.lbTimeCamCapture.AutoSize = true;
+            this.lbTimeCamCapture.Font = new System.Drawing.Font("Segoe UI", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTimeCamCapture.Location = new System.Drawing.Point(126, 5);
+            this.lbTimeCamCapture.Margin = new System.Windows.Forms.Padding(3);
+            this.lbTimeCamCapture.Name = "lbTimeCamCapture";
+            this.lbTimeCamCapture.Size = new System.Drawing.Size(34, 13);
+            this.lbTimeCamCapture.TabIndex = 36;
+            this.lbTimeCamCapture.Text = "0.000";
+            // 
             // lbCountImageBasler
             // 
             this.lbCountImageBasler.AutoSize = true;
@@ -536,7 +547,7 @@
             this.label9.Location = new System.Drawing.Point(13, 4);
             this.label9.Margin = new System.Windows.Forms.Padding(6);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(83, 13);
+            this.label9.Size = new System.Drawing.Size(84, 13);
             this.label9.TabIndex = 29;
             this.label9.Text = "TimeReadPLC1:";
             // 
@@ -580,7 +591,7 @@
             this.label12.Location = new System.Drawing.Point(13, 5);
             this.label12.Margin = new System.Windows.Forms.Padding(6);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(85, 13);
+            this.label12.Size = new System.Drawing.Size(86, 13);
             this.label12.TabIndex = 32;
             this.label12.Text = "TimeWritePLC1:";
             // 
@@ -654,17 +665,6 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // lbTimeCamCapture
-            // 
-            this.lbTimeCamCapture.AutoSize = true;
-            this.lbTimeCamCapture.Font = new System.Drawing.Font("Segoe UI", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTimeCamCapture.Location = new System.Drawing.Point(126, 5);
-            this.lbTimeCamCapture.Margin = new System.Windows.Forms.Padding(3);
-            this.lbTimeCamCapture.Name = "lbTimeCamCapture";
-            this.lbTimeCamCapture.Size = new System.Drawing.Size(34, 13);
-            this.lbTimeCamCapture.TabIndex = 36;
-            this.lbTimeCamCapture.Text = "0.000";
             // 
             // Form1
             // 
@@ -762,7 +762,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbLockConnectStatus;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label lbTimeCamCapture;
+        protected System.Windows.Forms.Label lbTimeCamCapture;
     }
 }
 
