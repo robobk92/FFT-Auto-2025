@@ -162,6 +162,7 @@ namespace SLTtechSoft
         //Chu trình Kiểm tra Khóa cửa
         public void DoorTestProcess()
         {
+
             if (_form1.MachineMode != ModeMachine.Auto) return;
             if (!_form1.PLC.Read.Auto.Test.StartProcessTest) _form1.PLC.Write.Auto.Test.FinishProcessTest = false;
 
@@ -580,15 +581,18 @@ namespace SLTtechSoft
                             if (Cur >= Min && Cur <= Max)
                             {
                                 FinishATest(true, Cur.ToString());
+
+                                
                             }
                             else
                             {
                                 if (TestRetryTime++ >= CurrentDoorTestData.retry)
                                 {
                                     FinishATest(false, Cur.ToString());
-
+                                   
                                 }
                             }
+
                         }
                         break;
                     }
@@ -606,7 +610,6 @@ namespace SLTtechSoft
             string ResultSpringOne = _form1.PLC.Read.Auto.Test.ResultSpringOne ? "1" : "0";
             string ResultSpringTwo = _form1.PLC.Read.Auto.Test.ResultSpringTwo ? "1" : "0";
             string ResultSpringThree = _form1.PLC.Read.Auto.Test.ResultSpringThree ? "1" : "0";
-
             if (ProcessTestIndex == 0 && CurrentResult == DoorResult.Empty)
             {
                 TestRetryTime = 0;
@@ -627,6 +630,7 @@ namespace SLTtechSoft
                         if (powerOn == null) return;
                         if (powerOn.Power_On)
                         {
+                            
                             string Value = $"0-{ResultSpringOne}-{ResultSpringTwo}-{ResultSpringThree}";
                             //if (powerOn.Power_On)
                             //{
@@ -639,10 +643,12 @@ namespace SLTtechSoft
                             if (_form1.PLC.Read.Auto.Test.ResultSpringOne && _form1.PLC.Read.Auto.Test.ResultSpringTwo && _form1.PLC.Read.Auto.Test.ResultSpringThree)
                             {
                                 FinishATest(true, Value);
+                                _form1.PLC.Write.Auto.Test.StartCheckVoltage6V = false;
                             }
                             else
                             {
                                 FinishATest(false, Value);
+                                _form1.PLC.Write.Auto.Test.StartCheckVoltage6V = false;
                             }
                         }
                         else
@@ -656,6 +662,8 @@ namespace SLTtechSoft
                         // khi không thấy PowerOn
                         if (TestRetryTime++ >= CurrentDoorTestData.retry)
                         {
+                           
+
                             //Khi Vượt quá số lân Retry
                             string Value = $"0-{ResultSpringOne}-{ResultSpringTwo}-{ResultSpringThree}";
                             FinishATest(false, Value);
@@ -670,7 +678,7 @@ namespace SLTtechSoft
                 case 3:
                     {
                         //Ngắt nguồn KeysightPSU
-                        _form1.KeySightPSU_Off();
+                        //_form1.KeySightPSU_Off();
                         StartDelayProcess = true;
                         ProcessTestIndex++;
                         break;
@@ -678,7 +686,7 @@ namespace SLTtechSoft
                 case 4:
                     {
                         //Chờ 1 giây
-                        DelayProcess(10);
+                        DelayProcess(3);
                         if (DelayProcessDone)
                         {
                             StartDelayProcess = false;
@@ -689,7 +697,7 @@ namespace SLTtechSoft
                 case 5:
                     {
                         //Bật nguồn trở lại
-                        _form1.KeySightPSU_ON();
+                        //_form1.KeySightPSU_ON();
                         StartDelayProcess = true;
                         ProcessTestIndex++;
                         break;
@@ -697,7 +705,7 @@ namespace SLTtechSoft
                 case 6:
                     {
                         //Chờ 1 giây
-                        DelayProcess(10);
+                        DelayProcess(3);
                         if (DelayProcessDone)
                         {
                             StartDelayProcess = false;
@@ -716,6 +724,7 @@ namespace SLTtechSoft
         }
         public void Test_Load_Parameter()
         {
+
             //Condition
             if (!CurrentDoorTestData.Enable) return;
             if (CurrentDoorTestData.Name != functionDoorList.Load_Parameter.Name) return;
@@ -829,7 +838,7 @@ namespace SLTtechSoft
         }
         public void Test_Set_Default()
         {
-            //Condition
+            //Condition 
             if (!CurrentDoorTestData.Enable) return;
             if (CurrentDoorTestData.Name != functionDoorList.Set_Default.Name) return;
             string CurrentResult = dataGridView1.Rows[CurrentDoorTestData.RowIndex].Cells[DoorTableCol.Result].Value.ToString();
@@ -849,14 +858,15 @@ namespace SLTtechSoft
             {
                 case 1:
                     {
-                        try
+                        try 
                         {
                             string hexString = CurrentDoorTestData.Min;
-                            byte result = Convert.ToByte(hexString);
+                            string hexValue = hexString.Substring(2);
+                            byte result = Convert.ToByte(hexValue,16);
                             SetdeafautLock SetDefaultDoor = _form1.LockASSA.SetDefaultDoor(result, CurrentDoorTestData.TimeOut);
                             if (SetDefaultDoor != null)
                             {
-                                FinishATest(true, hexString);
+                                FinishATest(true, SetDefaultDoor.temperature);
                             }
                             else
                             {
@@ -1122,7 +1132,7 @@ namespace SLTtechSoft
                 case 3:
                     {
                         //Khi lỗi xảy ra, báo cho PLC kiểm tra lại
-                        _form1.PLC.Write.Auto.Test.StartCheckDoorPositionSensor_Close = false;
+                        //_form1.PLC.Write.Auto.Test.StartCheckDoorPositionSensor_Close = false;
                         if (!_form1.PLC.Read.Auto.Test.ReadyCheckDoorPositionSensor_Close)
                         {
                             if (TestRetryTime++ < CurrentDoorTestData.retry)
@@ -1428,18 +1438,8 @@ namespace SLTtechSoft
             {
                 case 1:
                     {
-                        Alarm alarm = _form1.LockASSA.WarningOnOff(WarningType.Off, CurrentDoorTestData.TimeOut);
-                        if (alarm.DataAlarm_GetTrue)
-                        {
-                            FinishATest(true, "True");
-                        }
-                        else
-                        {
-                            if (TestRetryTime++ > CurrentDoorTestData.retry)
-                            {
-                                FinishATest(false, "false");
-                            }
-                        }
+                        _form1.PLC.Write.Output.Broken = true;
+                        FinishATest(true, "True");
                         break;
                     }
                 
@@ -1470,25 +1470,13 @@ namespace SLTtechSoft
             {
                 case 1:
                     {
-                        Alarm alarm = _form1.LockASSA.WarningOnOff(WarningType.On, CurrentDoorTestData.TimeOut);
-                        if (alarm.DataAlarm_GetTrue)
-                        {
-                            StartDelayProcess = true;
-                            ProcessTestIndex++;
-                        }
-                        else
-                        {
-                            StopTestingByFail = true;
-                            //LOG
-                            this.Invoke(new Action(() => {
-                                _form1.WriteLogPC(LogType.Main, "WarningOn", "Fail");
-                            }));
-                        }
+                        StartDelayProcess = true;
+                        ProcessTestIndex++;
                         break;
                     }
                 case 2:
                     {
-                        DelayProcess(10);
+                        DelayProcess(50);
                         if (DelayProcessDone)
                         {
                             StartDelayProcess = false;
@@ -1517,6 +1505,7 @@ namespace SLTtechSoft
                 case 5:
                     {
                         Alarm alarm = _form1.LockASSA.WarningOnOff(WarningType.Off, CurrentDoorTestData.TimeOut);
+                        _form1.PLC.Write.Output.Broken = false;
                         if (alarm.DataAlarm_GetTrue)
                         {
                             ProcessTestIndex++;

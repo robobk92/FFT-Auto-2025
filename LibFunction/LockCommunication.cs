@@ -386,7 +386,8 @@ namespace LibFunction
                     {
                         Datarecived.Fisrtscan[i] = hi[i];
                     }
-                    if (Datarecived.Fisrtscan[0] == 0x44 && Datarecived.Fisrtscan[1] == 0xB0)
+                    if (Datarecived.Fisrtscan[0] == 0x44 && Datarecived.Fisrtscan[1] == 0xB0 && Datarecived.Fisrtscan[3]==0x1A
+                         && Datarecived.Fisrtscan[4] == 0x70 && Datarecived.Fisrtscan[5] == 0x71)
                     {
                         Datarecived.Power_On = true;
                     }

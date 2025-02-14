@@ -330,6 +330,8 @@ namespace SLTtechSoft
             topControl.Dock = DockStyle.Fill;
             panelTopControl.Controls.Add(topControl);
             topControl.btnShutdown.Click += Shutdown;
+            topControl.btnReset.Click += BtnReset_Click;
+
 
             formIO = new FormIO();
             formIO.TopLevel = false;
@@ -363,6 +365,23 @@ namespace SLTtechSoft
             btnIO.BackColor = TabControlBackColorOFF;
             btnOption.BackColor = TabControlBackColorOFF;
             formModel.btnRunOnce.Enabled = GUICamera.IsSingleShotSupported();
+        }
+
+        private void BtnReset_Click(object sender, EventArgs e)
+        {
+          
+            DialogResult result = MessageBox.Show("Do you want Reset Testing", "Reset", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                formModel.ShowFFTTableInMainScreen();
+                formMain.StartTesting = false;
+                MachineMode = ModeMachine.Manual;
+                formMain.ProcessTestIndex = 0;
+                CurrentSerial_Number = "dacb1";
+                CurrentQRCodeRecived = "123";
+            }
+         
         }
 
         private void BtnStop_Click(object sender, EventArgs e)
