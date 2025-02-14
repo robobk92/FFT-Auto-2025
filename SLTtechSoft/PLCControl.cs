@@ -244,7 +244,7 @@ namespace SLTtechSoft
             _form1.PLC.Write.Auto.Auto = ManualControlPLC.AutoCmd.State;
             _form1.PLC.Write.Auto.Stop = Stop.State;
             _form1.PLC.Write.Auto.ResetAll = ManualControlPLC.Reset.State;
-            _form1.PLC.Write.Auto.TestFinish = ManualControlPLC.TestFinish.State;
+            _form1.PLC.Write.Auto.Test.FinishProcessTest = ManualControlPLC.TestFinish.State;
             _form1.PLC.Write.Auto.MotionReady = ManualControlPLC.MotionReady.State;
             _form1.PLC.Write.Auto.StepXNeg = toggleSwitch1.State;
             _form1.PLC.Write.Auto.StepXPos =  btnJogXup.State;
@@ -258,7 +258,7 @@ namespace SLTtechSoft
             _form1.PLC.Write.Auto.MovePosX4 = btnGotoPos4.State;
             _form1.PLC.Write.Auto.MovePosX5 = btnGotoPos5.State;
             _form1.PLC.Write.Auto.MovePosX6 = btnGotoPos6.State;
-           
+            
 
 
             //Word 

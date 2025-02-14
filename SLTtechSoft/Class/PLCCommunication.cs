@@ -177,6 +177,7 @@ namespace SLTtechSoft
         public bool FinishProcessTest { get; set; }
         public bool Set_Check_ADC_Voltage { get; set; }
         public bool Set_Check_IDE_Current {  get; set; }
+        public bool Broken_Disconnect { get; set; }
     }
     public class TestAutoRead
     {
@@ -210,7 +211,7 @@ namespace SLTtechSoft
         public bool Ready_check_ADCVoltage { get; set; }
         public bool Ready_Check_IDE_Current {  get; set; }
 
-
+        public bool Broken_Disconnect { get; set; }
     }
     public class WordRead
     {

@@ -950,63 +950,63 @@ namespace SLTtechSoft
                 default: { break; }
             }
         }
-        public void Test_Get_RTC()
-        {
-            //Condition
-            if (!CurrentDoorTestData.Enable) return;
-            if (CurrentDoorTestData.Name != functionDoorList.Get_RTC.Name) return;
-            string CurrentResult = dataGridView1.Rows[CurrentDoorTestData.RowIndex].Cells[DoorTableCol.Result].Value.ToString();
-
-            if (ProcessTestIndex == 0 && CurrentResult == DoorResult.Empty)
+            public void Test_Get_RTC()
             {
-                TestRetryTime = 0;
-                //CountTime
-                StopWatchTestDoor = new Stopwatch();
-                StopWatchTestDoor.Start();
+                //Condition
+                if (!CurrentDoorTestData.Enable) return;
+                if (CurrentDoorTestData.Name != functionDoorList.Get_RTC.Name) return;
+                string CurrentResult = dataGridView1.Rows[CurrentDoorTestData.RowIndex].Cells[DoorTableCol.Result].Value.ToString();
 
-                ProcessTestIndex = 1;
-            }
-            //Execute
+                if (ProcessTestIndex == 0 && CurrentResult == DoorResult.Empty)
+                {
+                    TestRetryTime = 0;
+                    //CountTime
+                    StopWatchTestDoor = new Stopwatch();
+                    StopWatchTestDoor.Start();
 
-            switch (ProcessTestIndex)
-            {
-                case 1:
-                    {
-                        try
+                    ProcessTestIndex = 1;
+                }
+                //Execute
+
+                switch (ProcessTestIndex)
+                {
+                    case 1:
                         {
-                            //string dateString = CurrentDoorTestData.Min;
-                            //DateTime date = DateTime.ParseExact(dateString, "yyyyMMdd", CultureInfo.InvariantCulture);
-                            //// Tách các phần của chuỗi
-                            //string year = dateString.Substring(2, 2); // Lấy 2 số cuối của năm (23)
-                            //string month = dateString.Substring(4, 2); // Lấy tháng (10)
-                            //string day = dateString.Substring(6, 2); // Lấy ngày (11)
-                            //string DayOfWeek = date.DayOfWeek.ToString(); // Lấy thứ của ngày trên
-
-                            RTC Get_RTC = _form1.LockASSA.GetRTC(16);
-                            if (Get_RTC != null)
+                            try
                             {
-                                FinishATest(true, Get_RTC.Data_Get_RTC);
-                            }
-                            else
-                            {
-                                FinishATest(false, "Null");
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            FinishATest(false, "Error");
-                            StopTestingByFail = true;
-                            //LOG
-                            this.Invoke(new Action(() => {
-                                _form1.WriteLogPC(LogType.Main, "Get_RTC", ex.Message);
-                            }));
-                        }
-                        break;
-                    }
+                                //string dateString = CurrentDoorTestData.Min;
+                                //DateTime date = DateTime.ParseExact(dateString, "yyyyMMdd", CultureInfo.InvariantCulture);
+                                //// Tách các phần của chuỗi
+                                //string year = dateString.Substring(2, 2); // Lấy 2 số cuối của năm (23)
+                                //string month = dateString.Substring(4, 2); // Lấy tháng (10)
+                                //string day = dateString.Substring(6, 2); // Lấy ngày (11)
+                                //string DayOfWeek = date.DayOfWeek.ToString(); // Lấy thứ của ngày trên
 
-                default: { break; }
+                                RTC Get_RTC = _form1.LockASSA.GetRTC(16);
+                                if (Get_RTC != null)
+                                {
+                                    FinishATest(true, Get_RTC.Data_Get_RTC);
+                                }
+                                else
+                                {
+                                    FinishATest(false, "Null");
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                FinishATest(false, "Error");
+                                StopTestingByFail = true;
+                                //LOG
+                                this.Invoke(new Action(() => {
+                                    _form1.WriteLogPC(LogType.Main, "Get_RTC", ex.Message);
+                                }));
+                            }
+                            break;
+                        }
+
+                    default: { break; }
+                }
             }
-        }
         public void Test_Check_Flash()
         {
             //Condition
@@ -1059,6 +1059,7 @@ namespace SLTtechSoft
             }
         }
         private DataKey datakeyRead;
+        private CheckLockInputAddstatus DataLockread;
         public void Test_Door_Position_Sensor_Check_Close()
         {
             //Condition
@@ -1092,6 +1093,7 @@ namespace SLTtechSoft
                         if (_form1.PLC.Read.Auto.Test.ReadyCheckDoorPositionSensor_Close)
                         {
                             datakeyRead = _form1.LockASSA.checkDataKey(CurrentDoorTestData.TimeOut);
+                            DataLockread = _form1.LockASSA.CheckInputADoor(CurrentDoorTestData.TimeOut);
                             if (datakeyRead == null)
                             {
                                 //Fail
@@ -1197,6 +1199,7 @@ namespace SLTtechSoft
                         if (_form1.PLC.Read.Auto.Test.ReadyCheckDoorPositionSensor_Auto_Lock)
                         {
                             readParameterDoor = _form1.LockASSA.CheckParameterDoor(CurrentDoorTestData.TimeOut);
+                            DataLockread = _form1.LockASSA.CheckInputADoor(CurrentDoorTestData.TimeOut);
                             if (readParameterDoor == null)
                             {
                                 //LOG
@@ -1289,6 +1292,7 @@ namespace SLTtechSoft
                         if (_form1.PLC.Read.Auto.Test.ReadyCheckDoorPositionSensor_Open)
                         {
                             datakeyRead = _form1.LockASSA.checkDataKey(CurrentDoorTestData.TimeOut);
+                            DataLockread = _form1.LockASSA.CheckInputADoor(CurrentDoorTestData.TimeOut);
                             if (datakeyRead == null)
                             {
                                 //Fail
@@ -1438,11 +1442,38 @@ namespace SLTtechSoft
             {
                 case 1:
                     {
-                        _form1.PLC.Write.Output.Broken = true;
-                        FinishATest(true, "True");
+                        _form1.PLC.Write.Auto.Test.Broken_Disconnect = true;
+                        ProcessTestIndex++;
                         break;
                     }
-                
+                case 2:
+                    {
+                        if (!_form1.PLC.Read.Auto.Test.Broken_Disconnect)
+                        {
+                            if (TestRetryTime++ < CurrentDoorTestData.retry)
+                            {
+                                ProcessTestIndex = 0;
+                            }
+                            else
+                            {
+                                    FinishATest(false, "False");
+                            }
+                        }
+                        else
+                        {
+                            ProcessTestIndex = 3;
+                        }
+                        break;
+                    }
+                case 3:
+                    {
+                        if (_form1.PLC.Read.Auto.Test.Broken_Disconnect)
+                        {
+                            FinishATest(true, "True");
+                        }
+                      
+                        break;
+                    }
                 default: { break; }
             }
         }
@@ -1494,7 +1525,7 @@ namespace SLTtechSoft
                     }
                 case 4:
                     {
-                        DelayProcess(10);
+                        DelayProcess(50);
                         if (DelayProcessDone)
                         {
                             StartDelayProcess = false;
@@ -1505,7 +1536,7 @@ namespace SLTtechSoft
                 case 5:
                     {
                         Alarm alarm = _form1.LockASSA.WarningOnOff(WarningType.Off, CurrentDoorTestData.TimeOut);
-                        _form1.PLC.Write.Output.Broken = false;
+                        
                         if (alarm.DataAlarm_GetTrue)
                         {
                             ProcessTestIndex++;
@@ -1540,7 +1571,7 @@ namespace SLTtechSoft
                                 FinishATest(false, _form1.formModel.FftAnalysis.PeakPower.ToString());
                             }
                         }
-
+                        _form1.PLC.Write.Auto.Test.Broken_Disconnect = false;
                         break;
                     }
                
@@ -1602,7 +1633,7 @@ namespace SLTtechSoft
                     {
                         _form1.formModel.FftAnalysis.Start();
                         StartDelayProcess = true;
-                        DelayProcessIndex++;
+                        ProcessTestIndex++;
                         break;
                     }
                 case 3:
@@ -1611,7 +1642,7 @@ namespace SLTtechSoft
                         if (DelayProcessDone)
                         {
                             StartDelayProcess = false;
-                            DelayProcessIndex++;
+                            ProcessTestIndex++;
                         }
                         break;
                     }
@@ -1676,6 +1707,7 @@ namespace SLTtechSoft
             {
                 case 1:
                     {
+                        if(_form1.LockASSA.LEDKeyOn(CurrentDoorTestData.TimeOut)==null) return;
                         _form1.PLC.Write.Auto.Test.StartCheckPress[CheckKeyPressIndex] = true;
                         ProcessTestIndex++;
                         break;
@@ -1685,6 +1717,7 @@ namespace SLTtechSoft
                         if (_form1.PLC.Read.Auto.Test.ReadyCheckPress[CheckKeyPressIndex])
                         {
                             datakeyRead = _form1.LockASSA.checkDataKey(CurrentDoorTestData.TimeOut);
+                            DataLockread = _form1.LockASSA.CheckInputADoor(CurrentDoorTestData.TimeOut);
                             if (datakeyRead == null)
                             {
                                 //Fail
