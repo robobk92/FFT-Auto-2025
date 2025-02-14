@@ -38,9 +38,13 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint5 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 5D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint6 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 10D);
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint7 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 5D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint8 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 5D);
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
@@ -63,6 +67,9 @@
             this.panel38 = new System.Windows.Forms.Panel();
             this.tlp_VisionNumPad = new System.Windows.Forms.TableLayoutPanel();
             this.panel34 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.TactTime = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -280,6 +287,9 @@
             // panel34
             // 
             this.panel34.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(223)))));
+            this.panel34.Controls.Add(this.panel7);
+            this.panel34.Controls.Add(this.panel5);
+            this.panel34.Controls.Add(this.panel3);
             this.panel34.Controls.Add(this.label11);
             this.panel34.Controls.Add(this.TactTime);
             this.panel34.Controls.Add(this.label4);
@@ -313,6 +323,24 @@
             this.panel34.Controls.Add(this.chart_Performance);
             resources.ApplyResources(this.panel34, "panel34");
             this.panel34.Name = "panel34";
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.panel7, "panel7");
+            this.panel7.Name = "panel7";
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.panel5, "panel5");
+            this.panel5.Name = "panel5";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.panel3, "panel3");
+            this.panel3.Name = "panel3";
             // 
             // label11
             // 
@@ -417,7 +445,7 @@
             // 
             // HandlingTime
             // 
-            this.HandlingTime.BackColor = System.Drawing.Color.Red;
+            this.HandlingTime.BackColor = System.Drawing.Color.HotPink;
             resources.ApplyResources(this.HandlingTime, "HandlingTime");
             this.HandlingTime.Name = "HandlingTime";
             // 
@@ -542,6 +570,11 @@
             series7.CustomProperties = "DrawSideBySide=True, LabelStyle=Top, DrawingStyle=Cylinder";
             series7.Legend = "Legend1";
             series7.Name = "Series1";
+            dataPoint5.Color = System.Drawing.Color.Lime;
+            dataPoint5.Label = "";
+            dataPoint6.Color = System.Drawing.Color.Red;
+            series7.Points.Add(dataPoint5);
+            series7.Points.Add(dataPoint6);
             this.chart_RateFirst.Series.Add(series7);
             // 
             // chart_Performance
@@ -570,6 +603,10 @@
             series8.CustomProperties = "DrawSideBySide=True, LabelStyle=Top, DrawingStyle=Cylinder";
             series8.Legend = "Legend1";
             series8.Name = "Series1";
+            dataPoint7.Color = System.Drawing.Color.Lime;
+            dataPoint8.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            series8.Points.Add(dataPoint7);
+            series8.Points.Add(dataPoint8);
             this.chart_Performance.Series.Add(series8);
             // 
             // pn_GRR
@@ -778,5 +815,8 @@
         public System.Windows.Forms.CheckBox cbSkipRetry;
         public System.Windows.Forms.CheckBox cbSkipTestFail;
         public System.Windows.Forms.Label TactTime;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel3;
     }
 }

@@ -33,6 +33,9 @@ namespace SLTtechSoft
             public string Sharp = "Sharp";
             public string Logo = "Logo";
             public string Card = "Card";
+            public string Lock = "Lock";
+            public string Finger = "Finger";
+            public string Battery = "Battery";
         }
         private NumPadName numPadName = new NumPadName();
         public TopControl()
@@ -62,6 +65,21 @@ namespace SLTtechSoft
             Sharp.Dock = DockStyle.Fill;
             VisionDisplay.Add(numPadName.Sharp, Sharp);
             tlp_VisionNumPad.Controls.Add(VisionDisplay[numPadName.Sharp]);
+
+            CogDisplayNumpad Lock = new CogDisplayNumpad();
+            Lock.Dock = DockStyle.Fill;
+            VisionDisplay.Add(numPadName.Lock, Lock);
+            tlp_VisionNumPad.Controls.Add(VisionDisplay[numPadName.Lock]);
+
+            CogDisplayNumpad Finger = new CogDisplayNumpad();
+            Finger.Dock = DockStyle.Fill;
+            VisionDisplay.Add(numPadName.Finger, Finger);
+            tlp_VisionNumPad.Controls.Add(VisionDisplay[numPadName.Finger]);
+
+            CogDisplayNumpad Battery = new CogDisplayNumpad();
+            Battery.Dock = DockStyle.Fill;
+            VisionDisplay.Add(numPadName.Battery, Battery);
+            tlp_VisionNumPad.Controls.Add(VisionDisplay[numPadName.Battery]);
 
             CogDisplayNumpad Logo = new CogDisplayNumpad();
             Logo.Dock = DockStyle.Fill;

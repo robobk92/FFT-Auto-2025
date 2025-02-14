@@ -129,6 +129,7 @@
             this.btnLoadSoPo.BackColor = System.Drawing.Color.Transparent;
             this.btnLoadSoPo.BackgroundImage = global::SLTtechSoft.Properties.Resources.HandPointFinger;
             resources.ApplyResources(this.btnLoadSoPo, "btnLoadSoPo");
+            this.btnLoadSoPo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLoadSoPo.ForeColor = System.Drawing.Color.White;
             this.btnLoadSoPo.Name = "btnLoadSoPo";
             this.btnLoadSoPo.UseVisualStyleBackColor = false;
@@ -138,6 +139,7 @@
             this.btnLoadWO.BackColor = System.Drawing.Color.Transparent;
             this.btnLoadWO.BackgroundImage = global::SLTtechSoft.Properties.Resources.HandPointFinger;
             resources.ApplyResources(this.btnLoadWO, "btnLoadWO");
+            this.btnLoadWO.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLoadWO.ForeColor = System.Drawing.Color.White;
             this.btnLoadWO.Name = "btnLoadWO";
             this.btnLoadWO.UseVisualStyleBackColor = false;
@@ -147,6 +149,7 @@
             this.btnLoadSKUCode.BackColor = System.Drawing.Color.Transparent;
             this.btnLoadSKUCode.BackgroundImage = global::SLTtechSoft.Properties.Resources.HandPointFinger;
             resources.ApplyResources(this.btnLoadSKUCode, "btnLoadSKUCode");
+            this.btnLoadSKUCode.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLoadSKUCode.ForeColor = System.Drawing.Color.White;
             this.btnLoadSKUCode.Name = "btnLoadSKUCode";
             this.btnLoadSKUCode.UseVisualStyleBackColor = false;

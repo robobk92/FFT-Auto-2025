@@ -65,8 +65,8 @@
             this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.lbUser = new System.Windows.Forms.Label();
             this.lbVersion = new System.Windows.Forms.Label();
+            this.lbUser = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.lbProcessStatus = new System.Windows.Forms.Label();
             this.lbOnlineStatus = new System.Windows.Forms.Label();
@@ -109,7 +109,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(1, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(315, 834);
+            this.panel1.Size = new System.Drawing.Size(266, 834);
             this.panel1.TabIndex = 0;
             // 
             // panel2
@@ -119,7 +119,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(315, 747);
+            this.panel2.Size = new System.Drawing.Size(266, 755);
             this.panel2.TabIndex = 3;
             // 
             // panel4
@@ -129,7 +129,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 40);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(315, 707);
+            this.panel4.Size = new System.Drawing.Size(266, 715);
             this.panel4.TabIndex = 1;
             // 
             // panel6
@@ -140,7 +140,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(0, 34);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(315, 673);
+            this.panel6.Size = new System.Drawing.Size(266, 681);
             this.panel6.TabIndex = 1;
             // 
             // panel9
@@ -148,9 +148,9 @@
             this.panel9.Controls.Add(this.panel10);
             this.panel9.Controls.Add(this.flowLayoutPanel1);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel9.Location = new System.Drawing.Point(0, 144);
+            this.panel9.Location = new System.Drawing.Point(0, 115);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(315, 529);
+            this.panel9.Size = new System.Drawing.Size(266, 566);
             this.panel9.TabIndex = 2;
             // 
             // panel10
@@ -160,16 +160,16 @@
             this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel10.Location = new System.Drawing.Point(0, 0);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(315, 487);
+            this.panel10.Size = new System.Drawing.Size(266, 524);
             this.panel10.TabIndex = 1;
             // 
             // panel12
             // 
             this.panel12.Controls.Add(this.CamDisplay);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel12.Location = new System.Drawing.Point(0, 193);
+            this.panel12.Location = new System.Drawing.Point(0, 190);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(315, 294);
+            this.panel12.Size = new System.Drawing.Size(266, 334);
             this.panel12.TabIndex = 8;
             // 
             // CamDisplay
@@ -180,7 +180,7 @@
             this.CamDisplay.Margin = new System.Windows.Forms.Padding(0);
             this.CamDisplay.Name = "CamDisplay";
             this.CamDisplay.Padding = new System.Windows.Forms.Padding(2);
-            this.CamDisplay.Size = new System.Drawing.Size(315, 294);
+            this.CamDisplay.Size = new System.Drawing.Size(266, 334);
             this.CamDisplay.TabIndex = 7;
             // 
             // panel11
@@ -189,7 +189,7 @@
             this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel11.Location = new System.Drawing.Point(0, 0);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(315, 193);
+            this.panel11.Size = new System.Drawing.Size(266, 190);
             this.panel11.TabIndex = 1;
             // 
             // tabControl1
@@ -203,7 +203,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(315, 193);
+            this.tabControl1.Size = new System.Drawing.Size(266, 190);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -212,7 +212,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(307, 167);
+            this.tabPage1.Size = new System.Drawing.Size(258, 164);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "DataLog";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -233,7 +233,7 @@
             this.ListViewDataLog.Location = new System.Drawing.Point(3, 3);
             this.ListViewDataLog.Margin = new System.Windows.Forms.Padding(2);
             this.ListViewDataLog.Name = "ListViewDataLog";
-            this.ListViewDataLog.Size = new System.Drawing.Size(301, 161);
+            this.ListViewDataLog.Size = new System.Drawing.Size(252, 158);
             this.ListViewDataLog.TabIndex = 1;
             this.ListViewDataLog.UseCompatibleStateImageBehavior = false;
             this.ListViewDataLog.View = System.Windows.Forms.View.Details;
@@ -259,7 +259,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(307, 167);
+            this.tabPage2.Size = new System.Drawing.Size(258, 164);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "MainLog";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -280,7 +280,7 @@
             this.listViewMainLog.Location = new System.Drawing.Point(3, 3);
             this.listViewMainLog.Margin = new System.Windows.Forms.Padding(2);
             this.listViewMainLog.Name = "listViewMainLog";
-            this.listViewMainLog.Size = new System.Drawing.Size(301, 161);
+            this.listViewMainLog.Size = new System.Drawing.Size(252, 158);
             this.listViewMainLog.TabIndex = 2;
             this.listViewMainLog.UseCompatibleStateImageBehavior = false;
             this.listViewMainLog.View = System.Windows.Forms.View.Details;
@@ -306,7 +306,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(307, 167);
+            this.tabPage3.Size = new System.Drawing.Size(258, 164);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "VisionLog";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -327,7 +327,7 @@
             this.listViewVisionLog.Location = new System.Drawing.Point(3, 3);
             this.listViewVisionLog.Margin = new System.Windows.Forms.Padding(2);
             this.listViewVisionLog.Name = "listViewVisionLog";
-            this.listViewVisionLog.Size = new System.Drawing.Size(301, 161);
+            this.listViewVisionLog.Size = new System.Drawing.Size(252, 158);
             this.listViewVisionLog.TabIndex = 3;
             this.listViewVisionLog.UseCompatibleStateImageBehavior = false;
             this.listViewVisionLog.View = System.Windows.Forms.View.Details;
@@ -353,7 +353,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(307, 167);
+            this.tabPage4.Size = new System.Drawing.Size(258, 164);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "KeySightLog";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -374,7 +374,7 @@
             this.listViewKeysightLog.Location = new System.Drawing.Point(3, 3);
             this.listViewKeysightLog.Margin = new System.Windows.Forms.Padding(2);
             this.listViewKeysightLog.Name = "listViewKeysightLog";
-            this.listViewKeysightLog.Size = new System.Drawing.Size(301, 161);
+            this.listViewKeysightLog.Size = new System.Drawing.Size(252, 158);
             this.listViewKeysightLog.TabIndex = 4;
             this.listViewKeysightLog.UseCompatibleStateImageBehavior = false;
             this.listViewKeysightLog.View = System.Windows.Forms.View.Details;
@@ -399,7 +399,7 @@
             this.tabPage5.Controls.Add(this.listViewMesLog);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(307, 167);
+            this.tabPage5.Size = new System.Drawing.Size(258, 164);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "MesLog";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -420,7 +420,7 @@
             this.listViewMesLog.Location = new System.Drawing.Point(0, 0);
             this.listViewMesLog.Margin = new System.Windows.Forms.Padding(2);
             this.listViewMesLog.Name = "listViewMesLog";
-            this.listViewMesLog.Size = new System.Drawing.Size(307, 167);
+            this.listViewMesLog.Size = new System.Drawing.Size(258, 164);
             this.listViewMesLog.TabIndex = 5;
             this.listViewMesLog.UseCompatibleStateImageBehavior = false;
             this.listViewMesLog.View = System.Windows.Forms.View.Details;
@@ -442,59 +442,57 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.lbUser);
             this.flowLayoutPanel1.Controls.Add(this.lbVersion);
+            this.flowLayoutPanel1.Controls.Add(this.lbUser);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 487);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 524);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(315, 42);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(266, 42);
             this.flowLayoutPanel1.TabIndex = 0;
-            // 
-            // lbUser
-            // 
-            this.lbUser.BackColor = System.Drawing.Color.Transparent;
-            this.lbUser.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lbUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUser.ForeColor = System.Drawing.Color.Black;
-            this.lbUser.Location = new System.Drawing.Point(3, 0);
-            this.lbUser.Name = "lbUser";
-            this.lbUser.Size = new System.Drawing.Size(307, 21);
-            this.lbUser.TabIndex = 9;
-            this.lbUser.Text = "User:";
-            this.lbUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbVersion
             // 
             this.lbVersion.BackColor = System.Drawing.Color.Transparent;
-            this.lbVersion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lbVersion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbVersion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbVersion.ForeColor = System.Drawing.Color.Black;
-            this.lbVersion.Location = new System.Drawing.Point(3, 21);
+            this.lbVersion.Location = new System.Drawing.Point(3, 0);
             this.lbVersion.Name = "lbVersion";
-            this.lbVersion.Size = new System.Drawing.Size(307, 20);
+            this.lbVersion.Size = new System.Drawing.Size(263, 20);
             this.lbVersion.TabIndex = 8;
             this.lbVersion.Text = "V5.12.07";
             this.lbVersion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbUser
+            // 
+            this.lbUser.BackColor = System.Drawing.Color.Transparent;
+            this.lbUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUser.ForeColor = System.Drawing.Color.Black;
+            this.lbUser.Location = new System.Drawing.Point(3, 20);
+            this.lbUser.Name = "lbUser";
+            this.lbUser.Size = new System.Drawing.Size(258, 21);
+            this.lbUser.TabIndex = 9;
+            this.lbUser.Text = "User:";
+            this.lbUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel8
             // 
             this.panel8.Controls.Add(this.lbProcessStatus);
             this.panel8.Controls.Add(this.lbOnlineStatus);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel8.Location = new System.Drawing.Point(0, 75);
+            this.panel8.Location = new System.Drawing.Point(0, 52);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(315, 69);
+            this.panel8.Size = new System.Drawing.Size(266, 63);
             this.panel8.TabIndex = 1;
             // 
             // lbProcessStatus
             // 
             this.lbProcessStatus.BackColor = System.Drawing.Color.Transparent;
             this.lbProcessStatus.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lbProcessStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbProcessStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbProcessStatus.ForeColor = System.Drawing.Color.Black;
             this.lbProcessStatus.Location = new System.Drawing.Point(0, 31);
             this.lbProcessStatus.Name = "lbProcessStatus";
-            this.lbProcessStatus.Size = new System.Drawing.Size(315, 31);
+            this.lbProcessStatus.Size = new System.Drawing.Size(266, 24);
             this.lbProcessStatus.TabIndex = 7;
             this.lbProcessStatus.Text = "Waitting";
             this.lbProcessStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -507,7 +505,7 @@
             this.lbOnlineStatus.ForeColor = System.Drawing.Color.Green;
             this.lbOnlineStatus.Location = new System.Drawing.Point(0, 0);
             this.lbOnlineStatus.Name = "lbOnlineStatus";
-            this.lbOnlineStatus.Size = new System.Drawing.Size(315, 31);
+            this.lbOnlineStatus.Size = new System.Drawing.Size(266, 31);
             this.lbOnlineStatus.TabIndex = 6;
             this.lbOnlineStatus.Text = "OffLine";
             this.lbOnlineStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -518,7 +516,7 @@
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(315, 75);
+            this.panel7.Size = new System.Drawing.Size(266, 52);
             this.panel7.TabIndex = 0;
             // 
             // lblStatus
@@ -529,7 +527,7 @@
             this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatus.Location = new System.Drawing.Point(0, 0);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(315, 75);
+            this.lblStatus.Size = new System.Drawing.Size(266, 52);
             this.lblStatus.TabIndex = 5;
             this.lblStatus.Text = "Waiting";
             this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -540,7 +538,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(315, 34);
+            this.panel5.Size = new System.Drawing.Size(266, 34);
             this.panel5.TabIndex = 0;
             // 
             // label1
@@ -551,7 +549,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(315, 34);
+            this.label1.Size = new System.Drawing.Size(266, 34);
             this.label1.TabIndex = 4;
             this.label1.Text = "RESULT";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -563,7 +561,7 @@
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.panel3.Size = new System.Drawing.Size(315, 40);
+            this.panel3.Size = new System.Drawing.Size(266, 40);
             this.panel3.TabIndex = 0;
             // 
             // lblLogo
@@ -574,7 +572,7 @@
             this.lblLogo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogo.Location = new System.Drawing.Point(0, 0);
             this.lblLogo.Name = "lblLogo";
-            this.lblLogo.Size = new System.Drawing.Size(315, 35);
+            this.lblLogo.Size = new System.Drawing.Size(266, 35);
             this.lblLogo.TabIndex = 1;
             this.lblLogo.Text = "ASSA ABLOY";
             this.lblLogo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -584,17 +582,18 @@
             this.panel19.Controls.Add(this.btnRun);
             this.panel19.Controls.Add(this.btnStop);
             this.panel19.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel19.Location = new System.Drawing.Point(0, 747);
+            this.panel19.Location = new System.Drawing.Point(0, 755);
             this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(315, 87);
+            this.panel19.Size = new System.Drawing.Size(266, 79);
             this.panel19.TabIndex = 2;
             // 
             // btnRun
             // 
             this.btnRun.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.btnRun.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRun.Font = new System.Drawing.Font("Verdana", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnRun.Image = ((System.Drawing.Image)(resources.GetObject("btnRun.Image")));
-            this.btnRun.Location = new System.Drawing.Point(16, 8);
+            this.btnRun.Location = new System.Drawing.Point(3, 5);
             this.btnRun.Name = "btnRun";
             this.btnRun.Size = new System.Drawing.Size(126, 69);
             this.btnRun.TabIndex = 137;
@@ -605,9 +604,10 @@
             // btnStop
             // 
             this.btnStop.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.btnStop.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStop.Font = new System.Drawing.Font("Verdana", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnStop.Image = ((System.Drawing.Image)(resources.GetObject("btnStop.Image")));
-            this.btnStop.Location = new System.Drawing.Point(168, 8);
+            this.btnStop.Location = new System.Drawing.Point(135, 5);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(126, 69);
             this.btnStop.TabIndex = 138;
@@ -623,7 +623,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "LeftTabControl";
             this.Padding = new System.Windows.Forms.Padding(1);
-            this.Size = new System.Drawing.Size(317, 836);
+            this.Size = new System.Drawing.Size(268, 836);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);

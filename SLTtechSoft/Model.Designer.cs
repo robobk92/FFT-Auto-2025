@@ -782,6 +782,7 @@
             this.btnFftClear.BorderColor = System.Drawing.Color.Black;
             this.btnFftClear.BorderRadius = 15;
             this.btnFftClear.BorderSize = 1;
+            this.btnFftClear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFftClear.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.btnFftClear, "btnFftClear");
             this.btnFftClear.ForeColor = System.Drawing.Color.Black;
@@ -797,6 +798,7 @@
             this.btnFftStop.BorderColor = System.Drawing.Color.Black;
             this.btnFftStop.BorderRadius = 15;
             this.btnFftStop.BorderSize = 1;
+            this.btnFftStop.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFftStop.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.btnFftStop, "btnFftStop");
             this.btnFftStop.ForeColor = System.Drawing.Color.Black;
@@ -812,6 +814,7 @@
             this.btnFftStart.BorderColor = System.Drawing.Color.Black;
             this.btnFftStart.BorderRadius = 15;
             this.btnFftStart.BorderSize = 1;
+            this.btnFftStart.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFftStart.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.btnFftStart, "btnFftStart");
             this.btnFftStart.ForeColor = System.Drawing.Color.Black;

@@ -145,9 +145,9 @@
             this.panel6.Controls.Add(this.panel11);
             this.panel6.Controls.Add(this.panelTopControl);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(299, 0);
+            this.panel6.Location = new System.Drawing.Point(268, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1285, 836);
+            this.panel6.Size = new System.Drawing.Size(1316, 836);
             this.panel6.TabIndex = 3;
             // 
             // panel11
@@ -155,20 +155,20 @@
             this.panel11.Controls.Add(this.panel8);
             this.panel11.Controls.Add(this.flowLayoutPanel1);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel11.Location = new System.Drawing.Point(0, 226);
+            this.panel11.Location = new System.Drawing.Point(0, 205);
             this.panel11.Name = "panel11";
             this.panel11.Padding = new System.Windows.Forms.Padding(3);
-            this.panel11.Size = new System.Drawing.Size(1285, 610);
+            this.panel11.Size = new System.Drawing.Size(1316, 631);
             this.panel11.TabIndex = 1;
             // 
             // panel8
             // 
             this.panel8.Controls.Add(this.panelMother);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(3, 37);
+            this.panel8.Location = new System.Drawing.Point(3, 34);
             this.panel8.Name = "panel8";
             this.panel8.Padding = new System.Windows.Forms.Padding(3);
-            this.panel8.Size = new System.Drawing.Size(1279, 570);
+            this.panel8.Size = new System.Drawing.Size(1310, 594);
             this.panel8.TabIndex = 1;
             // 
             // panelMother
@@ -179,7 +179,7 @@
             this.panelMother.Location = new System.Drawing.Point(3, 3);
             this.panelMother.Margin = new System.Windows.Forms.Padding(2);
             this.panelMother.Name = "panelMother";
-            this.panelMother.Size = new System.Drawing.Size(1273, 564);
+            this.panelMother.Size = new System.Drawing.Size(1304, 588);
             this.panelMother.TabIndex = 1;
             // 
             // flowLayoutPanel1
@@ -193,20 +193,21 @@
             this.flowLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1279, 34);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1310, 31);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // btnMain
             // 
             this.btnMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnMain.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMain.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMain.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMain.ForeColor = System.Drawing.Color.White;
             this.btnMain.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMain.Location = new System.Drawing.Point(1, 1);
             this.btnMain.Margin = new System.Windows.Forms.Padding(1);
             this.btnMain.Name = "btnMain";
-            this.btnMain.Size = new System.Drawing.Size(133, 31);
+            this.btnMain.Size = new System.Drawing.Size(133, 25);
             this.btnMain.TabIndex = 0;
             this.btnMain.Text = "MAIN";
             this.btnMain.UseVisualStyleBackColor = false;
@@ -215,14 +216,15 @@
             // btnModel
             // 
             this.btnModel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(55)))));
+            this.btnModel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnModel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModel.ForeColor = System.Drawing.Color.White;
             this.btnModel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnModel.Location = new System.Drawing.Point(136, 1);
             this.btnModel.Margin = new System.Windows.Forms.Padding(1);
             this.btnModel.Name = "btnModel";
-            this.btnModel.Size = new System.Drawing.Size(133, 31);
+            this.btnModel.Size = new System.Drawing.Size(133, 25);
             this.btnModel.TabIndex = 1;
             this.btnModel.Text = "MODEL";
             this.btnModel.UseVisualStyleBackColor = false;
@@ -231,14 +233,15 @@
             // btnIO
             // 
             this.btnIO.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(55)))));
+            this.btnIO.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIO.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIO.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIO.ForeColor = System.Drawing.Color.White;
             this.btnIO.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnIO.Location = new System.Drawing.Point(271, 1);
             this.btnIO.Margin = new System.Windows.Forms.Padding(1);
             this.btnIO.Name = "btnIO";
-            this.btnIO.Size = new System.Drawing.Size(169, 31);
+            this.btnIO.Size = new System.Drawing.Size(169, 25);
             this.btnIO.TabIndex = 2;
             this.btnIO.Text = "Manual Send Cmd";
             this.btnIO.UseVisualStyleBackColor = false;
@@ -247,14 +250,15 @@
             // btnOption
             // 
             this.btnOption.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(55)))));
+            this.btnOption.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnOption.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOption.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOption.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOption.ForeColor = System.Drawing.Color.White;
             this.btnOption.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnOption.Location = new System.Drawing.Point(442, 1);
             this.btnOption.Margin = new System.Windows.Forms.Padding(1);
             this.btnOption.Name = "btnOption";
-            this.btnOption.Size = new System.Drawing.Size(133, 31);
+            this.btnOption.Size = new System.Drawing.Size(133, 25);
             this.btnOption.TabIndex = 3;
             this.btnOption.Text = "OPTION";
             this.btnOption.UseVisualStyleBackColor = false;
@@ -266,7 +270,7 @@
             this.panelTopControl.Location = new System.Drawing.Point(0, 0);
             this.panelTopControl.Name = "panelTopControl";
             this.panelTopControl.Padding = new System.Windows.Forms.Padding(3);
-            this.panelTopControl.Size = new System.Drawing.Size(1285, 226);
+            this.panelTopControl.Size = new System.Drawing.Size(1316, 205);
             this.panelTopControl.TabIndex = 0;
             // 
             // panel5
@@ -275,7 +279,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(299, 836);
+            this.panel5.Size = new System.Drawing.Size(268, 836);
             this.panel5.TabIndex = 2;
             // 
             // panelLeftControl
@@ -285,7 +289,7 @@
             this.panelLeftControl.Location = new System.Drawing.Point(0, 0);
             this.panelLeftControl.Name = "panelLeftControl";
             this.panelLeftControl.Padding = new System.Windows.Forms.Padding(3);
-            this.panelLeftControl.Size = new System.Drawing.Size(299, 836);
+            this.panelLeftControl.Size = new System.Drawing.Size(268, 836);
             this.panelLeftControl.TabIndex = 2;
             // 
             // panel7
