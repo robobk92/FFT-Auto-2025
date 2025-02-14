@@ -143,6 +143,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Simulation = new SLTtechSoft.ToggleSwitch();
             ((System.ComponentModel.ISupportInitialize)(this.nudRStartSpeed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudRStartAddress)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudROprSpeed)).BeginInit();
@@ -1229,6 +1230,7 @@
             // 
             // groupBox29
             // 
+            this.groupBox29.Controls.Add(this.Simulation);
             this.groupBox29.Controls.Add(this.groupBox30);
             this.groupBox29.Controls.Add(this.btnJogMode);
             this.groupBox29.Controls.Add(this.Stop);
@@ -1265,7 +1267,7 @@
             this.btnJogMode.Location = new System.Drawing.Point(38, 82);
             this.btnJogMode.Name = "btnJogMode";
             this.btnJogMode.ReadSameRelay = true;
-            this.btnJogMode.Size = new System.Drawing.Size(247, 32);
+            this.btnJogMode.Size = new System.Drawing.Size(165, 32);
             this.btnJogMode.State = false;
             this.btnJogMode.TabIndex = 83;
             this.btnJogMode.Text = "STEP MODE";
@@ -1667,6 +1669,21 @@
             this.panel1.Size = new System.Drawing.Size(704, 473);
             this.panel1.TabIndex = 156;
             // 
+            // Simulation
+            // 
+            this.Simulation.BackColor = System.Drawing.Color.Transparent;
+            this.Simulation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.Simulation.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Simulation.Location = new System.Drawing.Point(215, 82);
+            this.Simulation.Name = "Simulation";
+            this.Simulation.ReadSameRelay = true;
+            this.Simulation.Size = new System.Drawing.Size(98, 32);
+            this.Simulation.State = false;
+            this.Simulation.TabIndex = 84;
+            this.Simulation.Text = "Simulation";
+            this.Simulation.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Toggle;
+            this.Simulation.UseVisualStyleBackColor = false;
+            // 
             // PLCControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1840,5 +1857,6 @@
         private ToggleSwitch btnGotoPos6;
         private ToggleSwitch btnGotoPos2;
         public System.Windows.Forms.Timer Timer1;
+        private ToggleSwitch Simulation;
     }
 }

@@ -637,10 +637,10 @@ namespace SLTtechSoft
                 PLC.Read.Input.CheckSpringClose = dataReadPLC_bools1[10];
 
                 PLC.Read.Output.PulseAxis1 = dataReadPLC_bools5[0];
-                //PLC.Read.Output.CylinderDoorClose = dataReadPLC_bools5[2];
-                //PLC.Read.Output.CylinderToolsDown = dataReadPLC_bools5[3];
-                //PLC.Read.Output.CylinderPushLock = dataReadPLC_bools5[4];
-                //PLC.Read.Output.CylinderCheckSpring = dataReadPLC_bools5[5];
+                PLC.Read.Output.Reverse9V = dataReadPLC_bools5[2];
+                PLC.Read.Output.Change9Vor6V = dataReadPLC_bools5[3];
+                PLC.Read.Output.Supply6VToBattery = dataReadPLC_bools5[4];
+                PLC.Read.Output.Supply9VToFront = dataReadPLC_bools5[5];
                 PLC.Read.Output.DirAxis1 = dataReadPLC_bools5[6];
                 PLC.Read.Output.Broken = dataReadPLC_bools5[7];
                 PLC.Read.Output.TL_Green = dataReadPLC_bools5[8];
@@ -648,7 +648,7 @@ namespace SLTtechSoft
                 PLC.Read.Output.TL_Yellow = dataReadPLC_bools5[10];
                 PLC.Read.Output.TL_Buzzer = dataReadPLC_bools5[11];
                 //PLC.Read.Output.CylinderPush2 = dataReadPLC_bools5[12];
-                PLC.Read.Output.CylinderDownSpring = dataReadPLC_bools5[13];
+                PLC.Read.Output.CylinderDownSpring = dataReadPLC_bools5[12];
 
                 PLC.Read.Output.CylinderKeyAsterisk = dataReadPLC_bools6[0];
                 PLC.Read.Output.CylinderKeySharp = dataReadPLC_bools6[1];
@@ -786,8 +786,8 @@ namespace SLTtechSoft
                 PLC.Write.Output.TL_Red,
                 PLC.Write.Output.TL_Yellow,
                 PLC.Write.Output.TL_Buzzer,
-                false,
                 PLC.Write.Output.CylinderDownSpring,
+                false,
                 false,
                 false
                 );
@@ -839,7 +839,7 @@ namespace SLTtechSoft
                 PLC.Write.Auto.TestFinish,
                 PLC.Write.Auto.MotionReady,
                 PLC.Write.Auto.Step_Mode,
-                false,
+                PLC.Write.Auto.PC_Simulation_Mode,
                 false,
                 false,
                 false,

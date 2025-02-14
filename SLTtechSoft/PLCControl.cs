@@ -222,6 +222,23 @@ namespace SLTtechSoft
             ManualControlPLC.Check2.BackColor = _form1.PLC.Read.Input.Check2 ? On : Off;
             ManualControlPLC.Check3.BackColor = _form1.PLC.Read.Input.Check3 ? On : Off;
             ManualControlPLC.SafetySensor.BackColor = _form1.PLC.Read.Input.SafetySensor ? On : Off;
+            ManualControlPLC.CylDownSpring.BackColor = _form1.PLC.Read.Output.CylinderDownSpring ? On : Off;
+            ManualControlPLC.CylinderCheckSpring.BackColor = _form1.PLC.Read.Output.CylinderCheckSpring ? On : Off;
+            ManualControlPLC.CylinderDoorClose.BackColor = _form1.PLC.Read.Output.CylinderDoorClose? On : Off;
+            ManualControlPLC.CylinderToolsDown.BackColor = _form1.PLC.Read.Output.CylinderToolsDown ? On : Off;
+            ManualControlPLC.CylinderTransTools.BackColor = _form1.PLC.Read.Output.CylinderTransTools? On : Off;
+            ManualControlPLC.CylinderPush1.BackColor = _form1.PLC.Read.Output.CylinderPush1 ? On : Off;
+            ManualControlPLC.CylinderPushLock.BackColor = _form1.PLC.Read.Output.CylinderPushLock? On : Off;
+            ManualControlPLC.CylinderPush2.BackColor = _form1.PLC.Read.Output.CylinderPush2 ? On : Off;
+            ManualControlPLC.CylinderTools3.BackColor = _form1.PLC.Read.Output.CylinderTools3 ? On : Off;
+            ManualControlPLC.CylinderTools4.BackColor  = _form1.PLC.Read.Output.CylinderTools4 ? On : Off;
+            ManualControlPLC.CylinderTools2.BackColor = _form1.PLC.Read.Output.CylinderTools2 ? On : Off;
+            ManualControlPLC.CylinderTools1.BackColor = _form1.PLC.Read.Output.CylinderTools1 ? On : Off;
+            ManualControlPLC.Reverse9V.BackColor = _form1.PLC.Read.Output.Reverse9V ? On : Off;
+            ManualControlPLC.Change9Vor6V.BackColor = _form1.PLC.Read.Output.Change9Vor6V ? On : Off;
+            ManualControlPLC.Supply6VToBattery.BackColor = _form1.PLC.Read.Output.Supply6VToBattery ? On : Off;
+            ManualControlPLC.Supply9VToFront.BackColor = _form1.PLC.Read.Output.Supply9VToFront ? On : Off;
+            ManualControlPLC.Broken.BackColor = _form1.PLC.Read.Output.Broken ? On : Off;
 
             //Auto
             _form1.PLC.Write.Auto.Auto = ManualControlPLC.AutoCmd.State;
@@ -234,6 +251,7 @@ namespace SLTtechSoft
             _form1.PLC.Write.Auto.HomeX = btnHomeX.State;
             _form1.PLC.Write.Auto.HomeAll = btnHomeAll.State;
             _form1.PLC.Write.Auto.Step_Mode = btnJogMode.State;
+            _form1.PLC.Write.Auto.PC_Simulation_Mode =  Simulation.State;
             _form1.PLC.Write.Auto.MovePosX1 = btnGotoPos1.State;
             _form1.PLC.Write.Auto.MovePosX2 = btnGotoPos2.State;
             _form1.PLC.Write.Auto.MovePosX3 = btnGotoPos3.State;
@@ -263,13 +281,12 @@ namespace SLTtechSoft
             _form1.PLC.Write.Output.CylinderToolsDown = ManualControlPLC.CylinderToolsDown.State;
             _form1.PLC.Write.Output.CylinderPushLock = ManualControlPLC.CylinderPushLock.State;
             _form1.PLC.Write.Output.CylinderCheckSpring = ManualControlPLC.CylinderCheckSpring.State;
-
+            _form1.PLC.Write.Output.CylinderDownSpring = ManualControlPLC.CylDownSpring.State;
             _form1.PLC.Write.Output.CylinderTools1 = ManualControlPLC.CylinderTools1.State;
             _form1.PLC.Write.Output.CylinderTools2 = ManualControlPLC.CylinderTools2.State;
             _form1.PLC.Write.Output.CylinderTransTools = ManualControlPLC.CylinderTransTools.State;
             _form1.PLC.Write.Output.CylinderPush1 = ManualControlPLC.CylinderPush1.State;
             _form1.PLC.Write.Output.CylinderPush2 = ManualControlPLC.CylinderPush2.State;
-            _form1.PLC.Write.Output.CylinderDownSpring = ManualControlPLC.CylDownSpring.State;
             _form1.PLC.Write.Output.CylinderTools3 = ManualControlPLC.CylinderTools3.State;
             _form1.PLC.Write.Output.CylinderTools4 = ManualControlPLC.CylinderTools4.State;
 
@@ -286,6 +303,7 @@ namespace SLTtechSoft
             _form1.PLC.Write.Output.CylinderKey7 = ManualControlPLC.CylinderKey7.State;
             _form1.PLC.Write.Output.CylinderKey8 = ManualControlPLC.CylinderKey8.State;
             _form1.PLC.Write.Output.CylinderKey9 = ManualControlPLC.CylinderKey9.State;
+            _form1.PLC.Write.Output.Reverse9V = ManualControlPLC.Reverse9V.State;
             _form1.PLC.Write.Output.Supply6VToBattery = ManualControlPLC.Supply6VToBattery.State;
             _form1.PLC.Write.Output.Supply9VToFront = ManualControlPLC.Supply9VToFront.State;
             _form1.PLC.Write.Output.Change9Vor6V = ManualControlPLC.Change9Vor6V.State;
@@ -297,7 +315,6 @@ namespace SLTtechSoft
             lbTowerLightRed.BackColor = _form1.PLC.Read.Output.TL_Red ? On : Off;
             lbTowerLightOrange.BackColor = _form1.PLC.Read.Output.TL_Yellow ? On : Off;
             lbTowerLightOrange .BackColor = _form1.PLC.Read.Output.TL_Buzzer ? On : Off;
-
         }
 
         private void toggleSwitch3_Click(object sender, EventArgs e)
