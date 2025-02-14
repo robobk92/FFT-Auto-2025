@@ -239,7 +239,7 @@ namespace SLTtechSoft
             ManualControlPLC.Supply6VToBattery.BackColor = _form1.PLC.Read.Output.Supply6VToBattery ? On : Off;
             ManualControlPLC.Supply9VToFront.BackColor = _form1.PLC.Read.Output.Supply9VToFront ? On : Off;
             ManualControlPLC.Broken.BackColor = _form1.PLC.Read.Output.Broken ? On : Off;
-
+            ManualControlPLC.AutoCmd.BackColor = _form1.PLC.Read.Auto.Auto ? On : Off;
             //Auto
             _form1.PLC.Write.Auto.Auto = ManualControlPLC.AutoCmd.State;
             _form1.PLC.Write.Auto.Stop = Stop.State;
