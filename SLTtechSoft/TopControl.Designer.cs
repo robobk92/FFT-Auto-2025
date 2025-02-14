@@ -108,6 +108,9 @@
             this.cbSkipRetry = new System.Windows.Forms.CheckBox();
             this.cbSkipTestFail = new System.Windows.Forms.CheckBox();
             this.lb_GRR = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel16.SuspendLayout();
@@ -280,6 +283,9 @@
             // panel34
             // 
             this.panel34.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(223)))));
+            this.panel34.Controls.Add(this.panel7);
+            this.panel34.Controls.Add(this.panel5);
+            this.panel34.Controls.Add(this.panel3);
             this.panel34.Controls.Add(this.label11);
             this.panel34.Controls.Add(this.TactTime);
             this.panel34.Controls.Add(this.label4);
@@ -678,6 +684,24 @@
             resources.ApplyResources(this.lb_GRR, "lb_GRR");
             this.lb_GRR.Name = "lb_GRR";
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.panel3, "panel3");
+            this.panel3.Name = "panel3";
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.panel5, "panel5");
+            this.panel5.Name = "panel5";
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.panel7, "panel7");
+            this.panel7.Name = "panel7";
+            // 
             // TopControl
             // 
             resources.ApplyResources(this, "$this");
@@ -778,5 +802,8 @@
         public System.Windows.Forms.CheckBox cbSkipRetry;
         public System.Windows.Forms.CheckBox cbSkipTestFail;
         public System.Windows.Forms.Label TactTime;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel3;
     }
 }

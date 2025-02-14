@@ -58,7 +58,7 @@
             this.Table.Name = "Table";
             this.Table.RowHeadersWidth = 25;
             this.Table.RowTemplate.Height = 31;
-            this.Table.Size = new System.Drawing.Size(387, 165);
+            this.Table.Size = new System.Drawing.Size(220, 135);
             this.Table.TabIndex = 95;
             this.Table.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Table_CellDoubleClick);
             this.Table.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.Table_RowsAdded);
@@ -85,7 +85,7 @@
             // 
             // Call
             // 
-            this.Call.Location = new System.Drawing.Point(194, 7);
+            this.Call.Location = new System.Drawing.Point(70, 34);
             this.Call.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Call.Name = "Call";
             this.Call.Size = new System.Drawing.Size(56, 41);
@@ -96,7 +96,7 @@
             // 
             // Delete
             // 
-            this.Delete.Location = new System.Drawing.Point(256, 7);
+            this.Delete.Location = new System.Drawing.Point(132, 34);
             this.Delete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Delete.Name = "Delete";
             this.Delete.Size = new System.Drawing.Size(56, 41);
@@ -106,7 +106,7 @@
             // 
             // Save
             // 
-            this.Save.Location = new System.Drawing.Point(132, 7);
+            this.Save.Location = new System.Drawing.Point(8, 34);
             this.Save.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Save.Name = "Save";
             this.Save.Size = new System.Drawing.Size(56, 41);
@@ -122,17 +122,17 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(387, 218);
+            this.panel2.Size = new System.Drawing.Size(220, 218);
             this.panel2.TabIndex = 97;
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.Table);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 53);
+            this.panel4.Location = new System.Drawing.Point(0, 83);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(387, 165);
+            this.panel4.Size = new System.Drawing.Size(220, 135);
             this.panel4.TabIndex = 1;
             // 
             // panel3
@@ -146,7 +146,7 @@
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(387, 53);
+            this.panel3.Size = new System.Drawing.Size(220, 83);
             this.panel3.TabIndex = 0;
             // 
             // label12
@@ -179,7 +179,7 @@
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Segoe UI", 8.142858F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "ModelTable";
-            this.Size = new System.Drawing.Size(387, 218);
+            this.Size = new System.Drawing.Size(220, 218);
             ((System.ComponentModel.ISupportInitialize)(this.Table)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);

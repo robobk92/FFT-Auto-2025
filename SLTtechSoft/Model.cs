@@ -1199,7 +1199,7 @@ namespace SLTtechSoft
             SaveCogToolBlock1();
         }
 
-        private bool HideShowPanelFFTAnalize;
+        private bool HideShowPanelFFTAnalize = true;
         private void btnExtendFFTAnalize_Click(object sender, EventArgs e)
         {
             HideShowPanelFFTAnalize = !HideShowPanelFFTAnalize;

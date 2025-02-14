@@ -160,8 +160,8 @@ namespace SLTtechSoft
             public int TimeVision;
             public bool FinishTrigger;
             public bool TriggerOne = false;
-            public bool[] LedResult = new bool[13];
-            public string[] LedValue = new string[13];
+            public bool[] LedResult = new bool[17];
+            public string[] LedValue = new string[17];
         }
 
 
@@ -228,8 +228,8 @@ namespace SLTtechSoft
             {
                 IsTestNoPLC = true;
                 IsTestNoCam = new bool[] { true, true, true };
-                IsTestNoScanner = false;
-                IstestNoLock = false;
+                IsTestNoScanner = true;
+                IstestNoLock = true;
                 IsTestNoMes = true;
             }
             if (result == DialogResult.Cancel)
@@ -1527,6 +1527,9 @@ namespace SLTtechSoft
                     CogToolBlock CogToolBlock_No9 = _VisionSystem[cam].cogToolBlock[0].Tools["CogToolBlock_No9"] as CogToolBlock;
                     CogToolBlock CogToolBlock_Asterisk = _VisionSystem[cam].cogToolBlock[0].Tools["CogToolBlock_Asterisk"] as CogToolBlock;
                     CogToolBlock CogToolBlock_Sharp = _VisionSystem[cam].cogToolBlock[0].Tools["CogToolBlock_Sharp"] as CogToolBlock;
+                    CogToolBlock CogToolBlock_Lock = _VisionSystem[cam].cogToolBlock[0].Tools["CogToolBlock_Lock"] as CogToolBlock;
+                    CogToolBlock CogToolBlock_Finger = _VisionSystem[cam].cogToolBlock[0].Tools["CogToolBlock_Finger"] as CogToolBlock;
+                    CogToolBlock CogToolBlock_Battery = _VisionSystem[cam].cogToolBlock[0].Tools["CogToolBlock_Battery"] as CogToolBlock;
 
                     _VisionSystem[cam].LedValue[0] = Convert.ToString((double)CogToolBlock_No0.Outputs["HistoValue"].Value);
                     _VisionSystem[cam].LedValue[1] = Convert.ToString((double)CogToolBlock_No1.Outputs["HistoValue"].Value);
@@ -1541,6 +1544,11 @@ namespace SLTtechSoft
                     _VisionSystem[cam].LedValue[10] = Convert.ToString((double)CogToolBlock_Asterisk.Outputs["HistoValue"].Value);
                     _VisionSystem[cam].LedValue[11] = Convert.ToString((double)CogToolBlock_Sharp.Outputs["HistoValue"].Value);
                     _VisionSystem[cam].LedValue[12] = Convert.ToString((double)CogToolBlock_Logo.Outputs["HistoValue"].Value);
+                    _VisionSystem[cam].LedValue[13] = Convert.ToString((double)CogToolBlock_Card.Outputs["HistoValue"].Value);
+                    _VisionSystem[cam].LedValue[14] = Convert.ToString((double)CogToolBlock_Lock.Outputs["HistoValue"].Value);
+                    _VisionSystem[cam].LedValue[15] = Convert.ToString((double)CogToolBlock_Finger.Outputs["HistoValue"].Value);
+                    _VisionSystem[cam].LedValue[16] = Convert.ToString((double)CogToolBlock_Battery.Outputs["HistoValue"].Value);
+
 
                     _VisionSystem[cam].LedResult[0] = (bool)CogToolBlock_No0.Outputs["ResultAll"].Value;
                     _VisionSystem[cam].LedResult[1] = (bool)CogToolBlock_No1.Outputs["ResultAll"].Value;
@@ -1555,6 +1563,10 @@ namespace SLTtechSoft
                     _VisionSystem[cam].LedResult[10] = (bool)CogToolBlock_Asterisk.Outputs["ResultAll"].Value;
                     _VisionSystem[cam].LedResult[11] = (bool)CogToolBlock_Sharp.Outputs["ResultAll"].Value;
                     _VisionSystem[cam].LedResult[12] = (bool)CogToolBlock_Logo.Outputs["ResultLogo"].Value;
+                    _VisionSystem[cam].LedResult[13] = (bool)CogToolBlock_Card.Outputs["ResultLogo"].Value;
+                    _VisionSystem[cam].LedResult[14] = (bool)CogToolBlock_Lock.Outputs["ResultLogo"].Value;
+                    _VisionSystem[cam].LedResult[15] = (bool)CogToolBlock_Finger.Outputs["ResultLogo"].Value;
+                    _VisionSystem[cam].LedResult[16] = (bool)CogToolBlock_Battery.Outputs["ResultLogo"].Value;
 
                     bool ResultCard = (bool)CogToolBlock_Card.Outputs["ResultLogo"].Value;
 
@@ -1574,7 +1586,9 @@ namespace SLTtechSoft
                     ICogRecord cogRecordSharp = Record.SubRecords["CogToolBlock_Sharp.CogAffineTransformTool_Logo.OutputImage"];
                     ICogRecord cogRecordLogo = Record.SubRecords["CogToolBlock_Logo.CogAffineTransformTool_Logo.OutputImage"];
                     ICogRecord cogRecordCard = Record.SubRecords["CogToolBlock_Card.CogAffineTransformTool_Logo.OutputImage"];
-
+                    ICogRecord cogRecordLock = Record.SubRecords["CogToolBlock_Lock.CogAffineTransformTool_Logo.OutputImage"];
+                    ICogRecord cogRecordFinger = Record.SubRecords["CogToolBlock_Finger.CogAffineTransformTool_Logo.OutputImage"];
+                    ICogRecord cogRecordBattery = Record.SubRecords["CogToolBlock_Battery.CogAffineTransformTool_Logo.OutputImage"];
 
                     //Lấy ảnh đầu ra hiển thị
                     leftTabControl.CamDisplay.BackColor = Color.Lime;
@@ -1661,10 +1675,25 @@ namespace SLTtechSoft
                     if (cogRecordLogo != null) topControl.VisionDisplay[numPadName.Logo].mDisplay.Record = cogRecordLogo;
                     topControl.VisionDisplay[numPadName.Logo].mDisplay.Fit(false);
                     // Card
-                    topControl.VisionDisplay[numPadName.Card].BackColor = ResultCard ? Color.Lime : Color.Red;
+                    topControl.VisionDisplay[numPadName.Card].BackColor = _VisionSystem[cam].LedResult[13] ? Color.Lime : Color.Red;
                     topControl.VisionDisplay[numPadName.Card].mDisplay.InteractiveGraphics.Clear();
                     if (cogRecordCard != null) topControl.VisionDisplay[numPadName.Card].mDisplay.Record = cogRecordCard;
                     topControl.VisionDisplay[numPadName.Card].mDisplay.Fit(false);
+                    // Lock
+                    topControl.VisionDisplay[numPadName.Lock].BackColor = _VisionSystem[cam].LedResult[14] ? Color.Lime : Color.Red;
+                    topControl.VisionDisplay[numPadName.Lock].mDisplay.InteractiveGraphics.Clear();
+                    if (cogRecordLock != null) topControl.VisionDisplay[numPadName.Lock].mDisplay.Record = cogRecordLock;
+                    topControl.VisionDisplay[numPadName.Lock].mDisplay.Fit(false);
+                    // Finger
+                    topControl.VisionDisplay[numPadName.Finger].BackColor = _VisionSystem[cam].LedResult[15] ? Color.Lime : Color.Red;
+                    topControl.VisionDisplay[numPadName.Finger].mDisplay.InteractiveGraphics.Clear();
+                    if (cogRecordFinger != null) topControl.VisionDisplay[numPadName.Finger].mDisplay.Record = cogRecordFinger;
+                    topControl.VisionDisplay[numPadName.Finger].mDisplay.Fit(false);
+                    // Battery
+                    topControl.VisionDisplay[numPadName.Battery].BackColor = _VisionSystem[cam].LedResult[16] ? Color.Lime : Color.Red;
+                    topControl.VisionDisplay[numPadName.Battery].mDisplay.InteractiveGraphics.Clear();
+                    if (cogRecordBattery != null) topControl.VisionDisplay[numPadName.Battery].mDisplay.Record = cogRecordBattery;
+                    topControl.VisionDisplay[numPadName.Battery].mDisplay.Fit(false);
 
                     //ShowCogRecord1(true, CurrentMdisplaySHow, PLC.Write.Word.ResultCam1a.X, PLC.Write.Word.ResultCam1a.Y, PLC.Write.Word.ResultCam1a.R);
                     ////Log

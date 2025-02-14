@@ -61,7 +61,11 @@ namespace LibFunction
         new ClassLedCheck { ID = "FFT-10.9", Name = "Led_Check", Detail = "Led_9" },
         new ClassLedCheck { ID = "FFT-10.10", Name = "Led_Check", Detail = "Led_*" },
         new ClassLedCheck { ID = "FFT-10.11", Name = "Led_Check", Detail = "Led_#" },
-        new ClassLedCheck { ID = "FFT-10.12", Name = "Led_Check", Detail = "Led_Bar" }
+        new ClassLedCheck { ID = "FFT-10.12", Name = "Led_Check", Detail = "Led_Bar" },
+        new ClassLedCheck { ID = "FFT-10.12", Name = "Led_Check", Detail = "Led_Card" },
+        new ClassLedCheck { ID = "FFT-10.13", Name = "Led_Check", Detail = "Led_Lock" },
+        new ClassLedCheck { ID = "FFT-10.13", Name = "Led_Check", Detail = "Led_Finger"},
+        new ClassLedCheck { ID = "FFT-10.13", Name = "Led_Check", Detail = "Led_Battery"}
         };
 
         public ClassFingerprint_Check_Contact_1 Fingerprint_Check_Contact_1 = new ClassFingerprint_Check_Contact_1();
