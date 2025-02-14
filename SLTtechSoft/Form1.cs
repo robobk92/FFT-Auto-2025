@@ -28,6 +28,8 @@ using System.Runtime.InteropServices;
 using GUISampleMultiCam;
 using static SLTtechSoft.TopControl;
 using Basler.Pylon;
+using System.Windows.Forms.DataVisualization.Charting;
+using Newtonsoft.Json.Linq;
 
 namespace SLTtechSoft
 {
@@ -1046,6 +1048,67 @@ namespace SLTtechSoft
             topControl.QualityLastHour.Text = PLC.Read.Word.QualityLastHour.ToString();
             topControl.QualityThisHour.Text = PLC.Read.Word.QualityThisHour.ToString();
 
+            UpdateChartOKNG(PLC.Read.Word.PassCount, PLC.Read.Word.FailCount);
+            UpdateChartPerformance(PLC.Read.Word.MachineWorkTime, PLC.Read.Word.HandlingTime);
+        }
+
+        private void UpdateChartOKNG(int Value1, int Value2)
+        {
+            topControl.chart_RateFirst.Series.Clear();
+            topControl.chart_RateFirst.Titles.Clear();
+
+            // Tạo Series mới
+            Series series = new Series("Quality");
+            series.ChartType = SeriesChartType.Pie;
+
+            // Thêm dữ liệu OK và NG
+            int okCount = Value1;  // Số lượng sản phẩm OK
+            int ngCount = Value2;  // Số lượng sản phẩm NG
+            int OKPercent = 0;
+            if (Value1 == 0 && Value2 == 0)
+            {
+                okCount = 5;
+                ngCount = 5;
+            }
+            OKPercent = okCount / (okCount + ngCount);
+            topControl.lblPercentOK_NG.Text = OKPercent.ToString();
+
+            series.Points.AddXY("OK", okCount);
+            series.Points.AddXY("NG", ngCount);
+            // Thêm Series vào Chart
+            topControl.chart_RateFirst.Series.Add(series);
+            // Tuỳ chỉnh hiển thị
+            series.Points[0].Color = System.Drawing.Color.Green;  // Màu xanh cho OK
+            series.Points[1].Color = System.Drawing.Color.Red;    // Màu đỏ cho NG
+        }
+        private void UpdateChartPerformance(int Value1, int Value2)
+        {
+            topControl.chart_Performance.Series.Clear();
+            topControl.chart_Performance.Titles.Clear();
+
+            // Tạo Series mới
+            Series series = new Series("Performance");
+            series.ChartType = SeriesChartType.Pie;
+
+            // Thêm dữ liệu OK và NG
+            int okCount = Value1;  // Số lượng sản phẩm OK
+            int ngCount = Value2;  // Số lượng sản phẩm NG
+            int OKPercent = 0;
+            if (Value1 == 0 && Value2 == 0)
+            {
+                okCount = 5;
+                ngCount = 5;
+            }
+            OKPercent = okCount / (okCount + ngCount);
+            topControl.lblPercentMC_Performance.Text = OKPercent.ToString();
+
+            series.Points.AddXY("OK", okCount);
+            series.Points.AddXY("NG", ngCount);
+            // Thêm Series vào Chart
+            topControl.chart_Performance.Series.Add(series);
+            // Tuỳ chỉnh hiển thị
+            series.Points[0].Color = System.Drawing.Color.Green;  // Màu xanh cho OK
+            series.Points[1].Color = System.Drawing.Color.HotPink;    // Màu đỏ cho NG
         }
         private void InitialOneTimeTimer()
         {
