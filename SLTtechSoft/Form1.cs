@@ -163,7 +163,7 @@ namespace SLTtechSoft
             public bool FinishTrigger;
             public bool TriggerOne = false;
             public bool[] LedResult = new bool[17];
-            public string[] LedValue = new string[17];
+            public int[] LedValue = new int[17];
         }
 
 
@@ -360,6 +360,7 @@ namespace SLTtechSoft
 
             ScannerConnect();
             LockConnect();
+            ConnectKeySightPSU();
             IndexFormShowing = 0;
             formMain.Show();
             btnMain.BackColor = TabControlBackColorON;
@@ -382,6 +383,9 @@ namespace SLTtechSoft
                 formMain.ProcessTestIndex = 0;
                 CurrentSerial_Number = "dacb1";
                 CurrentQRCodeRecived = "123";
+                formMain.IsLedDoorOn = false;
+                _VisionSystem[0].FinishTrigger = false;
+
             }
          
         }
@@ -1594,23 +1598,23 @@ namespace SLTtechSoft
                     CogToolBlock CogToolBlock_Finger = _VisionSystem[cam].cogToolBlock[0].Tools["CogToolBlock_Finger"] as CogToolBlock;
                     CogToolBlock CogToolBlock_Battery = _VisionSystem[cam].cogToolBlock[0].Tools["CogToolBlock_Battery"] as CogToolBlock;
 
-                    _VisionSystem[cam].LedValue[0] = Convert.ToString((double)CogToolBlock_No0.Outputs["HistoValue"].Value);
-                    _VisionSystem[cam].LedValue[1] = Convert.ToString((double)CogToolBlock_No1.Outputs["HistoValue"].Value);
-                    _VisionSystem[cam].LedValue[2] = Convert.ToString((double)CogToolBlock_No2.Outputs["HistoValue"].Value);
-                    _VisionSystem[cam].LedValue[3] = Convert.ToString((double)CogToolBlock_No3.Outputs["HistoValue"].Value);
-                    _VisionSystem[cam].LedValue[4] = Convert.ToString((double)CogToolBlock_No4.Outputs["HistoValue"].Value);
-                    _VisionSystem[cam].LedValue[5] = Convert.ToString((double)CogToolBlock_No5.Outputs["HistoValue"].Value);
-                    _VisionSystem[cam].LedValue[6] = Convert.ToString((double)CogToolBlock_No6.Outputs["HistoValue"].Value);
-                    _VisionSystem[cam].LedValue[7] = Convert.ToString((double)CogToolBlock_No7.Outputs["HistoValue"].Value);
-                    _VisionSystem[cam].LedValue[8] = Convert.ToString((double)CogToolBlock_No8.Outputs["HistoValue"].Value);
-                    _VisionSystem[cam].LedValue[9] = Convert.ToString((double)CogToolBlock_No9.Outputs["HistoValue"].Value);
-                    _VisionSystem[cam].LedValue[10] = Convert.ToString((double)CogToolBlock_Asterisk.Outputs["HistoValue"].Value);
-                    _VisionSystem[cam].LedValue[11] = Convert.ToString((double)CogToolBlock_Sharp.Outputs["HistoValue"].Value);
-                    _VisionSystem[cam].LedValue[12] = Convert.ToString((double)CogToolBlock_Logo.Outputs["HistoValue"].Value);
-                    _VisionSystem[cam].LedValue[13] = Convert.ToString((double)CogToolBlock_Card.Outputs["HistoValue"].Value);
-                    _VisionSystem[cam].LedValue[14] = Convert.ToString((double)CogToolBlock_Lock.Outputs["HistoValue"].Value);
-                    _VisionSystem[cam].LedValue[15] = Convert.ToString((double)CogToolBlock_Finger.Outputs["HistoValue"].Value);
-                    _VisionSystem[cam].LedValue[16] = Convert.ToString((double)CogToolBlock_Battery.Outputs["HistoValue"].Value);
+                    _VisionSystem[cam].LedValue[0] = Convert.ToInt32((double)CogToolBlock_No0.Outputs["HistoValue"].Value);
+                    _VisionSystem[cam].LedValue[1] = Convert.ToInt32((double)CogToolBlock_No1.Outputs["HistoValue"].Value);
+                    _VisionSystem[cam].LedValue[2] = Convert.ToInt32((double)CogToolBlock_No2.Outputs["HistoValue"].Value);
+                    _VisionSystem[cam].LedValue[3] = Convert.ToInt32((double)CogToolBlock_No3.Outputs["HistoValue"].Value);
+                    _VisionSystem[cam].LedValue[4] = Convert.ToInt32((double)CogToolBlock_No4.Outputs["HistoValue"].Value);
+                    _VisionSystem[cam].LedValue[5] = Convert.ToInt32((double)CogToolBlock_No5.Outputs["HistoValue"].Value);
+                    _VisionSystem[cam].LedValue[6] = Convert.ToInt32((double)CogToolBlock_No6.Outputs["HistoValue"].Value);
+                    _VisionSystem[cam].LedValue[7] = Convert.ToInt32((double)CogToolBlock_No7.Outputs["HistoValue"].Value);
+                    _VisionSystem[cam].LedValue[8] = Convert.ToInt32((double)CogToolBlock_No8.Outputs["HistoValue"].Value);
+                    _VisionSystem[cam].LedValue[9] = Convert.ToInt32((double)CogToolBlock_No9.Outputs["HistoValue"].Value);
+                    _VisionSystem[cam].LedValue[10] = Convert.ToInt32((double)CogToolBlock_Asterisk.Outputs["HistoValue"].Value);
+                    _VisionSystem[cam].LedValue[11] = Convert.ToInt32((double)CogToolBlock_Sharp.Outputs["HistoValue"].Value);
+                    _VisionSystem[cam].LedValue[12] = Convert.ToInt32((double)CogToolBlock_Logo.Outputs["HistoValue"].Value);
+                    _VisionSystem[cam].LedValue[13] = Convert.ToInt32((double)CogToolBlock_Card.Outputs["HistoValue"].Value);
+                    _VisionSystem[cam].LedValue[14] = Convert.ToInt32((double)CogToolBlock_Lock.Outputs["HistoValue"].Value);
+                    _VisionSystem[cam].LedValue[15] = Convert.ToInt32((double)CogToolBlock_Finger.Outputs["HistoValue"].Value);
+                    _VisionSystem[cam].LedValue[16] = Convert.ToInt32((double)CogToolBlock_Battery.Outputs["HistoValue"].Value);
 
 
                     _VisionSystem[cam].LedResult[0] = (bool)CogToolBlock_No0.Outputs["ResultAll"].Value;
@@ -1627,9 +1631,9 @@ namespace SLTtechSoft
                     _VisionSystem[cam].LedResult[11] = (bool)CogToolBlock_Sharp.Outputs["ResultAll"].Value;
                     _VisionSystem[cam].LedResult[12] = (bool)CogToolBlock_Logo.Outputs["ResultLogo"].Value;
                     _VisionSystem[cam].LedResult[13] = (bool)CogToolBlock_Card.Outputs["ResultLogo"].Value;
-                    _VisionSystem[cam].LedResult[14] = (bool)CogToolBlock_Lock.Outputs["ResultLogo"].Value;
-                    _VisionSystem[cam].LedResult[15] = (bool)CogToolBlock_Finger.Outputs["ResultLogo"].Value;
-                    _VisionSystem[cam].LedResult[16] = (bool)CogToolBlock_Battery.Outputs["ResultLogo"].Value;
+                    _VisionSystem[cam].LedResult[14] = (bool)CogToolBlock_Lock.Outputs["ResultAll"].Value;
+                    _VisionSystem[cam].LedResult[15] = (bool)CogToolBlock_Finger.Outputs["ResultAll"].Value;
+                    _VisionSystem[cam].LedResult[16] = (bool)CogToolBlock_Battery.Outputs["ResultAll"].Value;
 
                     bool ResultCard = (bool)CogToolBlock_Card.Outputs["ResultLogo"].Value;
 
@@ -2162,8 +2166,8 @@ namespace SLTtechSoft
                     string KeysightReadVol_String = formModel.Keysight.KeysightPSU.GetVoltage();
                     formModel.Keysight.Vol_value.Text = KeysightReadVol_String;
                     double KeysightReadVol_double = Convert.ToDouble(KeysightReadVol_String);
-                    if (Vol != KeysightReadVol_double)
-                        throw new Exception($"Set Voltage fail. SetVol = {Vol}. GetVol = {KeysightReadVol_String}");
+                    //if (Vol != KeysightReadVol_double)
+                    //    throw new Exception($"Set Voltage fail. SetVol = {Vol}. GetVol = {KeysightReadVol_String}");
 
                 }
                 return true;

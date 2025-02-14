@@ -373,7 +373,7 @@ namespace LibFunction
             PowerOn Datarecived = new PowerOn();
             try
             {
-                byte[] hi = new byte[500];
+                byte[] hi = new byte[1000];
                 int m = 0;
                 CheckByteToRead(ref m, TimeOut);
 
@@ -823,7 +823,7 @@ namespace LibFunction
                     }
                     switch (key)
                     {
-                        case 0: { Datakey.Key = "There is no input button"; break; }
+                        case 0: { Datakey.Key = "Press_0"; break; }
                         case 1: { Datakey.Key = "Press_1"; break; }
                         case 2: { Datakey.Key = "Press_2"; break; }
                         case 3: { Datakey.Key = "Press_3"; break; }
@@ -833,9 +833,9 @@ namespace LibFunction
                         case 7: { Datakey.Key = "Press_7"; break; }
                         case 8: { Datakey.Key = "Press_8"; break; }
                         case 9: { Datakey.Key = "Press_9"; break; }
-                        case 10: { Datakey.Key = "Press_0"; break; }
-                        case 11: { Datakey.Key = "Press_V"; break; }
-                        case 12: { Datakey.Key = "Press_*"; break; }
+                        case 10: { Datakey.Key = "Press_*"; break; }
+                        case 11: { Datakey.Key = "11"; break; }
+                        case 12: { Datakey.Key = "Press_V"; break; }
                         case 13: { Datakey.Key = "Key Open/Lock"; break; }
                         case 14: { Datakey.Key = "Key Register"; break; }
                         case 15: { Datakey.Key = "Key Menu"; break; }
@@ -2628,6 +2628,7 @@ namespace LibFunction
                     Serial.Read(hi, 0, m);
                     ArrayByteToString_RX(ref RX_cmd, hi, m);
                     OnEventTransferData(true, "GetRTC", RX_cmd);
+                    Data.Datarecived_Get_RTC = new byte[m];
                     for (int i = 0; i < m; i++)
                     {
                         Data.Datarecived_Get_RTC[i] = hi[i];
