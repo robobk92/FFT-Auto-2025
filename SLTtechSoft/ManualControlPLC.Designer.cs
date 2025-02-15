@@ -662,14 +662,14 @@
             this.Broken.BackColor = System.Drawing.Color.Transparent;
             this.Broken.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.Broken.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Broken.Location = new System.Drawing.Point(319, 142);
+            this.Broken.Location = new System.Drawing.Point(320, 142);
             this.Broken.Name = "Broken";
             this.Broken.ReadSameRelay = true;
             this.Broken.Size = new System.Drawing.Size(90, 34);
             this.Broken.State = false;
             this.Broken.TabIndex = 120;
             this.Broken.Text = "RL_Broken";
-            this.Broken.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Momentary;
+            this.Broken.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Toggle;
             this.Broken.UseVisualStyleBackColor = false;
             // 
             // CylDownSpring
@@ -684,7 +684,7 @@
             this.CylDownSpring.State = false;
             this.CylDownSpring.TabIndex = 87;
             this.CylDownSpring.Text = "UP";
-            this.CylDownSpring.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Momentary;
+            this.CylDownSpring.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Toggle;
             this.CylDownSpring.UseVisualStyleBackColor = false;
             // 
             // Supply9VToFront
@@ -699,7 +699,7 @@
             this.Supply9VToFront.State = false;
             this.Supply9VToFront.TabIndex = 119;
             this.Supply9VToFront.Text = "Supply9VToFront";
-            this.Supply9VToFront.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Momentary;
+            this.Supply9VToFront.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Toggle;
             this.Supply9VToFront.UseVisualStyleBackColor = false;
             // 
             // Supply6VToBattery
@@ -714,7 +714,7 @@
             this.Supply6VToBattery.State = false;
             this.Supply6VToBattery.TabIndex = 118;
             this.Supply6VToBattery.Text = "Supply6VToBattery";
-            this.Supply6VToBattery.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Momentary;
+            this.Supply6VToBattery.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Toggle;
             this.Supply6VToBattery.UseVisualStyleBackColor = false;
             // 
             // MotionReady
@@ -774,7 +774,7 @@
             this.Change9Vor6V.State = false;
             this.Change9Vor6V.TabIndex = 99;
             this.Change9Vor6V.Text = "9V/6V Change/Y037";
-            this.Change9Vor6V.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Momentary;
+            this.Change9Vor6V.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Toggle;
             this.Change9Vor6V.UseVisualStyleBackColor = false;
             // 
             // Reverse9V
@@ -789,7 +789,7 @@
             this.Reverse9V.State = false;
             this.Reverse9V.TabIndex = 98;
             this.Reverse9V.Text = "9V REVERSE";
-            this.Reverse9V.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Momentary;
+            this.Reverse9V.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Toggle;
             this.Reverse9V.UseVisualStyleBackColor = false;
             // 
             // CylinderTools4
@@ -804,7 +804,7 @@
             this.CylinderTools4.State = false;
             this.CylinderTools4.TabIndex = 87;
             this.CylinderTools4.Text = "UP";
-            this.CylinderTools4.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Momentary;
+            this.CylinderTools4.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Toggle;
             this.CylinderTools4.UseVisualStyleBackColor = false;
             // 
             // CylinderPush2
@@ -819,7 +819,7 @@
             this.CylinderPush2.State = false;
             this.CylinderPush2.TabIndex = 87;
             this.CylinderPush2.Text = "UP";
-            this.CylinderPush2.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Momentary;
+            this.CylinderPush2.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Toggle;
             this.CylinderPush2.UseVisualStyleBackColor = false;
             // 
             // CylinderTools3
@@ -834,7 +834,7 @@
             this.CylinderTools3.State = false;
             this.CylinderTools3.TabIndex = 87;
             this.CylinderTools3.Text = "UP";
-            this.CylinderTools3.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Momentary;
+            this.CylinderTools3.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Toggle;
             this.CylinderTools3.UseVisualStyleBackColor = false;
             // 
             // CylinderPush1
@@ -849,7 +849,7 @@
             this.CylinderPush1.State = false;
             this.CylinderPush1.TabIndex = 87;
             this.CylinderPush1.Text = "UP";
-            this.CylinderPush1.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Momentary;
+            this.CylinderPush1.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Toggle;
             this.CylinderPush1.UseVisualStyleBackColor = false;
             // 
             // CylinderTransTools
@@ -864,7 +864,7 @@
             this.CylinderTransTools.State = false;
             this.CylinderTransTools.TabIndex = 87;
             this.CylinderTransTools.Text = "UP";
-            this.CylinderTransTools.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Momentary;
+            this.CylinderTransTools.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Toggle;
             this.CylinderTransTools.UseVisualStyleBackColor = false;
             // 
             // CylinderTools2
@@ -879,7 +879,7 @@
             this.CylinderTools2.State = false;
             this.CylinderTools2.TabIndex = 87;
             this.CylinderTools2.Text = "UP";
-            this.CylinderTools2.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Momentary;
+            this.CylinderTools2.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Toggle;
             this.CylinderTools2.UseVisualStyleBackColor = false;
             // 
             // CylinderTools1
@@ -894,7 +894,7 @@
             this.CylinderTools1.State = false;
             this.CylinderTools1.TabIndex = 87;
             this.CylinderTools1.Text = "UP";
-            this.CylinderTools1.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Momentary;
+            this.CylinderTools1.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Toggle;
             this.CylinderTools1.UseVisualStyleBackColor = false;
             // 
             // CylinderCheckSpring
@@ -909,7 +909,7 @@
             this.CylinderCheckSpring.State = false;
             this.CylinderCheckSpring.TabIndex = 87;
             this.CylinderCheckSpring.Text = "UP";
-            this.CylinderCheckSpring.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Momentary;
+            this.CylinderCheckSpring.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Toggle;
             this.CylinderCheckSpring.UseVisualStyleBackColor = false;
             // 
             // CylinderPushLock
@@ -924,7 +924,7 @@
             this.CylinderPushLock.State = false;
             this.CylinderPushLock.TabIndex = 87;
             this.CylinderPushLock.Text = "UP";
-            this.CylinderPushLock.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Momentary;
+            this.CylinderPushLock.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Toggle;
             this.CylinderPushLock.UseVisualStyleBackColor = false;
             // 
             // CylinderToolsDown
@@ -939,7 +939,7 @@
             this.CylinderToolsDown.State = false;
             this.CylinderToolsDown.TabIndex = 87;
             this.CylinderToolsDown.Text = "UP";
-            this.CylinderToolsDown.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Momentary;
+            this.CylinderToolsDown.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Toggle;
             this.CylinderToolsDown.UseVisualStyleBackColor = false;
             // 
             // CylinderDoorClose
@@ -954,7 +954,7 @@
             this.CylinderDoorClose.State = false;
             this.CylinderDoorClose.TabIndex = 87;
             this.CylinderDoorClose.Text = "UP";
-            this.CylinderDoorClose.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Momentary;
+            this.CylinderDoorClose.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Toggle;
             this.CylinderDoorClose.UseVisualStyleBackColor = false;
             // 
             // AutoCmd

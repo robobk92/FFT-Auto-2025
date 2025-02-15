@@ -2232,6 +2232,7 @@ namespace SLTtechSoft
                         if (_form1.PLC.Read.Auto.Test.ReadyButton_Check_Register_P)
                         {
                             datakeyRead = _form1.LockASSA.checkDataKey(CurrentDoorTestData.TimeOut);
+                            DataLockread = _form1.LockASSA.CheckInputADoor(CurrentDoorTestData.TimeOut);
                             if (datakeyRead == null)
                             {
                                 //Fail
@@ -2272,21 +2273,17 @@ namespace SLTtechSoft
                 case 3:
                     {
                         //Khi lỗi xảy ra, báo cho PLC kiểm tra lại
-                        _form1.PLC.Write.Auto.Test.StartButton_Check_Register_P = false;
-                        if (!_form1.PLC.Read.Auto.Test.ReadyButton_Check_Register_P)
+                        if (TestRetryTime++ < CurrentDoorTestData.retry)
                         {
-                            if (TestRetryTime++ < CurrentDoorTestData.retry)
-                            {
-                                ProcessTestIndex = 0;
-                            }
+                            ProcessTestIndex = 0;
+                        }
+                        else
+                        {
+                            //kết thúc kiểm tra Fail
+                            if (datakeyRead != null)
+                                FinishATest(false, datakeyRead.Key);
                             else
-                            {
-                                //kết thúc kiểm tra Fail
-                                if (datakeyRead != null)
-                                    FinishATest(false, datakeyRead.Key);
-                                else
-                                    FinishATest(false, "Error");
-                            }
+                                FinishATest(false, "Error");
                         }
                         break;
                     }
@@ -2335,6 +2332,7 @@ namespace SLTtechSoft
                         if (_form1.PLC.Read.Auto.Test.ReadyButton_Check_Register_N)
                         {
                             datakeyRead = _form1.LockASSA.checkDataKey(CurrentDoorTestData.TimeOut);
+                            DataLockread = _form1.LockASSA.CheckInputADoor(CurrentDoorTestData.TimeOut);
                             if (datakeyRead == null)
                             {
                                 //Fail
@@ -2357,7 +2355,7 @@ namespace SLTtechSoft
                                 }
                                 else
                                 {
-                                    if (datakeyRead.Key == "")
+                                    if (datakeyRead.Key == "254")
                                     {
                                         //Pass
                                         ProcessTestIndex = 4;
@@ -2375,21 +2373,17 @@ namespace SLTtechSoft
                 case 3:
                     {
                         //Khi lỗi xảy ra, báo cho PLC kiểm tra lại
-                        _form1.PLC.Write.Auto.Test.StartButton_Check_Register_N = false;
-                        if (!_form1.PLC.Read.Auto.Test.ReadyButton_Check_Register_N)
+                        if (TestRetryTime++ < CurrentDoorTestData.retry)
                         {
-                            if (TestRetryTime++ < CurrentDoorTestData.retry)
-                            {
-                                ProcessTestIndex = 0;
-                            }
+                            ProcessTestIndex = 0;
+                        }
+                        else
+                        {
+                            //kết thúc kiểm tra Fail
+                            if (datakeyRead != null)
+                                FinishATest(false, datakeyRead.Key);
                             else
-                            {
-                                //kết thúc kiểm tra Fail
-                                if (datakeyRead != null)
-                                    FinishATest(false, datakeyRead.Key);
-                                else
-                                    FinishATest(false, "Error");
-                            }
+                                FinishATest(false, "Error");
                         }
                         break;
                     }
@@ -2478,21 +2472,17 @@ namespace SLTtechSoft
                 case 3:
                     {
                         //Khi lỗi xảy ra, báo cho PLC kiểm tra lại
-                        _form1.PLC.Write.Auto.Test.StartButton_Check_Lock_P = false;
-                        if (!_form1.PLC.Read.Auto.Test.ReadyButton_Check_Lock_P)
+                        if (TestRetryTime++ < CurrentDoorTestData.retry)
                         {
-                            if (TestRetryTime++ < CurrentDoorTestData.retry)
-                            {
-                                ProcessTestIndex = 0;
-                            }
+                            ProcessTestIndex = 0;
+                        }
+                        else
+                        {
+                            //kết thúc kiểm tra Fail
+                            if (datakeyRead != null)
+                                FinishATest(false, datakeyRead.Key);
                             else
-                            {
-                                //kết thúc kiểm tra Fail
-                                if (datakeyRead != null)
-                                    FinishATest(false, datakeyRead.Key);
-                                else
-                                    FinishATest(false, "Error");
-                            }
+                                FinishATest(false, "Error");
                         }
                         break;
                     }
@@ -2563,7 +2553,7 @@ namespace SLTtechSoft
                                 }
                                 else
                                 {
-                                    if (datakeyRead.Key == "")
+                                    if (datakeyRead.Key == "254")
                                     {
                                         //Pass
                                         ProcessTestIndex = 4;
@@ -2581,21 +2571,18 @@ namespace SLTtechSoft
                 case 3:
                     {
                         //Khi lỗi xảy ra, báo cho PLC kiểm tra lại
-                        _form1.PLC.Write.Auto.Test.StartButton_Check_Lock_N = false;
-                        if (!_form1.PLC.Read.Auto.Test.ReadyButton_Check_Lock_N)
+                        //_form1.PLC.Write.Auto.Test.StartButton_Check_Lock_N = false;
+                        if (TestRetryTime++ < CurrentDoorTestData.retry)
                         {
-                            if (TestRetryTime++ < CurrentDoorTestData.retry)
-                            {
-                                ProcessTestIndex = 0;
-                            }
+                            ProcessTestIndex = 0;
+                        }
+                        else
+                        {
+                            //kết thúc kiểm tra Fail
+                            if (datakeyRead != null)
+                                FinishATest(false, datakeyRead.Key);
                             else
-                            {
-                                //kết thúc kiểm tra Fail
-                                if (datakeyRead != null)
-                                    FinishATest(false, datakeyRead.Key);
-                                else
-                                    FinishATest(false, "Error");
-                            }
+                                FinishATest(false, "Error");
                         }
                         break;
                     }
@@ -2636,12 +2623,15 @@ namespace SLTtechSoft
                 case 1:
                     {
                         _form1.PLC.Write.Auto.Test.StartMotor_Check_Close = true;
+                        _form1.PLC.Write.Auto.Test.StartCheckDoorPositionSensor_Close = true;
+
                         ProcessTestIndex++;
                         break;
                     }
                 case 2:
                     {
-                        //Xác nhận passWord để khóa cửa đóng vào
+                        _form1.LockASSA.RunMotorDoor(CurrentDoorTestData.TimeOut);
+                        ProcessTestIndex++;
                         break;
                     }
                 case 3:
@@ -2649,6 +2639,7 @@ namespace SLTtechSoft
                         if (_form1.PLC.Read.Auto.Test.ReadyMotor_Check_Close)
                         {
                             datakeyRead = _form1.LockASSA.checkDataKey(CurrentDoorTestData.TimeOut);
+                            DataLockread = _form1.LockASSA.CheckInputADoor(CurrentDoorTestData.TimeOut);
                             if (datakeyRead == null)
                             {
                                 //Fail
@@ -2689,27 +2680,24 @@ namespace SLTtechSoft
                 case 4:
                     {
                         //Khi lỗi xảy ra, báo cho PLC kiểm tra lại
-                        _form1.PLC.Write.Auto.Test.StartMotor_Check_Close = false;
-                        if (!_form1.PLC.Read.Auto.Test.ReadyMotor_Check_Close)
+                        if (TestRetryTime++ < CurrentDoorTestData.retry)
                         {
-                            if (TestRetryTime++ < CurrentDoorTestData.retry)
-                            {
-                                ProcessTestIndex = 0;
-                            }
+                            ProcessTestIndex = 0;
+                        }
+                        else
+                        {
+                            //kết thúc kiểm tra Fail
+                            if (datakeyRead != null)
+                                FinishATest(false, datakeyRead.SensorMortise);
                             else
-                            {
-                                //kết thúc kiểm tra Fail
-                                if (datakeyRead != null)
-                                    FinishATest(false, datakeyRead.SensorMortise);
-                                else
-                                    FinishATest(false, "Error");
-                            }
+                                FinishATest(false, "Error");
                         }
                         break;
                     }
                 case 5:
                     {
                         //kết thúc kiểm tra Pass
+                        _form1.PLC.Write.Auto.Test.StartCheckDoorPositionSensor_Close = false;
                         _form1.PLC.Write.Auto.Test.StartMotor_Check_Close = false;
                         if (!_form1.PLC.Read.Auto.Test.ReadyMotor_Check_Close)
                         {
@@ -2743,13 +2731,21 @@ namespace SLTtechSoft
             {
                 case 1:
                     {
+                        
+                       _form1.PLC.Write.Auto.Test.StartMotor_Check_Mortise_Close =true;
+                        ProcessTestIndex++;
+                        break;
+                    }
+                case 2:
+                    {
+
                         if (_form1.PLC.Read.Auto.Test.IsMortise_Close)
                         {
                             FinishATest(true, CurrentDoorTestData.Min);
                         }
                         else
                         {
-                            if (_form1.PLC.Read.Auto.Test.IsMortise_Open)
+                            if (_form1.PLC.Read.Auto.Test.IsMortise_Close)
                             {
                                 FinishATest(false, "Open");
                             }
@@ -2758,7 +2754,9 @@ namespace SLTtechSoft
                                 FinishATest(false, "Error");
                             }
                         }
+                        _form1.PLC.Write.Auto.Test.StartMotor_Check_Mortise_Close = false;
                         break;
+                       
                     }
                 default: { break; }
             }
@@ -2858,21 +2856,17 @@ namespace SLTtechSoft
                 case 4:
                     {
                         //Khi lỗi xảy ra, báo cho PLC kiểm tra lại
-                        _form1.PLC.Write.Auto.Test.StartMotor_Check_Open = false;
-                        if (!_form1.PLC.Read.Auto.Test.ReadyMotor_Check_Open)
+                        if (TestRetryTime++ < CurrentDoorTestData.retry)
                         {
-                            if (TestRetryTime++ < CurrentDoorTestData.retry)
-                            {
-                                ProcessTestIndex = 0;
-                            }
+                            ProcessTestIndex = 0;
+                        }
+                        else
+                        {
+                            //kết thúc kiểm tra Fail
+                            if (datakeyRead != null)
+                                FinishATest(false, datakeyRead.SensorMortise);
                             else
-                            {
-                                //kết thúc kiểm tra Fail
-                                if (datakeyRead != null)
-                                    FinishATest(false, datakeyRead.SensorMortise);
-                                else
-                                    FinishATest(false, "Error");
-                            }
+                                FinishATest(false, "Error");
                         }
                         break;
                     }
@@ -2915,13 +2909,34 @@ namespace SLTtechSoft
             {
                 case 1:
                     {
-                        if (_form1.PLC.Read.Auto.Test.IsMortise_Open) 
+                       
+                        _form1.PLC.Write.Auto.Test.StartMotor_Check_Mortise_Open = true;
+                        ProcessTestIndex++;
+                        break;
+                    }
+                case 2:
+                    {
+                        if (_form1.PLC.Read.Auto.Test.IsMortise_Open)
                         {
                             FinishATest(true, CurrentDoorTestData.Min);
                         }
                         else
                         {
-                            if (_form1.PLC.Read.Auto.Test.IsMortise_Close)
+                            ProcessTestIndex = 3;
+                        }
+                        _form1.PLC.Write.Auto.Test.StartMotor_Check_Mortise_Open = false;
+                        break;
+                    }
+                case 3:
+                    {
+                        if (TestRetryTime++ < CurrentDoorTestData.retry)
+                        {
+                            ProcessTestIndex = 0;
+                        }
+                        else
+                        {
+                            //kết thúc kiểm tra Fail
+                            if (_form1.PLC.Read.Auto.Test.IsMortise_Open)
                             {
                                 FinishATest(false, "Close");
                             }
@@ -2932,6 +2947,7 @@ namespace SLTtechSoft
                         }
                         break;
                     }
+                    
                 default: { break; }
             }
         }
@@ -3152,7 +3168,8 @@ namespace SLTtechSoft
                         if (!SetVol || !SetCur)
                         {
                             // Lỗi ghi điện áp hoặc dòng điện 9V
-
+                            PowerOn powerOn = _form1.LockASSA.ReadPowerOn(CurrentDoorTestData.TimeOut);
+                            if (powerOn.Power_On != false) return;
                         }
                         if (SetVol && SetCur)
                         {
@@ -3171,7 +3188,7 @@ namespace SLTtechSoft
                             _form1.KeySightPSU_ON();
                             // Delay Sau khi mở nguồn
                             StartDelayProcess = true;
-                            DelayProcess(10);
+                            DelayProcess(20);
                             if (DelayProcessDone)
                             {
                                 StartDelayProcess = false;
@@ -3182,7 +3199,9 @@ namespace SLTtechSoft
                     }
                 case 4:  // Kiểm tra khởi tạo
                     {
-                      
+
+                        PowerOn powerOn = _form1.LockASSA.ReadPowerOn(CurrentDoorTestData.TimeOut);
+                        if (powerOn.Power_On == null) return;
                         if (_form1.LockASSA.initializationLock(CurrentDoorTestData.TimeOut))
                         {
                             ProcessTestIndex = 5;
@@ -3194,6 +3213,7 @@ namespace SLTtechSoft
                                 ProcessTestIndex = 6;
                             }
                         }
+
                         break;
                     }
                 case 5: //Pass
@@ -3244,11 +3264,15 @@ namespace SLTtechSoft
                 case 1:
                     {
                         _form1.PLC.Write.Auto.Test.StartExternal_Power_Check_9V_REV = true;
+                        PowerOn powerOn = _form1.LockASSA.ReadPowerOn(CurrentDoorTestData.TimeOut);
+                        if (powerOn.Power_On != false) return;
                         ProcessTestIndex++;
                         break;
                     }
                 case 2:
                     {
+                        PowerOn powerOn = _form1.LockASSA.ReadPowerOn(CurrentDoorTestData.TimeOut);
+                        if (powerOn.Power_On == null)return;
                         if (_form1.PLC.Read.Auto.Test.ReadyExternal_Power_Check_9V_REV)
                         {
                             if (_form1.LockASSA.initializationLock(CurrentDoorTestData.TimeOut))

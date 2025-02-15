@@ -805,7 +805,7 @@ namespace LibFunction
                     }
                     switch (SensorMortise)
                     {
-                        case 0: { Datakey.SensorMortise = "Open sensor detection status"; break; }
+                        case 0: { Datakey.SensorMortise = "Open"; break; }
                         case 1: { Datakey.SensorMortise = "Open and neutral sensor detection status"; break; }
                         case 2: { Datakey.SensorMortise = "Open and internal forced lock sensor detection status"; break; }
                         case 3: { Datakey.SensorMortise = "Lock sensor detection status"; break; }
@@ -817,8 +817,8 @@ namespace LibFunction
                         case 9: { Datakey.SensorMortise = "Internal forced lock sensor detection status"; break; }
                         case 10: { Datakey.SensorMortise = "Sensor detection error status"; break; }
                         case 64: { Datakey.SensorMortise = "Lock sensor detection status"; break; }
-                        case 131: { Datakey.SensorMortise = "Open"; break; }
-                        case 136: { Datakey.SensorMortise = "Close"; break; }
+                        case 131: { Datakey.SensorMortise = "Close"; break; }
+                        case 128: { Datakey.SensorMortise = "Open"; break; }
                         default: { Datakey.SensorMortise = SensorMortise.ToString(); break; }
                     }
                     switch (key)
