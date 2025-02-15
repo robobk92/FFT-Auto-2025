@@ -385,7 +385,7 @@ namespace SLTtechSoft
                 CurrentQRCodeRecived = "123";
                 formMain.IsLedDoorOn = false;
                 _VisionSystem[0].FinishTrigger = false;
-
+                PLC.Write.Auto.Test.FinishProcessTest =true;
             }
          
         }

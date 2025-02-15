@@ -1468,7 +1468,10 @@ namespace SLTtechSoft
                         {
                             FinishATest(true, "True");
                         }
-                      
+                        else
+                        {
+                            FinishATest(false, "false");
+                        }
                         break;
                     }
                 default: { break; }
@@ -1828,14 +1831,14 @@ namespace SLTtechSoft
                         {
                             _form1.LockASSA.LEDKeyOn(CurrentDoorTestData.TimeOut);
                             IsLedDoorOn = true;
+
                         }
                         if (_form1.PLC.Read.Auto.Test.ReadyLedCheck)
                         {
                             _form1.PLC.Write.Auto.Test.StartLedCheck = false;
                             ProcessTestIndex++;
                         }
-                        datakeyRead = _form1.LockASSA.checkDataKey(CurrentDoorTestData.TimeOut);
-                        DataLockread = _form1.LockASSA.CheckInputADoor(CurrentDoorTestData.TimeOut);
+                       
                         break;
                     }
                 case 2:
@@ -1850,6 +1853,8 @@ namespace SLTtechSoft
                         {
                             if (_form1._VisionSystem[0].LedResult[CheckKeyPressIndex])
                             {
+                                datakeyRead = _form1.LockASSA.checkDataKey(CurrentDoorTestData.TimeOut);
+                                DataLockread = _form1.LockASSA.CheckInputADoor(CurrentDoorTestData.TimeOut);
                                 int Result1 = _form1._VisionSystem[0].LedValue[CheckKeyPressIndex];
                                 int Result2 = _form1._VisionSystem[0].LedValue[CheckKeyPressIndex];
                                 int Min1 = Convert.ToInt32(CurrentDoorTestData.Min.Split('-')[0]);
@@ -1886,6 +1891,7 @@ namespace SLTtechSoft
                             _form1.LockASSA.LEDKeyOn(CurrentDoorTestData.TimeOut);
                             _form1._VisionSystem[0].FinishTrigger = false;
                             ProcessTestIndex = 2;
+                            
                         }
                         else
                         {

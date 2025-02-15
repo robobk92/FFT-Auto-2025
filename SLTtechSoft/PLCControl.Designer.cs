@@ -115,6 +115,7 @@
             this.btnSavePos1 = new System.Windows.Forms.Button();
             this.nudStepSizeR = new System.Windows.Forms.NumericUpDown();
             this.groupBox29 = new System.Windows.Forms.GroupBox();
+            this.Simulation = new SLTtechSoft.ToggleSwitch();
             this.groupBox30 = new System.Windows.Forms.GroupBox();
             this.btnJogMode = new SLTtechSoft.ToggleSwitch();
             this.Stop = new SLTtechSoft.ToggleSwitch();
@@ -143,7 +144,6 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Simulation = new SLTtechSoft.ToggleSwitch();
             ((System.ComponentModel.ISupportInitialize)(this.nudRStartSpeed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudRStartAddress)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudROprSpeed)).BeginInit();
@@ -1243,6 +1243,21 @@
             this.groupBox29.TabStop = false;
             this.groupBox29.Text = "JOG Controller";
             // 
+            // Simulation
+            // 
+            this.Simulation.BackColor = System.Drawing.Color.Transparent;
+            this.Simulation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.Simulation.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Simulation.Location = new System.Drawing.Point(215, 82);
+            this.Simulation.Name = "Simulation";
+            this.Simulation.ReadSameRelay = true;
+            this.Simulation.Size = new System.Drawing.Size(98, 32);
+            this.Simulation.State = false;
+            this.Simulation.TabIndex = 84;
+            this.Simulation.Text = "Simulation";
+            this.Simulation.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Toggle;
+            this.Simulation.UseVisualStyleBackColor = false;
+            // 
             // groupBox30
             // 
             this.groupBox30.Controls.Add(this.nudStepSizeX);
@@ -1567,12 +1582,12 @@
             this.nudPoint2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudPoint2.Location = new System.Drawing.Point(113, 56);
             this.nudPoint2.Maximum = new decimal(new int[] {
-            500000,
+            32750,
             0,
             0,
             0});
             this.nudPoint2.Minimum = new decimal(new int[] {
-            1,
+            3000,
             0,
             0,
             -2147483648});
@@ -1668,21 +1683,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(704, 473);
             this.panel1.TabIndex = 156;
-            // 
-            // Simulation
-            // 
-            this.Simulation.BackColor = System.Drawing.Color.Transparent;
-            this.Simulation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.Simulation.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Simulation.Location = new System.Drawing.Point(215, 82);
-            this.Simulation.Name = "Simulation";
-            this.Simulation.ReadSameRelay = true;
-            this.Simulation.Size = new System.Drawing.Size(98, 32);
-            this.Simulation.State = false;
-            this.Simulation.TabIndex = 84;
-            this.Simulation.Text = "Simulation";
-            this.Simulation.TypeSwitch = SLTtechSoft.ToggleSwitch.type.Toggle;
-            this.Simulation.UseVisualStyleBackColor = false;
             // 
             // PLCControl
             // 
