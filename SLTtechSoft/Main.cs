@@ -1507,7 +1507,7 @@ namespace SLTtechSoft
                     }
                 case 2:
                     {
-                        DelayProcess(10);
+                        DelayProcess(50);
                         if (DelayProcessDone)
                         {
                             StartDelayProcess = false;
@@ -1525,7 +1525,7 @@ namespace SLTtechSoft
                     }
                 case 4:
                     {
-                        DelayProcess(60);
+                        DelayProcess(20);
                         if (DelayProcessDone)
                         {
                             StartDelayProcess = false;
@@ -1570,7 +1570,9 @@ namespace SLTtechSoft
                             {
                                 FinishATest(false, _form1.formModel.FftAnalysis.PeakPower.ToString());
                             }
+                           
                         }
+                       
                         _form1.PLC.Write.Auto.Test.Broken_Disconnect = false;
                         break;
                     }
@@ -1583,7 +1585,7 @@ namespace SLTtechSoft
             //Condition
             if (!CurrentDoorTestData.Enable) return;
             if (CurrentDoorTestData.Name != functionDoorList.Speaker_Check.Name ||
-                CurrentDoorTestData.Detail != functionDoorList.Speaker_Check.Detail
+                CurrentDoorTestData.Detail != functionDoorList. Speaker_Check.Detail
                 ) return;
             string CurrentResult = dataGridView1.Rows[CurrentDoorTestData.RowIndex].Cells[DoorTableCol.Result].Value.ToString();
 
@@ -1600,6 +1602,7 @@ namespace SLTtechSoft
 
             switch (ProcessTestIndex)
             {
+
                 case 1:
                     {
                         Speak Speaker = _form1.LockASSA.Speaker(SpeakerType.Low, CurrentDoorTestData.TimeOut);
@@ -1659,7 +1662,7 @@ namespace SLTtechSoft
                         {
                             if (TestRetryTime++ < CurrentDoorTestData.retry)
                             {
-                                ProcessTestIndex = 1;
+                                ProcessTestIndex = 2;
                             }
                             else
                             {
@@ -1669,6 +1672,7 @@ namespace SLTtechSoft
                         
                         break;
                     }
+               
                 
                 default: { break; }
             }
@@ -1934,8 +1938,8 @@ namespace SLTtechSoft
                     {
                         if (_form1.PLC.Read.Auto.Test.ReadyFingerprint_Check_Contact_1)
                         {
-                            datakeyRead = _form1.LockASSA.checkDataKey(CurrentDoorTestData.TimeOut);
-                            if (datakeyRead == null)
+                            Password_Card_Figer data = _form1.LockASSA.ConfirmFingerPrint(CurrentDoorTestData.TimeOut);
+                            if (data == null)
                             {
                                 //Fail
                                 ProcessTestIndex++;
@@ -1944,9 +1948,9 @@ namespace SLTtechSoft
                                     _form1.WriteLogPC(LogType.Main, "checkDataKey", "Null");
                                 }));
                             }
-                            if (datakeyRead != null)
+                            if (data != null)
                             {
-                                if (datakeyRead.fingerprintLid == "")
+                                if (data.DataFingerPrint_GetTrue == false )
                                 {
                                     //Fail
                                     ProcessTestIndex++;
@@ -1957,7 +1961,7 @@ namespace SLTtechSoft
                                 }
                                 else
                                 {
-                                    if (datakeyRead.fingerprintLid == "Close")
+                                    if (data.DataFingerPrint_GetTrue == true)
                                     {
                                         //Pass
                                         ProcessTestIndex = 4;
@@ -2056,7 +2060,7 @@ namespace SLTtechSoft
                                 }
                                 else
                                 {
-                                    if (datakeyRead.fingerprintLid == "Open")
+                                    if (datakeyRead.fingerprintLid == "Close")
                                     {
                                         //Pass
                                         ProcessTestIndex = 4;
@@ -2074,7 +2078,7 @@ namespace SLTtechSoft
                 case 3:
                     {
                         //Khi lỗi xảy ra, báo cho PLC kiểm tra lại
-                        _form1.PLC.Write.Auto.Test.StartFingerprint_Check_Touch_1 = false;
+                       
                         if (TestRetryTime++ < CurrentDoorTestData.retry)
                         {
                             ProcessTestIndex = 0;
@@ -3135,6 +3139,72 @@ namespace SLTtechSoft
             }
         }
 
+        public void Test_Reset_defaut()
+        {
+            //Condition
+            if (!CurrentDoorTestData.Enable) return;
+            if (CurrentDoorTestData.Name != functionDoorList.Load_Parameter.Name) return;
+            string CurrentResult = dataGridView1.Rows[CurrentDoorTestData.RowIndex].Cells[DoorTableCol.Result].Value.ToString();
+
+            if (ProcessTestIndex == 0 && CurrentResult == DoorResult.Empty)
+            {
+                TestRetryTime = 0;
+                //CountTime
+                StopWatchTestDoor = new Stopwatch();
+                StopWatchTestDoor.Start();
+
+                ProcessTestIndex = 1;
+            }
+            //Execute
+
+            switch (ProcessTestIndex)
+            {
+                case 1:
+                    {
+                        _form1.LockASSA.initializationLock(CurrentDoorTestData.TimeOut);
+                        if (TestRetryTime < CurrentDoorTestData.retry)
+                        {
+                            TestRetryTime = 0;
+                            ProcessTestIndex++;
+                        }
+                        else
+                        {
+                            if (TestRetryTime++ > CurrentDoorTestData.retry)
+                            {
+                                ProcessTestIndex = 3;
+                            }
+                        }
+                        break;
+                    }
+                case 2:
+                    {
+                        // Có sensor
+                        //Có thẻ từ
+                        // Có vân tay
+                        // Version
+                        ReadParameterDoor CheckParameterDoor = _form1.LockASSA.CheckParameterDoor(CurrentDoorTestData.TimeOut);
+                        if (CheckParameterDoor != null && TestRetryTime < CurrentDoorTestData.retry)
+                        {
+                            FinishATest(true, "");
+                        }
+                        else
+                        {
+                            if (TestRetryTime++ > CurrentDoorTestData.retry)
+                            {
+                                ProcessTestIndex = 3;
+
+                            }
+                        }
+                        break;
+                    }
+                case 3:
+                    {
+                        FinishATest(false, "Null");
+                        break;
+                    }
+                default: { break; }
+            }
+        }
         public void Test_9V_Battery()
         {
             //Condition

@@ -270,6 +270,7 @@
             "Set_RTC",
             "Get_RTC",
             "CheckProtocol",
+            "CheckADC",
             "DoneCheckLock"});
             this.cbFunctionTest.Location = new System.Drawing.Point(81, 14);
             this.cbFunctionTest.Name = "cbFunctionTest";

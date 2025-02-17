@@ -290,6 +290,12 @@ namespace LibFunction
 
 
     }
+    public enum BlE
+    {
+        APP = 0x88,
+        RF = 0x89
+
+    }
     public class FFTTableColumnClass
     {
         public int ID = 0;

@@ -2208,8 +2208,9 @@ namespace LibFunction
         }
         //30. Yêu cầu thực hiện chế độ kiểm tra BLE APP
         //32. Yêu cầu thực hiện chế độ kiểm tra BLE RF
-        public BLE TestBLEAPP_RF(byte BLE, int TimeOut)
+        public BLE TestBLEAPP_RF(BlE BLE, int TimeOut)
         {
+            byte value = Convert.ToByte(BLE);
             BLE Data = new BLE();
             byte[] cmd = new byte[7];
             cmd[0] = 0x02;
@@ -2217,7 +2218,7 @@ namespace LibFunction
             cmd[2] = 0x05;
             cmd[3] = 0x02;
             cmd[4] = 0x03;
-            cmd[5] = BLE; //APP 88 RF 89
+            cmd[5] = value; //APP 88 RF 89
             cmd[6] = 0x03;
             ArrayByteToString_TX(ref TX_cmd, cmd);
 
@@ -2611,9 +2612,17 @@ namespace LibFunction
         public RTC GetRTC(int TimeOut)
         {
             RTC Data = new RTC();
-            byte[] cmd = new byte[2];
-            cmd[0] = 0x00;
-            cmd[1] = 0xFF;
+            byte[] cmd = new byte[9];
+            cmd[0] = 0x02;
+            cmd[1] = 0x00;
+            cmd[2] = 0x15;
+            cmd[3] = 0x04;
+            cmd[4] = 0x01;
+            cmd[5] = 0x00;    //CheckRTC 0x00 Check_Vol 0x01 Check_Cur 0x02 Check_IOS 0x03 Check_VolBLE 0x04 Check BleRx 0x05 CheckSleepmode 0x06
+            cmd[6] = 0x00;
+            cmd[7] = 0xFF;
+            cmd[8] = 0x03;
+           
             ArrayByteToString_TX(ref TX_cmd, cmd);
             try
             {
@@ -2663,9 +2672,16 @@ namespace LibFunction
         public ADC_Check ADC_Check (int TimeOut)
         {
             ADC_Check Data = new ADC_Check();
-            byte[] cmd = new byte[2];
-            cmd[0] = 0x01;
+            byte[] cmd = new byte[8];
+            cmd[0] = 0x02;
             cmd[1] = 0x00;
+            cmd[2] = 0x15;
+            cmd[3] = 0x02;
+            cmd[4] = 0x01;
+            cmd[5] = 0x01;
+            cmd[6] = 0x00;
+            cmd[7] = 0x03;
+            
             ArrayByteToString_TX(ref TX_cmd, cmd);
             try
             {

@@ -76,6 +76,16 @@ namespace FunctionLoock.Usercontrol
                 case "Set_RTC": { Content = SetRTC(); break; }
                 case "Get_RTC": { Content = GetRTC(); break; }
                 case "CheckProtocol": { Content = Check_Protocol(); break; }
+                case "CheckADC": { Content = GetADC(); break; }
+                case "SettingSecurity": { Content = SettingSecurity(); break; }
+                case "TestBLEAPP_RF": { Content = TestBLEAPP_RF(); break; }
+                //case "TestBLEAPPKeyPad": { Content = SettingSecurity(); break; }
+                case "TestBLECBA": { Content = TestBLECBA(); break; }
+                case "ExternalDevice": { Content = ExternalDeviced(); break; }
+                case "DoneCheckLock": { Content = SettingSecurity(); break; }
+               
+
+
                 default: break;
             }
             listView_LogData.Items.Clear();
@@ -449,6 +459,92 @@ namespace FunctionLoock.Usercontrol
                 Content = new string[3];
                 Content[0] = $"DataGetRTC: {data.Data_Get_RTC}";
                 Content[1] = $"DataGetRTC_GetTrue: {data.Data_Get_RTC_GetTrue}";
+            }
+            else
+            {
+                Content = new string[1];
+                Content[0] = "null";
+            }
+            return Content;
+        }
+        private string[] GetADC()
+        {
+            string[] Content = new string[2];
+            int timeout = Convert.ToInt32(tbTimeOut.Text);
+            ADC_Check data = new ADC_Check();
+            data = _form1.LockASSA.ADC_Check(timeout);
+            if (data != null)
+            {
+                Content = new string[1];
+                Content[0] = $"DataGetADC: {data.Data_ADC}";
+                //Content[1] = $"DataGetADC_GetTrue: {data.Datarecived}";
+            }
+            else
+            {
+                Content = new string[1];
+                Content[0] = "null";
+            }
+            return Content;
+        }
+        private string[] SettingSecurity()
+        {
+            string[] Content = new string[1];
+            int timeout = Convert.ToInt32(tbTimeOut.Text);
+            bool data = new bool();
+            data = _form1.LockASSA.SettingSecurity(ProtectType.None, timeout);
+            Content[0] = data.ToString();
+
+            return Content; 
+        }
+        private string[] ExternalDeviced()
+        {
+            string[] Content = new string[2];
+            int timeout = Convert.ToInt32(tbTimeOut.Text);
+            External_device data = new External_device();
+            data = _form1.LockASSA.ExternalDevice(timeout);
+            if (data != null)
+            {
+                Content = new string[1];
+                Content[0] = $"DataGetExternal: {data.DataRecived}";
+                //Content[1] = $"DataGetRTC_GetTrue: {data.Data_Get_RTC_GetTrue}";
+            }
+            else
+            {
+                Content = new string[1];
+                Content[0] = "null";
+            }
+            return Content;
+        }
+        private string[] TestBLEAPP_RF()
+        {
+            string[] Content = new string[3];
+            int timeout = Convert.ToInt32(tbTimeOut.Text);
+            BLE data = new BLE();
+            data = _form1.LockASSA.TestBLEAPP_RF(BlE.APP,timeout);
+            if (data != null)
+            {
+                Content = new string[2];
+                Content[0] = $"DataGetAPP: {data.Datarecived_RF_APP}";
+                Content[1] = $"DataGetAPP: {data.DataRF_APP_GetTrue}";
+            }
+            else
+            {
+                Content = new string[1];
+                Content[0] = "null";
+            }
+            return Content;
+        }
+        private string[] TestBLECBA()
+        {
+            string[] Content = new string[3];
+            int timeout = Convert.ToInt32(tbTimeOut.Text);
+            BLE data = new BLE();
+            data = _form1.LockASSA.TestBLECBA( timeout);
+            if (data != null)
+            {
+                Content = new string[2];
+                Content[0] = $"DataGetBLE: {data.Data_CBA}";
+                Content[1] = $"DataGetBLE: {data.Data_CBA_GetTrue}";
             }
             else
             {

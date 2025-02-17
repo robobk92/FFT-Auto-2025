@@ -321,7 +321,12 @@ namespace LibFunction
         public string Name = "IDE_Current_Check";
         public string Detail = "PSU_Read_Current";
     }
-
+    public class ClassReset_Defaut_Check
+    {
+        public string ID = "FFT-18.0";
+        public string Name = "Reset_Defaut";
+        public string Detail = "Reset";
+    }
     public class ClassExternal_Power_Check_9V
     {
         public string ID = "FFT-17.0";
