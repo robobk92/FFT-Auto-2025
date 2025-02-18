@@ -209,6 +209,7 @@ namespace SLTtechSoft
                 Test_Motor_Check_Mortise_Open();
                 Test_ADC_Check();
                 Test_IDE_Curent_Check();
+                Test_Reset_defaut();
                 Test_9V_Battery();
                 Test_9V_Battery_REV();
             }
@@ -644,11 +645,13 @@ namespace SLTtechSoft
                             {
                                 FinishATest(true, Value);
                                 _form1.PLC.Write.Auto.Test.StartCheckVoltage6V = false;
+                                powerOn.Power_On = false;
                             }
                             else
                             {
                                 FinishATest(false, Value);
                                 _form1.PLC.Write.Auto.Test.StartCheckVoltage6V = false;
+                                powerOn.Power_On = false;
                             }
                         }
                         else
@@ -3143,7 +3146,7 @@ namespace SLTtechSoft
         {
             //Condition
             if (!CurrentDoorTestData.Enable) return;
-            if (CurrentDoorTestData.Name != functionDoorList.Load_Parameter.Name) return;
+            if (CurrentDoorTestData.Name != functionDoorList.Reset_Defaut_Check.Name) return;
             string CurrentResult = dataGridView1.Rows[CurrentDoorTestData.RowIndex].Cells[DoorTableCol.Result].Value.ToString();
 
             if (ProcessTestIndex == 0 && CurrentResult == DoorResult.Empty)
@@ -3161,45 +3164,65 @@ namespace SLTtechSoft
             {
                 case 1:
                     {
-                        _form1.LockASSA.initializationLock(CurrentDoorTestData.TimeOut);
-                        if (TestRetryTime < CurrentDoorTestData.retry)
-                        {
-                            TestRetryTime = 0;
-                            ProcessTestIndex++;
-                        }
-                        else
-                        {
-                            if (TestRetryTime++ > CurrentDoorTestData.retry)
-                            {
-                                ProcessTestIndex = 3;
-                            }
-                        }
+                        _form1.PLC.Write.Auto.Test.Cyl_Resset_Default = true;
+                        ProcessTestIndex++; 
                         break;
                     }
-                case 2:
-                    {
-                        // Có sensor
-                        //Có thẻ từ
-                        // Có vân tay
-                        // Version
-                        ReadParameterDoor CheckParameterDoor = _form1.LockASSA.CheckParameterDoor(CurrentDoorTestData.TimeOut);
-                        if (CheckParameterDoor != null && TestRetryTime < CurrentDoorTestData.retry)
-                        {
-                            FinishATest(true, "");
-                        }
-                        else
-                        {
-                            if (TestRetryTime++ > CurrentDoorTestData.retry)
-                            {
-                                ProcessTestIndex = 3;
 
+                case 2:
+
+                    {
+                        if (_form1.PLC.Read.Auto.Test.StartCyl_Resset_Default)
+                        {
+                            PowerOn powerOn = _form1.LockASSA.ReadPowerOn(CurrentDoorTestData.TimeOut);
+                            if (powerOn == null) return;
+                            if (powerOn.Power_On)
+                            {
+                                TestRetryTime = 0;
+                                ProcessTestIndex++;
+                            }
+                            else
+                            {
+                                if (TestRetryTime++ > CurrentDoorTestData.retry)
+                                {
+                                    ProcessTestIndex = 4;
+                                }
                             }
                         }
+                       
                         break;
                     }
                 case 3:
                     {
-                        FinishATest(false, "Null");
+                       
+                        _form1.LockASSA.initializationLock(CurrentDoorTestData.TimeOut);
+                        if (TestRetryTime < CurrentDoorTestData.retry)
+                        {
+                            FinishATest(true, "Pass");
+                        }
+                        else
+                        {
+                            if (TestRetryTime++ > CurrentDoorTestData.retry)
+                            {
+                                ProcessTestIndex ++;
+
+                            }
+                        }
+                        
+                        _form1.PLC.Write.Auto.Test.Cyl_Resset_Default = false;
+                        break;
+                    }
+                case 4:
+                    {
+                        if (TestRetryTime++ < CurrentDoorTestData.retry)
+                        {
+                            ProcessTestIndex = 0;
+                        }
+                        else
+                        {
+                            //kết thúc kiểm tra Fail
+                           FinishATest(false, "null");
+                        }
                         break;
                     }
                 default: { break; }
@@ -3264,7 +3287,7 @@ namespace SLTtechSoft
                             _form1.KeySightPSU_ON();
                             // Delay Sau khi mở nguồn
                             StartDelayProcess = true;
-                            DelayProcess(20);
+                            DelayProcess(30);
                             if (DelayProcessDone)
                             {
                                 StartDelayProcess = false;
@@ -3277,18 +3300,24 @@ namespace SLTtechSoft
                     {
 
                         PowerOn powerOn = _form1.LockASSA.ReadPowerOn(CurrentDoorTestData.TimeOut);
-                        if (powerOn.Power_On == null) return;
-                        if (_form1.LockASSA.initializationLock(CurrentDoorTestData.TimeOut))
+                        //if (powerOn.Power_On == null) return;
+                        if (powerOn.Power_On)
                         {
-                            ProcessTestIndex = 5;
-                        }
-                        else
-                        {
-                            if (TestRetryTime++ > CurrentDoorTestData.retry)
+                            if (_form1.LockASSA.initializationLock(CurrentDoorTestData.TimeOut))
                             {
-                                ProcessTestIndex = 6;
+                                ProcessTestIndex = 5;
+                                powerOn.Power_On = false;
+                            }
+                            else
+                            {
+                                if (TestRetryTime++ > CurrentDoorTestData.retry)
+                                {
+                                    ProcessTestIndex = 6;
+                                    powerOn.Power_On = false;
+                                }
                             }
                         }
+                        
 
                         break;
                     }
@@ -3349,19 +3378,23 @@ namespace SLTtechSoft
                     {
                         PowerOn powerOn = _form1.LockASSA.ReadPowerOn(CurrentDoorTestData.TimeOut);
                         if (powerOn.Power_On == null)return;
-                        if (_form1.PLC.Read.Auto.Test.ReadyExternal_Power_Check_9V_REV)
+                        if (powerOn.Power_On)
                         {
-                            if (_form1.LockASSA.initializationLock(CurrentDoorTestData.TimeOut))
+                            if (_form1.PLC.Read.Auto.Test.ReadyExternal_Power_Check_9V_REV)
                             {
-                                ProcessTestIndex = 3;
-                            }
-                            else
-                            {
-                                if (TestRetryTime++ > CurrentDoorTestData.retry)
+                                if (_form1.LockASSA.initializationLock(CurrentDoorTestData.TimeOut))
                                 {
-                                    ProcessTestIndex = 4;
+                                    ProcessTestIndex = 3;
+                                }
+                                else
+                                {
+                                    if (TestRetryTime++ > CurrentDoorTestData.retry)
+                                    {
+                                        ProcessTestIndex = 4;
+                                    }
                                 }
                             }
+                            
                         }
                         break;
                     }

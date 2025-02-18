@@ -82,7 +82,7 @@ namespace FunctionLoock.Usercontrol
                 //case "TestBLEAPPKeyPad": { Content = SettingSecurity(); break; }
                 case "TestBLECBA": { Content = TestBLECBA(); break; }
                 case "ExternalDevice": { Content = ExternalDeviced(); break; }
-                case "DoneCheckLock": { Content = SettingSecurity(); break; }
+                //case "DoneCheckLock": { Content = SettingSecurity(); break; }
                
 
 

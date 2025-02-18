@@ -83,6 +83,7 @@ namespace LibFunction
 
         public ClassADC_Check ADC_Check = new ClassADC_Check();
         public ClassIDE_Current_Check IDE_Curent_Check = new ClassIDE_Current_Check();
+        public ClassReset_Defaut_Check Reset_Defaut_Check = new ClassReset_Defaut_Check();
         public ClassExternal_Power_Check_9V External_Power_Check_9V = new ClassExternal_Power_Check_9V();
         public ClassExternal_Power_Check_9V_REV External_Power_Check_9V_REV = new ClassExternal_Power_Check_9V_REV();
     }
@@ -324,7 +325,7 @@ namespace LibFunction
     public class ClassReset_Defaut_Check
     {
         public string ID = "FFT-18.0";
-        public string Name = "Reset_Defaut";
+        public string Name = "Reset_Default";
         public string Detail = "Reset";
     }
     public class ClassExternal_Power_Check_9V

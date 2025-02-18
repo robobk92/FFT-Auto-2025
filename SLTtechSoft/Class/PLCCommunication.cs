@@ -178,6 +178,8 @@ namespace SLTtechSoft
         public bool Set_Check_ADC_Voltage { get; set; }
         public bool Set_Check_IDE_Current {  get; set; }
         public bool Broken_Disconnect { get; set; }
+        public bool Cyl_Check_Stuck { get; set; }
+        public bool Cyl_Resset_Default { get; set; }
     }
     public class TestAutoRead
     {
@@ -212,6 +214,8 @@ namespace SLTtechSoft
         public bool Ready_Check_IDE_Current {  get; set; }
 
         public bool Broken_Disconnect { get; set; }
+        public bool StartCyl_Resset_Default {  get; set; }
+        public bool StartCyl_Check_Stuck { get; set; }
     }
     public class WordRead
     {

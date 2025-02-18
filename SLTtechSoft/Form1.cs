@@ -741,6 +741,8 @@ namespace SLTtechSoft
                 PLC.Read.Auto.Test.Ready_check_ADCVoltage = dataReadPLC_bools19[5];
                 PLC.Read.Auto.Test.Ready_Check_IDE_Current = dataReadPLC_bools19[6];
                 PLC.Read.Auto.Test.Broken_Disconnect = dataReadPLC_bools19[7];
+                PLC.Read.Auto.Test.StartCyl_Check_Stuck = dataReadPLC_bools19[8];
+                PLC.Read.Auto.Test.StartCyl_Resset_Default = dataReadPLC_bools19[9];
 
                 PLC.Read.Auto.Auto = dataReadPLC_bools20[0];
                 PLC.Read.Auto.Run = dataReadPLC_bools20[1];
@@ -930,8 +932,8 @@ namespace SLTtechSoft
                 PLC.Write.Auto.Test.Set_Check_ADC_Voltage,
                 PLC.Write.Auto.Test.Set_Check_IDE_Current,
                 PLC.Write.Auto.Test.Broken_Disconnect,
-                false,  
-                false,
+                PLC.Write.Auto.Test.Cyl_Check_Stuck,  
+                PLC.Write.Auto.Test.Cyl_Resset_Default,
                 false, 
                 false,
                 false,
