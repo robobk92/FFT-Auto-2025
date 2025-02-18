@@ -401,13 +401,15 @@ namespace LibFunction
                 }
                 else
                 {
+                    Array.Clear(hi, 0, hi.Length);
                     throw new Exception("Recived Timeout!");
+                    
                 }
             }
             catch (Exception ex)
             {
                 OnEventException("Initial", ex.Message);
-                return null;
+                
             }
             return Datarecived;
         }
@@ -438,15 +440,15 @@ namespace LibFunction
                 CheckByteToRead(ref m, TimeOut);
                 if (m > 0)
                 {
-                    Serial.Read(hi, 0, m);
+                    //Serial.Read(hi, 0, m);
 
-                    byte[] newbtye = new byte[m];
-                    for (int i = 0; i < m; i++)
-                    {
-                        newbtye[i] = hi[i];
-                    }
-                    RX_cmd = BitConverter.ToString(newbtye).Replace("-", " ");
-                    OnEventTransferData(true, "Initial", RX_cmd);
+                    //byte[] newbtye = new byte[m];
+                    //for (int i = 0; i < m; i++)
+                    //{
+                    //    newbtye[i] = hi[i];
+                    //}
+                    //RX_cmd = BitConverter.ToString(newbtye).Replace("-", " ");
+                    //OnEventTransferData(true, "Initial", RX_cmd);
                 }
                 else
                 {
@@ -1202,7 +1204,7 @@ namespace LibFunction
 
                 if (Data.DataRecived_ConfirmCard[4] == 0x00)
                 {
-                    if (Data.DataCard == "01 01 FF FF FF FF FF FF 03")
+                    if (Data.DataCard == "DB 73 FB C0 FF FF FF FF 03")
                     {
                         Data.DataCard_GetTrue = true;
                     }
