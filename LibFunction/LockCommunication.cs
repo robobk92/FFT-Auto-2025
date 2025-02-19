@@ -435,25 +435,25 @@ namespace LibFunction
                 Serial.Write(cmd, 0, cmd.Length);
                 OnEventTransferData(false, "Initial", TX_cmd);
 
-                byte[] hi = new byte[500];
-                int m = 0;
-                CheckByteToRead(ref m, TimeOut);
-                if (m > 0)
-                {
-                    //Serial.Read(hi, 0, m);
+                //byte[] hi = new byte[500];
+                //int m = 0;
+                //CheckByteToRead(ref m, TimeOut);
+                //if (m > 0)
+                //{
+                //    Serial.Read(hi, 0, m);
 
-                    //byte[] newbtye = new byte[m];
-                    //for (int i = 0; i < m; i++)
-                    //{
-                    //    newbtye[i] = hi[i];
-                    //}
-                    //RX_cmd = BitConverter.ToString(newbtye).Replace("-", " ");
-                    //OnEventTransferData(true, "Initial", RX_cmd);
-                }
-                else
-                {
-                    throw new Exception("Recived Timeout!");
-                }
+                //    byte[] newbtye = new byte[m];
+                //    for (int i = 0; i < m; i++)
+                //    {
+                //        newbtye[i] = hi[i];
+                //    }
+                //    RX_cmd = BitConverter.ToString(newbtye).Replace("-", " ");
+                //    OnEventTransferData(true, "Initial", RX_cmd);
+                //}
+                //else
+                //{
+                //    throw new Exception("Recived Timeout!");
+                //}
             }
             catch (Exception ex)
             {

@@ -600,6 +600,7 @@
             this.btnRun.Text = "RUN";
             this.btnRun.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnRun.UseVisualStyleBackColor = false;
+            this.btnRun.Click += new System.EventHandler(this.btnRun_Click);
             // 
             // btnStop
             // 

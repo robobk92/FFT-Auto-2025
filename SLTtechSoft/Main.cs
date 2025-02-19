@@ -259,14 +259,14 @@ namespace SLTtechSoft
                                 dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.Red;
                                 //Kiểm tra xem Chức năng có thuộc danh sách dừng Check Khi Fail hay không
                                 //Nếu phải thì cho dừng Kiểm tra
-                                //for (int k = 0; k <= ListItemStopWhenFail.Length; k++)
-                                //{
-                                //    if (dataGridView1.Rows[i].Cells[1].Value.ToString() == ListItemStopWhenFail[k])
-                                //    { 
-                                //        StopTestingByFail = false;
-                                //        break;
-                                //    }
-                                //}
+                                for (int k = 0; k <= ListItemStopWhenFail.Length; k++)
+                                {
+                                    if (dataGridView1.Rows[i].Cells[1].Value.ToString() == ListItemStopWhenFail[k])
+                                    {
+                                        StopTestingByFail = false;
+                                        break;
+                                    }
+                                }
                                 if (StopTestingByFail) break;
                             }
                             else
@@ -378,6 +378,8 @@ namespace SLTtechSoft
 
 
         }
+        private DataKey datakeyRead;
+        private CheckLockInputAddstatus DataLockread;
         public void Test_Front_QR()
         {
             if (!CurrentDoorTestData.Enable) return;
@@ -766,13 +768,10 @@ namespace SLTtechSoft
                     }
                 case 2:
                     {
-                        // Có sensor
-                        //Có thẻ từ
-                        // Có vân tay
-                        // Version
                         ReadParameterDoor CheckParameterDoor = _form1.LockASSA.CheckParameterDoor(CurrentDoorTestData.TimeOut);
                         if (CheckParameterDoor != null && TestRetryTime < CurrentDoorTestData.retry)
                         {
+
                             FinishATest(true, "");
                         }
                         else
@@ -1062,8 +1061,7 @@ namespace SLTtechSoft
                 default: { break; }
             }
         }
-        private DataKey datakeyRead;
-        private CheckLockInputAddstatus DataLockread;
+       
         public void Test_Door_Position_Sensor_Check_Close()
         {
             //Condition
@@ -1838,6 +1836,12 @@ namespace SLTtechSoft
                         if (!IsLedDoorOn)
                         {
                             _form1.LockASSA.LEDKeyOn(CurrentDoorTestData.TimeOut);
+                            //StartDelayProcess = true;
+                            //DelayProcess(10);
+                            //if (DelayProcessDone)
+                            //{
+                            //    StartDelayProcess = false;
+                            //}
                             IsLedDoorOn = true;
 
                         }
@@ -1897,6 +1901,12 @@ namespace SLTtechSoft
                         if (TestRetryTime++ < CurrentDoorTestData.retry)
                         {
                             _form1.LockASSA.LEDKeyOn(CurrentDoorTestData.TimeOut);
+                            //StartDelayProcess = true;
+                            //DelayProcess(10);
+                            //if (DelayProcessDone)
+                            //{
+                            //    StartDelayProcess = false;
+                            //}
                             _form1._VisionSystem[0].FinishTrigger = false;
                             ProcessTestIndex = 2;
                             
@@ -2090,7 +2100,7 @@ namespace SLTtechSoft
                        
                         if (TestRetryTime++ < CurrentDoorTestData.retry)
                         {
-                            ProcessTestIndex = 0;
+                            ProcessTestIndex = 1;
                         }
                         else
                         {
@@ -3448,7 +3458,7 @@ namespace SLTtechSoft
                 case 1:
                     {
                         StartDelayProcess = true;
-                        DelayProcess(30);
+                        DelayProcess(5);
                         if (DelayProcessDone)
                         {
                             _form1.PLC.Write.Auto.Test.StartExternal_Power_Check_9V_REV = true;
@@ -3493,13 +3503,7 @@ namespace SLTtechSoft
                 case 4:
                     {
                         _form1.PLC.Write.Auto.Test.StartExternal_Power_Check_9V_REV = false;
-                        StartDelayProcess = true;
-                        DelayProcess(10);
-                        if (DelayProcessDone)
-                        {
-                            StartDelayProcess = false;
-                        }
-                        if (_form1.PLC.Read.Auto.Test.ReadyExternal_Power_Check_9V_REV)
+                        if (!_form1.PLC.Read.Auto.Test.ReadyExternal_Power_Check_9V_REV)
                         {
                             FinishATest(true, CurrentDoorTestData.Min);
                         }
