@@ -547,9 +547,9 @@ namespace SLTtechSoft
             ReadFFTTableToSetFFTDataGridView(Model.ListFFTTest);
             PLCControl.tbMotionFile.Texts = Model.MotionFile;
             ReadPLCProgramFromFile(Model.MotionFile);
-            
+            short pos2 = (short)Model.pLCModelPara.nudPoint2;
             PLCControl.nudPoint1.Value = Model.pLCModelPara.nudPoint1;
-            PLCControl.nudPoint2.Value = Model.pLCModelPara.nudPoint2;
+            PLCControl.nudPoint2.Value = pos2;
             PLCControl.nudPoint3.Value = Model.pLCModelPara.nudPoint3;
             PLCControl.nudPoint4.Value = Model.pLCModelPara.nudPoint4;
             PLCControl.nudPoint5.Value = Model.pLCModelPara.nudPoint5;

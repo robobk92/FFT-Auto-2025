@@ -259,15 +259,15 @@ namespace SLTtechSoft
                                 dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.Red;
                                 //Kiểm tra xem Chức năng có thuộc danh sách dừng Check Khi Fail hay không
                                 //Nếu phải thì cho dừng Kiểm tra
-                                for (int k = 0; k <= ListItemStopWhenFail.Length; k++)
-                                {
-                                    if (dataGridView1.Rows[i].Cells[1].Value.ToString() == ListItemStopWhenFail[k])
-                                    {
-                                        StopTestingByFail = false;
-                                        break;
-                                    }
-                                }
-                                if (StopTestingByFail) break;
+                                //for (int k = 0; k <= ListItemStopWhenFail.Length; k++)
+                                //{
+                                //    if (dataGridView1.Rows[i].Cells[1].Value.ToString() == ListItemStopWhenFail[k])
+                                //    {
+                                //        StopTestingByFail = false;
+                                //        break;
+                                //    }
+                                //}
+                                //if (StopTestingByFail) break;
                             }
                             else
                             {
@@ -1883,13 +1883,17 @@ namespace SLTtechSoft
                                 else
                                 {
                                     //Fail;
+                                    _form1.LockASSA.LEDKeyOn(CurrentDoorTestData.TimeOut);
+                                   
                                     ProcessTestIndex = 4;
                                 }
                             }
                             else
                             {
                                 //Fail;
+                                _form1.LockASSA.LEDKeyOn(CurrentDoorTestData.TimeOut);
                                 ProcessTestIndex = 4;
+                               
                             }
                         }
                         
@@ -1898,18 +1902,17 @@ namespace SLTtechSoft
                 case 4:
                     {
                         //Xử lý chụp lại khi NG
+                        //delay nhung chup van bi mo
                         if (TestRetryTime++ < CurrentDoorTestData.retry)
                         {
-                            _form1.LockASSA.LEDKeyOn(CurrentDoorTestData.TimeOut);
-                            //StartDelayProcess = true;
-                            //DelayProcess(10);
-                            //if (DelayProcessDone)
-                            //{
-                            //    StartDelayProcess = false;
-                            //}
                             _form1._VisionSystem[0].FinishTrigger = false;
+                            StartDelayProcess = true;
+                            DelayProcess(30);
+                            if (DelayProcessDone)
+                            {
+                                StartDelayProcess = false;
+                            }
                             ProcessTestIndex = 2;
-                            
                         }
                         else
                         {
