@@ -86,7 +86,9 @@ namespace SLTtechSoft
                         }
                     case 2:
                         {
-                            _model.modelParameter.pLCModelPara.nudPoint2 = Convert.ToInt32(nudPoint2.Value);
+                            short sigervalue = (short)nudPoint2.Value;
+                            ushort value = (ushort)sigervalue;
+                            _model.modelParameter.pLCModelPara.nudPoint2 = Convert.ToInt32(value);
                             break;
                         }
                     case 3:
