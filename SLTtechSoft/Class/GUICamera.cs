@@ -496,7 +496,7 @@ namespace GUISampleMultiCam
                 handler.Invoke(this, e);
             }
         }
-
+        public bool UserLighting;
         // Invoke event handlers when a grab has been started.
         // This event is raised by the member object camera.
         public void OnGrabStarted(Object sender, EventArgs e)
@@ -505,13 +505,18 @@ namespace GUISampleMultiCam
             //{
             //    int k = i;
             //}
-            camera.Parameters[PLCamera.UserOutputValue].TrySetValue(true);
-            EventHandler handler = GuiCameraGrabStarted;
-            Console.WriteLine("OnGrabStarted");
-            if (handler != null)
+            if (UserLighting)
             {
-                handler.Invoke(this, e);
+                camera.Parameters[PLCamera.UserOutputValue].TrySetValue(true);
+                EventHandler handler = GuiCameraGrabStarted;
+                Console.WriteLine("OnGrabStarted");
+                if (handler != null)
+                {
+                    handler.Invoke(this, e);
+                }
+
             }
+           
         }
 
         // Invoke event handlers when a grab has been stopped.

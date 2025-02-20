@@ -196,6 +196,7 @@ namespace SLTtechSoft
                 Test_Speaker_Check();
                 Test_Key_Check();
                 Test_Led_Check();
+                //Test_Label_Check();
                 Test_Fingerprint_Check_Contact_1();
                 Test_Fingerprint_Check_Touch_1();
                 Test_RF_Card_Check();
@@ -1680,6 +1681,7 @@ namespace SLTtechSoft
             }
         }
         private int CheckKeyPressIndex = 0;
+        
         public void Test_Key_Check()
         {
             //Condition
@@ -1836,12 +1838,7 @@ namespace SLTtechSoft
                         if (!IsLedDoorOn)
                         {
                             _form1.LockASSA.LEDKeyOn(CurrentDoorTestData.TimeOut);
-                            //StartDelayProcess = true;
-                            //DelayProcess(10);
-                            //if (DelayProcessDone)
-                            //{
-                            //    StartDelayProcess = false;
-                            //}
+                            _form1.GUICamera.UserLighting = false;
                             IsLedDoorOn = true;
 
                         }
@@ -1883,7 +1880,7 @@ namespace SLTtechSoft
                                 else
                                 {
                                     //Fail;
-                                    _form1.LockASSA.LEDKeyOn(CurrentDoorTestData.TimeOut);
+                                    
                                    
                                     ProcessTestIndex = 4;
                                 }
@@ -1891,7 +1888,7 @@ namespace SLTtechSoft
                             else
                             {
                                 //Fail;
-                                _form1.LockASSA.LEDKeyOn(CurrentDoorTestData.TimeOut);
+                                
                                 ProcessTestIndex = 4;
                                
                             }
@@ -1906,6 +1903,7 @@ namespace SLTtechSoft
                         if (TestRetryTime++ < CurrentDoorTestData.retry)
                         {
                             _form1._VisionSystem[0].FinishTrigger = false;
+                            _form1.LockASSA.LEDKeyOn(CurrentDoorTestData.TimeOut);
                             StartDelayProcess = true;
                             DelayProcess(30);
                             if (DelayProcessDone)
@@ -1921,6 +1919,125 @@ namespace SLTtechSoft
                         break;
                     }
                 
+                default: { break; }
+            }
+        }
+        private int ChecklabelIndex = 0;
+        public void Test_Label_Check()
+        {
+            if (!CurrentDoorTestData.Enable) return;
+            if (CurrentDoorTestData.Name != "Label_Check")
+            {
+                _form1._VisionSystem[0].FinishTrigger = false;
+            }
+            bool IsInFunctionList = false;
+            for (int i = 0; i < functionDoorList.labelCheck.Length; i++)
+            {
+
+                if (CurrentDoorTestData.Name == functionDoorList.labelCheck[i].Name &&
+                    CurrentDoorTestData.Detail == functionDoorList.labelCheck[i].Detail
+                   )
+                {
+                    IsInFunctionList = true;
+                    ChecklabelIndex = i;
+                }
+            }
+            if (!IsInFunctionList) return;
+            string CurrentResult = dataGridView1.Rows[CurrentDoorTestData.RowIndex].Cells[DoorTableCol.Result].Value.ToString();
+
+            if (ProcessTestIndex == 0 && CurrentResult == DoorResult.Empty)
+            {
+                TestRetryTime = 0;
+                //CountTime
+                StopWatchTestDoor = new Stopwatch();
+                StopWatchTestDoor.Start();
+
+                ProcessTestIndex = 1;
+            }
+            //Execute
+
+            switch (ProcessTestIndex)
+            {
+                case 1:
+                    {
+                        _form1.PLC.Write.Auto.Test.StartLedCheck = true;
+                        if (!IsLedDoorOn)
+                        {
+
+                            IsLedDoorOn = true;
+
+                        }
+                        if (_form1.PLC.Read.Auto.Test.ReadyLedCheck)
+                        {
+                            _form1.PLC.Write.Auto.Test.StartLedCheck = false;
+                            _form1.GUICamera.UserLighting = true;
+                            ProcessTestIndex++;
+                        }
+
+                        break;
+                    }
+                case 2:
+                    {
+                        if (!_form1._VisionSystem[0].FinishTrigger) _form1.GUICamera.StartSingleShotGrabbing();
+                        ProcessTestIndex++;
+                        break;
+                    }
+                case 3:
+                    {
+                        if (_form1._VisionSystem[0].FinishTrigger)
+                        {
+                            if (_form1._VisionSystem[0].LedResult[CheckKeyPressIndex])
+                            {
+                                datakeyRead = _form1.LockASSA.checkDataKey(CurrentDoorTestData.TimeOut);
+                                DataLockread = _form1.LockASSA.CheckInputADoor(CurrentDoorTestData.TimeOut);
+                                int Result1 = _form1._VisionSystem[0].LedValue[CheckKeyPressIndex];
+                                int Result2 = _form1._VisionSystem[0].LedValue[CheckKeyPressIndex];
+                                int Min1 = Convert.ToInt32(CurrentDoorTestData.Min.Split('-')[0]);
+                                int Min2 = Convert.ToInt32(CurrentDoorTestData.Min.Split('-')[1]);
+                                int Max1 = Convert.ToInt32(CurrentDoorTestData.Max.Split('-')[0]);
+                                int Max2 = Convert.ToInt32(CurrentDoorTestData.Max.Split('-')[1]);
+
+                                if (Result1 >= Min1 && Result1 <= Max1 && Result2 >= Min2 && Result2 <= Max2)
+                                {
+                                    //Pass
+                                    FinishATest(true, _form1._VisionSystem[0].LedValue[CheckKeyPressIndex].ToString());
+
+                                }
+                                else
+                                {
+                                    //Fail;
+
+
+                                    ProcessTestIndex = 4;
+                                }
+                            }
+                            else
+                            {
+                                //Fail;
+
+                                ProcessTestIndex = 4;
+
+                            }
+                        }
+
+                        break;
+                    }
+                case 4:
+                    {
+                        //Xử lý chụp lại khi NG
+                        //delay nhung chup van bi mo
+                        if (TestRetryTime++ < CurrentDoorTestData.retry)
+                        {
+                            _form1._VisionSystem[0].FinishTrigger = false;
+                            ProcessTestIndex = 2;
+                        }
+                        else
+                        {
+                            FinishATest(false, _form1._VisionSystem[0].LedValue[CheckKeyPressIndex].ToString());
+                        }
+                        break;
+                    }
+
                 default: { break; }
             }
         }

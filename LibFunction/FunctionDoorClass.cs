@@ -68,6 +68,12 @@ namespace LibFunction
         new ClassLedCheck { ID = "FFT-10.13", Name = "Led_Check", Detail = "Led_Battery"}
         };
 
+        public ClassLabelCheck[] labelCheck = new ClassLabelCheck[]
+        {
+        new ClassLabelCheck { ID = "FFT-10.12", Name = "Label_Check", Detail = "Led_Bar" },
+        new ClassLabelCheck { ID = "FFT-10.12", Name = "Label_Check", Detail = "Led_Card" },
+        
+        };
         public ClassFingerprint_Check_Contact_1 Fingerprint_Check_Contact_1 = new ClassFingerprint_Check_Contact_1();
         public ClassFingerprint_Check_Touch_1 Fingerprint_Check_Touch_1 = new ClassFingerprint_Check_Touch_1();
         public ClassRF_Card_Check RF_Card_Check = new ClassRF_Card_Check();
@@ -232,7 +238,12 @@ namespace LibFunction
         public string Name { get; set; }
         public string Detail { get; set; }
     }
-
+    public class ClassLabelCheck
+    {
+        public string ID { get; set; }
+        public string Name { get; set; }
+        public string Detail { get; set; }
+    }
     //
     public class ClassFingerprint_Check_Contact_1
     {
