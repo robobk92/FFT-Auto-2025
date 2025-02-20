@@ -351,7 +351,8 @@ namespace SLTtechSoft
                 _form1.formModel.ShowFFTTableInMainScreen();
                 StartTesting = true;
                 ProcessTestIndex = 0;
-                
+                _form1.RefreshCogDisplayImage();
+
                 //Bắt đầu đếm thời gian kiểm thử 1 công đoạn
                 StopWatchTestDoor = new Stopwatch();
                 StopWatchTestDoor.Start();

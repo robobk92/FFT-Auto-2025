@@ -1555,6 +1555,8 @@ namespace SLTtechSoft
             }
             return thisImageRun;
         }
+
+        NumPadName numPadName = new NumPadName();
         private int VisionRun(int cam, ImageInfo ImageInput, bool IsFitImage)
         {
             // Khởi tạo biến
@@ -1578,8 +1580,9 @@ namespace SLTtechSoft
                     _VisionSystem[cam].imageInfos[index] = ImageInput;
 
                     //Check Tool Block Output Variable
-                    int FindProductLocation = (int)_VisionSystem[cam].cogToolBlock[0].Outputs["FindProductLocation"].Value;
-                    if (FindProductLocation == 0) throw new Exception($"don't Exist Card Results");
+                    //int FindProductLocation = (int)_VisionSystem[cam].cogToolBlock[0].Outputs["FindProductLocation"].Value;
+                    //if (FindProductLocation == 0) throw new Exception($"don't Exist Card Results");
+
 
                     _VisionSystem[cam].cogToolBlock[index].Run();
                     CogToolBlock CogToolBlock_Logo = _VisionSystem[cam].cogToolBlock[0].Tools["CogToolBlock_Logo"] as CogToolBlock;
@@ -1600,44 +1603,51 @@ namespace SLTtechSoft
                     CogToolBlock CogToolBlock_Finger = _VisionSystem[cam].cogToolBlock[0].Tools["CogToolBlock_Finger"] as CogToolBlock;
                     CogToolBlock CogToolBlock_Battery = _VisionSystem[cam].cogToolBlock[0].Tools["CogToolBlock_Battery"] as CogToolBlock;
 
-                    _VisionSystem[cam].LedValue[0] = Convert.ToInt32((double)CogToolBlock_No0.Outputs["HistoValue"].Value);
-                    _VisionSystem[cam].LedValue[1] = Convert.ToInt32((double)CogToolBlock_No1.Outputs["HistoValue"].Value);
-                    _VisionSystem[cam].LedValue[2] = Convert.ToInt32((double)CogToolBlock_No2.Outputs["HistoValue"].Value);
-                    _VisionSystem[cam].LedValue[3] = Convert.ToInt32((double)CogToolBlock_No3.Outputs["HistoValue"].Value);
-                    _VisionSystem[cam].LedValue[4] = Convert.ToInt32((double)CogToolBlock_No4.Outputs["HistoValue"].Value);
-                    _VisionSystem[cam].LedValue[5] = Convert.ToInt32((double)CogToolBlock_No5.Outputs["HistoValue"].Value);
-                    _VisionSystem[cam].LedValue[6] = Convert.ToInt32((double)CogToolBlock_No6.Outputs["HistoValue"].Value);
-                    _VisionSystem[cam].LedValue[7] = Convert.ToInt32((double)CogToolBlock_No7.Outputs["HistoValue"].Value);
-                    _VisionSystem[cam].LedValue[8] = Convert.ToInt32((double)CogToolBlock_No8.Outputs["HistoValue"].Value);
-                    _VisionSystem[cam].LedValue[9] = Convert.ToInt32((double)CogToolBlock_No9.Outputs["HistoValue"].Value);
-                    _VisionSystem[cam].LedValue[10] = Convert.ToInt32((double)CogToolBlock_Asterisk.Outputs["HistoValue"].Value);
-                    _VisionSystem[cam].LedValue[11] = Convert.ToInt32((double)CogToolBlock_Sharp.Outputs["HistoValue"].Value);
-                    _VisionSystem[cam].LedValue[12] = Convert.ToInt32((double)CogToolBlock_Logo.Outputs["HistoValue"].Value);
-                    _VisionSystem[cam].LedValue[13] = Convert.ToInt32((double)CogToolBlock_Card.Outputs["HistoValue"].Value);
-                    _VisionSystem[cam].LedValue[14] = Convert.ToInt32((double)CogToolBlock_Lock.Outputs["HistoValue"].Value);
-                    _VisionSystem[cam].LedValue[15] = Convert.ToInt32((double)CogToolBlock_Finger.Outputs["HistoValue"].Value);
-                    _VisionSystem[cam].LedValue[16] = Convert.ToInt32((double)CogToolBlock_Battery.Outputs["HistoValue"].Value);
+                    if (!GUICamera.UserLighting)
+                    {
+                        _VisionSystem[cam].LedValue[0] = Convert.ToInt32((double)CogToolBlock_No0.Outputs["HistoValue"].Value);
+                        _VisionSystem[cam].LedValue[1] = Convert.ToInt32((double)CogToolBlock_No1.Outputs["HistoValue"].Value);
+                        _VisionSystem[cam].LedValue[2] = Convert.ToInt32((double)CogToolBlock_No2.Outputs["HistoValue"].Value);
+                        _VisionSystem[cam].LedValue[3] = Convert.ToInt32((double)CogToolBlock_No3.Outputs["HistoValue"].Value);
+                        _VisionSystem[cam].LedValue[4] = Convert.ToInt32((double)CogToolBlock_No4.Outputs["HistoValue"].Value);
+                        _VisionSystem[cam].LedValue[5] = Convert.ToInt32((double)CogToolBlock_No5.Outputs["HistoValue"].Value);
+                        _VisionSystem[cam].LedValue[6] = Convert.ToInt32((double)CogToolBlock_No6.Outputs["HistoValue"].Value);
+                        _VisionSystem[cam].LedValue[7] = Convert.ToInt32((double)CogToolBlock_No7.Outputs["HistoValue"].Value);
+                        _VisionSystem[cam].LedValue[8] = Convert.ToInt32((double)CogToolBlock_No8.Outputs["HistoValue"].Value);
+                        _VisionSystem[cam].LedValue[9] = Convert.ToInt32((double)CogToolBlock_No9.Outputs["HistoValue"].Value);
+                        _VisionSystem[cam].LedValue[10] = Convert.ToInt32((double)CogToolBlock_Asterisk.Outputs["HistoValue"].Value);
+                        _VisionSystem[cam].LedValue[11] = Convert.ToInt32((double)CogToolBlock_Sharp.Outputs["HistoValue"].Value);
+
+                        _VisionSystem[cam].LedValue[14] = Convert.ToInt32((double)CogToolBlock_Lock.Outputs["HistoValue"].Value);
+                        _VisionSystem[cam].LedValue[15] = Convert.ToInt32((double)CogToolBlock_Finger.Outputs["HistoValue"].Value);
+                        _VisionSystem[cam].LedValue[16] = Convert.ToInt32((double)CogToolBlock_Battery.Outputs["HistoValue"].Value);
 
 
-                    _VisionSystem[cam].LedResult[0] = (bool)CogToolBlock_No0.Outputs["ResultAll"].Value;
-                    _VisionSystem[cam].LedResult[1] = (bool)CogToolBlock_No1.Outputs["ResultAll"].Value;
-                    _VisionSystem[cam].LedResult[2] = (bool)CogToolBlock_No2.Outputs["ResultAll"].Value;
-                    _VisionSystem[cam].LedResult[3] = (bool)CogToolBlock_No3.Outputs["ResultAll"].Value;
-                    _VisionSystem[cam].LedResult[4] = (bool)CogToolBlock_No4.Outputs["ResultAll"].Value;
-                    _VisionSystem[cam].LedResult[5] = (bool)CogToolBlock_No5.Outputs["ResultAll"].Value;
-                    _VisionSystem[cam].LedResult[6] = (bool)CogToolBlock_No6.Outputs["ResultAll"].Value;
-                    _VisionSystem[cam].LedResult[7] = (bool)CogToolBlock_No7.Outputs["ResultAll"].Value;
-                    _VisionSystem[cam].LedResult[8] = (bool)CogToolBlock_No8.Outputs["ResultAll"].Value;
-                    _VisionSystem[cam].LedResult[9] = (bool)CogToolBlock_No9.Outputs["ResultAll"].Value;
-                    _VisionSystem[cam].LedResult[10] = (bool)CogToolBlock_Asterisk.Outputs["ResultAll"].Value;
-                    _VisionSystem[cam].LedResult[11] = (bool)CogToolBlock_Sharp.Outputs["ResultAll"].Value;
-                    _VisionSystem[cam].LedResult[12] = (bool)CogToolBlock_Logo.Outputs["ResultLogo"].Value;
-                    _VisionSystem[cam].LedResult[13] = (bool)CogToolBlock_Card.Outputs["ResultLogo"].Value;
-                    _VisionSystem[cam].LedResult[14] = (bool)CogToolBlock_Lock.Outputs["ResultAll"].Value;
-                    _VisionSystem[cam].LedResult[15] = (bool)CogToolBlock_Finger.Outputs["ResultAll"].Value;
-                    _VisionSystem[cam].LedResult[16] = (bool)CogToolBlock_Battery.Outputs["ResultAll"].Value;
+                        _VisionSystem[cam].LedResult[0] = (bool)CogToolBlock_No0.Outputs["ResultAll"].Value;
+                        _VisionSystem[cam].LedResult[1] = (bool)CogToolBlock_No1.Outputs["ResultAll"].Value;
+                        _VisionSystem[cam].LedResult[2] = (bool)CogToolBlock_No2.Outputs["ResultAll"].Value;
+                        _VisionSystem[cam].LedResult[3] = (bool)CogToolBlock_No3.Outputs["ResultAll"].Value;
+                        _VisionSystem[cam].LedResult[4] = (bool)CogToolBlock_No4.Outputs["ResultAll"].Value;
+                        _VisionSystem[cam].LedResult[5] = (bool)CogToolBlock_No5.Outputs["ResultAll"].Value;
+                        _VisionSystem[cam].LedResult[6] = (bool)CogToolBlock_No6.Outputs["ResultAll"].Value;
+                        _VisionSystem[cam].LedResult[7] = (bool)CogToolBlock_No7.Outputs["ResultAll"].Value;
+                        _VisionSystem[cam].LedResult[8] = (bool)CogToolBlock_No8.Outputs["ResultAll"].Value;
+                        _VisionSystem[cam].LedResult[9] = (bool)CogToolBlock_No9.Outputs["ResultAll"].Value;
+                        _VisionSystem[cam].LedResult[10] = (bool)CogToolBlock_Asterisk.Outputs["ResultAll"].Value;
+                        _VisionSystem[cam].LedResult[11] = (bool)CogToolBlock_Sharp.Outputs["ResultAll"].Value;
 
-                    bool ResultCard = (bool)CogToolBlock_Card.Outputs["ResultLogo"].Value;
+                        _VisionSystem[cam].LedResult[14] = (bool)CogToolBlock_Lock.Outputs["ResultAll"].Value;
+                        _VisionSystem[cam].LedResult[15] = (bool)CogToolBlock_Finger.Outputs["ResultAll"].Value;
+                        _VisionSystem[cam].LedResult[16] = (bool)CogToolBlock_Battery.Outputs["ResultAll"].Value;
+                    }
+                    else
+                    {
+                        _VisionSystem[cam].LedValue[12] = Convert.ToInt32((double)CogToolBlock_Logo.Outputs["HistoValue"].Value);
+                        _VisionSystem[cam].LedValue[13] = Convert.ToInt32((double)CogToolBlock_Card.Outputs["HistoValue"].Value);
+
+                        _VisionSystem[cam].LedResult[12] = (bool)CogToolBlock_Logo.Outputs["ResultLogo"].Value;
+                        _VisionSystem[cam].LedResult[13] = (bool)CogToolBlock_Card.Outputs["ResultLogo"].Value;
+                    }
 
                     var Record = _VisionSystem[cam].cogToolBlock[index].CreateLastRunRecord();
                     ICogRecord cogRecordAll = Record.SubRecords["CogAffineTransformTool_AllProduct.OutputImage"];
@@ -1666,103 +1676,109 @@ namespace SLTtechSoft
                     if (cogRecordAll != null) leftTabControl.CamDisplay.mDisplay.Record = cogRecordAll;
                     if (IsFitImage) leftTabControl.CamDisplay.mDisplay.Fit(false);
 
-
                     //Hiển thị ảnh lên các part
-                    NumPadName numPadName = new NumPadName();
-                    // No0
-                    topControl.VisionDisplay[numPadName.No0].BackColor = _VisionSystem[cam].LedResult[0] ? Color.Lime : Color.Red;
-                    topControl.VisionDisplay[numPadName.No0].mDisplay.InteractiveGraphics.Clear();
-                    if (cogRecord0 != null) topControl.VisionDisplay[numPadName.No0].mDisplay.Record = cogRecord0;
-                    topControl.VisionDisplay[numPadName.No0].mDisplay.Fit(false);
+                    if (!GUICamera.UserLighting)
+                    {  
+                        // No0
+                        topControl.VisionDisplay[numPadName.No0].BackColor = _VisionSystem[cam].LedResult[0] ? Color.Lime : Color.Red;
+                        topControl.VisionDisplay[numPadName.No0].mDisplay.InteractiveGraphics.Clear();
+                        if (cogRecord0 != null) topControl.VisionDisplay[numPadName.No0].mDisplay.Record = cogRecord0;
+                        topControl.VisionDisplay[numPadName.No0].mDisplay.Fit(false);
 
-                    // No1
-                    topControl.VisionDisplay[numPadName.No1].BackColor = _VisionSystem[cam].LedResult[1] ? Color.Lime : Color.Red;
-                    topControl.VisionDisplay[numPadName.No1].mDisplay.InteractiveGraphics.Clear();
-                    if (cogRecord1 != null) topControl.VisionDisplay[numPadName.No1].mDisplay.Record = cogRecord1;
-                    topControl.VisionDisplay[numPadName.No1].mDisplay.Fit(false);
+                        // No1
+                        topControl.VisionDisplay[numPadName.No1].BackColor = _VisionSystem[cam].LedResult[1] ? Color.Lime : Color.Red;
+                        topControl.VisionDisplay[numPadName.No1].mDisplay.InteractiveGraphics.Clear();
+                        if (cogRecord1 != null) topControl.VisionDisplay[numPadName.No1].mDisplay.Record = cogRecord1;
+                        topControl.VisionDisplay[numPadName.No1].mDisplay.Fit(false);
 
-                    // No2
-                    topControl.VisionDisplay[numPadName.No2].BackColor = _VisionSystem[cam].LedResult[2] ? Color.Lime : Color.Red;
-                    topControl.VisionDisplay[numPadName.No2].mDisplay.InteractiveGraphics.Clear();
-                    if (cogRecord2 != null) topControl.VisionDisplay[numPadName.No2].mDisplay.Record = cogRecord2;
-                    topControl.VisionDisplay[numPadName.No2].mDisplay.Fit(false);
+                        // No2
+                        topControl.VisionDisplay[numPadName.No2].BackColor = _VisionSystem[cam].LedResult[2] ? Color.Lime : Color.Red;
+                        topControl.VisionDisplay[numPadName.No2].mDisplay.InteractiveGraphics.Clear();
+                        if (cogRecord2 != null) topControl.VisionDisplay[numPadName.No2].mDisplay.Record = cogRecord2;
+                        topControl.VisionDisplay[numPadName.No2].mDisplay.Fit(false);
 
-                    // No3
-                    topControl.VisionDisplay[numPadName.No3].BackColor = _VisionSystem[cam].LedResult[3] ? Color.Lime : Color.Red;
-                    topControl.VisionDisplay[numPadName.No3].mDisplay.InteractiveGraphics.Clear();
-                    if (cogRecord3 != null) topControl.VisionDisplay[numPadName.No3].mDisplay.Record = cogRecord3;
-                    topControl.VisionDisplay[numPadName.No3].mDisplay.Fit(false);
+                        // No3
+                        topControl.VisionDisplay[numPadName.No3].BackColor = _VisionSystem[cam].LedResult[3] ? Color.Lime : Color.Red;
+                        topControl.VisionDisplay[numPadName.No3].mDisplay.InteractiveGraphics.Clear();
+                        if (cogRecord3 != null) topControl.VisionDisplay[numPadName.No3].mDisplay.Record = cogRecord3;
+                        topControl.VisionDisplay[numPadName.No3].mDisplay.Fit(false);
 
-                    // No4
-                    topControl.VisionDisplay[numPadName.No4].BackColor = _VisionSystem[cam].LedResult[4] ? Color.Lime : Color.Red;
-                    topControl.VisionDisplay[numPadName.No4].mDisplay.InteractiveGraphics.Clear();
-                    if (cogRecord4 != null) topControl.VisionDisplay[numPadName.No4].mDisplay.Record = cogRecord4;
-                    topControl.VisionDisplay[numPadName.No4].mDisplay.Fit(false);
+                        // No4
+                        topControl.VisionDisplay[numPadName.No4].BackColor = _VisionSystem[cam].LedResult[4] ? Color.Lime : Color.Red;
+                        topControl.VisionDisplay[numPadName.No4].mDisplay.InteractiveGraphics.Clear();
+                        if (cogRecord4 != null) topControl.VisionDisplay[numPadName.No4].mDisplay.Record = cogRecord4;
+                        topControl.VisionDisplay[numPadName.No4].mDisplay.Fit(false);
 
-                    // No5
-                    topControl.VisionDisplay[numPadName.No5].BackColor = _VisionSystem[cam].LedResult[5] ? Color.Lime : Color.Red;
-                    topControl.VisionDisplay[numPadName.No5].mDisplay.InteractiveGraphics.Clear();
-                    if (cogRecord5 != null) topControl.VisionDisplay[numPadName.No5].mDisplay.Record = cogRecord5;
-                    topControl.VisionDisplay[numPadName.No5].mDisplay.Fit(false);
+                        // No5
+                        topControl.VisionDisplay[numPadName.No5].BackColor = _VisionSystem[cam].LedResult[5] ? Color.Lime : Color.Red;
+                        topControl.VisionDisplay[numPadName.No5].mDisplay.InteractiveGraphics.Clear();
+                        if (cogRecord5 != null) topControl.VisionDisplay[numPadName.No5].mDisplay.Record = cogRecord5;
+                        topControl.VisionDisplay[numPadName.No5].mDisplay.Fit(false);
 
-                    // No6
-                    topControl.VisionDisplay[numPadName.No6].BackColor = _VisionSystem[cam].LedResult[6] ? Color.Lime : Color.Red;
-                    topControl.VisionDisplay[numPadName.No6].mDisplay.InteractiveGraphics.Clear();
-                    if (cogRecord6 != null) topControl.VisionDisplay[numPadName.No6].mDisplay.Record = cogRecord6;
-                    topControl.VisionDisplay[numPadName.No6].mDisplay.Fit(false);
+                        // No6
+                        topControl.VisionDisplay[numPadName.No6].BackColor = _VisionSystem[cam].LedResult[6] ? Color.Lime : Color.Red;
+                        topControl.VisionDisplay[numPadName.No6].mDisplay.InteractiveGraphics.Clear();
+                        if (cogRecord6 != null) topControl.VisionDisplay[numPadName.No6].mDisplay.Record = cogRecord6;
+                        topControl.VisionDisplay[numPadName.No6].mDisplay.Fit(false);
 
-                    // No7
-                    topControl.VisionDisplay[numPadName.No7].BackColor = _VisionSystem[cam].LedResult[7] ? Color.Lime : Color.Red;
-                    topControl.VisionDisplay[numPadName.No7].mDisplay.InteractiveGraphics.Clear();
-                    if (cogRecord7 != null) topControl.VisionDisplay[numPadName.No7].mDisplay.Record = cogRecord7;
-                    topControl.VisionDisplay[numPadName.No7].mDisplay.Fit(false);
+                        // No7
+                        topControl.VisionDisplay[numPadName.No7].BackColor = _VisionSystem[cam].LedResult[7] ? Color.Lime : Color.Red;
+                        topControl.VisionDisplay[numPadName.No7].mDisplay.InteractiveGraphics.Clear();
+                        if (cogRecord7 != null) topControl.VisionDisplay[numPadName.No7].mDisplay.Record = cogRecord7;
+                        topControl.VisionDisplay[numPadName.No7].mDisplay.Fit(false);
 
-                    // No8
-                    topControl.VisionDisplay[numPadName.No8].BackColor = _VisionSystem[cam].LedResult[8] ? Color.Lime : Color.Red;
-                    topControl.VisionDisplay[numPadName.No8].mDisplay.InteractiveGraphics.Clear();
-                    if (cogRecord8 != null) topControl.VisionDisplay[numPadName.No8].mDisplay.Record = cogRecord8;
-                    topControl.VisionDisplay[numPadName.No8].mDisplay.Fit(false);
+                        // No8
+                        topControl.VisionDisplay[numPadName.No8].BackColor = _VisionSystem[cam].LedResult[8] ? Color.Lime : Color.Red;
+                        topControl.VisionDisplay[numPadName.No8].mDisplay.InteractiveGraphics.Clear();
+                        if (cogRecord8 != null) topControl.VisionDisplay[numPadName.No8].mDisplay.Record = cogRecord8;
+                        topControl.VisionDisplay[numPadName.No8].mDisplay.Fit(false);
 
-                    // No9
-                    topControl.VisionDisplay[numPadName.No9].BackColor = _VisionSystem[cam].LedResult[9] ? Color.Lime : Color.Red;
-                    topControl.VisionDisplay[numPadName.No9].mDisplay.InteractiveGraphics.Clear();
-                    if (cogRecord9 != null) topControl.VisionDisplay[numPadName.No9].mDisplay.Record = cogRecord9;
-                    topControl.VisionDisplay[numPadName.No9].mDisplay.Fit(false);
-                    // Asterisk
-                    topControl.VisionDisplay[numPadName.Asterisk].BackColor = _VisionSystem[cam].LedResult[10] ? Color.Lime : Color.Red;
-                    topControl.VisionDisplay[numPadName.Asterisk].mDisplay.InteractiveGraphics.Clear();
-                    if (cogRecordAsterisk != null) topControl.VisionDisplay[numPadName.Asterisk].mDisplay.Record = cogRecordAsterisk;
-                    topControl.VisionDisplay[numPadName.Asterisk].mDisplay.Fit(false);
-                    // Sharp
-                    topControl.VisionDisplay[numPadName.Sharp].BackColor = _VisionSystem[cam].LedResult[11] ? Color.Lime : Color.Red;
-                    topControl.VisionDisplay[numPadName.Sharp].mDisplay.InteractiveGraphics.Clear();
-                    if (cogRecordSharp != null) topControl.VisionDisplay[numPadName.Sharp].mDisplay.Record = cogRecordSharp;
-                    topControl.VisionDisplay[numPadName.Sharp].mDisplay.Fit(false);
-                    // Logo
-                    topControl.VisionDisplay[numPadName.Logo].BackColor = _VisionSystem[cam].LedResult[12] ? Color.Lime : Color.Red;
-                    topControl.VisionDisplay[numPadName.Logo].mDisplay.InteractiveGraphics.Clear();
-                    if (cogRecordLogo != null) topControl.VisionDisplay[numPadName.Logo].mDisplay.Record = cogRecordLogo;
-                    topControl.VisionDisplay[numPadName.Logo].mDisplay.Fit(false);
-                    // Card
-                    topControl.VisionDisplay[numPadName.Card].BackColor = _VisionSystem[cam].LedResult[13] ? Color.Lime : Color.Red;
-                    topControl.VisionDisplay[numPadName.Card].mDisplay.InteractiveGraphics.Clear();
-                    if (cogRecordCard != null) topControl.VisionDisplay[numPadName.Card].mDisplay.Record = cogRecordCard;
-                    topControl.VisionDisplay[numPadName.Card].mDisplay.Fit(false);
-                    // Lock
-                    topControl.VisionDisplay[numPadName.Lock].BackColor = _VisionSystem[cam].LedResult[14] ? Color.Lime : Color.Red;
-                    topControl.VisionDisplay[numPadName.Lock].mDisplay.InteractiveGraphics.Clear();
-                    if (cogRecordLock != null) topControl.VisionDisplay[numPadName.Lock].mDisplay.Record = cogRecordLock;
-                    topControl.VisionDisplay[numPadName.Lock].mDisplay.Fit(false);
-                    // Finger
-                    topControl.VisionDisplay[numPadName.Finger].BackColor = _VisionSystem[cam].LedResult[15] ? Color.Lime : Color.Red;
-                    topControl.VisionDisplay[numPadName.Finger].mDisplay.InteractiveGraphics.Clear();
-                    if (cogRecordFinger != null) topControl.VisionDisplay[numPadName.Finger].mDisplay.Record = cogRecordFinger;
-                    topControl.VisionDisplay[numPadName.Finger].mDisplay.Fit(false);
-                    // Battery
-                    topControl.VisionDisplay[numPadName.Battery].BackColor = _VisionSystem[cam].LedResult[16] ? Color.Lime : Color.Red;
-                    topControl.VisionDisplay[numPadName.Battery].mDisplay.InteractiveGraphics.Clear();
-                    if (cogRecordBattery != null) topControl.VisionDisplay[numPadName.Battery].mDisplay.Record = cogRecordBattery;
-                    topControl.VisionDisplay[numPadName.Battery].mDisplay.Fit(false);
+                        // No9
+                        topControl.VisionDisplay[numPadName.No9].BackColor = _VisionSystem[cam].LedResult[9] ? Color.Lime : Color.Red;
+                        topControl.VisionDisplay[numPadName.No9].mDisplay.InteractiveGraphics.Clear();
+                        if (cogRecord9 != null) topControl.VisionDisplay[numPadName.No9].mDisplay.Record = cogRecord9;
+                        topControl.VisionDisplay[numPadName.No9].mDisplay.Fit(false);
+                        // Asterisk
+                        topControl.VisionDisplay[numPadName.Asterisk].BackColor = _VisionSystem[cam].LedResult[10] ? Color.Lime : Color.Red;
+                        topControl.VisionDisplay[numPadName.Asterisk].mDisplay.InteractiveGraphics.Clear();
+                        if (cogRecordAsterisk != null) topControl.VisionDisplay[numPadName.Asterisk].mDisplay.Record = cogRecordAsterisk;
+                        topControl.VisionDisplay[numPadName.Asterisk].mDisplay.Fit(false);
+                        // Sharp
+                        topControl.VisionDisplay[numPadName.Sharp].BackColor = _VisionSystem[cam].LedResult[11] ? Color.Lime : Color.Red;
+                        topControl.VisionDisplay[numPadName.Sharp].mDisplay.InteractiveGraphics.Clear();
+                        if (cogRecordSharp != null) topControl.VisionDisplay[numPadName.Sharp].mDisplay.Record = cogRecordSharp;
+                        topControl.VisionDisplay[numPadName.Sharp].mDisplay.Fit(false);
+
+                        // Lock
+                        topControl.VisionDisplay[numPadName.Lock].BackColor = _VisionSystem[cam].LedResult[14] ? Color.Lime : Color.Red;
+                        topControl.VisionDisplay[numPadName.Lock].mDisplay.InteractiveGraphics.Clear();
+                        if (cogRecordLock != null) topControl.VisionDisplay[numPadName.Lock].mDisplay.Record = cogRecordLock;
+                        topControl.VisionDisplay[numPadName.Lock].mDisplay.Fit(false);
+                        // Finger
+                        topControl.VisionDisplay[numPadName.Finger].BackColor = _VisionSystem[cam].LedResult[15] ? Color.Lime : Color.Red;
+                        topControl.VisionDisplay[numPadName.Finger].mDisplay.InteractiveGraphics.Clear();
+                        if (cogRecordFinger != null) topControl.VisionDisplay[numPadName.Finger].mDisplay.Record = cogRecordFinger;
+                        topControl.VisionDisplay[numPadName.Finger].mDisplay.Fit(false);
+                        // Battery
+                        topControl.VisionDisplay[numPadName.Battery].BackColor = _VisionSystem[cam].LedResult[16] ? Color.Lime : Color.Red;
+                        topControl.VisionDisplay[numPadName.Battery].mDisplay.InteractiveGraphics.Clear();
+                        if (cogRecordBattery != null) topControl.VisionDisplay[numPadName.Battery].mDisplay.Record = cogRecordBattery;
+                        topControl.VisionDisplay[numPadName.Battery].mDisplay.Fit(false);
+
+                    }
+                    else
+                    {
+                        // Logo
+                        topControl.VisionDisplay[numPadName.Logo].BackColor = _VisionSystem[cam].LedResult[12] ? Color.Lime : Color.Red;
+                        topControl.VisionDisplay[numPadName.Logo].mDisplay.InteractiveGraphics.Clear();
+                        if (cogRecordLogo != null) topControl.VisionDisplay[numPadName.Logo].mDisplay.Record = cogRecordLogo;
+                        topControl.VisionDisplay[numPadName.Logo].mDisplay.Fit(false);
+                        // Card
+                        topControl.VisionDisplay[numPadName.Card].BackColor = _VisionSystem[cam].LedResult[13] ? Color.Lime : Color.Red;
+                        topControl.VisionDisplay[numPadName.Card].mDisplay.InteractiveGraphics.Clear();
+                        if (cogRecordCard != null) topControl.VisionDisplay[numPadName.Card].mDisplay.Record = cogRecordCard;
+                        topControl.VisionDisplay[numPadName.Card].mDisplay.Fit(false);
+                    }
 
                     //ShowCogRecord1(true, CurrentMdisplaySHow, PLC.Write.Word.ResultCam1a.X, PLC.Write.Word.ResultCam1a.Y, PLC.Write.Word.ResultCam1a.R);
                     ////Log
@@ -1802,6 +1818,86 @@ namespace SLTtechSoft
             _VisionSystem[cam].ResultArray[index] = Result;
             _VisionSystem[cam].ErrorVision = Result == 1;
             return Result;
+        }
+        public void RefreshCogDisplayImage()
+        {
+            leftTabControl.CamDisplay.BackColor = Color.Yellow;
+            leftTabControl.CamDisplay.mDisplay.InteractiveGraphics.Clear();
+            leftTabControl.CamDisplay.mDisplay.Image = null;
+
+            int cam = 0;
+            // No0
+            topControl.VisionDisplay[numPadName.No0].BackColor = Color.Yellow;
+            topControl.VisionDisplay[numPadName.No0].mDisplay.InteractiveGraphics.Clear();
+            topControl.VisionDisplay[numPadName.No0].mDisplay.Image = null;
+
+            // No1
+            topControl.VisionDisplay[numPadName.No1].BackColor = Color.Yellow;
+            topControl.VisionDisplay[numPadName.No1].mDisplay.InteractiveGraphics.Clear();
+            topControl.VisionDisplay[numPadName.No1].mDisplay.Image = null;
+            // No2
+            topControl.VisionDisplay[numPadName.No2].BackColor = Color.Yellow;
+            topControl.VisionDisplay[numPadName.No2].mDisplay.InteractiveGraphics.Clear();
+            topControl.VisionDisplay[numPadName.No2].mDisplay.Image = null;
+            // No3
+            topControl.VisionDisplay[numPadName.No3].BackColor = Color.Yellow;
+            topControl.VisionDisplay[numPadName.No3].mDisplay.InteractiveGraphics.Clear();
+            topControl.VisionDisplay[numPadName.No3].mDisplay.Image = null;
+            // No4
+            topControl.VisionDisplay[numPadName.No4].BackColor = Color.Yellow;
+            topControl.VisionDisplay[numPadName.No4].mDisplay.InteractiveGraphics.Clear();
+            topControl.VisionDisplay[numPadName.No4].mDisplay.Image = null;
+            // No5
+            topControl.VisionDisplay[numPadName.No5].BackColor = Color.Yellow;
+            topControl.VisionDisplay[numPadName.No5].mDisplay.InteractiveGraphics.Clear();
+            topControl.VisionDisplay[numPadName.No5].mDisplay.Image = null;
+            // No6
+            topControl.VisionDisplay[numPadName.No6].BackColor = Color.Yellow;
+            topControl.VisionDisplay[numPadName.No6].mDisplay.InteractiveGraphics.Clear();
+            topControl.VisionDisplay[numPadName.No6].mDisplay.Image = null;
+            // No7
+            topControl.VisionDisplay[numPadName.No7].BackColor = Color.Yellow;
+            topControl.VisionDisplay[numPadName.No7].mDisplay.InteractiveGraphics.Clear();
+            topControl.VisionDisplay[numPadName.No7].mDisplay.Image = null;
+            // No8
+            topControl.VisionDisplay[numPadName.No8].BackColor = Color.Yellow;
+            topControl.VisionDisplay[numPadName.No8].mDisplay.InteractiveGraphics.Clear();
+            topControl.VisionDisplay[numPadName.No8].mDisplay.Image = null;
+            // No9
+            topControl.VisionDisplay[numPadName.No9].BackColor = Color.Yellow;
+            topControl.VisionDisplay[numPadName.No9].mDisplay.InteractiveGraphics.Clear();
+            topControl.VisionDisplay[numPadName.No9].mDisplay.Image = null;
+            // Asterisk
+            topControl.VisionDisplay[numPadName.Asterisk].BackColor = Color.Yellow;
+            topControl.VisionDisplay[numPadName.Asterisk].mDisplay.InteractiveGraphics.Clear();
+            topControl.VisionDisplay[numPadName.Asterisk].mDisplay.Image = null;
+            // Sharp
+            topControl.VisionDisplay[numPadName.Sharp].BackColor = Color.Yellow;
+            topControl.VisionDisplay[numPadName.Sharp].mDisplay.InteractiveGraphics.Clear();
+            topControl.VisionDisplay[numPadName.Sharp].mDisplay.Image = null;
+            // Lock
+            topControl.VisionDisplay[numPadName.Lock].BackColor = Color.Yellow;
+            topControl.VisionDisplay[numPadName.Lock].mDisplay.InteractiveGraphics.Clear();
+            topControl.VisionDisplay[numPadName.Lock].mDisplay.Image = null;
+            // Finger
+            topControl.VisionDisplay[numPadName.Finger].BackColor = Color.Yellow;
+            topControl.VisionDisplay[numPadName.Finger].mDisplay.InteractiveGraphics.Clear();
+            topControl.VisionDisplay[numPadName.Finger].mDisplay.Image = null;
+            // Battery
+            topControl.VisionDisplay[numPadName.Battery].BackColor = Color.Yellow;
+            topControl.VisionDisplay[numPadName.Battery].mDisplay.InteractiveGraphics.Clear();
+            topControl.VisionDisplay[numPadName.Battery].mDisplay.Image = null;
+
+
+            // Logo
+            topControl.VisionDisplay[numPadName.Logo].BackColor = Color.Yellow;
+            topControl.VisionDisplay[numPadName.Logo].mDisplay.InteractiveGraphics.Clear();
+            topControl.VisionDisplay[numPadName.Logo].mDisplay.Image = null;
+            // Card
+            topControl.VisionDisplay[numPadName.Card].BackColor = Color.Yellow;
+            topControl.VisionDisplay[numPadName.Card].mDisplay.InteractiveGraphics.Clear();
+            topControl.VisionDisplay[numPadName.Card].mDisplay.Image = null;
+
         }
         /// <summary>
         /// FilmStrip
@@ -1843,11 +1939,11 @@ namespace SLTtechSoft
 
             if (formOption.Parameters.Cam[cam].SaveOrigin)
             {
-                var thisImage = _VisionSystem[cam].cogToolBlock[0].Inputs["InputImage"].Value as CogImage8Grey;
+                var thisImage = _VisionSystem[cam].cogToolBlock[0].Inputs["InputImage"].Value as CogImage24PlanarColor;
                 if (thisImage != null)
                 {
                     CIFT_SaveNGFile = new CogImageFileTool();
-                    CIFT_SaveNGFile.InputImage = _VisionSystem[cam].cogToolBlock[0].Inputs["InputImage"].Value as CogImage8Grey;
+                    CIFT_SaveNGFile.InputImage = _VisionSystem[cam].cogToolBlock[0].Inputs["InputImage"].Value as CogImage24PlanarColor;
                     CIFT_SaveNGFile.Operator.Open(thisPathFileOrigin, CogImageFileModeConstants.Write);
                     CIFT_SaveNGFile.Run();
                 }
