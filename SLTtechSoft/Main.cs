@@ -636,7 +636,7 @@ namespace SLTtechSoft
                         if (powerOn.Power_On)
                         {
                             
-                            string Value = $"0-{ResultSpringOne}-{ResultSpringTwo}-{ResultSpringThree}";
+                            string Value = $"1-{ResultSpringOne}-{ResultSpringTwo}-{ResultSpringThree}";
                             //if (powerOn.Power_On)
                             //{
                             //    FinishATest(true, Value);
@@ -1838,7 +1838,7 @@ namespace SLTtechSoft
                         if (!IsLedDoorOn)
                         {
                             _form1.LockASSA.LEDKeyOn(CurrentDoorTestData.TimeOut);
-                            _form1.GUICamera.UserLighting = false;
+                            _form1.GUICamera.UserLighting = true;
                             IsLedDoorOn = true;
 
                         }
