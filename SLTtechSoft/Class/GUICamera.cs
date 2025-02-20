@@ -516,6 +516,16 @@ namespace GUISampleMultiCam
                 }
 
             }
+            else
+            {
+                camera.Parameters[PLCamera.UserOutputValue].TrySetValue(false);
+                EventHandler handler = GuiCameraGrabStarted;
+                Console.WriteLine("OnGrabStarted");
+                if (handler != null)
+                {
+                    handler.Invoke(this, e);
+                }
+            }
            
         }
 
