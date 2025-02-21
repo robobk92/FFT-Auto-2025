@@ -274,15 +274,15 @@ namespace SLTtechSoft
                                 dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.Red;
                                 //Kiểm tra xem Chức năng có thuộc danh sách dừng Check Khi Fail hay không
                                 //Nếu phải thì cho dừng Kiểm tra
-                                for (int k = 0; k <= dataGridView1.Rows.Count; k++)
-                                {
-                                    if (dataGridView1.Rows[i].Cells[1].Value.ToString() == ListItemStopWhenFail[k])
-                                    {
-                                        StopTestingByFail = false;
-                                        break;
-                                    }
-                                }
-                                if (StopTestingByFail) break;
+                                //for (int k = 0; k <= dataGridView1.Rows.Count; k++)
+                                //{
+                                //    if (dataGridView1.Rows[i].Cells[1].Value.ToString() == ListItemStopWhenFail[k])
+                                //    {
+                                //        StopTestingByFail = false;
+                                //        break;
+                                //    }
+                                //}
+                                //if (StopTestingByFail) break;
                             }
                             else
                             {
