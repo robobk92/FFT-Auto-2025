@@ -993,6 +993,26 @@ namespace SLTtechSoft
         private bool ExportingFile2 = false;
         private void timer1_Tick(object sender, EventArgs e)
         {
+            if(MachineMode==ModeMachine.Auto)
+            {
+                if (PLC.Read.Input.OP_Start1 && PLC.Read.Input.OP_Start2)
+                {
+                    if (!PLC.Read.Auto.Test.StartProcessTest)
+                    {
+                        formMain.StartTesting = false;
+                        CurrentSerial_Number = "dacb1";
+                        CurrentQRCodeRecived = "123";
+                        
+                        
+                        formMain.ProcessTestIndex = 0;
+                        formMain.IsLedDoorOn = false;
+                        _VisionSystem[0].FinishTrigger = false;
+                    }
+                        
+                }
+            }
+           
+               
             formMain.DoorTestProcess();
             Timer1_ShowProductivity();
             //LiveCam();

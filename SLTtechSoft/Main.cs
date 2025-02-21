@@ -42,6 +42,20 @@ namespace SLTtechSoft
             "Check_Voltage",
             "Check_Current",
             "Power_On",
+            "Key_Check",
+            "Firmware_Check",
+            "Set_Default",
+            //"Door_Position_Sensor_Check",
+            //"Broken_Check",
+            "Fingerprint_Check",
+            "RF_Card_Check",
+            "Button_Check",
+            "Motor_Check",
+            "IDE_Current_Check",
+            "Reset_Default",
+            "Check_Stuck",
+            "External_Power_Check",
+            "Main_QR"
         };
         //Delay Process 
         private int CountDelayProcess = 0;
@@ -260,15 +274,15 @@ namespace SLTtechSoft
                                 dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.Red;
                                 //Kiểm tra xem Chức năng có thuộc danh sách dừng Check Khi Fail hay không
                                 //Nếu phải thì cho dừng Kiểm tra
-                                //for (int k = 0; k <= ListItemStopWhenFail.Length; k++)
-                                //{
-                                //    if (dataGridView1.Rows[i].Cells[1].Value.ToString() == ListItemStopWhenFail[k])
-                                //    {
-                                //        StopTestingByFail = false;
-                                //        break;
-                                //    }
-                                //}
-                                //if (StopTestingByFail) break;
+                                for (int k = 0; k <= dataGridView1.Rows.Count; k++)
+                                {
+                                    if (dataGridView1.Rows[i].Cells[1].Value.ToString() == ListItemStopWhenFail[k])
+                                    {
+                                        StopTestingByFail = false;
+                                        break;
+                                    }
+                                }
+                                if (StopTestingByFail) break;
                             }
                             else
                             {
@@ -1726,7 +1740,7 @@ namespace SLTtechSoft
                         if (_form1.PLC.Read.Auto.Test.ReadyCheckPress[CheckKeyPressIndex])
                         {
                             datakeyRead = _form1.LockASSA.checkDataKey(CurrentDoorTestData.TimeOut);
-                            DataLockread = _form1.LockASSA.CheckInputADoor(CurrentDoorTestData.TimeOut);
+                            //DataLockread = _form1.LockASSA.CheckInputADoor(CurrentDoorTestData.TimeOut);
                             if (datakeyRead == null)
                             {
                                 //Fail
