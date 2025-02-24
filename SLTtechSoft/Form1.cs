@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using System.IO.Ports;
 using System.IO;
 using System.Reflection;
-using Serilog;
+//using Serilog;
 using System.Diagnostics;
 //VisionPro
 using Cognex.VisionPro;
@@ -125,13 +125,13 @@ namespace SLTtechSoft
         public string ProcessStepName2 = "";
         public string TimeVision2 = "";
         //ApiMes
-        public string line = "";
-        public string LINE_INFOR = "";
-        private GetProductInfoResponse _productInfo = null;
-        public string No_WO = "";
-        public int Total_WO, Remaining_WO, Passed = 0;
-        public string station_name = "";
-        IniFile WOFile;
+        //public string line = "";
+        //public string LINE_INFOR = "";
+        //private GetProductInfoResponse _productInfo = null;
+        //public string No_WO = "";
+        //public int Total_WO, Remaining_WO, Passed = 0;
+        //public string station_name = "";
+        //IniFile WOFile;
        
 
         public enum ResultVision
@@ -305,7 +305,7 @@ namespace SLTtechSoft
             InitializeVision();
             InitialDevice();
             InitialUI();
-            GetPOInformation();
+            //GetPOInformation();
             timer1.Enabled = true;
         }
         private void InitialDevice()
@@ -2584,172 +2584,172 @@ namespace SLTtechSoft
         /// <summary>
         /// Door Test
         /// </summary>
-        #region API Connect
-        private void UpdateUI(Action updateAction)
-        {
-            if (InvokeRequired)
-            {
-                Invoke(updateAction);
-                LINE_INFOR = line + "_" + station_name;
-            }
-            else
-            {
-                updateAction();
-            }
-        }
-        public async void GetPOInformation()
-        {
-            if (formMain !=null)
-            {
-                try
-                {
-                    (bool result, string data) response = await apiMes.getProductInfoApi(LINE_INFOR);
-                    if (response.result == false)
-                    {
-                        throw new Exception(response.data);
-                    }
-                    GetProductInfoResponse productInfoResponse = new GetProductInfoResponse();
-                    productInfoResponse = JsonSerializer.Deserialize<GetProductInfoResponse>(response.data);
+        //#region API Connect
+        //private void UpdateUI(Action updateAction)
+        //{
+        //    if (InvokeRequired)
+        //    {
+        //        Invoke(updateAction);
+        //        LINE_INFOR = line + "_" + station_name;
+        //    }
+        //    else
+        //    {
+        //        updateAction();
+        //    }
+        //}
+        //public async void GetPOInformation()
+        //{
+        //    if (formMain !=null)
+        //    {
+        //        try
+        //        {
+        //            (bool result, string data) response = await apiMes.getProductInfoApi(LINE_INFOR);
+        //            if (response.result == false)
+        //            {
+        //                throw new Exception(response.data);
+        //            }
+        //            GetProductInfoResponse productInfoResponse = new GetProductInfoResponse();
+        //            productInfoResponse = JsonSerializer.Deserialize<GetProductInfoResponse>(response.data);
 
-                    _productInfo = productInfoResponse;
+        //            _productInfo = productInfoResponse;
 
-                    //lbWO.Text = $"WO: {_productInfo.data.WONumber}";
-                    //lbPO.Text = $"PO: {_productInfo.data.PO.PONumber}";
-                    No_WO = _productInfo.data.WONumber;
-                    formMain.tbWO.Text = No_WO;
-                    formMain.tbSoPo.Text = _productInfo.data.PO.PONumber;
-                    //lbSkuCode.Text = $"SKU: {_productInfo.data.Product.SkuCode}";
-                    formMain.txtSKUCode.Text = _productInfo.data.Product.SkuCode;
-                    formMain.lblTongWo.Text = $"Tổng WO: {_productInfo.data.TotalQuantity}";
-                    Total_WO = _productInfo.data.TotalQuantity;
-                    Count_PO();
+        //            //lbWO.Text = $"WO: {_productInfo.data.WONumber}";
+        //            //lbPO.Text = $"PO: {_productInfo.data.PO.PONumber}";
+        //            No_WO = _productInfo.data.WONumber;
+        //            formMain.tbWO.Text = No_WO;
+        //            formMain.tbSoPo.Text = _productInfo.data.PO.PONumber;
+        //            //lbSkuCode.Text = $"SKU: {_productInfo.data.Product.SkuCode}";
+        //            formMain.txtSKUCode.Text = _productInfo.data.Product.SkuCode;
+        //            formMain.lblTongWo.Text = $"Tổng WO: {_productInfo.data.TotalQuantity}";
+        //            Total_WO = _productInfo.data.TotalQuantity;
+        //            Count_PO();
 
-                    (bool result, string msg, ProductLabelResponse data) _productLabel;
-                    _productLabel = await apiMes.getProductLabel(productInfoResponse.data.Product.SkuCode, station_name);
-                    if (!_productLabel.result)
-                    {
-                        throw new Exception(_productLabel.msg);
-                    }
+        //            (bool result, string msg, ProductLabelResponse data) _productLabel;
+        //            _productLabel = await apiMes.getProductLabel(productInfoResponse.data.Product.SkuCode, station_name);
+        //            if (!_productLabel.result)
+        //            {
+        //                throw new Exception(_productLabel.msg);
+        //            }
 
-                    // Open Template File in ProductLabel (table)
-                    //foreach (var item in _productLabel.data.results)
-                    //{
-                    //    if (engine == null)
-                    //        continue;
+        //            // Open Template File in ProductLabel (table)
+        //            //foreach (var item in _productLabel.data.results)
+        //            //{
+        //            //    if (engine == null)
+        //            //        continue;
 
-                    //    //MessageBox.Show($"PrkioductLabel: {item.TemplateFile}");
-                    //    string tmp_file_path = "";
-                    //    // Download file label
-                    //    tmp_file_path = _Mes.DownloadFileByUrl(item.TemplateFile);
-                    //    // Load Label to Engine
+        //            //    //MessageBox.Show($"PrkioductLabel: {item.TemplateFile}");
+        //            //    string tmp_file_path = "";
+        //            //    // Download file label
+        //            //    tmp_file_path = _Mes.DownloadFileByUrl(item.TemplateFile);
+        //            //    // Load Label to Engine
 
-                    //    if (item.Printer != null && item.Printer != "") // Have config Printer
-                    //        format = engine.Documents.Open(tmp_file_path, item.Printer);    // Load to Engine
-                    //    else
-                    //    {
-                    //        format = engine.Documents.Open(tmp_file_path, cb_Printer.SelectedItem.ToString());
+        //            //    if (item.Printer != null && item.Printer != "") // Have config Printer
+        //            //        format = engine.Documents.Open(tmp_file_path, item.Printer);    // Load to Engine
+        //            //    else
+        //            //    {
+        //            //        format = engine.Documents.Open(tmp_file_path, cb_Printer.SelectedItem.ToString());
 
-                    //    }
-                    //}
+        //            //    }
+        //            //}
 
-                }
-                catch (Exception ex)
-                {
-                    int line = (new StackTrace(ex, true)).GetFrame(0).GetFileLineNumber();
-                    MessageBox.Show($"[GetPOInformation][ERROR][Line {line}] {ex.Message}", "GetPOInformation", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    //Application.Exit();
-                }
-            }
-            else
-            {
-                Load_WO_Offline();
-                //lbWO.Text = $"WO: {No_WO}";
-                //Total_WO = frmLogin.Mode.Q_ty;
-                formMain.lblTongWo.Text = $"Total WO: {Total_WO}";
-                formMain.lblDaDat.Text = $"Passed: {Passed}";
-                Remaining_WO = Total_WO - Passed;
-                formMain.lblConlai.Text = $"Remaining: {Remaining_WO}";
-                formMain.lblWO.Text = $"WO: {No_WO}";
-                //lb_name_machine.Text = $"{Frm_Login.Mode.Location} Final Functions Test";
-                //lbPO.Text = $"PO: {_productInfo.data.PO.PONumber}";
-                //No_WO = _productInfo.data.WONumber;
-                //lbSkuCode.Text = $"SKU: {_productInfo.data.Product.SkuCode}";
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            int line = (new StackTrace(ex, true)).GetFrame(0).GetFileLineNumber();
+        //            MessageBox.Show($"[GetPOInformation][ERROR][Line {line}] {ex.Message}", "GetPOInformation", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //            //Application.Exit();
+        //        }
+        //    }
+        //    else
+        //    {
+        //        Load_WO_Offline();
+        //        //lbWO.Text = $"WO: {No_WO}";
+        //        //Total_WO = frmLogin.Mode.Q_ty;
+        //        formMain.lblTongWo.Text = $"Total WO: {Total_WO}";
+        //        formMain.lblDaDat.Text = $"Passed: {Passed}";
+        //        Remaining_WO = Total_WO - Passed;
+        //        formMain.lblConlai.Text = $"Remaining: {Remaining_WO}";
+        //        formMain.lblWO.Text = $"WO: {No_WO}";
+        //        //lb_name_machine.Text = $"{Frm_Login.Mode.Location} Final Functions Test";
+        //        //lbPO.Text = $"PO: {_productInfo.data.PO.PONumber}";
+        //        //No_WO = _productInfo.data.WONumber;
+        //        //lbSkuCode.Text = $"SKU: {_productInfo.data.Product.SkuCode}";
 
 
-            }
+        //    }
 
-        }
-        private void Load_WO_Offline()
-        {
-            try
-            {
-                //string _WO = WOFile.IniReadValue("Previos", "Work_Order");
-                //No_WO = _WO;
-                //Total_WO = int.Parse(WOFile.IniReadValue(_WO, "Total"));
-                //Passed = int.Parse(WOFile.IniReadValue(_WO, "Passed"));
-                No_WO = "";
-                Total_WO = 0;
-                Passed = 0;
-            }
-            catch { }
-        }
-        private async void Count_WO()
-        {
+        //}
+        //private void Load_WO_Offline()
+        //{
+        //    try
+        //    {
+        //        //string _WO = WOFile.IniReadValue("Previos", "Work_Order");
+        //        //No_WO = _WO;
+        //        //Total_WO = int.Parse(WOFile.IniReadValue(_WO, "Total"));
+        //        //Passed = int.Parse(WOFile.IniReadValue(_WO, "Passed"));
+        //        No_WO = "";
+        //        Total_WO = 0;
+        //        Passed = 0;
+        //    }
+        //    catch { }
+        //}
+        //private async void Count_WO()
+        //{
 
-            (bool result, string data) Data;
-            //string Station_ID = Global.LINE_INFO;
-            Data = await apiMes.getCompleteQtyByStationApi(LINE_INFOR, No_WO);
-            int count = Regex.Matches(Data.data, "LPO").Count;
-            Log.Information(count.ToString());
-            formMain.lblDaDat.Text = $"Đã Đạt: {count}";
-            formMain.lblConlai.Text = $"Còn Lại: {(Total_WO - count)}";
+        //    (bool result, string data) Data;
+        //    //string Station_ID = Global.LINE_INFO;
+        //    Data = await apiMes.getCompleteQtyByStationApi(LINE_INFOR, No_WO);
+        //    int count = Regex.Matches(Data.data, "LPO").Count;
+        //    Log.Information(count.ToString());
+        //    formMain.lblDaDat.Text = $"Đã Đạt: {count}";
+        //    formMain.lblConlai.Text = $"Còn Lại: {(Total_WO - count)}";
 
-        }
-        private async void Count_PO()
-        {
-            if (formMain!= null)
-            {
+        //}
+        //private async void Count_PO()
+        //{
+        //    if (formMain!= null)
+        //    {
 
-                (bool result, string data) Data;
-                string Station_ID = LINE_INFOR;
-                Data = await apiMes.getCompleteQtyByStationApi(Station_ID, No_WO);
-                int pre = Regex.Matches(Data.data, ",").Count;
-                int count = pre - 2;
-                Log.Information(count.ToString());
-                UpdateUI(() =>
-                {
-                    formMain.lblDaDat.Text = $"Đã Đạt: {count}";
-                    formMain.lblConlai.Text = $"Còn Lại: {(Total_WO - count)}";
-                    //if (English)
-                    //{
-                    //    lb_passed.Text = $"Passed: {count}";
-                    //    lb_remaining.Text = $"Remaining: {(Total_WO - count)}";
-                    //}
-                    //else
-                    //{
+        //        (bool result, string data) Data;
+        //        string Station_ID = LINE_INFOR;
+        //        Data = await apiMes.getCompleteQtyByStationApi(Station_ID, No_WO);
+        //        int pre = Regex.Matches(Data.data, ",").Count;
+        //        int count = pre - 2;
+        //        Log.Information(count.ToString());
+        //        UpdateUI(() =>
+        //        {
+        //            formMain.lblDaDat.Text = $"Đã Đạt: {count}";
+        //            formMain.lblConlai.Text = $"Còn Lại: {(Total_WO - count)}";
+        //            //if (English)
+        //            //{
+        //            //    lb_passed.Text = $"Passed: {count}";
+        //            //    lb_remaining.Text = $"Remaining: {(Total_WO - count)}";
+        //            //}
+        //            //else
+        //            //{
                         
-                    //}
-                });
-            }
-            else
-            {
-                WOFile.IniWriteValue(No_WO, "Passed", Passed.ToString());
-                Remaining_WO = Total_WO - Passed;
-                formMain.lblDaDat.Text = $"Đã Đạt: {Passed}";
-                formMain.lblConlai.Text = $"Còn Lại: {Remaining_WO}";
-                //if (English)
-                //{
-                //    lb_passed.Text = $"Passed: {Passed}";
-                //    lb_remaining.Text = $"Remaining: {Remaining_WO}";
-                //}
-                //else
-                //{
+        //            //}
+        //        });
+        //    }
+        //    else
+        //    {
+        //        WOFile.IniWriteValue(No_WO, "Passed", Passed.ToString());
+        //        Remaining_WO = Total_WO - Passed;
+        //        formMain.lblDaDat.Text = $"Đã Đạt: {Passed}";
+        //        formMain.lblConlai.Text = $"Còn Lại: {Remaining_WO}";
+        //        //if (English)
+        //        //{
+        //        //    lb_passed.Text = $"Passed: {Passed}";
+        //        //    lb_remaining.Text = $"Remaining: {Remaining_WO}";
+        //        //}
+        //        //else
+        //        //{
                    
-                //}
-            }
+        //        //}
+        //    }
 
-        }
-        #endregion
+        //}
+        //#endregion
         public ClassDoorTestData CurrentDoorTestData = new ClassDoorTestData();
         public string CurrentSerial_Number = "dacb1";
         public string CurrentQRCodeRecived = "123";
