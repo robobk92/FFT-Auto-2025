@@ -10,6 +10,9 @@ using System.Windows.Forms;
 //using Seagull.BarTender.Print;
 using System.Net;
 using System.IO;
+using static ByYou.ApiMes;
+//using System.Diagnostics.Metrics;
+using static ByYou.ApiMes.ProductSNResponse;
 
 namespace ByYou
 {
@@ -27,15 +30,267 @@ namespace ByYou
         public static String URL_REQUEST_NEXT_SN_API = "/shopfloor/api/requestNextSn/";
 
         public static String URL_SENDRECVDATASFC = "/shopfloor/api/sendrecvdatasfc/";
-
+        public static String URL_SORTWARE_UPDATE = "/shopfloor/SoftwareUpdater/";
         public static String URL_EMPLOYEEAUTH = "/shopfloor/employees/EmployeeAuth/";
         public static String URL_QCAUTH = "/shopfloor/employees/EmployeeQCAuth/";
         public static String URL_IsNeedFirstSN = "/shopfloor/workoders/IsNeedFirstSN/";
+        public static String URL_WO = "/shopfloor/workoders/";
+        public static String URL_LINEINFOR = "/shopfloor/workoders/getLineInformation/";
+        string Mes = "";
 
-
-        public ApiMes(string root_url="")
+        public ApiMes(string root_url = "")
         {
             this.root_url = root_url;
+        }
+        public async Task<(bool, string, WO_Response)> Get_WO(string WorkOder)
+        {
+            string msg = "PASS";
+            WO_Response data = new WO_Response();
+            bool result = true;
+            int count = 0;
+
+            HttpClient httpClient = new HttpClient();
+            httpClient.BaseAddress = new Uri(this.root_url + $"/shopfloor/workoders/?WONumber={WorkOder}");
+            while (count < 3)
+            {
+                try
+                {
+                    HttpResponseMessage response = await httpClient.GetAsync(httpClient.BaseAddress);
+                    string d = response.Content.ReadAsStringAsync().Result;
+                    if (response.IsSuccessStatusCode)
+                    {
+                        msg = d;
+                        data = JsonSerializer.Deserialize<WO_Response>(d);
+                        result = true;
+                    }
+                    else
+                    {
+                        msg = "[Get_WO][ERROR]: " + d;
+                        result = false;
+                    }
+                    break;
+                }
+                catch (Exception ex)
+                {
+
+                    count++;
+                    msg = "[GET_WO][ERROR]: " + ex.Message;
+                    result = false;
+                    if (msg.Contains("An error occurred while sending the request"))
+                    {
+                        await Task.Delay(2000);
+                        continue;
+                    }
+                    break;
+                }
+            }
+            return (result, msg, data);
+        }
+        public async Task<(bool, string, GetCSVResponse)> Software_Config(string Model, string Station, string version)
+        {
+            string msg = "PASS";
+            GetCSVResponse data = new GetCSVResponse();
+            bool result = true;
+            int count = 0;
+            HttpClient httpClient = new HttpClient();
+            httpClient.BaseAddress = new Uri(this.root_url + $"/shopfloor/SoftwareConfig/?SoftwareName={Model}&SoftwareType={Station}&Version={version}");
+            while (count < 3)
+            {
+                try
+                {
+                    HttpResponseMessage response = await httpClient.GetAsync(httpClient.BaseAddress);
+                    string d = response.Content.ReadAsStringAsync().Result;
+                    if (response.IsSuccessStatusCode)
+                    {
+                        msg = d;
+                        data = JsonSerializer.Deserialize<GetCSVResponse>(d);
+                        result = true;
+                    }
+                    else
+                    {
+                        msg = "[getStationLinkPart][ERROR]: " + d;
+                        result = false;
+                    }
+                    break;
+                }
+                catch (Exception ex)
+                {
+
+                    count++;
+                    msg = "[getStationLinkPart][ERROR]: " + ex.Message;
+                    result = false;
+                    if (msg.Contains("An error occurred while sending the request"))
+                    {
+                        await Task.Delay(2000);
+                        continue;
+                    }
+                    break;
+                }
+            }
+            return (result, msg, data);
+        }
+        public async Task<(bool, string, employee_Response)> employee_Infor(string ID)
+        {
+            string msg = "PASS";
+            employee_Response data = new employee_Response();
+            bool result = true;
+            int count = 0;
+
+            HttpClient httpClient = new HttpClient();
+            httpClient.BaseAddress = new Uri(this.root_url + $"/shopfloor/employees/?UserId={ID}");
+            while (count < 3)
+            {
+                try
+                {
+                    HttpResponseMessage response = await httpClient.GetAsync(httpClient.BaseAddress);
+                    string d = response.Content.ReadAsStringAsync().Result;
+                    if (response.IsSuccessStatusCode)
+                    {
+                        msg = d;
+                        data = JsonSerializer.Deserialize<employee_Response>(d);
+                        result = true;
+                    }
+                    else
+                    {
+                        msg = "[Get_Emp][ERROR]: " + d;
+                        result = false;
+                    }
+                    break;
+                }
+                catch (Exception ex)
+                {
+
+                    count++;
+                    msg = "[GET_Emp][ERROR]: " + ex.Message;
+                    result = false;
+                    if (msg.Contains("An error occurred while sending the request"))
+                    {
+                        await Task.Delay(2000);
+                        continue;
+                    }
+                    break;
+                }
+            }
+            return (result, msg, data);
+        }
+        public async Task<(bool, string, LineInfor_Response)> Line_Infor(string ID)
+        {
+            string msg = "PASS";
+            LineInfor_Response data = new LineInfor_Response();
+            bool result = true;
+            int count = 0;
+
+            HttpClient httpClient = new HttpClient();
+            httpClient.BaseAddress = new Uri(this.root_url + $"/shopfloor/Dashboard/getLineStatus/");
+            while (count < 3)
+            {
+                try
+                {
+                    HttpResponseMessage response = await httpClient.GetAsync(httpClient.BaseAddress);
+                    string d = response.Content.ReadAsStringAsync().Result;
+                    if (response.IsSuccessStatusCode)
+                    {
+                        msg = d;
+                        data = JsonSerializer.Deserialize<LineInfor_Response>(d);
+                        result = true;
+                    }
+                    else
+                    {
+                        msg = "[Get_Emp][ERROR]: " + d;
+                        result = false;
+                    }
+                    break;
+                }
+                catch (Exception ex)
+                {
+
+                    count++;
+                    msg = "[GET_Emp][ERROR]: " + ex.Message;
+                    result = false;
+                    if (msg.Contains("An error occurred while sending the request"))
+                    {
+                        await Task.Delay(2000);
+                        continue;
+                    }
+                    break;
+                }
+            }
+            return (result, msg, data);
+        }
+        public async Task<string> DownloadFileFromApiAsync(string skuCode, string softwareName, string softwareType, string version)
+        {
+            string fileUrl = "";
+            HttpClient httpClient = new HttpClient();
+            string apiUrl = $"http://10.27.36.20:8000//shopfloor/SoftwareConfig?page_size=1&SkuCode={skuCode}&SoftwareName={softwareName}&SoftwareType={softwareType}&Version={version}";
+            int count = 0;
+            while (count < 3)
+            {
+                try
+                {
+                    HttpResponseMessage response = await httpClient.GetAsync(apiUrl);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        // Đọc toàn bộ dữ liệu JSON trả về từ API dưới dạng chuỗi
+                        var jsonString = await response.Content.ReadAsStringAsync();
+                        Console.WriteLine("Received JSON: " + jsonString); // In ra để kiểm tra dữ liệu (nếu cần)
+
+                        // Bóc tách dữ liệu để lấy URL của file
+                        var jsonObject = JsonDocument.Parse(jsonString);
+                        var result = jsonObject.RootElement.GetProperty("results")[0];
+                        fileUrl = result.GetProperty("AutoStepListFile").GetString();
+
+                        return fileUrl;  // Trả về link của file nếu thành công
+                    }
+                    else
+                    {
+                        Console.WriteLine($"[GetFileLinkFromApi][ERROR]: {response.Content.ReadAsStringAsync().Result}");
+                    }
+                    break;
+                }
+                catch (Exception ex)
+                {
+                    count++;
+                    Console.WriteLine($"[GetFileLinkFromApi][ERROR]: {ex.Message}");
+
+                    // Nếu gặp lỗi mạng, đợi 2 giây rồi thử lại
+                    if (ex.Message.Contains("An error occurred while sending the request"))
+                    {
+                        await Task.Delay(2000);
+                        continue;
+                    }
+                    break;  // Thoát vòng lặp nếu lỗi khác
+                }
+            }
+
+            return fileUrl; // Trả về fileUrl (rỗng nếu thất bại)
+        }
+        public async Task<(bool, string, GetSoftwareUpdateResponse)> Software_Updater(string page_size = "", string SoftwareName = "", string SoftwareType = "", string Version = "")
+        {
+            string url_page_size = $"page_size={page_size}";
+            string url_software_name = $"SoftwareName={SoftwareName.ToUpper()}";
+            string url_software_type = $"SoftwareType={SoftwareType.ToUpper()}";
+            string url_version = $"Version={Version}";
+            bool result = true;
+            String msg = "PASS";
+            int count = 0;
+            HttpClient httpClient = new HttpClient();
+            httpClient.BaseAddress = new Uri(this.root_url + URL_SORTWARE_UPDATE + url_page_size + url_software_name + url_software_type + url_version);
+            GetSoftwareUpdateResponse data = new GetSoftwareUpdateResponse();
+
+            while (count < 3)
+            {
+                try
+                {
+
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
+
+            return (result, msg, data);
         }
 
         public async Task<string> checkSnApi(string sn, string line, string station, string index, string user = "")
@@ -205,6 +460,61 @@ namespace ByYou
             return msg;
         }
 
+
+        public async Task<(bool, string, ByLineInfor_Response)> By_Line_Infor(string line)
+        {
+            bool result = true;
+            String msg = "PASS";
+            ByLineInfor_Response data = new ByLineInfor_Response();
+            int count = 0;
+            HttpClient httpClient = new HttpClient();
+            httpClient.BaseAddress = new Uri(this.root_url + URL_LINEINFOR);
+
+            InforLineSend dataSend = new InforLineSend();
+            dataSend.line_name = line;
+
+            while (count < 3)
+            {
+                try
+                {
+                    var JsonString = JsonSerializer.Serialize(dataSend);
+                    StringContent sdata = new StringContent(JsonString, Encoding.UTF8, "application/json");
+                    HttpResponseMessage response = await httpClient.PostAsync(httpClient.BaseAddress, sdata);
+                    string d = response.Content.ReadAsStringAsync().Result;
+                    if (response.IsSuccessStatusCode)
+                    {
+                        msg = d;
+                        data = JsonSerializer.Deserialize<ByLineInfor_Response>(d);
+                        if (!d.Contains("FAIL"))
+                            result = true;
+                        else
+                            result = false;
+                    }
+                    else
+                    {
+                        result = false;
+                        msg = "[getLineInfor][ERROR]: " + response.Content.ReadAsStringAsync().Result;
+                    }
+                    break;
+                }
+                catch (Exception ex)
+                {
+
+                    count++;
+                    msg = "[getLineInfor][ERROR]: " + ex.Message;
+                    result = false;
+                    if (msg.Contains("An error occurred while sending the request"))
+                    {
+                        await Task.Delay(2000);
+                        continue;
+                    }
+                    break;
+                }
+            }
+
+            return (result, msg, data);
+        }
+
         public async Task<string> QCAuthApi(string username, string password)
         {
             String msg = "PASS";
@@ -288,7 +598,7 @@ namespace ByYou
             return (result, msg);
         }
 
-        public async Task<(bool, string)> rePrintConfirmApi(string sn, string station_id, string wo, string category, bool dev_mode=true)
+        public async Task<(bool, string)> rePrintConfirmApi(string sn, string station_id, string wo, string category, bool dev_mode = true)
         {
             bool result = true;
             String msg = "PASS";
@@ -826,6 +1136,50 @@ namespace ByYou
                 }
             MessageBox.Show(res.data.mac);
          */
+        public async Task<(bool, string, ProductSNLinkPartResponse)> getProductSNLinkPart(string sn)
+        {
+            string msg = "PASS";
+            ProductSNLinkPartResponse data = new ProductSNLinkPartResponse();
+            bool result = true;
+            int count = 0;
+
+            HttpClient httpClient = new HttpClient();
+            httpClient.BaseAddress = new Uri(this.root_url + $"/shopfloor/ProductSNLinkPart/?SerialNumber={sn}&page_size=10");
+            while (count < 3)
+            {
+                try
+                {
+                    HttpResponseMessage response = await httpClient.GetAsync(httpClient.BaseAddress);
+                    string d = response.Content.ReadAsStringAsync().Result;
+                    if (response.IsSuccessStatusCode)
+                    {
+                        msg = d;
+                        data = JsonSerializer.Deserialize<ProductSNLinkPartResponse>(d);
+                        result = true;
+                    }
+                    else
+                    {
+                        msg = "[getProductSNLinkPart][ERROR]: " + d;
+                        result = false;
+                    }
+                    break;
+                }
+                catch (Exception ex)
+                {
+
+                    count++;
+                    msg = "[getProductSNLinkPart][ERROR]: " + ex.Message;
+                    result = false;
+                    if (msg.Contains("An error occurred while sending the request"))
+                    {
+                        await Task.Delay(2000);
+                        continue;
+                    }
+                    break;
+                }
+            }
+            return (result, msg, data);
+        }
         public async Task<(bool, string, requestAllocateMACResponse)> requestAllocateMACApi(string sn)
         {
             string msg = "PASS";
@@ -885,8 +1239,9 @@ namespace ByYou
                 return;
             }         
          */
-        public async Task<(bool, string, string)> updateProvisioningDataApi(string sn, string mac="", string mac2="", string wifiMac1="", string wifiMac2="",
-            string matterCode="", string augustCode="", string HSK="", string resetCode="", string lockId="", string fwVersion="" )
+
+        public async Task<(bool, string, string)> updateProvisioningDataApi(string sn, string mac = "", string mac2 = "", string wifiMac1 = "", string wifiMac2 = "",
+            string matterCode = "", string augustCode = "", string HSK = "", string resetCode = "", string lockId = "", string fwVersion = "")
         {
             string msg = "PASS";
             string data = "";
@@ -946,7 +1301,57 @@ namespace ByYou
             return (result, msg, data);
         }
 
+        public async Task<(bool, string)> getCompleteQtyByStationApi(string station_id, string Number_PO)
+        {
+            bool result = true;
+            String msg = "PASS";
+            int count = 0;
+            HttpClient httpClient = new HttpClient();
+            httpClient.BaseAddress = new Uri(this.root_url + URL_SENDRECVDATASFC);
+            GetCompleteQtyByStationSend dataSend = new GetCompleteQtyByStationSend();
+            dataSend.data_type = "GET_COMPLETE_QTY_BY_STATION";
+            dataSend.dut_id = "NONE";
+            dataSend.station_id = station_id;
+            dataSend.data = new SendData { wo = Number_PO };
+            while (count < 3)
+            {
+                try
+                {
+                    var JsonString = JsonSerializer.Serialize(dataSend);
+                    StringContent data = new StringContent(JsonString, Encoding.UTF8, "application/json");
+                    HttpResponseMessage response = await httpClient.PostAsync(httpClient.BaseAddress, data);
+                    string d = response.Content.ReadAsStringAsync().Result;
+                    if (response.IsSuccessStatusCode)
+                    {
+                        msg = d;
+                        if (!d.Contains("FAIL"))
+                            result = true;
+                        else
+                            result = false;
+                    }
+                    else
+                    {
+                        result = false;
+                        msg = "[getProductInfoApi][ERROR]: " + response.Content.ReadAsStringAsync().Result;
+                    }
+                    break;
+                }
+                catch (Exception ex)
+                {
 
+                    count++;
+                    msg = "[getProductInfoApi][ERROR]: " + ex.Message;
+                    if (msg.Contains("An error occurred while sending the request"))
+                    {
+                        await Task.Delay(500);
+                        continue;
+                    }
+                    break;
+                }
+            }
+
+            return (result, msg);
+        }
         public class CheckSnSend
         {
             public string SerialNumber { get; set; }
@@ -960,11 +1365,14 @@ namespace ByYou
         public class RequestNexSnSend
         {
             public RequestNexSnSend(
-                string sn = "", string st = "", string line = "", string idx = "",
-                string user = "", bool result = false, string des = "OK",
-                float totaltime = 0, List<TestData> data=null )
+                string WO = "", string sn = "", string st = "", string line = "", string idx = "",
+                string user = "", bool result = false, string des = "OK", string Front = "", string Main = "",
+                float totaltime = 0, List<TestData> data = null)
             {
+                this.WorkOder = WO;
                 this.SerialNumber = sn;
+                this.QR_Front = Front;
+                this.QR_Main = Main;
                 this.Station = st;
                 this.Line = line;
                 this.Index = idx;
@@ -993,7 +1401,10 @@ namespace ByYou
                 }
             }
 
+            public string WorkOder { get; set; }
             public string SerialNumber { get; set; }
+            public string QR_Front { get; set; }
+            public string QR_Main { get; set; }
             public string Station { get; set; }
             public string Line { get; set; }
             public string Index { get; set; }
@@ -1013,6 +1424,8 @@ namespace ByYou
             public string station_id { get; set; }
 
         }
+
+
 
         public class GetSNByGiftSend
         {
@@ -1035,13 +1448,34 @@ namespace ByYou
             public string data_type { get; set; }
             public string dut_id { get; set; }
             public string station_id { get; set; }
+            // public string data { get; set; }
+            public SendData data { get; set; }
 
+        }
+        public class SendData
+        {
+            public string wo { get; set; }
         }
 
         public class EmployeeAuthSend
         {
             public string username { get; set; }
             public string password { get; set; }
+
+        }
+        public class InforLineSend
+        {
+            public string line_name { get; set; }
+
+        }
+
+        public class ByLineInfor_Response
+        {
+            public string WO_activate { get; set; }
+            public string product_name { get; set; }
+            public string SKUcode { get; set; }
+            public string PO_id { get; set; }
+
 
         }
 
@@ -1095,7 +1529,23 @@ namespace ByYou
                 public DateTime updated_date { get; set; }
             }
         }
-
+        public class WO_Response
+        {
+            public int count { get; set; }
+            public string next { get; set; }
+            public object previous { get; set; }
+            public List<WO_Information> results { get; set; }
+            public class WO_Information
+            {
+                public string Product { get; set; }
+                public string PO { get; set; }
+                public string NewCodeAASPV { get; set; }
+                public string Line { get; set; }
+                public string Model { get; set; }
+                public string ModelName { get; set; }
+                public int TotalQuantity { get; set; }
+            }
+        }
         public class ProductSNResponse
         {
             public int count { get; set; }
@@ -1140,7 +1590,34 @@ namespace ByYou
                 public DateTime updated_date { get; set; }
             }
         }
+        public class ProductSNLinkPartResponse
+        {
+            public int count { get; set; }
+            public string next { get; set; }
+            public object previous { get; set; }
+            public List<ProductSNLinkPartInfo> results { get; set; }
 
+            public class ProductSNLinkPartInfo
+            {
+                public int id { get; set; }
+                public string SerialNumber { get; set; }
+                public string StationType { get; set; }
+                public string Line { get; set; }
+                public string Index { get; set; }
+                public string PartSerialNumber { get; set; }
+                public string PartCode { get; set; }
+                public int Quantity { get; set; }
+                public int Station { get; set; }
+
+                public DateTime created_date { get; set; }
+                public DateTime updated_date { get; set; }
+            }
+        }
+
+        public class GetSoftwareUpdateResponse
+        {
+
+        }
         public class GetQtyCompleteResponse
         {
             public string result { get; set; }
@@ -1152,7 +1629,210 @@ namespace ByYou
                 public List<string> sn { get; set; }
             }
         }
+        public class GetProductInfoResponse
+        {
+            public string result { get; set; }
+            public string message { get; set; }
+            public Data data { get; set; }
 
+            public class Customer
+            {
+                public int id { get; set; }
+                public object CustomerCode { get; set; }
+                public object CustomerName { get; set; }
+                public object Address { get; set; }
+                public object ShipCode { get; set; }
+                public DateTime created_date { get; set; }
+                public DateTime updated_date { get; set; }
+            }
+            public class Data
+            {
+                public int id { get; set; }
+                public string WONumber { get; set; }
+                public int TotalQuantity { get; set; }
+                public string Status { get; set; }
+                public string ShipTo { get; set; }
+                public DateTime StartDate { get; set; }
+                public object CloseDate { get; set; }
+                public object KittingStatus { get; set; }
+                public DateTime created_date { get; set; }
+                public DateTime updated_date { get; set; }
+                public PO PO { get; set; }
+                public Product Product { get; set; }
+                public Line Line { get; set; }
+            }
+            public class Factory
+            {
+                public int id { get; set; }
+                public string FactoryCode { get; set; }
+                public string FactoryName { get; set; }
+                public string Address { get; set; }
+                public DateTime created_date { get; set; }
+                public DateTime updated_date { get; set; }
+            }
+            public class Line
+            {
+                public int id { get; set; }
+                public string LineCode { get; set; }
+                public string LineName { get; set; }
+                public object Description { get; set; }
+                public DateTime created_date { get; set; }
+                public DateTime updated_date { get; set; }
+                public Factory Factory { get; set; }
+            }
+            public class PO
+            {
+                public int id { get; set; }
+                public string PONumber { get; set; }
+                public DateTime ReceiveDate { get; set; }
+                public DateTime ShipDate { get; set; }
+                public string Status { get; set; }
+                public DateTime created_date { get; set; }
+                public DateTime updated_date { get; set; }
+                public Customer Customer { get; set; }
+            }
+            public class Product
+            {
+                public int id { get; set; }
+                public string SkuCode { get; set; }
+                public string ProductName { get; set; }
+                public string Model { get; set; }
+                public string ModelName { get; set; }
+                public object SnRule { get; set; }
+                public object ProductImage { get; set; }
+                public string FCC_Certificate { get; set; }
+                public string IC_Certificate { get; set; }
+                public string CodeAASPV { get; set; }
+                public object NewCodeAASPV { get; set; }
+                public string CodeUPC { get; set; }
+                public string CodeAffiliate { get; set; }
+                public string Affiliate { get; set; }
+                public object CartonGTIN { get; set; }
+                public object PalletGTIN { get; set; }
+                public object EANCode { get; set; }
+                public object FirmwareVersion { get; set; }
+                public int GiftInCartonQty { get; set; }
+                public int CartonInPalletQty { get; set; }
+                public int SnLabelCopyQty { get; set; }
+                public int GiftLabelCopyQty { get; set; }
+                public int KeyLabelCopyQty { get; set; }
+                public int CartonLabelCopyQty { get; set; }
+                public int PalletLabelCopyQty { get; set; }
+                public object Active { get; set; }
+                public DateTime created_date { get; set; }
+                public DateTime updated_date { get; set; }
+                public Route Route { get; set; }
+                public SnLabelFile SnLabelFile { get; set; }
+                public KeyLabelFile KeyLabelFile { get; set; }
+                public GiftLabelFile GiftLabelFile { get; set; }
+                public CartonLabelFile CartonLabelFile { get; set; }
+                public PalletLabelFile PalletLabelFile { get; set; }
+                public double GiftWeightMin { get; set; }
+                public double GiftWeightMax { get; set; }
+                public bool IsGiftWeight { get; set; }
+            }
+            public class GiftLabelFile
+            {
+                public int id { get; set; }
+                public string DisplayName { get; set; }
+                public string Category { get; set; }
+                public string File { get; set; }
+                public DateTime created_date { get; set; }
+                public DateTime updated_date { get; set; }
+                //public GiftLabelFile()
+                //{
+                //   GiftLabelFile giftLabelFile = new GiftLabelFile();
+                //}
+            }
+            public class KeyLabelFile
+            {
+                public int id { get; set; }
+                public string DisplayName { get; set; }
+                public string Category { get; set; }
+                public string File { get; set; }
+                public DateTime created_date { get; set; }
+                public DateTime updated_date { get; set; }
+            }
+            public class CartonLabelFile
+            {
+                public int id { get; set; }
+                public string DisplayName { get; set; }
+                public string Category { get; set; }
+                public string File { get; set; }
+                public DateTime created_date { get; set; }
+                public DateTime updated_date { get; set; }
+            }
+            public class SnLabelFile
+            {
+                public int id { get; set; }
+                public string DisplayName { get; set; }
+                public string Category { get; set; }
+                public string File { get; set; }
+                public DateTime created_date { get; set; }
+                public DateTime updated_date { get; set; }
+            }
+            public class PalletLabelFile
+            {
+                public int id { get; set; }
+                public string DisplayName { get; set; }
+                public string Category { get; set; }
+                public string File { get; set; }
+                public DateTime created_date { get; set; }
+                public DateTime updated_date { get; set; }
+            }
+            public class Route
+            {
+                public int id { get; set; }
+                public string RouteCode { get; set; }
+                public DateTime created_date { get; set; }
+                public DateTime updated_date { get; set; }
+            }
+
+
+        }
+        public class employee_Response
+        {
+            public int count { get; set; }
+            public object next { get; set; }
+            public object previous { get; set; }
+            public List<employee_Response_Result> results { get; set; }
+
+            public class employee_Response_Result
+            {
+                public string UserId { get; set; }
+                public string OldUserId { get; set; }
+                public string Name { get; set; }
+                public string Department { get; set; }
+            }
+        }
+        public class LineInfor_Response
+        {
+            public string Line { get; set; }
+            public string Status { get; set; }
+            public string SkuCode { get; set; }
+            public string WO { get; set; }
+            public string PO { get; set; }
+            public int Produced { get; set; }
+            public DateTime? LastSnDate { get; set; }
+        }
+        public class GetCSVResponse
+        {
+            public int count { get; set; }
+            public object next { get; set; }
+            public object previous { get; set; }
+            public List<GetCSVResult> results { get; set; }
+
+            public class GetCSVResult
+            {
+                public string AutoStepListFile { get; set; }
+                public string ManualStepListFile { get; set; }
+                public string FactotySettingFile { get; set; }
+                public string AutoStepListFileMD5 { get; set; }
+                public string ManualStepListFileMD5 { get; set; }
+                public string FactorySettingFileMD5 { get; set; }
+
+            }
+        }
         public class StationLinkPartResponse
         {
             public int count { get; set; }
@@ -1167,6 +1847,7 @@ namespace ByYou
                 public string Product { get; set; }
                 public string PartCode { get; set; }
                 public int Quantity { get; set; }
+                public bool NoNeedLink { get; set; }
                 public string PartCodeNameRule { get; set; }
                 public bool AllowDuplicate { get; set; }
                 public bool Active { get; set; }

@@ -129,6 +129,9 @@
   <data name="lblConlai.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 12pt, style=Bold</value>
   </data>
+  <data name="lblConlai.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblConlai.Location" type="System.Drawing.Point, System.Drawing">
     <value>517, 0</value>
   </data>
@@ -165,6 +168,9 @@
   <data name="lblTongWo.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 12pt, style=Bold</value>
   </data>
+  <data name="lblTongWo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblTongWo.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 0</value>
   </data>
@@ -191,222 +197,6 @@
   </data>
   <data name="&gt;&gt;lblTongWo.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="&gt;&gt;btnLoadSoPo.Name" xml:space="preserve">
-    <value>btnLoadSoPo</value>
-  </data>
-  <data name="&gt;&gt;btnLoadSoPo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnLoadSoPo.Parent" xml:space="preserve">
-    <value>tbSKUCode</value>
-  </data>
-  <data name="&gt;&gt;btnLoadSoPo.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;btnLoadWO.Name" xml:space="preserve">
-    <value>btnLoadWO</value>
-  </data>
-  <data name="&gt;&gt;btnLoadWO.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnLoadWO.Parent" xml:space="preserve">
-    <value>tbSKUCode</value>
-  </data>
-  <data name="&gt;&gt;btnLoadWO.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;btnLoadSKUCode.Name" xml:space="preserve">
-    <value>btnLoadSKUCode</value>
-  </data>
-  <data name="&gt;&gt;btnLoadSKUCode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnLoadSKUCode.Parent" xml:space="preserve">
-    <value>tbSKUCode</value>
-  </data>
-  <data name="&gt;&gt;btnLoadSKUCode.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;tbSoPo.Name" xml:space="preserve">
-    <value>tbSoPo</value>
-  </data>
-  <data name="&gt;&gt;tbSoPo.Type" xml:space="preserve">
-    <value>SLTSoft.RJControl.RJTextBox, Vision Measurement System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;tbSoPo.Parent" xml:space="preserve">
-    <value>tbSKUCode</value>
-  </data>
-  <data name="&gt;&gt;tbSoPo.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;tbWO.Name" xml:space="preserve">
-    <value>tbWO</value>
-  </data>
-  <data name="&gt;&gt;tbWO.Type" xml:space="preserve">
-    <value>SLTSoft.RJControl.RJTextBox, Vision Measurement System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;tbWO.Parent" xml:space="preserve">
-    <value>tbSKUCode</value>
-  </data>
-  <data name="&gt;&gt;tbWO.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;rjTextBox1.Name" xml:space="preserve">
-    <value>rjTextBox1</value>
-  </data>
-  <data name="&gt;&gt;rjTextBox1.Type" xml:space="preserve">
-    <value>SLTSoft.RJControl.RJTextBox, Vision Measurement System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;rjTextBox1.Parent" xml:space="preserve">
-    <value>tbSKUCode</value>
-  </data>
-  <data name="&gt;&gt;rjTextBox1.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;cbTurnOnVoice.Name" xml:space="preserve">
-    <value>cbTurnOnVoice</value>
-  </data>
-  <data name="&gt;&gt;cbTurnOnVoice.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbTurnOnVoice.Parent" xml:space="preserve">
-    <value>tbSKUCode</value>
-  </data>
-  <data name="&gt;&gt;cbTurnOnVoice.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;cbTestAgain.Name" xml:space="preserve">
-    <value>cbTestAgain</value>
-  </data>
-  <data name="&gt;&gt;cbTestAgain.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbTestAgain.Parent" xml:space="preserve">
-    <value>tbSKUCode</value>
-  </data>
-  <data name="&gt;&gt;cbTestAgain.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;cbCloseDoorFFT.Name" xml:space="preserve">
-    <value>cbCloseDoorFFT</value>
-  </data>
-  <data name="&gt;&gt;cbCloseDoorFFT.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbCloseDoorFFT.Parent" xml:space="preserve">
-    <value>tbSKUCode</value>
-  </data>
-  <data name="&gt;&gt;cbCloseDoorFFT.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;cbManualMac.Name" xml:space="preserve">
-    <value>cbManualMac</value>
-  </data>
-  <data name="&gt;&gt;cbManualMac.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbManualMac.Parent" xml:space="preserve">
-    <value>tbSKUCode</value>
-  </data>
-  <data name="&gt;&gt;cbManualMac.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;cbUseMacMes.Name" xml:space="preserve">
-    <value>cbUseMacMes</value>
-  </data>
-  <data name="&gt;&gt;cbUseMacMes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbUseMacMes.Parent" xml:space="preserve">
-    <value>tbSKUCode</value>
-  </data>
-  <data name="&gt;&gt;cbUseMacMes.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;cbResetWhenSetDefault.Name" xml:space="preserve">
-    <value>cbResetWhenSetDefault</value>
-  </data>
-  <data name="&gt;&gt;cbResetWhenSetDefault.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbResetWhenSetDefault.Parent" xml:space="preserve">
-    <value>tbSKUCode</value>
-  </data>
-  <data name="&gt;&gt;cbResetWhenSetDefault.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;cbAskSupply.Name" xml:space="preserve">
-    <value>cbAskSupply</value>
-  </data>
-  <data name="&gt;&gt;cbAskSupply.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbAskSupply.Parent" xml:space="preserve">
-    <value>tbSKUCode</value>
-  </data>
-  <data name="&gt;&gt;cbAskSupply.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;label30.Name" xml:space="preserve">
-    <value>label30</value>
-  </data>
-  <data name="&gt;&gt;label30.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label30.Parent" xml:space="preserve">
-    <value>tbSKUCode</value>
-  </data>
-  <data name="&gt;&gt;label30.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;label31.Name" xml:space="preserve">
-    <value>label31</value>
-  </data>
-  <data name="&gt;&gt;label31.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label31.Parent" xml:space="preserve">
-    <value>tbSKUCode</value>
-  </data>
-  <data name="&gt;&gt;label31.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="&gt;&gt;label32.Name" xml:space="preserve">
-    <value>label32</value>
-  </data>
-  <data name="&gt;&gt;label32.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label32.Parent" xml:space="preserve">
-    <value>tbSKUCode</value>
-  </data>
-  <data name="&gt;&gt;label32.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
-  <data name="tbSKUCode.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="tbSKUCode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>773, 0</value>
-  </data>
-  <data name="tbSKUCode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>593, 190</value>
-  </data>
-  <data name="tbSKUCode.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tbSKUCode.Name" xml:space="preserve">
-    <value>tbSKUCode</value>
-  </data>
-  <data name="&gt;&gt;tbSKUCode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbSKUCode.Parent" xml:space="preserve">
-    <value>panel22</value>
-  </data>
-  <data name="&gt;&gt;tbSKUCode.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="btnLoadSoPo.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Zoom</value>
@@ -585,34 +375,34 @@
   <data name="&gt;&gt;tbWO.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="rjTextBox1.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="txtSKUCode.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="rjTextBox1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="txtSKUCode.Location" type="System.Drawing.Point, System.Drawing">
     <value>297, 6</value>
   </data>
-  <data name="rjTextBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="txtSKUCode.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 3, 4, 3</value>
   </data>
-  <data name="rjTextBox1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="txtSKUCode.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>7, 7, 7, 7</value>
   </data>
-  <data name="rjTextBox1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="txtSKUCode.Size" type="System.Drawing.Size, System.Drawing">
     <value>250, 28</value>
   </data>
-  <data name="rjTextBox1.TabIndex" type="System.Int32, mscorlib">
+  <data name="txtSKUCode.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
   </data>
-  <data name="&gt;&gt;rjTextBox1.Name" xml:space="preserve">
-    <value>rjTextBox1</value>
+  <data name="&gt;&gt;txtSKUCode.Name" xml:space="preserve">
+    <value>txtSKUCode</value>
   </data>
-  <data name="&gt;&gt;rjTextBox1.Type" xml:space="preserve">
+  <data name="&gt;&gt;txtSKUCode.Type" xml:space="preserve">
     <value>SLTSoft.RJControl.RJTextBox, Vision Measurement System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;rjTextBox1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;txtSKUCode.Parent" xml:space="preserve">
     <value>tbSKUCode</value>
   </data>
-  <data name="&gt;&gt;rjTextBox1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;txtSKUCode.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
   <data name="cbTurnOnVoice.AutoSize" type="System.Boolean, mscorlib">
@@ -825,37 +615,40 @@
   <data name="&gt;&gt;cbAskSupply.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
-  <data name="label30.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lblWO.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label30.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="lblWO.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 10pt, style=Bold</value>
   </data>
-  <data name="label30.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lblWO.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblWO.Location" type="System.Drawing.Point, System.Drawing">
     <value>252, 53</value>
   </data>
-  <data name="label30.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lblWO.Size" type="System.Drawing.Size, System.Drawing">
     <value>38, 17</value>
   </data>
-  <data name="label30.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblWO.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
   </data>
-  <data name="label30.Text" xml:space="preserve">
+  <data name="lblWO.Text" xml:space="preserve">
     <value>WO:</value>
   </data>
-  <data name="label30.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="lblWO.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
   </data>
-  <data name="&gt;&gt;label30.Name" xml:space="preserve">
-    <value>label30</value>
+  <data name="&gt;&gt;lblWO.Name" xml:space="preserve">
+    <value>lblWO</value>
   </data>
-  <data name="&gt;&gt;label30.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblWO.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label30.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblWO.Parent" xml:space="preserve">
     <value>tbSKUCode</value>
   </data>
-  <data name="&gt;&gt;label30.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblWO.ZOrder" xml:space="preserve">
     <value>13</value>
   </data>
   <data name="label31.AutoSize" type="System.Boolean, mscorlib">
@@ -863,6 +656,9 @@
   </data>
   <data name="label31.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 10pt, style=Bold</value>
+  </data>
+  <data name="label31.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label31.Location" type="System.Drawing.Point, System.Drawing">
     <value>229, 94</value>
@@ -897,6 +693,9 @@
   <data name="label32.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 10pt, style=Bold</value>
   </data>
+  <data name="label32.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="label32.Location" type="System.Drawing.Point, System.Drawing">
     <value>208, 12</value>
   </data>
@@ -924,101 +723,29 @@
   <data name="&gt;&gt;label32.ZOrder" xml:space="preserve">
     <value>15</value>
   </data>
-  <data name="&gt;&gt;dataGridView1.Name" xml:space="preserve">
-    <value>dataGridView1</value>
+  <data name="tbSKUCode.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
   </data>
-  <data name="&gt;&gt;dataGridView1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="tbSKUCode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>773, 0</value>
   </data>
-  <data name="&gt;&gt;dataGridView1.Parent" xml:space="preserve">
-    <value>panel2</value>
+  <data name="tbSKUCode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>593, 190</value>
   </data>
-  <data name="&gt;&gt;dataGridView1.ZOrder" xml:space="preserve">
+  <data name="tbSKUCode.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="&gt;&gt;tbSKUCode.Name" xml:space="preserve">
+    <value>tbSKUCode</value>
   </data>
-  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1366, 385</value>
-  </data>
-  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
+  <data name="&gt;&gt;tbSKUCode.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;tbSKUCode.Parent" xml:space="preserve">
+    <value>panel22</value>
   </data>
-  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <metadata name="Column_ID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column_Name.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column_Detail.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column_Value.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column_Min.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column_Max.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column_Unit.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column_Timer.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column_Result.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column_Timeout.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="dataGridView1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="dataGridView1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1366, 385</value>
-  </data>
-  <data name="dataGridView1.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="&gt;&gt;dataGridView1.Name" xml:space="preserve">
-    <value>dataGridView1</value>
-  </data>
-  <data name="&gt;&gt;dataGridView1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridView1.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;dataGridView1.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;tbSKUCode.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <metadata name="Column_ID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1116,6 +843,54 @@
   <data name="Column_Timeout.Width" type="System.Int32, mscorlib">
     <value>50</value>
   </data>
+  <data name="dataGridView1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="dataGridView1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1366, 385</value>
+  </data>
+  <data name="dataGridView1.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.Name" xml:space="preserve">
+    <value>dataGridView1</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1366, 385</value>
+  </data>
+  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="lblDaDat.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1124,6 +899,9 @@
   </data>
   <data name="lblDaDat.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 12pt, style=Bold</value>
+  </data>
+  <data name="lblDaDat.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblDaDat.Location" type="System.Drawing.Point, System.Drawing">
     <value>260, 0</value>
@@ -1302,6 +1080,9 @@
   <data name="&gt;&gt;tbMacMes.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="btnskip.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnskip.Location" type="System.Drawing.Point, System.Drawing">
     <value>567, 16</value>
   </data>
@@ -1362,6 +1143,9 @@
   <data name="label20.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
+  <data name="label20.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="label20.Location" type="System.Drawing.Point, System.Drawing">
     <value>310, 116</value>
   </data>
@@ -1396,6 +1180,9 @@ MES</value>
   <data name="label19.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
+  <data name="label19.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="label19.Location" type="System.Drawing.Point, System.Drawing">
     <value>11, 121</value>
   </data>
@@ -1429,6 +1216,9 @@ MES</value>
   <data name="label18.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
+  <data name="label18.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="label18.Location" type="System.Drawing.Point, System.Drawing">
     <value>19, 53</value>
   </data>
@@ -1461,6 +1251,9 @@ MES</value>
   </data>
   <data name="label17.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="label17.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label17.Location" type="System.Drawing.Point, System.Drawing">
     <value>310, 11</value>
@@ -1497,6 +1290,9 @@ Scan
   <data name="label16.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
+  <data name="label16.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
     <value>20, 87</value>
   </data>
@@ -1529,6 +1325,9 @@ Scan
   </data>
   <data name="label15.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="label15.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 12</value>
@@ -1583,6 +1382,24 @@ Number</value>
     <value>panel25</value>
   </data>
   <data name="&gt;&gt;panel27.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tableLayoutPanel2.ColumnCount" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tableLayoutPanel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tableLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="tableLayoutPanel2.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tableLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>773, 40</value>
+  </data>
+  <data name="tableLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="&gt;&gt;tableLayoutPanel2.Name" xml:space="preserve">
@@ -1648,39 +1465,6 @@ Number</value>
   <data name="&gt;&gt;panel25.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="tableLayoutPanel2.ColumnCount" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="tableLayoutPanel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tableLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="tableLayoutPanel2.RowCount" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tableLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>773, 40</value>
-  </data>
-  <data name="tableLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel2.Name" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel2.Parent" xml:space="preserve">
-    <value>panel26</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tableLayoutPanel2.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="lblConlai" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="lblDaDat" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblTongWo" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,33.33333,Percent,33.33333,Percent,33.33333" /&gt;&lt;Rows Styles="Percent,100,Absolute,40" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
   <data name="panel22.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -1737,6 +1521,9 @@ Number</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1366, 575</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Main</value>

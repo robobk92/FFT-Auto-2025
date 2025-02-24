@@ -32,12 +32,9 @@
             this.lblConlai = new System.Windows.Forms.Label();
             this.lblTongWo = new System.Windows.Forms.Label();
             this.tbSKUCode = new System.Windows.Forms.Panel();
-            this.btnLoadSoPo = new System.Windows.Forms.Button();
-            this.btnLoadWO = new System.Windows.Forms.Button();
-            this.btnLoadSKUCode = new System.Windows.Forms.Button();
             this.tbSoPo = new SLTSoft.RJControl.RJTextBox();
             this.tbWO = new SLTSoft.RJControl.RJTextBox();
-            this.rjTextBox1 = new SLTSoft.RJControl.RJTextBox();
+            this.txtSKUCode = new SLTSoft.RJControl.RJTextBox();
             this.cbTurnOnVoice = new System.Windows.Forms.CheckBox();
             this.cbTestAgain = new System.Windows.Forms.CheckBox();
             this.cbCloseDoorFFT = new System.Windows.Forms.CheckBox();
@@ -45,7 +42,7 @@
             this.cbUseMacMes = new System.Windows.Forms.CheckBox();
             this.cbResetWhenSetDefault = new System.Windows.Forms.CheckBox();
             this.cbAskSupply = new System.Windows.Forms.CheckBox();
-            this.label30 = new System.Windows.Forms.Label();
+            this.lblWO = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -82,6 +79,9 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel22 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnLoadSoPo = new System.Windows.Forms.Button();
+            this.btnLoadWO = new System.Windows.Forms.Button();
+            this.btnLoadSKUCode = new System.Windows.Forms.Button();
             this.tbSKUCode.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -110,7 +110,7 @@
             this.tbSKUCode.Controls.Add(this.btnLoadSKUCode);
             this.tbSKUCode.Controls.Add(this.tbSoPo);
             this.tbSKUCode.Controls.Add(this.tbWO);
-            this.tbSKUCode.Controls.Add(this.rjTextBox1);
+            this.tbSKUCode.Controls.Add(this.txtSKUCode);
             this.tbSKUCode.Controls.Add(this.cbTurnOnVoice);
             this.tbSKUCode.Controls.Add(this.cbTestAgain);
             this.tbSKUCode.Controls.Add(this.cbCloseDoorFFT);
@@ -118,41 +118,11 @@
             this.tbSKUCode.Controls.Add(this.cbUseMacMes);
             this.tbSKUCode.Controls.Add(this.cbResetWhenSetDefault);
             this.tbSKUCode.Controls.Add(this.cbAskSupply);
-            this.tbSKUCode.Controls.Add(this.label30);
+            this.tbSKUCode.Controls.Add(this.lblWO);
             this.tbSKUCode.Controls.Add(this.label31);
             this.tbSKUCode.Controls.Add(this.label32);
             resources.ApplyResources(this.tbSKUCode, "tbSKUCode");
             this.tbSKUCode.Name = "tbSKUCode";
-            // 
-            // btnLoadSoPo
-            // 
-            this.btnLoadSoPo.BackColor = System.Drawing.Color.Transparent;
-            this.btnLoadSoPo.BackgroundImage = global::SLTtechSoft.Properties.Resources.HandPointFinger;
-            resources.ApplyResources(this.btnLoadSoPo, "btnLoadSoPo");
-            this.btnLoadSoPo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLoadSoPo.ForeColor = System.Drawing.Color.White;
-            this.btnLoadSoPo.Name = "btnLoadSoPo";
-            this.btnLoadSoPo.UseVisualStyleBackColor = false;
-            // 
-            // btnLoadWO
-            // 
-            this.btnLoadWO.BackColor = System.Drawing.Color.Transparent;
-            this.btnLoadWO.BackgroundImage = global::SLTtechSoft.Properties.Resources.HandPointFinger;
-            resources.ApplyResources(this.btnLoadWO, "btnLoadWO");
-            this.btnLoadWO.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLoadWO.ForeColor = System.Drawing.Color.White;
-            this.btnLoadWO.Name = "btnLoadWO";
-            this.btnLoadWO.UseVisualStyleBackColor = false;
-            // 
-            // btnLoadSKUCode
-            // 
-            this.btnLoadSKUCode.BackColor = System.Drawing.Color.Transparent;
-            this.btnLoadSKUCode.BackgroundImage = global::SLTtechSoft.Properties.Resources.HandPointFinger;
-            resources.ApplyResources(this.btnLoadSKUCode, "btnLoadSKUCode");
-            this.btnLoadSKUCode.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLoadSKUCode.ForeColor = System.Drawing.Color.White;
-            this.btnLoadSKUCode.Name = "btnLoadSKUCode";
-            this.btnLoadSKUCode.UseVisualStyleBackColor = false;
             // 
             // tbSoPo
             // 
@@ -182,19 +152,19 @@
             this.tbWO.Texts = "";
             this.tbWO.UnderlinedStyle = true;
             // 
-            // rjTextBox1
+            // txtSKUCode
             // 
-            this.rjTextBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.rjTextBox1.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.rjTextBox1.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.rjTextBox1.BorderSize = 2;
-            resources.ApplyResources(this.rjTextBox1, "rjTextBox1");
-            this.rjTextBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.rjTextBox1.Multiline = false;
-            this.rjTextBox1.Name = "rjTextBox1";
-            this.rjTextBox1.PasswordChar = false;
-            this.rjTextBox1.Texts = "";
-            this.rjTextBox1.UnderlinedStyle = true;
+            this.txtSKUCode.BackColor = System.Drawing.SystemColors.Window;
+            this.txtSKUCode.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtSKUCode.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtSKUCode.BorderSize = 2;
+            resources.ApplyResources(this.txtSKUCode, "txtSKUCode");
+            this.txtSKUCode.ForeColor = System.Drawing.Color.DimGray;
+            this.txtSKUCode.Multiline = false;
+            this.txtSKUCode.Name = "txtSKUCode";
+            this.txtSKUCode.PasswordChar = false;
+            this.txtSKUCode.Texts = "";
+            this.txtSKUCode.UnderlinedStyle = true;
             // 
             // cbTurnOnVoice
             // 
@@ -238,10 +208,10 @@
             this.cbAskSupply.Name = "cbAskSupply";
             this.cbAskSupply.UseVisualStyleBackColor = true;
             // 
-            // label30
+            // lblWO
             // 
-            resources.ApplyResources(this.label30, "label30");
-            this.label30.Name = "label30";
+            resources.ApplyResources(this.lblWO, "lblWO");
+            this.lblWO.Name = "lblWO";
             // 
             // label31
             // 
@@ -529,6 +499,36 @@
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
+            // btnLoadSoPo
+            // 
+            this.btnLoadSoPo.BackColor = System.Drawing.Color.Transparent;
+            this.btnLoadSoPo.BackgroundImage = global::SLTtechSoft.Properties.Resources.HandPointFinger;
+            resources.ApplyResources(this.btnLoadSoPo, "btnLoadSoPo");
+            this.btnLoadSoPo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLoadSoPo.ForeColor = System.Drawing.Color.White;
+            this.btnLoadSoPo.Name = "btnLoadSoPo";
+            this.btnLoadSoPo.UseVisualStyleBackColor = false;
+            // 
+            // btnLoadWO
+            // 
+            this.btnLoadWO.BackColor = System.Drawing.Color.Transparent;
+            this.btnLoadWO.BackgroundImage = global::SLTtechSoft.Properties.Resources.HandPointFinger;
+            resources.ApplyResources(this.btnLoadWO, "btnLoadWO");
+            this.btnLoadWO.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLoadWO.ForeColor = System.Drawing.Color.White;
+            this.btnLoadWO.Name = "btnLoadWO";
+            this.btnLoadWO.UseVisualStyleBackColor = false;
+            // 
+            // btnLoadSKUCode
+            // 
+            this.btnLoadSKUCode.BackColor = System.Drawing.Color.Transparent;
+            this.btnLoadSKUCode.BackgroundImage = global::SLTtechSoft.Properties.Resources.HandPointFinger;
+            resources.ApplyResources(this.btnLoadSKUCode, "btnLoadSKUCode");
+            this.btnLoadSKUCode.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLoadSKUCode.ForeColor = System.Drawing.Color.White;
+            this.btnLoadSKUCode.Name = "btnLoadSKUCode";
+            this.btnLoadSKUCode.UseVisualStyleBackColor = false;
+            // 
             // Main
             // 
             resources.ApplyResources(this, "$this");
@@ -575,7 +575,6 @@
         public System.Windows.Forms.Button btnLoadSoPo;
         public System.Windows.Forms.Button btnLoadWO;
         public System.Windows.Forms.Button btnLoadSKUCode;
-        private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Panel panel2;
@@ -594,7 +593,7 @@
         private System.Windows.Forms.Panel panel1;
         public SLTSoft.RJControl.RJTextBox tbSoPo;
         public SLTSoft.RJControl.RJTextBox tbWO;
-        public SLTSoft.RJControl.RJTextBox rjTextBox1;
+        public SLTSoft.RJControl.RJTextBox txtSKUCode;
         public SLTSoft.RJControl.RJTextBox tbMacDevice;
         public SLTSoft.RJControl.RJTextBox tbMainQR;
         public SLTSoft.RJControl.RJTextBox tbFrontQR;
@@ -621,6 +620,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_Timeout;
-        private System.Windows.Forms.Button btnskip;
+        public System.Windows.Forms.Label lblWO;
+        public System.Windows.Forms.Button btnskip;
     }
 }
