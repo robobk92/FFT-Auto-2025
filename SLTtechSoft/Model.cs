@@ -418,6 +418,8 @@ namespace SLTtechSoft
             PLCControl.nudROprSpeed.Value = Model.pLCInternalPara.nudROprSpeed;
             PLCControl.nudRStartAddress.Value = Model.pLCInternalPara.nudRStartAddress;
             PLCControl.nudRStartSpeed.Value = Model.pLCInternalPara.nudRStartSpeed;
+            PLCControl.nudACC_X.Text = Model.pLCInternalPara.nudACC_X.ToString();
+            PLCControl.nudDEC_X.Text = Model.pLCInternalPara.nudDEC_X.ToString();
             ReadModelToSetModelTable(Model.ModelInfo);
 
             _form1.topControl.cbSkipTestFail.Checked = Model.ModelMachine.cbSkipTestFail;
@@ -559,7 +561,7 @@ namespace SLTtechSoft
             PLCControl.nudRPos2.Value = Model.pLCModelPara.nudRPos2;
             PLCControl.nudRPos3.Value = Model.pLCModelPara.nudRPos3;
             PLCControl.nudRSpeed.Value = Model.pLCModelPara.nudRSpeed;
-
+            
             nudVoltage6V.Value = Convert.ToDecimal(Model.KeySight.nudVoltage6V);
             nudCurrent6V.Value = Convert.ToDecimal(Model.KeySight.nudCurrent6V);
             nudVoltage9V.Value = Convert.ToDecimal(Model.KeySight.nudVoltage9V);

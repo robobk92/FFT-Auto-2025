@@ -972,9 +972,11 @@ namespace SLTtechSoft
             DataWritePLC[30] = PLC.Write.Word.nudRPos2;
             DataWritePLC[31] = PLC.Write.Word.nudRPos3;
             DataWritePLC[32] = PLC.Write.Word.SpeedRAuto;
+            DataWritePLC[33] = PLC.Write.Word.nudACC_X;
+            DataWritePLC[34] = PLC.Write.Word.nudDEC_X;
 
 
-            Fx5uPLC.WriteRegister(5500, 33, 0, DataWritePLC);
+            Fx5uPLC.WriteRegister(5500, 40, 0, DataWritePLC);
 
             StopwatchWritePLC[0].Stop();
             TimeSpan ts2 = StopwatchWritePLC[0].Elapsed;

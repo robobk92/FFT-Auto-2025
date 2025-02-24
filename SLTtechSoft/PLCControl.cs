@@ -168,7 +168,6 @@ namespace SLTtechSoft
             _model.currentModelInfomation.pLCInternalPara.nudFeedRateX = Convert.ToInt32(nudFeedRateX.Value);
             _model.currentModelInfomation.pLCInternalPara.nudStepSizeR = Convert.ToInt32(nudStepSizeR.Value);
             _model.currentModelInfomation.pLCInternalPara.nudFeedRateR = Convert.ToInt32(nudFeedRateR.Value);
-
         }
 
         private void btnWriteSpeedXAuto_Click(object sender, EventArgs e)
@@ -191,6 +190,8 @@ namespace SLTtechSoft
             _model.currentModelInfomation.pLCInternalPara.nudROprSpeed = Convert.ToInt32(nudROprSpeed.Value);
             _model.currentModelInfomation.pLCInternalPara.nudRStartAddress = Convert.ToInt32(nudRStartAddress.Value);
             _model.currentModelInfomation.pLCInternalPara.nudRStartSpeed = Convert.ToInt32(nudRStartSpeed.Value);
+            _model.currentModelInfomation.pLCInternalPara.nudACC_X = Convert.ToInt32(nudACC_X.Text);
+            _model.currentModelInfomation.pLCInternalPara.nudDEC_X = Convert.ToInt32(nudDEC_X.Text);
         }
         private Color On = Color.Lime;
         private Color Off = Color.Transparent;
@@ -270,6 +271,8 @@ namespace SLTtechSoft
             _form1.PLC.Write.Word.tbOprSpeedX = Convert.ToInt32(_model.currentModelInfomation.pLCInternalPara.tbOprSpeedX);
             _form1.PLC.Write.Word.tbStartAddressX = Convert.ToInt32(_model.currentModelInfomation.pLCInternalPara.tbStartAddressX);
             _form1.PLC.Write.Word.tbOprStartSpeedX = Convert.ToInt32(_model.currentModelInfomation.pLCInternalPara.tbOprStartSpeedX);
+            _form1.PLC.Write.Word.nudACC_X = Convert.ToInt32(_model.currentModelInfomation.pLCInternalPara.nudACC_X);
+            _form1.PLC.Write.Word.nudDEC_X = Convert.ToInt32(_model.currentModelInfomation.pLCInternalPara.nudDEC_X);
             _form1.PLC.Write.Word.SpeedXAuto = _model.modelParameter.pLCModelPara.nudSpeed;
             _form1.PLC.Write.Word.PosCamera = _model.modelParameter.pLCModelPara.nudPoint1;
             _form1.PLC.Write.Word.PosInput = _model.modelParameter.pLCModelPara.nudPoint2;

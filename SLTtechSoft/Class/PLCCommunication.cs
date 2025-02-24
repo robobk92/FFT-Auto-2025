@@ -261,7 +261,8 @@ namespace SLTtechSoft
         public int nudROprSpeed { get; set; }
         public int nudRStartAddress { get; set; }
         public int nudRStartSpeed { get; set; }
-
+        public int nudACC_X { get; set; }
+        public int nudDEC_X { get; set; }
     }
     public class Coordinate3D
     {
