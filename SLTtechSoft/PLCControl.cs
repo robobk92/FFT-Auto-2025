@@ -1,4 +1,5 @@
 ﻿using Cognex.VisionPro.Exceptions;
+using LibFunction;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace SLTtechSoft
 {
@@ -161,7 +163,61 @@ namespace SLTtechSoft
             }
 
         }
+        private void AlarmPlc ()
+        {
+            List<string> errorMessages = new List<string>();
+            if(_form1.PLC.Read.Alarm.AlarmALL)
+            {
+                if (_form1.PLC.Read.Alarm.Alarm_Cyl_Door_X14_not_on)
+                    errorMessages.Add("Alarm_Cyl_Door_X14_not_on");
+                if (_form1.PLC.Read.Alarm.Alarm_Cyl_Door_X15_not_on)
+                    errorMessages.Add("Alarm_Cyl_Door_X15_not_on");
+                if (_form1.PLC.Read.Alarm.Alarm_Cyl_Up_Tool_X16_not_on)
+                    errorMessages.Add("Alarm_Cyl_Up_Tool_X16_not_on");
+                if (_form1.PLC.Read.Alarm.Alarm_Cyl_DW_Tool_X17_not_on)
+                    errorMessages.Add("Alarm_Cyl_DW_Tool_X17_not_on");
+                if (_form1.PLC.Read.Alarm.Alarm_Cyl_FW_Tool_X23_not_on)
+                    errorMessages.Add("Alarm_Cyl_FW_Tool_X23_not_on");
+                if (_form1.PLC.Read.Alarm.Alarm_Cyl_BW_Tool_X24_not_on)
+                    errorMessages.Add("Alarm_Cyl_BW_Tool_X24_not_on");
+                if (_form1.PLC.Read.Alarm.Alarm_CylCheckCard_Dw_X25_not_on)
+                    errorMessages.Add("Alarm_CylCheckCard_Dw_X25_not_on");
+                if (_form1.PLC.Read.Alarm.Alarm_Cyl_CheckStuck_FW_X26_not_on)
+                    errorMessages.Add("Alarm_Cyl_CheckStuck_FW_X26_not_on");
+                if (_form1.PLC.Read.Alarm.Alarm_Cyl_PushLock_Dw_X30_not_off)
+                    errorMessages.Add("Alarm_Cyl_PushLock_Dw_X30_not_off");
+                if (_form1.PLC.Read.Alarm.Alarm_Cyl_PushLock_Dw_X30_not_on)
+                    errorMessages.Add("Alarm_Cyl_PushLock_Dw_X30_not_on");
+                if (_form1.PLC.Read.Alarm.Alarm_CylSpring_Open_X31_not_on)
+                    errorMessages.Add("Alarm_CylSpring_Open_X31_not_on");
+                if (_form1.PLC.Read.Alarm.Alarm_CylSpring_Close_X32_not_on)
+                    errorMessages.Add("Alarm_CylSpring_Close_X32_not_on");
+                if (_form1.PLC.Read.Alarm.Alarm_CylSpring_Up_X33_not_on)
+                    errorMessages.Add("Alarm_CylSpring_Up_X33_not_on");
+                if (_form1.PLC.Read.Alarm.Alarm_CylSpring_Dw_X34_not_on)
+                    errorMessages.Add("Alarm_CylSpring_Dw_X34_not_on");
 
+            }
+            if (errorMessages.Count > 0)
+                lbStepName.Text = "StepName: " + string.Join(", ", errorMessages);
+            else
+                lbStepName.Text = "StepName: ";
+            //if (_form1.PLC.Read.Alarm.Alarm_Cyl_Door_X14_not_on) lbStepName.Text = "StepName:Alarm_Cyl_Door_X14_not_on";
+            //else if (_form1.PLC.Read.Alarm.Alarm_Cyl_Door_X15_not_on) lbStepName.Text = "StepName:Alarm_Cyl_Door_X15_not_on";
+            //else if (_form1.PLC.Read.Alarm.Alarm_Cyl_Up_Tool_X16_not_on) lbStepName.Text = "StepName:Alarm_Cyl_Up_Tool_X16_not_on";
+            //else if (_form1.PLC.Read.Alarm.Alarm_Cyl_DW_Tool_X17_not_on) lbStepName.Text = "StepName:Alarm_Cyl_DW_Tool_X17_not_on";
+            //else if (_form1.PLC.Read.Alarm.Alarm_Cyl_FW_Tool_X23_not_on) lbStepName.Text = "StepName:Alarm_Cyl_FW_Tool_X23_not_on";
+            //else if (_form1.PLC.Read.Alarm.Alarm_Cyl_BW_Tool_X24_not_on) lbStepName.Text = "StepName:Alarm_Cyl_BW_Tool_X24_not_on";
+            //else if (_form1.PLC.Read.Alarm.Alarm_CylCheckCard_Dw_X25_not_on) lbStepName.Text = "StepName:Alarm_CylCheckCard_Dw_X25_not_on";
+            //else if (_form1.PLC.Read.Alarm.Alarm_Cyl_CheckStuck_FW_X26_not_on) lbStepName.Text = "StepName:Alarm_Cyl_CheckStuck_FW_X26_not_on";
+            //else if (_form1.PLC.Read.Alarm.Alarm_Cyl_PushLock_Dw_X30_not_off) lbStepName.Text = "StepName:Alarm_Cyl_PushLock_Dw_X30_not_off";
+            //else if (_form1.PLC.Read.Alarm.Alarm_Cyl_PushLock_Dw_X30_not_on) lbStepName.Text = "StepName:Alarm_Cyl_PushLock_Dw_X30_not_on";
+            //else if (_form1.PLC.Read.Alarm.Alarm_CylSpring_Open_X31_not_on) lbStepName.Text = "StepName:Alarm_CylSpring_Open_X31_not_on";
+            //else if (_form1.PLC.Read.Alarm.Alarm_CylSpring_Close_X32_not_on) lbStepName.Text = "StepName:Alarm_CylSpring_Close_X32_not_on";
+            //else if (_form1.PLC.Read.Alarm.Alarm_CylSpring_Up_X33_not_on) lbStepName.Text = "StepName:Alarm_CylSpring_Up_X33_not_on";
+            //else if (_form1.PLC.Read.Alarm.Alarm_CylSpring_Dw_X34_not_on) lbStepName.Text = "StepName:Alarm_CylSpring_Dw_X34_not_on";
+            //else lbStepName.Text = "StepName:";
+        }
         private void btnWriteJogParameter_Click(object sender, EventArgs e)
         {
             _model.currentModelInfomation.pLCInternalPara.nudStepSizeX = Convert.ToInt32(nudStepSizeX.Value);
@@ -193,10 +249,38 @@ namespace SLTtechSoft
             _model.currentModelInfomation.pLCInternalPara.nudACC_X = Convert.ToInt32(nudACC_X.Text);
             _model.currentModelInfomation.pLCInternalPara.nudDEC_X = Convert.ToInt32(nudDEC_X.Text);
         }
+      
         private Color On = Color.Lime;
         private Color Off = Color.Transparent;
         private void Timer1_Tick(object sender, EventArgs e)
         {
+
+            //if (_form1.PLC.Read.Auto.Stop)
+            //{
+            //    _form1.PLC.Write.Auto.Auto = false;
+            //    _form1.PLC.Write.Auto.Stop = false;
+            //    _form1.PLC.Write.Auto.ResetAll = true;
+            //}
+            //else
+            //{
+
+            //    if (!_form1.PLC.Read.Auto.HomeAll)
+            //    {
+            //        _form1.PLC.Write.Auto.ResetAll = false;
+            //        _form1.PLC.Write.Auto.HomeAll = true;
+
+            //    }
+            //    else
+            //    {
+            //        _form1.PLC.Write.Auto.HomeAll = false;
+            //        _form1.PLC.Write.Auto.Auto = true;
+            //    }
+            //}
+            //if (_form1.MachineMode != Form1.ModeMachine.Manual) return;
+
+
+
+            AlarmPlc();
             //Input
             ManualControlPLC.LimitNegAxis1.BackColor = _form1.PLC.Read.Input.LimitNegAxis1 ? On : Off;
             ManualControlPLC.HomeAxis1.BackColor = _form1.PLC.Read.Input.HomeAxis1 ? On : Off;

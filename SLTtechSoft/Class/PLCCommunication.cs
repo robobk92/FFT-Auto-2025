@@ -18,12 +18,33 @@ namespace SLTtechSoft
         public ClassOutput Output = new ClassOutput();
         public BitReadAuto Auto = new BitReadAuto();
         public WordRead Word = new WordRead();
+        public AlarmPLc Alarm = new AlarmPLc();
     }
     public class Write
     {
         public ClassOutput Output = new ClassOutput();
         public BitWriteAuto Auto = new BitWriteAuto();
         public WordWrite Word = new WordWrite();
+    }
+    public class AlarmPLc
+    {
+        public bool Alarm_Cyl_Door_X14_not_on {  get; set; }
+        public bool Alarm_Cyl_Door_X15_not_on {  get; set; }
+        public bool Alarm_Cyl_Up_Tool_X16_not_on { get; set; }
+        public bool Alarm_Cyl_DW_Tool_X17_not_on { get; set; }
+        public bool Alarm_Cyl_FW_Tool_X23_not_on { get; set; }
+        public bool Alarm_Cyl_BW_Tool_X24_not_on { get; set; }
+        public bool Alarm_CylCheckCard_Dw_X25_not_on { get; set; }
+        public bool Alarm_Cyl_CheckStuck_FW_X26_not_on { get; set; }
+        public bool Alarm_Cyl_PushLock_Dw_X30_not_on { get; set; }
+        public bool Alarm_Cyl_PushLock_Dw_X30_not_off { get; set; }
+        public bool Alarm_CylSpring_Open_X31_not_on { get; set; }
+        public bool Alarm_CylSpring_Close_X32_not_on { get; set; }
+        public bool Alarm_CylSpring_Up_X33_not_on { get; set; }
+        public bool Alarm_CylSpring_Dw_X34_not_on { get; set; }
+        public bool Alarm_Axis1 {  get; set; }
+        public bool AlarmALL {  get; set; }
+       
     }
     public class ClassInput
     {

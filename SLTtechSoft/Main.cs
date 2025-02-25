@@ -95,7 +95,7 @@ namespace SLTtechSoft
 
         private void btnskip_Click(object sender, EventArgs e)
         {
-            ProcessTestIndex = 4;
+            
         }
         private void tbSerialNumber_Keydown(object sender, KeyEventArgs e)
         {
