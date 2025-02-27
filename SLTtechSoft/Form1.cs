@@ -307,6 +307,7 @@ namespace SLTtechSoft
             InitialUI();
             //GetPOInformation();
             timer1.Enabled = true;
+           
         }
         private void InitialDevice()
         {
@@ -320,8 +321,6 @@ namespace SLTtechSoft
             LockASSA.Mode_TCP_Serial = true;
             LockASSA.EventTransferDataLog += LockASSA_EventTransferDataLog;
             LockASSA.EventExceptionLog += LockASSA_EventExceptionLog;
-
-
 
             ErrorListContent1 = ReadErrorListContent(0);
             ErrorListContent2 = ReadErrorListContent(1);
@@ -393,19 +392,23 @@ namespace SLTtechSoft
 
             if (result == DialogResult.Yes)
             {
-                formModel.ShowFFTTableInMainScreen();
-                formMain.StartTesting = false;
-                MachineMode = ModeMachine.Manual;
-                formMain.ProcessTestIndex = 0;
-                CurrentSerial_Number = "dacb1";
-                CurrentQRCodeRecived = "123";
-                formMain.IsLedDoorOn = false;
-                _VisionSystem[0].FinishTrigger = false;
-                PLC.Write.Auto.Test.FinishProcessTest =true;
+                ResetMachine();
             }
          
         }
-        private void btnskip_Click(object sender, EventArgs e)
+        private void ResetMachine()
+        {
+            formModel.ShowFFTTableInMainScreen();
+            formMain.StartTesting = false;
+            MachineMode = ModeMachine.Manual;
+            formMain.ProcessTestIndex = 0;
+            CurrentSerial_Number = "";
+            CurrentQRCodeRecived = "";
+            formMain.IsLedDoorOn = false;
+            _VisionSystem[0].FinishTrigger = false;
+            PLC.Write.Auto.Test.FinishProcessTest = true;
+        }
+        private async void btnskip_Click(object sender, EventArgs e)
         {
             GetPOInformation();
         }
@@ -1034,24 +1037,24 @@ namespace SLTtechSoft
         private void timer1_Tick(object sender, EventArgs e)
         {
           
-            if(MachineMode==ModeMachine.Auto)
-            {
-                if (PLC.Read.Input.OP_Start1 && PLC.Read.Input.OP_Start2)
-                {
-                    if (!PLC.Read.Auto.Test.StartProcessTest)
-                    {
-                        formMain.StartTesting = false;
-                        CurrentSerial_Number = "dacb1";
-                        CurrentQRCodeRecived = "123";
+            //if(MachineMode==ModeMachine.Auto)
+            //{
+            //    if (PLC.Read.Input.OP_Start1 && PLC.Read.Input.OP_Start2)
+            //    {
+            //        if (!PLC.Read.Auto.Test.StartProcessTest)
+            //        {
+            //            formMain.StartTesting = false;
+            //            CurrentSerial_Number = "dacb1";
+            //            CurrentQRCodeRecived = "123";
                         
                         
-                        formMain.ProcessTestIndex = 0;
-                        formMain.IsLedDoorOn = false;
-                        _VisionSystem[0].FinishTrigger = false;
-                    }
+            //            formMain.ProcessTestIndex = 0;
+            //            formMain.IsLedDoorOn = false;
+            //            _VisionSystem[0].FinishTrigger = false;
+            //        }
                         
-                }
-            }
+            //    }
+            //}
            
                
             formMain.DoorTestProcess();
@@ -1100,9 +1103,24 @@ namespace SLTtechSoft
                 CountCheckPLC_Off = 0;
             }
             Timer1_ShowUI();
-           
+            ResetMachineFirstTime();
+
+             
         }
-       
+        private bool IsResetFirstTime = false;
+        private void ResetMachineFirstTime()
+        {
+            if (!IsResetFirstTime)
+            {
+                if(PLC.Read.Auto.ComOn)
+                {
+                    ResetMachine();
+                    IsResetFirstTime = true;
+                }
+               
+            }
+               
+        }
         private void Timer1_ShowProductivity()
         {
             topControl.TactTime.Text = PLC.Read.Word.TactTime.ToString();
@@ -1973,7 +1991,7 @@ namespace SLTtechSoft
         {
             if (leftTabControl.CamDisplay.mDisplay == null) return;
             string Datetimenow = DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss");
-            string FileName = $"{formMain.tbSerialNumber.Texts} {Datetimenow}";
+            string FileName = $"{formMain.tbSerialNumber.Text} {Datetimenow}";
             string CamNoString = (cam + 1).ToString();
             string ResultString = result == 2 ? "Pass" : "Fail";
             string FolderName = DateTime.Now.ToString("yyyy-MM-dd");
@@ -2034,7 +2052,7 @@ namespace SLTtechSoft
             {
                 int indexSave = 0;
                 indexSave = index;
-                if (formOption.Parameters.Cam[cam].SaveGraphic)
+                if (formOption.Parameters.Cam[cam].SaveGraphic) 
                 {
                     if (System.IO.File.Exists(Path)) throw new Exception($"{Path}, Graphic Image file already Exists.");
                     if (display.Image == null) throw new Exception($"formMain.CameraVisionDisplays[cam].ListPartOfCam[{index}].mDisplay.Image == null");
@@ -2616,7 +2634,7 @@ namespace SLTtechSoft
             if (InvokeRequired)
             {
                 Invoke(updateAction);
-                LINE_INFOR = line + "_" + station_name;
+                
             }
             else
             {
@@ -2625,6 +2643,7 @@ namespace SLTtechSoft
         }
         public async void GetPOInformation()
         {
+            LINE_INFOR = "LTEST" + "_" + "FFT1" + "_" + "1";
             if (formMain != null)
             {
                 try
@@ -2777,8 +2796,8 @@ namespace SLTtechSoft
         }
         #endregion
         public ClassDoorTestData CurrentDoorTestData = new ClassDoorTestData();
-        public string CurrentSerial_Number = "dacb1";
-        public string CurrentQRCodeRecived = "123";
+        public string CurrentSerial_Number = "";
+        public string CurrentQRCodeRecived = "";
         
         
     }

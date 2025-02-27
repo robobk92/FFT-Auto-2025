@@ -32,6 +32,9 @@
             this.lblConlai = new System.Windows.Forms.Label();
             this.lblTongWo = new System.Windows.Forms.Label();
             this.tbSKUCode = new System.Windows.Forms.Panel();
+            this.btnLoadSoPo = new System.Windows.Forms.Button();
+            this.btnLoadWO = new System.Windows.Forms.Button();
+            this.btnLoadSKUCode = new System.Windows.Forms.Button();
             this.tbSoPo = new SLTSoft.RJControl.RJTextBox();
             this.tbWO = new SLTSoft.RJControl.RJTextBox();
             this.txtSKUCode = new SLTSoft.RJControl.RJTextBox();
@@ -61,9 +64,6 @@
             this.Column_Timeout = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblDaDat = new System.Windows.Forms.Label();
             this.tbMacDevice = new SLTSoft.RJControl.RJTextBox();
-            this.tbMainQR = new SLTSoft.RJControl.RJTextBox();
-            this.tbFrontQR = new SLTSoft.RJControl.RJTextBox();
-            this.tbSerialNumber = new SLTSoft.RJControl.RJTextBox();
             this.tbMacMes = new SLTSoft.RJControl.RJTextBox();
             this.panel27 = new System.Windows.Forms.Panel();
             this.btnskip = new System.Windows.Forms.Button();
@@ -79,9 +79,9 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel22 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnLoadSoPo = new System.Windows.Forms.Button();
-            this.btnLoadWO = new System.Windows.Forms.Button();
-            this.btnLoadSKUCode = new System.Windows.Forms.Button();
+            this.tbSerialNumber = new System.Windows.Forms.TextBox();
+            this.tbFrontQR = new System.Windows.Forms.TextBox();
+            this.tbMainQR = new System.Windows.Forms.TextBox();
             this.tbSKUCode.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -123,6 +123,36 @@
             this.tbSKUCode.Controls.Add(this.label32);
             resources.ApplyResources(this.tbSKUCode, "tbSKUCode");
             this.tbSKUCode.Name = "tbSKUCode";
+            // 
+            // btnLoadSoPo
+            // 
+            this.btnLoadSoPo.BackColor = System.Drawing.Color.Transparent;
+            this.btnLoadSoPo.BackgroundImage = global::SLTtechSoft.Properties.Resources.HandPointFinger;
+            resources.ApplyResources(this.btnLoadSoPo, "btnLoadSoPo");
+            this.btnLoadSoPo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLoadSoPo.ForeColor = System.Drawing.Color.White;
+            this.btnLoadSoPo.Name = "btnLoadSoPo";
+            this.btnLoadSoPo.UseVisualStyleBackColor = false;
+            // 
+            // btnLoadWO
+            // 
+            this.btnLoadWO.BackColor = System.Drawing.Color.Transparent;
+            this.btnLoadWO.BackgroundImage = global::SLTtechSoft.Properties.Resources.HandPointFinger;
+            resources.ApplyResources(this.btnLoadWO, "btnLoadWO");
+            this.btnLoadWO.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLoadWO.ForeColor = System.Drawing.Color.White;
+            this.btnLoadWO.Name = "btnLoadWO";
+            this.btnLoadWO.UseVisualStyleBackColor = false;
+            // 
+            // btnLoadSKUCode
+            // 
+            this.btnLoadSKUCode.BackColor = System.Drawing.Color.Transparent;
+            this.btnLoadSKUCode.BackgroundImage = global::SLTtechSoft.Properties.Resources.HandPointFinger;
+            resources.ApplyResources(this.btnLoadSKUCode, "btnLoadSKUCode");
+            this.btnLoadSKUCode.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLoadSKUCode.ForeColor = System.Drawing.Color.White;
+            this.btnLoadSKUCode.Name = "btnLoadSKUCode";
+            this.btnLoadSKUCode.UseVisualStyleBackColor = false;
             // 
             // tbSoPo
             // 
@@ -339,48 +369,6 @@
             this.tbMacDevice.Texts = "";
             this.tbMacDevice.UnderlinedStyle = true;
             // 
-            // tbMainQR
-            // 
-            this.tbMainQR.BackColor = System.Drawing.SystemColors.Window;
-            this.tbMainQR.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.tbMainQR.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.tbMainQR.BorderSize = 2;
-            resources.ApplyResources(this.tbMainQR, "tbMainQR");
-            this.tbMainQR.ForeColor = System.Drawing.Color.DimGray;
-            this.tbMainQR.Multiline = false;
-            this.tbMainQR.Name = "tbMainQR";
-            this.tbMainQR.PasswordChar = false;
-            this.tbMainQR.Texts = "";
-            this.tbMainQR.UnderlinedStyle = true;
-            // 
-            // tbFrontQR
-            // 
-            this.tbFrontQR.BackColor = System.Drawing.SystemColors.Window;
-            this.tbFrontQR.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.tbFrontQR.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.tbFrontQR.BorderSize = 2;
-            resources.ApplyResources(this.tbFrontQR, "tbFrontQR");
-            this.tbFrontQR.ForeColor = System.Drawing.Color.DimGray;
-            this.tbFrontQR.Multiline = false;
-            this.tbFrontQR.Name = "tbFrontQR";
-            this.tbFrontQR.PasswordChar = false;
-            this.tbFrontQR.Texts = "";
-            this.tbFrontQR.UnderlinedStyle = true;
-            // 
-            // tbSerialNumber
-            // 
-            this.tbSerialNumber.BackColor = System.Drawing.SystemColors.Window;
-            this.tbSerialNumber.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.tbSerialNumber.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.tbSerialNumber.BorderSize = 2;
-            resources.ApplyResources(this.tbSerialNumber, "tbSerialNumber");
-            this.tbSerialNumber.ForeColor = System.Drawing.Color.DimGray;
-            this.tbSerialNumber.Multiline = false;
-            this.tbSerialNumber.Name = "tbSerialNumber";
-            this.tbSerialNumber.PasswordChar = false;
-            this.tbSerialNumber.Texts = "";
-            this.tbSerialNumber.UnderlinedStyle = true;
-            // 
             // tbMacMes
             // 
             this.tbMacMes.BackColor = System.Drawing.SystemColors.Window;
@@ -397,13 +385,13 @@
             // 
             // panel27
             // 
+            this.panel27.Controls.Add(this.tbMainQR);
+            this.panel27.Controls.Add(this.tbFrontQR);
+            this.panel27.Controls.Add(this.tbSerialNumber);
             this.panel27.Controls.Add(this.btnskip);
             this.panel27.Controls.Add(this.tbMacMes);
             this.panel27.Controls.Add(this.tbUSBScan);
             this.panel27.Controls.Add(this.tbMacDevice);
-            this.panel27.Controls.Add(this.tbMainQR);
-            this.panel27.Controls.Add(this.tbFrontQR);
-            this.panel27.Controls.Add(this.tbSerialNumber);
             this.panel27.Controls.Add(this.label20);
             this.panel27.Controls.Add(this.label19);
             this.panel27.Controls.Add(this.label18);
@@ -499,35 +487,23 @@
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
-            // btnLoadSoPo
+            // tbSerialNumber
             // 
-            this.btnLoadSoPo.BackColor = System.Drawing.Color.Transparent;
-            this.btnLoadSoPo.BackgroundImage = global::SLTtechSoft.Properties.Resources.HandPointFinger;
-            resources.ApplyResources(this.btnLoadSoPo, "btnLoadSoPo");
-            this.btnLoadSoPo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLoadSoPo.ForeColor = System.Drawing.Color.White;
-            this.btnLoadSoPo.Name = "btnLoadSoPo";
-            this.btnLoadSoPo.UseVisualStyleBackColor = false;
+            resources.ApplyResources(this.tbSerialNumber, "tbSerialNumber");
+            this.tbSerialNumber.Name = "tbSerialNumber";
+            this.tbSerialNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbSerialNumber_KeyPress);
             // 
-            // btnLoadWO
+            // tbFrontQR
             // 
-            this.btnLoadWO.BackColor = System.Drawing.Color.Transparent;
-            this.btnLoadWO.BackgroundImage = global::SLTtechSoft.Properties.Resources.HandPointFinger;
-            resources.ApplyResources(this.btnLoadWO, "btnLoadWO");
-            this.btnLoadWO.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLoadWO.ForeColor = System.Drawing.Color.White;
-            this.btnLoadWO.Name = "btnLoadWO";
-            this.btnLoadWO.UseVisualStyleBackColor = false;
+            resources.ApplyResources(this.tbFrontQR, "tbFrontQR");
+            this.tbFrontQR.Name = "tbFrontQR";
+            this.tbFrontQR.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbFrontQR_KeyPress);
             // 
-            // btnLoadSKUCode
+            // tbMainQR
             // 
-            this.btnLoadSKUCode.BackColor = System.Drawing.Color.Transparent;
-            this.btnLoadSKUCode.BackgroundImage = global::SLTtechSoft.Properties.Resources.HandPointFinger;
-            resources.ApplyResources(this.btnLoadSKUCode, "btnLoadSKUCode");
-            this.btnLoadSKUCode.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLoadSKUCode.ForeColor = System.Drawing.Color.White;
-            this.btnLoadSKUCode.Name = "btnLoadSKUCode";
-            this.btnLoadSKUCode.UseVisualStyleBackColor = false;
+            resources.ApplyResources(this.tbMainQR, "tbMainQR");
+            this.tbMainQR.Name = "tbMainQR";
+            this.tbMainQR.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbMainQR_KeyPress);
             // 
             // Main
             // 
@@ -595,9 +571,6 @@
         public SLTSoft.RJControl.RJTextBox tbWO;
         public SLTSoft.RJControl.RJTextBox txtSKUCode;
         public SLTSoft.RJControl.RJTextBox tbMacDevice;
-        public SLTSoft.RJControl.RJTextBox tbMainQR;
-        public SLTSoft.RJControl.RJTextBox tbFrontQR;
-        public SLTSoft.RJControl.RJTextBox tbSerialNumber;
         public SLTSoft.RJControl.RJTextBox tbMacMes;
         public SLTSoft.RJControl.RJTextBox tbUSBScan;
         public System.Windows.Forms.CheckBox cbTurnOnVoice;
@@ -622,5 +595,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_Timeout;
         public System.Windows.Forms.Label lblWO;
         public System.Windows.Forms.Button btnskip;
+        public System.Windows.Forms.TextBox tbMainQR;
+        public System.Windows.Forms.TextBox tbFrontQR;
+        public System.Windows.Forms.TextBox tbSerialNumber;
     }
 }

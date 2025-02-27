@@ -958,96 +958,6 @@
     <value>panel27</value>
   </data>
   <data name="&gt;&gt;tbMacDevice.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="tbMainQR.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="tbMainQR.Location" type="System.Drawing.Point, System.Drawing">
-    <value>89, 79</value>
-  </data>
-  <data name="tbMainQR.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 3, 4, 3</value>
-  </data>
-  <data name="tbMainQR.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>7, 7, 7, 7</value>
-  </data>
-  <data name="tbMainQR.Size" type="System.Drawing.Size, System.Drawing">
-    <value>458, 28</value>
-  </data>
-  <data name="tbMainQR.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;tbMainQR.Name" xml:space="preserve">
-    <value>tbMainQR</value>
-  </data>
-  <data name="&gt;&gt;tbMainQR.Type" xml:space="preserve">
-    <value>SLTSoft.RJControl.RJTextBox, Vision Measurement System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;tbMainQR.Parent" xml:space="preserve">
-    <value>panel27</value>
-  </data>
-  <data name="&gt;&gt;tbMainQR.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="tbFrontQR.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="tbFrontQR.Location" type="System.Drawing.Point, System.Drawing">
-    <value>89, 45</value>
-  </data>
-  <data name="tbFrontQR.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 3, 4, 3</value>
-  </data>
-  <data name="tbFrontQR.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>7, 7, 7, 7</value>
-  </data>
-  <data name="tbFrontQR.Size" type="System.Drawing.Size, System.Drawing">
-    <value>458, 28</value>
-  </data>
-  <data name="tbFrontQR.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;tbFrontQR.Name" xml:space="preserve">
-    <value>tbFrontQR</value>
-  </data>
-  <data name="&gt;&gt;tbFrontQR.Type" xml:space="preserve">
-    <value>SLTSoft.RJControl.RJTextBox, Vision Measurement System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;tbFrontQR.Parent" xml:space="preserve">
-    <value>panel27</value>
-  </data>
-  <data name="&gt;&gt;tbFrontQR.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="tbSerialNumber.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="tbSerialNumber.Location" type="System.Drawing.Point, System.Drawing">
-    <value>89, 11</value>
-  </data>
-  <data name="tbSerialNumber.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 3, 4, 3</value>
-  </data>
-  <data name="tbSerialNumber.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>7, 7, 7, 7</value>
-  </data>
-  <data name="tbSerialNumber.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 28</value>
-  </data>
-  <data name="tbSerialNumber.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;tbSerialNumber.Name" xml:space="preserve">
-    <value>tbSerialNumber</value>
-  </data>
-  <data name="&gt;&gt;tbSerialNumber.Type" xml:space="preserve">
-    <value>SLTSoft.RJControl.RJTextBox, Vision Measurement System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;tbSerialNumber.Parent" xml:space="preserve">
-    <value>panel27</value>
-  </data>
-  <data name="&gt;&gt;tbSerialNumber.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
   <data name="tbMacMes.Font" type="System.Drawing.Font, System.Drawing">
@@ -1078,7 +988,70 @@
     <value>panel27</value>
   </data>
   <data name="&gt;&gt;tbMacMes.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="tbMainQR.Location" type="System.Drawing.Point, System.Drawing">
+    <value>89, 84</value>
+  </data>
+  <data name="tbMainQR.Size" type="System.Drawing.Size, System.Drawing">
+    <value>199, 20</value>
+  </data>
+  <data name="tbMainQR.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;tbMainQR.Name" xml:space="preserve">
+    <value>tbMainQR</value>
+  </data>
+  <data name="&gt;&gt;tbMainQR.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbMainQR.Parent" xml:space="preserve">
+    <value>panel27</value>
+  </data>
+  <data name="&gt;&gt;tbMainQR.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tbFrontQR.Location" type="System.Drawing.Point, System.Drawing">
+    <value>89, 50</value>
+  </data>
+  <data name="tbFrontQR.Size" type="System.Drawing.Size, System.Drawing">
+    <value>199, 20</value>
+  </data>
+  <data name="tbFrontQR.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;tbFrontQR.Name" xml:space="preserve">
+    <value>tbFrontQR</value>
+  </data>
+  <data name="&gt;&gt;tbFrontQR.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbFrontQR.Parent" xml:space="preserve">
+    <value>panel27</value>
+  </data>
+  <data name="&gt;&gt;tbFrontQR.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="tbSerialNumber.Location" type="System.Drawing.Point, System.Drawing">
+    <value>89, 15</value>
+  </data>
+  <data name="tbSerialNumber.Size" type="System.Drawing.Size, System.Drawing">
+    <value>199, 20</value>
+  </data>
+  <data name="tbSerialNumber.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;tbSerialNumber.Name" xml:space="preserve">
+    <value>tbSerialNumber</value>
+  </data>
+  <data name="&gt;&gt;tbSerialNumber.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbSerialNumber.Parent" xml:space="preserve">
+    <value>panel27</value>
+  </data>
+  <data name="&gt;&gt;tbSerialNumber.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="btnskip.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1093,7 +1066,7 @@
     <value>13</value>
   </data>
   <data name="btnskip.Text" xml:space="preserve">
-    <value>skip</value>
+    <value>GET</value>
   </data>
   <data name="&gt;&gt;btnskip.Name" xml:space="preserve">
     <value>btnskip</value>
@@ -1105,7 +1078,7 @@
     <value>panel27</value>
   </data>
   <data name="&gt;&gt;btnskip.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>3</value>
   </data>
   <data name="tbUSBScan.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -1135,7 +1108,7 @@
     <value>panel27</value>
   </data>
   <data name="&gt;&gt;tbUSBScan.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>5</value>
   </data>
   <data name="label20.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1521,9 +1494,6 @@ Number</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1366, 575</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Main</value>

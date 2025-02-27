@@ -67,6 +67,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.lbModelFile = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
+            this.num_MachineNo = new SLTtechSoft.NumbericEdit();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel22 = new System.Windows.Forms.Panel();
@@ -79,14 +80,10 @@
             this.tabPageModel = new System.Windows.Forms.TabPage();
             this.tabPageMotion = new System.Windows.Forms.TabPage();
             this.panel13 = new System.Windows.Forms.Panel();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
@@ -108,13 +105,12 @@
             this.btnExtendFFTAnalize = new System.Windows.Forms.Button();
             this.panelKeysight = new System.Windows.Forms.Panel();
             this.panel19 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.panelFFTAnalysis = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.num_MachineNo = new SLTtechSoft.NumbericEdit();
             this.btnFftClear = new SLTSoft.RJControl.RJButton();
             this.btnFftStop = new SLTSoft.RJControl.RJButton();
+            this.label9 = new System.Windows.Forms.Label();
             this.btnFftStart = new SLTSoft.RJControl.RJButton();
+            this.panelFFTAnalysis = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel17.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
@@ -418,6 +414,18 @@
             resources.ApplyResources(this.label40, "label40");
             this.label40.Name = "label40";
             // 
+            // num_MachineNo
+            // 
+            this.num_MachineNo.DeviceHigh = 100D;
+            this.num_MachineNo.DeviceLeftOfDec = 5;
+            this.num_MachineNo.DeviceLow = 0D;
+            this.num_MachineNo.DeviceRightOfDec = 0;
+            this.num_MachineNo.DeviveFormat = SLTtechSoft.NumbericEdit.Format.Unsigned16;
+            resources.ApplyResources(this.num_MachineNo, "num_MachineNo");
+            this.num_MachineNo.Name = "num_MachineNo";
+            this.num_MachineNo.ReadOnly = true;
+            this.num_MachineNo.Click += new System.EventHandler(this.numbericEdit1_Click_1);
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -472,11 +480,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPageModel);
             this.tabControl1.Controls.Add(this.tabPageMotion);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
-            this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage1);
             resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Name = "tabControl1";
@@ -499,24 +503,6 @@
             // 
             resources.ApplyResources(this.panel13, "panel13");
             this.panel13.Name = "panel13";
-            // 
-            // tabPage2
-            // 
-            resources.ApplyResources(this.tabPage2, "tabPage2");
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tabPage3
-            // 
-            resources.ApplyResources(this.tabPage3, "tabPage3");
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // tabPage4
-            // 
-            resources.ApplyResources(this.tabPage4, "tabPage4");
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // tabPage5
             // 
@@ -543,12 +529,6 @@
             this.panel14.Controls.Add(this.panel1);
             resources.ApplyResources(this.panel14, "panel14");
             this.panel14.Name = "panel14";
-            // 
-            // tabPage6
-            // 
-            resources.ApplyResources(this.tabPage6, "tabPage6");
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.UseVisualStyleBackColor = true;
             // 
             // tabPage1
             // 
@@ -746,35 +726,6 @@
             resources.ApplyResources(this.panel19, "panel19");
             this.panel19.Name = "panel19";
             // 
-            // label9
-            // 
-            this.label9.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            resources.ApplyResources(this.label9, "label9");
-            this.label9.Name = "label9";
-            // 
-            // panelFFTAnalysis
-            // 
-            resources.ApplyResources(this.panelFFTAnalysis, "panelFFTAnalysis");
-            this.panelFFTAnalysis.Name = "panelFFTAnalysis";
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.tabControl1);
-            resources.ApplyResources(this.panel5, "panel5");
-            this.panel5.Name = "panel5";
-            // 
-            // num_MachineNo
-            // 
-            this.num_MachineNo.DeviceHigh = 100D;
-            this.num_MachineNo.DeviceLeftOfDec = 5;
-            this.num_MachineNo.DeviceLow = 0D;
-            this.num_MachineNo.DeviceRightOfDec = 0;
-            this.num_MachineNo.DeviveFormat = SLTtechSoft.NumbericEdit.Format.Unsigned16;
-            resources.ApplyResources(this.num_MachineNo, "num_MachineNo");
-            this.num_MachineNo.Name = "num_MachineNo";
-            this.num_MachineNo.ReadOnly = true;
-            this.num_MachineNo.Click += new System.EventHandler(this.numbericEdit1_Click_1);
-            // 
             // btnFftClear
             // 
             this.btnFftClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -807,6 +758,12 @@
             this.btnFftStop.UseVisualStyleBackColor = false;
             this.btnFftStop.Click += new System.EventHandler(this.btnFftStop_Click);
             // 
+            // label9
+            // 
+            this.label9.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            resources.ApplyResources(this.label9, "label9");
+            this.label9.Name = "label9";
+            // 
             // btnFftStart
             // 
             this.btnFftStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
@@ -822,6 +779,17 @@
             this.btnFftStart.TextColor = System.Drawing.Color.Black;
             this.btnFftStart.UseVisualStyleBackColor = false;
             this.btnFftStart.Click += new System.EventHandler(this.btnFftStart_Click);
+            // 
+            // panelFFTAnalysis
+            // 
+            resources.ApplyResources(this.panelFFTAnalysis, "panelFFTAnalysis");
+            this.panelFFTAnalysis.Name = "panelFFTAnalysis";
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.tabControl1);
+            resources.ApplyResources(this.panel5, "panel5");
+            this.panel5.Name = "panel5";
             // 
             // Model
             // 
@@ -914,12 +882,8 @@
         private System.Windows.Forms.Button btnSaveCogToolBlock;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPageModel;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Panel panel16;

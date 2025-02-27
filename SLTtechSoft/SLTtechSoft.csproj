@@ -135,6 +135,7 @@
     <Reference Include="LibFunction">
       <HintPath>..\LibFunction\bin\Debug\LibFunction.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="NAudio">
       <HintPath>..\Include\NAudio.dll</HintPath>
     </Reference>
@@ -231,6 +232,7 @@
     <Compile Include="Class\FftSharp\Window\Rectangular.cs" />
     <Compile Include="Class\FftSharp\Window\Tukey.cs" />
     <Compile Include="Class\FftSharp\Window\Welch.cs" />
+    <Compile Include="Class\Global.cs" />
     <Compile Include="Class\INIFile.cs" />
     <Compile Include="CogDisplayNumpad.cs">
       <SubType>UserControl</SubType>

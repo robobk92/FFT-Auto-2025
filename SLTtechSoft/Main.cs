@@ -70,6 +70,8 @@ namespace SLTtechSoft
         public bool StopTestingByFail = false;
         public bool StartTesting = false;
 
+        public string CurrentFrontQR = "";
+        public string CurrentMainQR = "";
         public Main()
         {
             InitializeComponent();
@@ -82,8 +84,6 @@ namespace SLTtechSoft
             if (_form1.formOption == null) return;
             if (_form1.formOption.Parameters == null) return;
 
-            //_form1.formModel.ShowAModelParameter(_form1.formModel.modelParameter);
-            tbSerialNumber.textBox1.KeyDown += tbSerialNumber_Keydown;
         }
 
         private void Main_Shown(object sender, EventArgs e)
@@ -97,17 +97,7 @@ namespace SLTtechSoft
         {
             
         }
-        private void tbSerialNumber_Keydown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                string inputData = tbSerialNumber.Texts;
-                tbSerialNumber.Texts = "";
-                if (inputData == "") return;
-                _form1.CurrentSerial_Number = inputData;
-
-            }
-        }
+       
         public void FinishATest(bool Result, string Value)
         {
             dataGridView1.Rows[CurrentDoorTestData.RowIndex].Cells[DoorTableCol.Value].Value = Value;
@@ -173,7 +163,7 @@ namespace SLTtechSoft
             }
 
         }
-        //Chu trình Kiểm tra Khóa cửa
+        //Chu trình Kiểm tra Khóa cửa 
         public void DoorTestProcess()
         {
 
@@ -237,6 +227,9 @@ namespace SLTtechSoft
             ClassDoorTestData classDoorTestData = new ClassDoorTestData();
             bool isFindOutFunctionTest = false;
             bool TotalResult = true;
+            int RowFinal = 0;
+            int RowTotalTestTime = 0;
+            int RowWaitTime = 0;
             if (dataGridView1.ColumnCount == 0) return null;
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
@@ -289,6 +282,9 @@ namespace SLTtechSoft
                                 {
                                     if (ProcessTestIndex == 0)
                                     {
+                                        int RowDisplay = i - 5;
+                                        if (RowDisplay < 0) RowDisplay = 0;
+                                        dataGridView1.FirstDisplayedScrollingRowIndex = RowDisplay;
                                         dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.Yellow;
                                         classDoorTestData.RowIndex = i;
                                         classDoorTestData.ID = dataGridView1.Rows[i].Cells[0].Value.ToString();
@@ -304,12 +300,26 @@ namespace SLTtechSoft
                                         classDoorTestData.retry = Convert.ToInt32(dataGridView1.Rows[i].Cells[10].Value.ToString());
                                         classDoorTestData.TimeOut = Convert.ToInt32(dataGridView1.Rows[i].Cells[11].Value.ToString());
                                     }
-                                  
+
                                     isFindOutFunctionTest = true;
                                     break;
                                 }
                             }
                         }
+                    }
+                    else
+                    {
+                        if (thisID == "Final") RowFinal = i;
+                        string thisDetail = dataGridView1.Rows[i].Cells[2].Value.ToString();
+                        if (thisDetail != "")
+                        {
+                            if (thisDetail == "Total_test_time") RowTotalTestTime = i;
+                            else
+                            {
+                                if (thisDetail == "Wait_Time") RowWaitTime = i;
+                            }
+                        }
+
                     }
                 }
             }
@@ -317,18 +327,20 @@ namespace SLTtechSoft
             //Nếu là dòng cuối cùng. Tổng hợp kết quả
             if (!isFindOutFunctionTest || StopTestingByFail)
             {
+               
+              
                 classDoorTestData.RowIndex = dataGridView1.RowCount - 3 ;
                 classDoorTestData.ID = "...Final";
                 classDoorTestData.Name = "Result...";
                 //ghi kết quả vào ô Final Result
                 if (TotalResult && !StopTestingByFail)
                 {
-                    dataGridView1.Rows[dataGridView1.RowCount - 3].Cells[DoorTableCol.Value].Value = DoorResult.Pass;
+                    dataGridView1.Rows[RowFinal].Cells[DoorTableCol.Value].Value = DoorResult.Pass;
                     _form1.leftTabControl.SetlStatus(labelStatus.Pass);
                 }
                 else
                 {
-                    dataGridView1.Rows[dataGridView1.RowCount - 3].Cells[DoorTableCol.Value].Value = DoorResult.Fail;
+                    dataGridView1.Rows[RowFinal].Cells[DoorTableCol.Value].Value = DoorResult.Fail;
                     _form1.leftTabControl.SetlStatus(labelStatus.Fail);
                 }
 
@@ -337,7 +349,7 @@ namespace SLTtechSoft
                 TimeSpan ts = StopWatchTestDoor.Elapsed;
                 string TimeTest = $"{ts.Seconds}.{_form1.PadLeftZeros(ts.Milliseconds, 3)}";
                 //Ghi lại thời gian kiểm tra tổng.
-                dataGridView1.Rows[dataGridView1.RowCount - 2].Cells[DoorTableCol.Time].Value = TimeTest;
+                dataGridView1.Rows[RowTotalTestTime].Cells[DoorTableCol.Time].Value = TimeTest;
                 //Xuất file CSV
                 _form1.ExportFileExcel(TotalResult);
                 //Kết thúc chu trình
@@ -362,7 +374,7 @@ namespace SLTtechSoft
             {
                 //Khởi tạo các trạng thái kiểm tra
                 _form1.formModel.ShowFFTTableInMainScreen();
-                StartTesting = true;
+                StartTesting = true; 
                 ProcessTestIndex = 0;
                 _form1.RefreshCogDisplayImage();
 
@@ -374,8 +386,8 @@ namespace SLTtechSoft
                 StopWatchTestDoorTotal = new Stopwatch();
                 StopWatchTestDoorTotal.Start();
 
-                dataGridView1.Rows[CurrentDoorTestData.RowIndex].Cells[DoorTableCol.Value].Value = _form1.CurrentSerial_Number;
-                dataGridView1.Rows[CurrentDoorTestData.RowIndex].Cells[DoorTableCol.Result].Value = DoorResult.Pass;
+                dataGridView1.Rows[0].Cells[DoorTableCol.Value].Value = _form1.CurrentSerial_Number;
+                dataGridView1.Rows[0].Cells[DoorTableCol.Result].Value = DoorResult.Pass;
 
                 _form1.CurrentSerial_Number = "";
 
@@ -383,7 +395,7 @@ namespace SLTtechSoft
                 TimeSpan ts = StopWatchTestDoor.Elapsed;
                 string TimeTest = $"{ts.Seconds}.{_form1.PadLeftZeros(ts.Milliseconds, 3)}";
 
-                dataGridView1.Rows[CurrentDoorTestData.RowIndex].Cells[DoorTableCol.Time].Value = TimeTest;
+                dataGridView1.Rows[0].Cells[DoorTableCol.Time].Value = TimeTest;
                 
 
 
@@ -406,7 +418,7 @@ namespace SLTtechSoft
 
                 dataGridView1.Rows[CurrentDoorTestData.RowIndex].Cells[DoorTableCol.Value].Value = _form1.CurrentQRCodeRecived;
                 dataGridView1.Rows[CurrentDoorTestData.RowIndex].Cells[DoorTableCol.Result].Value = DoorResult.Pass;
-                //_form1.CurrentQRCodeRecived = "";
+                _form1.CurrentQRCodeRecived = "";
 
                 StopWatchTestDoor.Stop();
                 TimeSpan ts = StopWatchTestDoor.Elapsed;
@@ -701,6 +713,7 @@ namespace SLTtechSoft
                         //Ngắt nguồn KeysightPSU
                         //_form1.KeySightPSU_Off();
                         StartDelayProcess = true;
+                        DelayProcessIndex = 0;
                         ProcessTestIndex++;
                         break;
                     }
@@ -720,6 +733,7 @@ namespace SLTtechSoft
                         //Bật nguồn trở lại
                         //_form1.KeySightPSU_ON();
                         StartDelayProcess = true;
+                        DelayProcessIndex = 0;
                         ProcessTestIndex++;
                         break;
                     }
@@ -1519,6 +1533,7 @@ namespace SLTtechSoft
                 case 1:
                     {
                         StartDelayProcess = true;
+                        DelayProcessIndex = 0;
                         ProcessTestIndex++;
                         break;
                     }
@@ -1536,6 +1551,7 @@ namespace SLTtechSoft
                 case 3:
                     {
                         StartDelayProcess = true;
+                        DelayProcessIndex = 0;
                         ProcessTestIndex++;
 
                         break;
@@ -1653,11 +1669,13 @@ namespace SLTtechSoft
                     {
                         _form1.formModel.FftAnalysis.Start();
                         StartDelayProcess = true;
+                        DelayProcessIndex = 0;
                         ProcessTestIndex++;
                         break;
                     }
                 case 3:
                     {
+                       
                         DelayProcess(30);
                         if (DelayProcessDone)
                         {
@@ -1829,7 +1847,7 @@ namespace SLTtechSoft
                     IsInFunctionList = true;
                     CheckKeyPressIndex = i;
                 }
-                if (functionDoorList.LedChecks[i].Detail == "Led_Bar")
+                if (CurrentDoorTestData.Detail == "Led_Bar")
                 {
                     _form1.GUICamera.UserLighting = true;
                 }
@@ -1837,8 +1855,8 @@ namespace SLTtechSoft
                 {
                     _form1.GUICamera.UserLighting = false;
                 }
-               
             }
+            
             if (!IsInFunctionList) return;
             string CurrentResult = dataGridView1.Rows[CurrentDoorTestData.RowIndex].Cells[DoorTableCol.Result].Value.ToString();
 
@@ -1861,7 +1879,7 @@ namespace SLTtechSoft
                         if (!IsLedDoorOn)
                         {
                             _form1.LockASSA.LEDKeyOn(CurrentDoorTestData.TimeOut);
-                           
+
                             IsLedDoorOn = true;
 
                         }
@@ -1870,12 +1888,14 @@ namespace SLTtechSoft
                             _form1.PLC.Write.Auto.Test.StartLedCheck = false;
                             ProcessTestIndex++;
                         }
-                     
+
                         break;
                     }
                 case 2:
                     {
+                        DelayProcessDone = false;
                         if (!_form1._VisionSystem[0].FinishTrigger) _form1.GUICamera.StartSingleShotGrabbing();
+
                         ProcessTestIndex++;
                         break;
                     }
@@ -1898,25 +1918,21 @@ namespace SLTtechSoft
                                 {
                                     //Pass
                                     FinishATest(true, _form1._VisionSystem[0].LedValue[CheckKeyPressIndex].ToString());
-
                                 }
                                 else
                                 {
                                     //Fail;
-                                    
-                                   
                                     ProcessTestIndex = 4;
                                 }
                             }
                             else
                             {
                                 //Fail;
-                                
                                 ProcessTestIndex = 4;
-                               
+
                             }
                         }
-                        
+
                         break;
                     }
                 case 4:
@@ -1928,12 +1944,8 @@ namespace SLTtechSoft
                             _form1._VisionSystem[0].FinishTrigger = false;
                             _form1.LockASSA.LEDKeyOn(CurrentDoorTestData.TimeOut);
                             StartDelayProcess = true;
-                            DelayProcess(30);
-                            if (DelayProcessDone)
-                            {
-                                StartDelayProcess = false;
-                            }
-                            ProcessTestIndex = 2;
+                            DelayProcessIndex = 0;
+                            ProcessTestIndex++;
                         }
                         else
                         {
@@ -1941,7 +1953,16 @@ namespace SLTtechSoft
                         }
                         break;
                     }
-                
+                case 5:
+                    {
+                        DelayProcess(30);
+                        if (DelayProcessDone)
+                        {
+                            StartDelayProcess = false;
+                            ProcessTestIndex = 2;
+                        }
+                        break;
+                    }
                 default: { break; }
             }
         }
@@ -2287,7 +2308,7 @@ namespace SLTtechSoft
                         if (_form1.PLC.Read.Auto.Test.ReadyButton_Check_Register_P)
                         {
                             datakeyRead = _form1.LockASSA.checkDataKey(CurrentDoorTestData.TimeOut);
-                            DataLockread = _form1.LockASSA.CheckInputADoor(CurrentDoorTestData.TimeOut);
+                          
                             if (datakeyRead == null)
                             {
                                 //Fail
@@ -2328,24 +2349,31 @@ namespace SLTtechSoft
                 case 3:
                     {
                         //Khi lỗi xảy ra, báo cho PLC kiểm tra lại
-                        if (TestRetryTime++ < CurrentDoorTestData.retry)
+                        _form1.PLC.Write.Auto.Test.StartButton_Check_Register_P = false;
+                        _form1.PLC.Write.Auto.Test.StartButton_Check_Register_N = true;
+                        if (!_form1.PLC.Read.Auto.Test.ReadyButton_Check_Register_P)
                         {
-                            ProcessTestIndex = 0;
-                        }
-                        else
-                        {
-                            //kết thúc kiểm tra Fail
-                            if (datakeyRead != null)
-                                FinishATest(false, datakeyRead.Key);
+                            if (TestRetryTime++ < CurrentDoorTestData.retry)
+                            {
+                                ProcessTestIndex = 1;
+                            }
                             else
-                                FinishATest(false, "Error");
+                            {
+                                //kết thúc kiểm tra Fail
+                                if (datakeyRead != null)
+                                    FinishATest(false, datakeyRead.Key);
+                                else
+                                    FinishATest(false, "Error");
+                            }
                         }
+                       
                         break;
                     }
                 case 4:
                     {
                         //kết thúc kiểm tra Pass
                         _form1.PLC.Write.Auto.Test.StartButton_Check_Register_P = false;
+                        _form1.PLC.Write.Auto.Test.StartButton_Check_Register_N = false;
                         if (!_form1.PLC.Read.Auto.Test.ReadyButton_Check_Register_P)
                         {
                             FinishATest(true, CurrentDoorTestData.Min);
@@ -2387,7 +2415,7 @@ namespace SLTtechSoft
                         if (_form1.PLC.Read.Auto.Test.ReadyButton_Check_Register_N)
                         {
                             datakeyRead = _form1.LockASSA.checkDataKey(CurrentDoorTestData.TimeOut);
-                            DataLockread = _form1.LockASSA.CheckInputADoor(CurrentDoorTestData.TimeOut);
+                            //DataLockread = _form1.LockASSA.CheckInputADoor(CurrentDoorTestData.TimeOut);
                             if (datakeyRead == null)
                             {
                                 //Fail
@@ -2527,24 +2555,31 @@ namespace SLTtechSoft
                 case 3:
                     {
                         //Khi lỗi xảy ra, báo cho PLC kiểm tra lại
-                        if (TestRetryTime++ < CurrentDoorTestData.retry)
+                        _form1.PLC.Write.Auto.Test.StartButton_Check_Lock_P = false;
+                        _form1.PLC.Write.Auto.Test.StartButton_Check_Lock_N = true;
+                        if (!_form1.PLC.Read.Auto.Test.ReadyButton_Check_Lock_P)
                         {
-                            ProcessTestIndex = 0;
-                        }
-                        else
-                        {
-                            //kết thúc kiểm tra Fail
-                            if (datakeyRead != null)
-                                FinishATest(false, datakeyRead.Key);
+                            if (TestRetryTime++ < CurrentDoorTestData.retry)
+                            {
+                                ProcessTestIndex = 3;
+                            }
                             else
-                                FinishATest(false, "Error");
+                            {
+                                //kết thúc kiểm tra Fail
+                                if (datakeyRead != null)
+                                    FinishATest(false, datakeyRead.Key);
+                                else
+                                    FinishATest(false, "Error");
+                            }
                         }
+                        
                         break;
                     }
                 case 4:
                     {
                         //kết thúc kiểm tra Pass
                         _form1.PLC.Write.Auto.Test.StartButton_Check_Lock_P = false;
+                        _form1.PLC.Write.Auto.Test.StartButton_Check_Lock_N = false;
                         if (!_form1.PLC.Read.Auto.Test.ReadyButton_Check_Lock_P)
                         {
                             FinishATest(true, CurrentDoorTestData.Min);
@@ -3390,6 +3425,7 @@ namespace SLTtechSoft
                         {
                             //Ghi điện áp và dòng điện thành công
                             ProcessTestIndex++;
+                            DelayProcessIndex = 0;
                         }
                       
                         break;
@@ -3476,6 +3512,8 @@ namespace SLTtechSoft
                 StopWatchTestDoor.Start();
 
                 ProcessTestIndex = 1;
+
+                DelayProcessIndex = 0;
             }
             //Execute
 
@@ -3610,5 +3648,28 @@ namespace SLTtechSoft
             }
         }
 
+        private void tbSerialNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                _form1.CurrentSerial_Number = tbSerialNumber.Text;
+            }
+        }
+
+        private void tbFrontQR_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                _form1.CurrentQRCodeRecived = tbFrontQR.Text;
+            }
+        }
+
+        private void tbMainQR_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                _form1.CurrentQRCodeRecived = tbMainQR.Text;
+            }
+        }
     }//
 }

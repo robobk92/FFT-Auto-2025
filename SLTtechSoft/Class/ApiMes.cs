@@ -221,7 +221,7 @@ namespace ByYou
         {
             string fileUrl = "";
             HttpClient httpClient = new HttpClient();
-            string apiUrl = $"http://10.27.36.20:8000//shopfloor/SoftwareConfig?page_size=1&SkuCode={skuCode}&SoftwareName={softwareName}&SoftwareType={softwareType}&Version={version}";
+            string apiUrl = $"http://10.27.40.3:8000//shopfloor/SoftwareConfig?page_size=1&SkuCode={skuCode}&SoftwareName={softwareName}&SoftwareType={softwareType}&Version={version}";
             int count = 0;
             while (count < 3)
             {
